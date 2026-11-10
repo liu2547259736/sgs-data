@@ -19,10 +19,16 @@ data-repo/
 │   └── <ver>/<kind>/
 ├── meta/                  # index.json / search_index.json / 各版本 pack_icons 等
 └── tools/
-    ├── migrate.py         # 从主程序重新生成 heroes/skins/images/meta（幂等）
+    ├── migrate.py         # 从主程序重新生成 heroes/skins/images/meta（镜像语义）
     ├── build_manifest.py  # 扫目录算 sha256 + bytes，重生成 manifest.json
-    └── snapshot.py        # 生成 ../legacy-web 非皮肤快照
+    ├── snapshot.py        # 生成 ../legacy-web 非皮肤快照（镜像语义）
+    ├── sync.py            # 统一入口：本体 -> 下游 -> git
+    ├── sync-state.json    # 上次同步基线（逐将内容 hash）
+    └── sync-log.jsonl     # 每次同步的变更记录
 ```
+
+`migrate.py` / `snapshot.py` 是**镜像同步**：主程序里删掉的武将或图片，下游对应文件也会被清掉，
+不会留下脏分片。清理范围仅限数据目录，绝不触碰 `.git` 和源目录。
 
 ## 数据规则
 
@@ -76,10 +82,18 @@ data-repo/
 
 ## 重跑方式
 
+日常只需要一条命令（在 `sgs-flutter/` 目录下）：
+
 ```
-python tools/migrate.py                    # 从主程序重建（会覆盖 data-repo 内的数据文件）
-python tools/build_manifest.py            # 重算 sha256 / bytes
-python tools/snapshot.py                  # 重建 ../legacy-web 快照
+python data-repo/tools/sync.py --check                  # 只读：本体这次改了什么
+python data-repo/tools/sync.py --note "补了 3 个武将"   # 重建下游 + 写变更记录
+python data-repo/tools/sync.py --commit --push          # 额外提交 4 个仓库并推送
+python data-repo/tools/sync.py --commit --gh user/repo  # 额外验证 jsDelivr
 ```
 
-三个脚本只用 Python 标准库，只读源目录，绝不删源文件。
+`sync.py` 会把 `migrate.py` → `snapshot.py` → `build_manifest.py` 串起来，
+并做发布断言（老武将消失 / 武将数减少 / JSON 损坏会中止，真要删加 `--allow-shrink`）。
+git 操作默认全部关闭，只有显式 `--commit` 才执行。
+
+链路是单向的：**`sgs-heroes-app`（本体，唯一真源）→ 本仓库 / `legacy-web` / `app` → git tag → jsDelivr → 多端 App**。
+永远不要反向写回主程序。三个子脚本也可以单独跑，都只用 Python 标准库、只读源目录。
