@@ -1,0 +1,9 @@
+.git/
+__pycache__/
+*.pyc
+*.tmp
+*.bak
+*.bak-*
+_backups/
+images/*/sk/
+images/*/voice/

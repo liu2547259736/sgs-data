@@ -1,0 +1,901 @@
+{
+ "meta": {
+  "title": "系列/扩展包参考字典（萌娘百科 Template:三国杀·武将牌 板块 × 004.md 并集）",
+  "createdAt": "2026-09-23",
+  "sources": [
+   "萌娘百科 Template:三国杀「武将牌」折叠板块 —— 本机无法直接抓取（Cookie 同意墙 / action=raw 需登录 / api.php 未授权），板块清单以用户提供的页面截图为准，src 标记为 moe",
+   "H:/AI/sgs-heroes/up/004.md 任务列举，src 标记为 task"
+  ],
+  "rules": [
+   "并集收录：截图与 004.md 出入的条目两条都收，src 互标，note 写明出入",
+   "status: mapped=已映射到现有版本 packs 字典（map.ver + map.pack）；partial=现有数据含部分子组；ref=仅参考登记，现有数据无此端/此包；本文件不改动现有 index.json 与 characters.json",
+   "现有版本端：sgsol=三国杀OL / msgs=三国杀移动版 / sgs=三国杀十周年；海外服/小程序/欢乐杀/线下专属暂无独立数据端",
+   "配套审计：node scripts/series-audit.mjs"
+  ]
+ },
+ "platforms": [
+  {
+   "platform": "offline",
+   "label": "线下桌游",
+   "boardTitle": "标准版/神话再临/一将成名·原创之魂/桌游志SP·☆SP·异SP·点将DIY·RE·国战SP·徐绫PR·COS/珍藏版·江山如故·蚀心入魔/珍藏封印·四象封印",
+   "series": [
+    {
+     "id": "std",
+     "label": "标准版",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "biaozhun"
+     },
+     "note": "另见 sgs.biaozhun / sgsol.std"
+    },
+    {
+     "id": "shenhua",
+     "label": "神话再临系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "shenhuazailin"
+     },
+     "note": "风/火/林/山/阴/雷子包，msgs 与 sgs 均有 gr 细分"
+    },
+    {
+     "id": "yijiang",
+     "label": "一将成名系列及对应界限突破",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "yijiangchengming"
+     },
+     "note": "msgs 另有界一将 jieyijiangchengming；各端 2011-2025 子组"
+    },
+    {
+     "id": "yuanchuang",
+     "label": "原创之魂系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "zyzsp",
+     "label": "桌游志SP系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "starsp",
+     "label": "☆SP系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "yisp",
+     "label": "异SP系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref",
+     "note": "[出入] 004.md 同板块写「界SP」，并集双收"
+    },
+    {
+     "id": "jiesp",
+     "label": "界SP系列",
+     "src": [
+      "task"
+     ],
+     "status": "ref",
+     "note": "[出入] 截图板块写「异SP」，并集双收"
+    },
+    {
+     "id": "dianjiang",
+     "label": "点将DIY专供系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "re",
+     "label": "RE系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "gzsp",
+     "label": "国战SP系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "pr",
+     "label": "PR系列（徐绫PR）",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "截图板块具体写「徐绫PR系列」"
+    },
+    {
+     "id": "cos",
+     "label": "COS系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "zhencang",
+     "label": "珍藏版",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "jiangshanOffline",
+     "label": "江山如故系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "msgs",
+      "pack": "xianshiwujiang"
+     },
+     "note": "msgs 已含「限时武将-江山如故-起包」「龙血玄黄,江山如故-兴包」"
+    },
+    {
+     "id": "shixin",
+     "label": "蚀心入魔系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "[出入] 截图列线下板块、004.md 列海外服板块，两处并存"
+    },
+    {
+     "id": "zcfy",
+     "label": "珍藏封印",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "sixiang",
+     "label": "四象封印系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    }
+   ]
+  },
+  {
+   "platform": "sgsol",
+   "label": "三国杀OL",
+   "boardTitle": "OL文德武备系列、门阀士族系列、上兵伐谋系列、廪系列、祈福系列、璀璨星河系列、江山如故系列、SP系列扩展包武将",
+   "series": [
+    {
+     "id": "wende",
+     "label": "文德武备系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "OL 端现有 misc 267 条未细分，归属待官网核实"
+    },
+    {
+     "id": "menfa",
+     "label": "门阀士族系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgsol",
+      "pack": "zu"
+     }
+    },
+    {
+     "id": "shangbing",
+     "label": "上兵伐谋系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "sgs 端已有「荟萃-上兵伐谋」3 条，OL 端归属待核实"
+    },
+    {
+     "id": "lin",
+     "label": "廪系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref",
+     "note": "[出入] 004.md 同板块写「魔系列」，并集双收"
+    },
+    {
+     "id": "mo",
+     "label": "魔系列",
+     "src": [
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgsol",
+      "pack": "mo"
+     },
+     "note": "[出入] 截图同板块写「廪系列」，两者并集收录"
+    },
+    {
+     "id": "qifuOL",
+     "label": "祈福系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "sgs 端已有「限定-祈福」7 条"
+    },
+    {
+     "id": "cuican",
+     "label": "璀璨星河系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "jiangshanOL",
+     "label": "江山如故系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "OL 端归属待核实"
+    },
+    {
+     "id": "spOL",
+     "label": "SP系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "OL 端 SP；移动版 SP 另见 msgs.sp"
+    }
+   ]
+  },
+  {
+   "platform": "sgs",
+   "label": "十周年（新三国杀）",
+   "boardTitle": "十周年星火燎原系列、星河璀璨系列、谋定天下系列、威震天下系列、限定专属系列、群英荟萃系列、专属一将成名系列扩展包武将",
+   "series": [
+    {
+     "id": "xinghuo",
+     "label": "星火燎原系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "xinghuoliaoyuan"
+     },
+     "note": "子组以星宿命名（天同/天梁/天机/天相/天府/七杀）"
+    },
+    {
+     "id": "xinghe",
+     "label": "星河璀璨系列",
+     "src": [
+      "moe",
+      "task",
+      "710"
+     ],
+     "status": "mapped",
+     "note": "与星火燎原子组星宿命名的归属关系待核实 | 2026-09-24 十周年710全量升级：21名落地(pack=xinghecuican)",
+     "map": {
+      "ver": "sgs",
+      "pack": "xinghecuican"
+     }
+    },
+    {
+     "id": "mouding",
+     "label": "谋定天下系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "mouding"
+     },
+     "note": "冢虎狼顾/子敬邀刀/毒士鸩计/周郎将计/奇佐论胜/幼麟绝战/谋定天下 7 子组"
+    },
+    {
+     "id": "weizhen",
+     "label": "威震天下系列",
+     "src": [
+      "moe",
+      "task",
+      "710"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "weizhen"
+     },
+     "note": "2026-09-24 十周年710全量升级：14名落地(pack=weizhen)"
+    },
+    {
+     "id": "xianding",
+     "label": "限定专属系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "sgs",
+      "pack": "xianding"
+     },
+     "note": "现有子组：祈福/高山仰止/神·武"
+    },
+    {
+     "id": "qunying",
+     "label": "群英荟萃系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "huicui"
+     },
+     "note": "30+ 子组，含文和乱武/纵横捭阖等玩法系列武将"
+    },
+    {
+     "id": "zsyj",
+     "label": "专属一将成名系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "与既有 yijiangchengming 的边界待核实"
+    },
+    {
+     "id": "xianshidizhu",
+     "label": "限时地主系列",
+     "src": [
+      "710"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "xianshidizhu"
+     },
+     "note": "2026-09-24 十周年710全量升级：31名落地，与图鉴基准(31)一致"
+    },
+    {
+     "id": "miaomiaosha",
+     "label": "喵喵杀系列",
+     "src": [
+      "710"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "sgs",
+      "pack": "miaomiaosha"
+     },
+     "note": "2026-09-24 十周年710全量升级：11名落地，与图鉴基准(11)一致"
+    }
+   ]
+  },
+  {
+   "platform": "msgs",
+   "label": "移动版（手杀）",
+   "boardTitle": "移动版稀有专属系列、龙血玄黄系列、兵势篇系列、谋攻篇系列、始计篇系列、江山如故系列、SP系列扩展包武将",
+   "series": [
+    {
+     "id": "xiyou",
+     "label": "稀有专属系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref",
+     "note": "msgs「限时武将」「常侍牌」是否归属此系列待核实"
+    },
+    {
+     "id": "longxue",
+     "label": "龙血玄黄系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "longxuexuanhuang"
+     }
+    },
+    {
+     "id": "bingshi",
+     "label": "兵势篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "bingshipian"
+     },
+     "note": "现有子组：正包"
+    },
+    {
+     "id": "mougong",
+     "label": "谋攻篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "mougongpian"
+     },
+     "note": "现有子组：同包"
+    },
+    {
+     "id": "shiji",
+     "label": "始计篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "shijipian"
+     },
+     "note": "仁/勇/智/信/严 5 子包"
+    },
+    {
+     "id": "jiangshanMsgs",
+     "label": "江山如故系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "msgs",
+      "pack": "xianshiwujiang"
+     },
+     "note": "起包（限时）/兴包（并龙血玄黄）"
+    },
+    {
+     "id": "jiangxing",
+     "label": "将星独具",
+     "src": [
+      "task"
+     ],
+     "status": "ref",
+     "note": "[出入] 004.md 列举，截图移动版板块无此名"
+    },
+    {
+     "id": "spMsgs",
+     "label": "SP系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "sp"
+     },
+     "note": "SP武将组 1-15"
+    }
+   ]
+  },
+  {
+   "platform": "hw",
+   "label": "移动版海外服",
+   "boardTitle": "移动版（海外服）稀有专属系列、武侠篇系列、IF篇系列、龙血玄黄系列、兵势篇系列、谋攻篇系列、运筹帷幄篇系列、蚀心入魔篇系列、沧海遗珠篇系列、SP系列扩展包武将",
+   "series": [
+    {
+     "id": "xiyouHW",
+     "label": "稀有专属系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "wuxia",
+     "label": "武侠篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "if",
+     "label": "IF篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "longxueHW",
+     "label": "龙血玄黄系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref",
+     "note": "004.md 海外服板块未列"
+    },
+    {
+     "id": "bingshiHW",
+     "label": "兵势篇系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "mougongHW",
+     "label": "谋攻篇系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "yunchou",
+     "label": "运筹帷幄篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "shixinHW",
+     "label": "蚀心入魔篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "canghai",
+     "label": "沧海遗珠篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "spHW",
+     "label": "SP系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    }
+   ],
+   "note": "整端 ref：现有无海外服数据端，未来新增版本时按此挂载"
+  },
+  {
+   "platform": "miniapp",
+   "label": "微信小程序",
+   "boardTitle": "小程序登峰造极系列、志系列、稀有限定系列扩展包武将",
+   "series": [
+    {
+     "id": "dengfeng",
+     "label": "登峰造极系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "zhi",
+     "label": "志系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "xianxianding",
+     "label": "稀有限定系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    }
+   ],
+   "note": "整端 ref：现有无小程序数据端"
+  },
+  {
+   "platform": "hls",
+   "label": "欢乐杀",
+   "boardTitle": "欢乐杀魅焰狂舞系列、专属系列、星系列、SP系列扩展包武将",
+   "series": [
+    {
+     "id": "meiyan",
+     "label": "魅焰狂舞系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref",
+     "note": "[出入] 004.md 写「喵娘乱舞」，并集双收"
+    },
+    {
+     "id": "miaoniang",
+     "label": "喵娘乱舞系列",
+     "src": [
+      "task"
+     ],
+     "status": "ref",
+     "note": "[出入] 截图写「魅焰狂舞」，并集双收"
+    },
+    {
+     "id": "zshls",
+     "label": "专属系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "xingHls",
+     "label": "星系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "spHls",
+     "label": "SP系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    }
+   ],
+   "note": "整端 ref：现有无欢乐杀数据端"
+  },
+  {
+   "platform": "gz",
+   "label": "国战与特殊模式",
+   "boardTitle": "国战标准版、君临天下系列、不臣篇系列、纵横捭阖系列、图国篇系列、紫气东来系列、金印紫绶系列、紫凤衔佩系列扩展包及各服国战专属武将；其他武将",
+   "series": [
+    {
+     "id": "gzstd",
+     "label": "国战标准版",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "sgsol",
+      "pack": "gz"
+     },
+     "note": "OL 国战 110 条"
+    },
+    {
+     "id": "junlin",
+     "label": "君临天下系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "buchen",
+     "label": "不臣篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "zongheng",
+     "label": "纵横捭阖系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "sgs",
+      "pack": "huicui"
+     },
+     "note": "现有「荟萃-纵横捭阖」6 条"
+    },
+    {
+     "id": "tuguo",
+     "label": "图国篇系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "ziqi",
+     "label": "紫气东来系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "jinyin",
+     "label": "金印紫绶系列",
+     "src": [
+      "moe",
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "zifeng",
+     "label": "紫凤衔佩系列",
+     "src": [
+      "moe"
+     ],
+     "status": "ref",
+     "note": "004.md 未列"
+    },
+    {
+     "id": "gzzs",
+     "label": "各服国战专属武将",
+     "src": [
+      "moe"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "v11",
+     "label": "1v1武将包",
+     "src": [
+      "task"
+     ],
+     "status": "mapped",
+     "map": {
+      "ver": "msgs",
+      "pack": "1v1wujiangbao"
+     }
+    },
+    {
+     "id": "v22v33",
+     "label": "2v2/3v3",
+     "src": [
+      "task"
+     ],
+     "status": "ref",
+     "note": "玩法形态，见玩法模块；无独立武将包数据"
+    },
+    {
+     "id": "zhongdan",
+     "label": "忠胆英杰",
+     "src": [
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "shanhe",
+     "label": "山河煮酒",
+     "src": [
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "wenhe",
+     "label": "文和乱武",
+     "src": [
+      "task"
+     ],
+     "status": "partial",
+     "map": {
+      "ver": "sgs",
+      "pack": "huicui"
+     },
+     "note": "现有「荟萃-文和乱武」10 条"
+    },
+    {
+     "id": "huanhua",
+     "label": "幻化之战",
+     "src": [
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "luoma",
+     "label": "罗马英文版",
+     "src": [
+      "task"
+     ],
+     "status": "ref"
+    },
+    {
+     "id": "nailong",
+     "label": "奶龙联动",
+     "src": [
+      "task"
+     ],
+     "status": "ref"
+    }
+   ],
+   "note": "截图末板块「其他武将」对应各端 misc/其他；004.md 特殊包 8 条并入本端登记"
+  }
+ ]
+}
