@@ -6,7 +6,8 @@
       http.extraHeader 在进程内传递，不写进 .git/config 或任何文件。
 
 用法（在 sgs-flutter 目录下）：
-    python data-repo/tools/setup_github.py --repo <user>/<repo> --dry-run
+    python data-repo/tools/setup_github.py --repo sgs-data --dry-run
+        --repo 可以只写仓库名，用户名会由 token 通过 GET /user 自动补全。
         只体检：API 连通性、token、仓库存在性、本地待推内容。不写任何东西。
     python data-repo/tools/setup_github.py --repo <user>/<repo> --create
         仓库不存在时自动创建（必须 public，jsDelivr 读不了私有仓库）。
@@ -205,17 +206,23 @@ def main():
     ap.add_argument('--skip-env', action='store_true', help='不回写 env.dart')
     a = ap.parse_args()
 
-    if '/' not in a.repo:
-        print('请用 --repo <user>/<repo> 指定数据仓库，例如 --repo asuna/sgs-data')
+    if not a.repo:
+        print('请用 --repo 指定数据仓库，例如 --repo sgs-data 或 --repo asuna/sgs-data')
         raise SystemExit(2)
-    owner, name = a.repo.split('/', 1)
+    if '/' in a.repo:
+        owner, name = a.repo.split('/', 1)
+        auto_owner = False
+    else:
+        # 只给仓库名时，用户名从 GET /user 自动补全，省得手填也免得写错
+        owner, name, auto_owner = '', a.repo, True
     token = os.environ.get('GITHUB_TOKEN', '').strip()
     dry = a.dry_run
     version = current_version()
     tag = 'data-v' + version if version else ''
 
     print('=== GitHub CDN 链路体检 ===')
-    print('  目标仓库 : %s' % a.repo)
+    print('  目标仓库 : %s%s' % (
+        a.repo, '  (用户名将从 token 自动获取)' if auto_owner else ''))
     print('  本地版本 : %s / tag %s' % (version or '(无)', tag or '(无)'))
     print('  token    : %s' % ('已提供' if token else '未提供（真实操作需要）'))
     print('  模式     : %s' % ('dry-run（不写任何文件）' if dry else '执行'))
@@ -231,15 +238,29 @@ def main():
     if token:
         code, me = api('GET', '/user', token)
         if code == 200:
-            print('    身份: %s（%s）' % (me.get('login'), me.get('type')))
-            if (me.get('login') or '').lower() != owner.lower():
+            login = me.get('login') or ''
+            print('    身份: %s（%s）' % (login, me.get('type')))
+            if auto_owner:
+                owner, a.repo = login, '%s/%s' % (login, name)
+                print('    用户名已自动确定，仓库: %s' % a.repo)
+            elif login.lower() != owner.lower():
                 print('    [!] token 属于 %s，但 --repo 写的是 %s；'
-                      '组织仓库请确认权限' % (me.get('login'), owner))
+                      '组织仓库请确认权限' % (login, owner))
         else:
             print('    [!] token 校验失败: %s %s' % (code, doc.get('message', '')))
+    elif auto_owner and not dry:
+        print('    [!] 只给了仓库名，需要 GITHUB_TOKEN 才能查出用户名；'
+              '或改用 --repo <user>/<repo>')
+        raise SystemExit(2)
+
+    if dry and auto_owner and not owner:
+        a.repo = '<user>/' + name     # 仅用于 dry-run 展示，真实执行已被 token 补全
 
     print('[2] 仓库存在性')
-    exists, info = repo_exists(owner, name, token)
+    if not owner:
+        exists, info = None, {}          # dry-run 且无 token，跳过查询
+    else:
+        exists, info = repo_exists(owner, name, token)
     if exists is True:
         print('    已存在  private=%s  default_branch=%s' % (
             info.get('private'), info.get('default_branch')))
@@ -257,15 +278,17 @@ def main():
         elif not a.create:
             print('    加 --create 可自动创建')
     else:
-        print('    [!] 查询失败: %s' % info.get('message'))
+        print('    %s' % ('[dry-run] 跳过' if dry else
+                         '[!] 查询失败: %s' % info.get('message')))
 
     print('[3] 配置 remote 并推送')
     targets = REPOS if a.all else [('data-repo', DATA)]
     for rname, path in targets:
+        display_owner = owner or '<user>'
         if rname == 'data-repo':
-            url = 'https://github.com/%s.git' % a.repo
+            url = 'https://github.com/%s/%s.git' % (display_owner, name)
         else:
-            url = 'https://github.com/%s/%s-%s.git' % (owner, name, rname)
+            url = 'https://github.com/%s/%s-%s.git' % (display_owner, name, rname)
         cur = git(path, 'remote', 'get-url', 'origin', check=False).stdout.strip()
         print('  %-12s origin: %s -> %s' % (rname, cur or '(无)', url))
         if not dry:
@@ -286,6 +309,8 @@ def main():
     if not ok:
         print('    可稍后单独重跑: python data-repo/tools/sync.py --verify-cdn %s'
               % a.repo)
+    else:
+        print('  env.dart 已更新，记得重新构建: flutter build web --release')
 
 
 if __name__ == '__main__':
