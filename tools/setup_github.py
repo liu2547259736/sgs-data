@@ -18,13 +18,15 @@
 默认只处理 data-repo —— 它是唯一需要经 CDN 分发的仓库。
 
 本脚本解决三个实测踩过的坑：
-  1. 沙箱注入的 HTTP_PROXY 对 github.com 返回 CONNECT 502；所有远端 git
-     命令显式清空代理走直连（实测 3/3 成功）。
+  1. 沙箱注入的 HTTP_PROXY 对 github.com 返回 CONNECT 502，直连又间歇性
+     超时；本机若有 Clash/v2ray 一类本地代理（常见 7890）则稳定可用。
+     脚本自动探测可用代理，找不到才退回直连。
   2. 首次推送 148 MB / 8000+ 文件容易 RPC failed；调大 http.postBuffer
      并固定 HTTP/1.1。
   3. cdn.jsdelivr.net 在本机 TLS 握手失败；验证改用 fastly/gcore/testingcf。
 """
 import argparse
+import base64
 import io
 import json
 import os
@@ -56,15 +58,52 @@ CDN_HOSTS = [
     'testingcf.jsdelivr.net',
     'cdn.jsdelivr.net',
 ]
-# 沙箱代理会劫持这些请求，统一走直连 opener
+# api.github.com 直连稳定可用；github.com 主站则要走本地代理
 OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-NO_PROXY_GIT = ['-c', 'http.proxy=', '-c', 'https.proxy=']
+PROXY_CANDIDATES = [
+    'http://127.0.0.1:7890',
+    'http://127.0.0.1:7897',
+    'http://127.0.0.1:10809',
+    'http://127.0.0.1:1080',
+]
+_PROXY_CACHE = None
 
 
-def git(path, *args, token=None, check=True):
-    cmd = ['git'] + NO_PROXY_GIT
-    if token:
-        cmd += ['-c', 'http.extraheader=AUTHORIZATION: bearer ' + token]
+def effective_proxy():
+    """返回能连通 github.com 的本地代理，找不到则空串（退回直连）。"""
+    global _PROXY_CACHE
+    if _PROXY_CACHE is not None:
+        return _PROXY_CACHE
+    for proxy in PROXY_CANDIDATES:
+        try:
+            op = urllib.request.build_opener(
+                urllib.request.ProxyHandler({'http': proxy, 'https': proxy}))
+            with op.open('https://github.com/', timeout=8) as r:
+                if r.status < 400:
+                    _PROXY_CACHE = proxy
+                    return proxy
+        except Exception:
+            pass
+    _PROXY_CACHE = ''
+    return ''
+
+
+def git_net_args():
+    proxy = effective_proxy()
+    if proxy:
+        return ['-c', 'http.proxy=' + proxy, '-c', 'https.proxy=' + proxy]
+    return ['-c', 'http.proxy=', '-c', 'https.proxy=']
+
+
+def git(path, *args, basic_auth=None, check=True):
+    cmd = ['git'] + git_net_args()
+    if basic_auth:
+        user, secret = basic_auth
+        cred = base64.b64encode(
+            ('%s:%s' % (user, secret)).encode('utf-8')).decode('ascii')
+        # GitHub git-over-HTTPS 只接受 Basic；Bearer 对 gho_ OAuth token
+        # 会返回 "remote: invalid credentials"。
+        cmd += ['-c', 'http.extraheader=AUTHORIZATION: basic ' + cred]
     cmd += list(args)
     return subprocess.run(cmd, cwd=str(path), check=check,
                           capture_output=True, text=True)
@@ -140,15 +179,28 @@ def push_repo(path, tag, token, dry, is_data):
     # 首次推送 148 MB / 8000+ 文件，避免 RPC failed 与 HTTP/2 流重置
     git(path, 'config', 'http.postBuffer', '524288000')
     git(path, 'config', 'http.version', 'HTTP/1.1')
+    # 优先让系统凭据管理器（GCM）做 Basic 认证。显式 extraheader 会覆盖
+    # GCM，所以只在首次失败、且调用方确实给了 token 时才退回显式 Basic。
+    fallback = ((os.environ.get('GITHUB_USER') or 'x-access-token', token)
+                if token else None)
+
+    def do_push(args):
+        first = git(path, *args, check=False)
+        if first.returncode and fallback:
+            return git(path, *args, basic_auth=fallback, check=False)
+        return first
+
     print('    push HEAD ...')
-    p = git(path, 'push', '-u', 'origin', 'HEAD', '--progress',
-            token=token, check=False)
+    p = do_push(['push', '-u', 'origin', 'HEAD', '--progress'])
     if p.returncode:
         print('    push 失败: ' + (p.stderr or p.stdout).strip()[-400:])
         raise SystemExit(2)
     if is_data and tag:
         print('    push tag %s ...' % tag)
-        git(path, 'push', 'origin', tag, '--progress', token=token)
+        p = do_push(['push', 'origin', tag, '--progress'])
+        if p.returncode:
+            print('    tag push 失败: ' + (p.stderr or p.stdout).strip()[-400:])
+            raise SystemExit(2)
     print('    pushed')
 
 
@@ -282,6 +334,7 @@ def main():
                          '[!] 查询失败: %s' % info.get('message')))
 
     print('[3] 配置 remote 并推送')
+    print('    git 通道: %s' % (effective_proxy() or '直连（未找到可用本地代理）'))
     targets = REPOS if a.all else [('data-repo', DATA)]
     for rname, path in targets:
         display_owner = owner or '<user>'
