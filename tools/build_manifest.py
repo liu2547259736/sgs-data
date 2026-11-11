@@ -80,6 +80,8 @@ def main():
             'heroes': heroes,
             'skins': count_skins(),
             'images': count_images(),
+            'shell': sum(1 for f in files if not f['path'].startswith(
+                ('heroes/', 'skins/', 'meta/', 'history/', 'tools/'))),
             'files': len(files),
         },
         'files': files,

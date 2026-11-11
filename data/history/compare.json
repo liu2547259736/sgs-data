@@ -1,0 +1,63 @@
+{
+  "v": 1,
+  "data_type": "history",
+  "items": [
+    {
+      "id": "cmp-wenjiu",
+      "title": "温酒斩华雄",
+      "difficulty": "beginner",
+      "priority": 1,
+      "history_side": {
+        "source_type": "sanguozhi",
+        "text": "华雄为孙坚所破斩。《三国志·吴书·孙破虏讨逆传》：坚复相收兵，合战于阳人，大破卓军，枭其都督华雄等。",
+        "reference": "《三国志·吴书·孙破虏讨逆传》"
+      },
+      "fiction_side": {
+        "text": "关羽于阵前立斩华雄，归来时曹操所斟热酒尚温。此为小说虚构：正史中斩华雄的是孙坚，与关羽无关。",
+        "reference": "《三国演义》第五回"
+      },
+      "related_ids": [],
+      "related_sgs_character_id": ["hlsgs_sunjian", "std_guanyu"],
+      "is_fiction": true,
+      "verdict": "斩华雄者实为孙坚；『温酒』情节系文学虚构，正史无记载。"
+    },
+    {
+      "id": "cmp-caochuan",
+      "title": "草船借箭",
+      "difficulty": "beginner",
+      "priority": 2,
+      "history_side": {
+        "source_type": "sanguozhi",
+        "text": "正史无此事。相近原型为孙权：建安十八年（213）濡须之战，孙权乘大船观曹军，曹操令射箭，船偏重将覆，权使回船以受箭平衡后退走（《魏略》所记）。",
+        "reference": "《三国志·吴书·吴主传》裴注引《魏略》"
+      },
+      "fiction_side": {
+        "text": "演义将故事移到赤壁之战前，写成诸葛亮立军令状、三日之内借鲁肃草船向曹操『借』十万支箭，塑造诸葛亮神机妙算。",
+        "reference": "《三国演义》第四十六回"
+      },
+      "related_ids": [],
+      "related_sgs_character_id": ["std_zhugeliang"],
+      "is_fiction": true,
+      "verdict": "『草船借箭』正史无记载；原型是孙权受箭（裴注《魏略》），发生地在濡须而非赤壁，主角不是诸葛亮。"
+    },
+    {
+      "id": "cmp-kongcheng",
+      "title": "空城计",
+      "difficulty": "intermediate",
+      "priority": 3,
+      "history_side": {
+        "source_type": "peizhu",
+        "text": "正史无诸葛亮用空城计事。裴松之注引『郭冲三事』记此说，但裴松之本人已辨其不实：其时司马懿为荆州都督，不在雍凉，无对手在西城。",
+        "reference": "《三国志·蜀书·诸葛亮传》裴注引郭冲三事及裴氏辨驳"
+      },
+      "fiction_side": {
+        "text": "演义写马谡失街亭后，诸葛亮在西城大开城门、焚香操琴，吓退司马懿大军。",
+        "reference": "《三国演义》第九十五回"
+      },
+      "related_ids": [],
+      "related_sgs_character_id": ["std_zhugeliang"],
+      "is_fiction": true,
+      "verdict": "空城计出自裴注所引郭冲之说，裴松之已考订为不实；属文学虚构，正史无记载。"
+    }
+  ]
+}

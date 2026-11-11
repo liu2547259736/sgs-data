@@ -1,14 +1,3740 @@
 {
   "schema": 1,
-  "version": "2026.11.11",
-  "updated_at": "2026-11-11T20:33:06+08:00",
+  "version": "2026.11.12",
+  "updated_at": "2026-11-12T02:23:46+08:00",
   "counts": {
     "heroes": 3745,
     "skins": 15632,
-    "images": 8195,
-    "files": 8555
+    "images": 8196,
+    "shell": 8953,
+    "files": 9313
   },
   "files": [
+    {
+      "path": "app.js",
+      "sha256": "9c6bd5677e328803c95fbfbfbeac24af950797be98e8e67c0d7a9e3822c6bd3e",
+      "bytes": 321511
+    },
+    {
+      "path": "apple-touch-icon.png",
+      "sha256": "c9ec921cbf6298a0e33dd6ed1936f9a0f5b78dab0a1ff4b9e59e56666ff63d6d",
+      "bytes": 56831
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【影】.jpg",
+      "sha256": "4bb32344b22bc123c517e9847cb88b02acb9287dbc62bf0251bb9ecdb8f58a18",
+      "bytes": 64455
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【杀】.png",
+      "sha256": "be4ea19c734b16927d6725cfb69c51b7a237606a19bd4260a8a8e99795dd769f",
+      "bytes": 113885
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【桃】.jpg",
+      "sha256": "d31e7a75330b1ddb4a4a20c9d9f037f7c8aab29b511ee8698e7150d28f280cce",
+      "bytes": 48213
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【毒】.webp",
+      "sha256": "ffb7db31d799d11d007037ea84a612d9510ea94d94bd0ad71c0f113289ae253c",
+      "bytes": 21494
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【爆竹】-幻化之战.png",
+      "sha256": "50ca73b044e1680985f2b83b502cec46b55e1e61f718c008e734cb750c41b648",
+      "bytes": 479304
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【粽】.jpg",
+      "sha256": "115ea14e381320eb4e65b797e6a10e478f20b5a01a9e12e151e2b3367ee5261d",
+      "bytes": 64884
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【花】.jpg",
+      "sha256": "f05b7a15054cab1d6817ed29772e79881786095391da2dad34e880c919be9f7d",
+      "bytes": 69050
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【酒】.jpg",
+      "sha256": "828a69b1b9da38b379f0f3c895497681deab7fe24866d3562bb7db1a5c2b6c19",
+      "bytes": 14702
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【酗酒】.jpg",
+      "sha256": "59fb9dec7d13e073c483e99f94e99651d6255bb5d27507abac0fb2965c55b014",
+      "bytes": 113440
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【闪】.jpg",
+      "sha256": "b7d57a127e680023a1083fc32ffc58ee3c7a4a86f3b87175e99fad08ab78b04c",
+      "bytes": 50228
+    },
+    {
+      "path": "assets/cards/basic/三国杀-【雄黄酒】.jpg",
+      "sha256": "a19f5d5a17d546d3905c3433f954bfad43f5e1fa5255c057ebe28bfad6bc3681",
+      "bytes": 64691
+    },
+    {
+      "path": "assets/cards/basic/三国杀-冰【杀】.png",
+      "sha256": "0f0aea9b4adaa9bc346e7e318a1a72d5305ff7a4ebebe6e82ef616d4c8ecad4b",
+      "bytes": 504971
+    },
+    {
+      "path": "assets/cards/basic/三国杀-刺【杀】.png",
+      "sha256": "2934fa0155c6a5a973294807d97fd09031e586d5337e179ea6c2f929e1140e34",
+      "bytes": 398704
+    },
+    {
+      "path": "assets/cards/basic/三国杀-掠【闪】.jpg",
+      "sha256": "8b836831bf3160b2df90845863b36a3d6082f9a7849978a8075fcccd433a711e",
+      "bytes": 90224
+    },
+    {
+      "path": "assets/cards/basic/三国杀-火【杀】.png",
+      "sha256": "96a6efbb6de3b7c0f3f3dbd7f585994b5cb249c0208069123baeadc9025778db",
+      "bytes": 157553
+    },
+    {
+      "path": "assets/cards/basic/三国杀-闪【闪】.png",
+      "sha256": "fb7fba100197e91569f687a1b3ad483ee839ee56df5c841fbcb4b66b8e0cb4a7",
+      "bytes": 41009
+    },
+    {
+      "path": "assets/cards/basic/三国杀-雷【杀】.png",
+      "sha256": "574fe387fa2757de84e001ac174529ac2005a23e9a0446178bf177159657b7ea",
+      "bytes": 156153
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【七宝刀】.webp",
+      "sha256": "63123c97b821965749cb6fe4fd5ed7c8a99d21b9518a865695fe8ea07311cefe",
+      "bytes": 36688
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【七彩神鹿】.jpg",
+      "sha256": "e0cbbf0b67b6be7217df1e384448423a216ec3a70a231d442ffcb077476fd03e",
+      "bytes": 70766
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【七星宝刀】.jpg",
+      "sha256": "7555d15438c40e9444d6f7531fe1d0ad8bfb6fbce723fd0f5aecaafca16211d3",
+      "bytes": 85809
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【丈八蛇矛】.png",
+      "sha256": "890f8da28d802577a164b0b4b58677815e328851a6edc3df78e2699242b9f368",
+      "bytes": 113623
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【三尖两刃刀】.png",
+      "sha256": "4049c2b2c10655e58b47874f7961f522cf173ff6f0b2d13914944ce6bd98d31e",
+      "bytes": 158569
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【三略】.jpg",
+      "sha256": "21091ab14fcf9dd600273b83d4f70fa3bf9f90ca2fbec4e39658b794da17f297",
+      "bytes": 73516
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【三首】.jpg",
+      "sha256": "9fa5a9c89860a801352b796cf969c8f01a363ade8c6235272e768231e139d7a5",
+      "bytes": 72915
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【乌铁锁链】.jpg",
+      "sha256": "ed12339bf1605c25ee6d085477a6594cbbc66a5c20f34f4216c272ff799fe20f",
+      "bytes": 84379
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【九州鼎】.jpg",
+      "sha256": "a90f740802eb7d3abf4e33de4468fa52d7543656869834118d0d34aafd127691",
+      "bytes": 86560
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【五行鹤翎扇】.jpg",
+      "sha256": "2abfacea77ad6c085f97e094ef72fbdaa34a86530c56d281520015e1a013a2af",
+      "bytes": 79867
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【仁王盾】.png",
+      "sha256": "2f8b36c449c7bcb30212f776d2d9980177254ce6316eaf52d7ef1fc32e0f4c1d",
+      "bytes": 112686
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【伏魔金刚杵】.jpg",
+      "sha256": "109faa84f7dbe9024f36cc202bf1065a2902df723111e9c761fe3ce58fe899bb",
+      "bytes": 79181
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【传国玉玺】.jpg",
+      "sha256": "62e6b494cd42952f42fb1f44bac7e1d7465f970a5b867f8394e0cf8f48bd7831",
+      "bytes": 81593
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【信鸽】.jpg",
+      "sha256": "e69a691c4422210fb96d947f1242f228c7bc368ccb408a384337483f76f90fb2",
+      "bytes": 79561
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【修罗炼狱戟】.jpg",
+      "sha256": "e69bc830965aae993ba5a5c37e86fdbd75f3747f53ff1e16469c1fc38eb9457f",
+      "bytes": 83827
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【倚天剑】.jpg",
+      "sha256": "a615dcf8596eb97ed27487c641d05ab3857aa3be94d4602ca19f128ba7f67e5d",
+      "bytes": 82589
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+      "sha256": "e4bb8ddc911cb230fe4b5141c30a39eb7719f3781bd62756cf05fcbb51010446",
+      "bytes": 35114
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【八卦阵】.webp",
+      "sha256": "17ef9a89811363efb55575798e30f5b8bf366fab5340b385c2d7a6e9b4b853b5",
+      "bytes": 41876
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【六龙骖驾】-M.jpg",
+      "sha256": "5f5a28cf50ec73da2b257c4f6f80645124e317e55ca885f9b306c1b05d71861c",
+      "bytes": 77919
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【六龙骖驾】-SP.jpg",
+      "sha256": "27e2d268566d95ffa8335879ce61c345b4a52931129347ca406fceacc1880639",
+      "bytes": 85254
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【六龙骖驾】.jpg",
+      "sha256": "852ee806e81c1b221d2674c9640757858ebab3a70fafab5adbe980a5e6678c17",
+      "bytes": 89506
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【军印】.jpg",
+      "sha256": "d211d6627a366cbde5cdda7770b06ef5f1acc6537d3d144dc3fdc6dfdd36fded",
+      "bytes": 247434
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【刑天破军斧】.jpg",
+      "sha256": "6516a81355014ae9f8549d077320ef87a4c82bff7a69ac77301f9e890a331693",
+      "bytes": 84047
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【刺匕】.jpg",
+      "sha256": "30a738b12bbb29375940a80d19ba4a17c47cf6af30d2cea3737b890f8d620ffe",
+      "bytes": 79680
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【古锭刀】.png",
+      "sha256": "4f5863b331566dc8a723ea3fb89fbe03edb313c4de63b33a327e824727ccfe48",
+      "bytes": 158228
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【吴六剑】-龙起襄樊.jpg",
+      "sha256": "29296293ea603f8bdabbcf04f416c2dbf03a7b5b6a59b0b6a4869bc5f73e5e0c",
+      "bytes": 241730
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【吴六剑】.jpg",
+      "sha256": "51f03c1b10fe4f9ee74a2a2bb684f7f2d928f0ee7d766eb6760f2d2421413865",
+      "bytes": 43040
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【喜鹊】.jpg",
+      "sha256": "85027ec1b660dfa561b30b1c79fd3dac86bac2709e0eaf14ed3efda92b24d590",
+      "bytes": 70805
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【四乘粮舆】.webp",
+      "sha256": "772afc98d89093a58a27654422627c33afa3fcdae237dc5c115250419bd50a21",
+      "bytes": 38542
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【国风玉袍】.jpg",
+      "sha256": "2a8d128f6657549dc31135a2859a99bb8766d690a34c5a725381d47503164ac7",
+      "bytes": 70539
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【地契】.jpg",
+      "sha256": "d6fb83b2273209322768a2e369f0a3d40077f5a6c16f007355b5ae202eb078fa",
+      "bytes": 77110
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【地税】.jpg",
+      "sha256": "bb17a78807d924b335d84971a9209928bb65056dacc6168e5a9848e993f405d1",
+      "bytes": 83860
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【夜行衣】.jpg",
+      "sha256": "3037e153adff0a32afdfb52edfaba78fd7a80a1e6ef2b62ed68c545d582b18e1",
+      "bytes": 72233
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【大宛】.jpg",
+      "sha256": "e73ea85e83939935bead6e301e216c09d6c3fc470e79022a8e30a0d3bf3194f4",
+      "bytes": 63201
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【天书残卷】.jpg",
+      "sha256": "383be706aaccecefdee279a621e8593b334b3dee910315c2a7ca723cd2319013",
+      "bytes": 72180
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【天机图】.jpg",
+      "sha256": "a0ee86bccd60c2e778f47f6b11397230475354a855207cd4b83870497f62f8c2",
+      "bytes": 73789
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【天禄】.jpg",
+      "sha256": "8d466e0b4a4fdd6796a08afebf5b072cd0594d9bef16d8a7b6125ab42ca523f1",
+      "bytes": 93274
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【太公阴符】.jpg",
+      "sha256": "d19160ca03a6893409a1d64ff422694d5be459d8809e7520b3152293e5a62aef",
+      "bytes": 82687
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【奇门八卦】.jpg",
+      "sha256": "ff8ccf0b15b9b5e46f91d7a3a7731dabb6af875d7e9c7524adb63d15a670c4ea",
+      "bytes": 74633
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【女装】-逐鹿天下.webp",
+      "sha256": "bba0f1c1638baae22a2ee9456d6d2d9394c1067ff8f9d181cbdaf75e9ca27e34",
+      "bytes": 4884
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【女装】.webp",
+      "sha256": "ffc6c4f7d947e9666b042d7ce3445f0b87b272d6ea60df1d99aa68a768e8596b",
+      "bytes": 29566
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【官轿】.jpg",
+      "sha256": "3943af9aeaad056797ea92d4cc5b6579ed327792ebc4ddaa3fc0d20cc4923be2",
+      "bytes": 80721
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【定澜夜明珠】-M.jpg",
+      "sha256": "2c81614546ef03392dc163a364cb9c0f9711017feca8083efa043d18c2f4abc1",
+      "bytes": 73432
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【定澜夜明珠】-太虚幻境.jpg",
+      "sha256": "7ee280a2699698f19e4ed39d5641e275b98a8096360da4ddf30547c6b711a909",
+      "bytes": 135938
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【定澜夜明珠】.jpg",
+      "sha256": "1083f4912cba5a6e3e0d1c80831439285aa81e60084baf31e09bd3064f18c629",
+      "bytes": 76464
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【宣花斧】.jpg",
+      "sha256": "a542c186da04fa2c5be12fae73aee1d7aecf6b8330d4a8b6c9822e901dde11ab",
+      "bytes": 82622
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【寒冰剑】.png",
+      "sha256": "582d8bb19d4e97b691d8f57ed8a5470d2ba15acba631d93ddfa3c407b1219f7c",
+      "bytes": 114168
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【幽火摄魄令】.jpg",
+      "sha256": "f1258654b2859fbcd8ce335d55fdb8d3587de0a5b6fc7aa36a355ab33f9cb5c5",
+      "bytes": 73600
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【引蜂甲】.jpg",
+      "sha256": "2ecfa2954957f4c020b0ed523312f6fc6aad534874249241503ded91c66e4197",
+      "bytes": 75465
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【引蜂衣】.jpg",
+      "sha256": "4d276aa0c2f9005d259f23ad54a3dc84b6cbf8699a9333deb5f534a3b5577031",
+      "bytes": 81903
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【思召剑】.jpg",
+      "sha256": "7c17c78bd40586bc393d2c68c76b5560af14c9f58173fd0b8260c42a4447bb01",
+      "bytes": 79266
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【惊帆】.jpg",
+      "sha256": "b3e70516512dea584a731e28cad0daab0ab51ad977e3c30f55e27f08e10e147f",
+      "bytes": 75451
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【战象】.jpg",
+      "sha256": "39d85a3308af41cef2030dc7e4013f64dc72ce6694f74bb4f2710d79330ae565",
+      "bytes": 77904
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【戢鳞潜翼】.jpg",
+      "sha256": "5c39035e5026ab27421e680ef193e5df4d8916f8d69b93507b358077cb93b9d4",
+      "bytes": 81485
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【投石车】.jpg",
+      "sha256": "03c966734fe43cd582c497b8721b64518fe1408c13c17912d7d2dc80bfeabc1a",
+      "bytes": 147406
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【折戟】-用间篇.jpg",
+      "sha256": "82bfa251168fdbc99813fe02b436784e25424b5f6635a362f410540de5ef6d0b",
+      "bytes": 76209
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【护心镜】-势备篇-彩色版.jpg",
+      "sha256": "8227b4d4cbb00004d2ca055d182d287ec537827902569c3b1356b862a563f1b7",
+      "bytes": 84734
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【护心镜】-应变篇.jpg",
+      "sha256": "04e36e240148a4e0ef55008a727acaf90f2ae390790433d35c8653ace6f95a1e",
+      "bytes": 85387
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【斩蛇剑】.jpg",
+      "sha256": "84708fee34f33d05e3b393f90792008a6ae39754a5725b5cff3fededa39144b9",
+      "bytes": 87369
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【方天画戟】-太虚幻境.jpg",
+      "sha256": "070484dbfb9f4e13924ccc41e7d5b182501e81dd2eaafa288f901fd75f68315b",
+      "bytes": 83929
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【方天画戟】.png",
+      "sha256": "96d526d226046856ed4ec7ac8acf5e2958920b726d39b1085c39bad391bdb0e7",
+      "bytes": 115895
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【无双修罗戟】.jpg",
+      "sha256": "2882048047895604b7f1956d2d6b876b523ad5fe9107210599aae49ebd1c241f",
+      "bytes": 78870
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【无双方天戟】.jpg",
+      "sha256": "873a7b1d81a0affc1cadf88d49b7eb32ddc5e0920c76cbd9fa30ce86e4d01077",
+      "bytes": 78803
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【无锋剑】.jpg",
+      "sha256": "39e66fa7576e94e10d396da69de5aca0515683b31d00899aebc5d364fff1a51c",
+      "bytes": 79472
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【明光铠】-彩色版.jpg",
+      "sha256": "eede4df35c6d136fd37ea89df1be64001cc4e689bb9ad1874ed42a67696c05d7",
+      "bytes": 88693
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【春秋笔】.jpg",
+      "sha256": "458ae8bf51342e97dbbd9228881361a98a31f4d9159d7f2dde8f3b098146afa4",
+      "bytes": 82101
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【朱雀羽扇】.png",
+      "sha256": "597494132d4bc3f6eff3e95cd27552e8edfcd5d4425e16c80632d6d576acc579",
+      "bytes": 158306
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【束发紫金冠】.jpg",
+      "sha256": "7532644e1b8a6edd220c00977959db8477827c990cbeaa134b30580c5a44f82c",
+      "bytes": 72874
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【水波剑】-原版.jpg",
+      "sha256": "3af4ef384c4a8a6eebe599ad54ee13615296cb928ce29f4852db4593951ce3b0",
+      "bytes": 82121
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【水波剑】.jpg",
+      "sha256": "aacb509b81d3de8b005e77776f8e5666debf607f0aaf75e370d9af7a601fffbe",
+      "bytes": 82193
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【浑天仪】.jpg",
+      "sha256": "94b4edc15a7f4fb97430f5a3a2c61d5b4be9e2f98a2b9658873cb2785302932e",
+      "bytes": 80788
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【涯角枪】.jpg",
+      "sha256": "b14332125006511e8d3da8041c315fbcab1f127d1328bb5b28ef4e9e36bddd01",
+      "bytes": 83762
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【混毒弯匕】.jpg",
+      "sha256": "7a6e3831a9930e059fc718c64b7f017ee29baed493bf7f9981e0de166bce6bb9",
+      "bytes": 81602
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【湖海笔】.jpg",
+      "sha256": "b0a0708f77dfd04daabdfeb6131407ff010285b20e1bb29ffd8af2962fc9be06",
+      "bytes": 77466
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【火浣衣】.jpg",
+      "sha256": "628315cbf388a1ae75ab33715abf28ae3dd6662e8f898b0d4092a29dcd8b6aea",
+      "bytes": 81898
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【灵宝仙葫】.webp",
+      "sha256": "44587aafa72d3413bd8afcde5da5579fedcce09d25582a6744d2913a88a87dd8",
+      "bytes": 38502
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【灵蛇髻】.jpg",
+      "sha256": "3d60437110610fa1f4cab7c0fb2ca4ec95b9b7289b0f1d0b97b3175967cfa2ac",
+      "bytes": 73122
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【烂银甲】.webp",
+      "sha256": "3616fd2fdb55b57695487777cd5bb12117af95dc1e69496c9e64fff6a0503869",
+      "bytes": 38588
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【烈淬刀】-原版.jpg",
+      "sha256": "e71e19dbb6c16ce1cd231ba16ab322b87dc87b3036f6e1737c7241460645d22a",
+      "bytes": 82845
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【烈淬刀】.jpg",
+      "sha256": "a18f9e4ad9bcc743d5ca3917f48d23743672b254599ec11f2b0b8cc8b9be8536",
+      "bytes": 81610
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【烟杆】.jpg",
+      "sha256": "53946c3efe74c2e5ac3d982cdac02176381dd48b2f5d5b1ba511abb1efd057cb",
+      "bytes": 82898
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【照夜玉狮子】.jpg",
+      "sha256": "b92f6df424973558452d7884682c3239f78bbdb93b569ca5f83fa84bf2eed2a5",
+      "bytes": 86022
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【照骨镜】.jpg",
+      "sha256": "6d729f3adefc7c3fd51784c8791b90be1230d90014e664b1ae62218b97d554ae",
+      "bytes": 74475
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【爪黄飞电】.jpg",
+      "sha256": "8451a58ff0cf6b0211af5e29aa0098973f18df2172e0ad161e58df561e402a15",
+      "bytes": 70129
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【玄剑】.jpg",
+      "sha256": "0a7eeacc5ba822a3c2823dd0882cfa5fdd08076dc8150180c4744227f9ef0ea8",
+      "bytes": 74168
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【玉玺】.jpg",
+      "sha256": "b33e4ce60f2607a05a3aafe8bf03e51ea490a7cef9051a1a782c3703fad52943",
+      "bytes": 75122
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【玲珑狮蛮带】.jpg",
+      "sha256": "ee218f14365df9f7c9451dba62dde3fc66c4ca268708e4d9507a8855b9c7cd3f",
+      "bytes": 77167
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【琼梳】.webp",
+      "sha256": "ef875818cb0893e37134af39e8cd19bbf91bd3d8e78dc25dedf5355520451454",
+      "bytes": 30402
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【白银狮子】.png",
+      "sha256": "942d5ed3eddbbc53ca1f9daef41591c122896dbdea9747b862ec8b0f29db7fa6",
+      "bytes": 164051
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【白麒麟】.jpg",
+      "sha256": "f4978a564249192c34c91ee781f92d2ccc18bb62745daed370ff4428043adead",
+      "bytes": 91166
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【百辟刀】.jpg",
+      "sha256": "7f8c97f1ff51233af048e4321bde3e99b145c061d9f084f9f05d0b094c9cc5a0",
+      "bytes": 78574
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【百辟双匕】.jpg",
+      "sha256": "412381b48b25d00b1e1438d547c5fefdce6c5ff5124f41214387091117721cfe",
+      "bytes": 83324
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【的卢】.jpg",
+      "sha256": "7fe43598519c6d70474d2eabe72f67de6f7e592f8795006b25d54d17aa9fc23b",
+      "bytes": 69359
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【盟军大纛】.jpg",
+      "sha256": "744401a50d2f3f37df40e206a3469ce4ca86e82ee0dd3267439e2cee0b5db567",
+      "bytes": 83928
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【真龙长剑】.jpg",
+      "sha256": "a035309cd16decfdd3bf74f3431c31b2c0b8706b629257174887963d8e5147da",
+      "bytes": 81747
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【破城锤】.jpg",
+      "sha256": "19b7f4951e6dabb47acf20566684bc1471ebc3189aa93755e16ad9ccf8f67329",
+      "bytes": 269962
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【禅让诏书】.jpg",
+      "sha256": "09d9cabb4cc9818adfe875971b545dc22342b74a46d3cb077ee1cc79eb4d4bd2",
+      "bytes": 77535
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【秦弩】.jpg",
+      "sha256": "c93d48c37e8ce2a4c43d2679d2e138104e3888a7b6b386409aba43051199da24",
+      "bytes": 86433
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【紫骍】.jpg",
+      "sha256": "039c7717751c6daf51f1156e61e6d8bda0cff76273c5a166132500e55e8cc4ec",
+      "bytes": 63080
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【红棉百花袍】.jpg",
+      "sha256": "9eb1ef027df3f8481baa7a8e092da32d03c80cde8e64bc77e00a5b90ce19b058",
+      "bytes": 71291
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【红缎枪】-原版.jpg",
+      "sha256": "38df3002a504aa4c044b4fff45e175450a683ab2575560184bedeebbc1afd74e",
+      "bytes": 83117
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【红缎枪】.jpg",
+      "sha256": "86710949a7b7545a028652c801ac39e53090b6b1f2ce7ebbbac089bf356f59a2",
+      "bytes": 81516
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【红莲紫金冠】.jpg",
+      "sha256": "475d8e19691bfe4d4896b07f65c5910e27974bb3e27180b669698b9be1cb1ac9",
+      "bytes": 81679
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【绝尘金戈】-彩色版.jpg",
+      "sha256": "33d25abde6dd38bc994d1c8aacff73b2787af7ffab59b75ef3987134da5b6cfb",
+      "bytes": 70332
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【绝影】.jpg",
+      "sha256": "9477759e909876edf0b7e6fb00fb46bc440201be081eab427868f5da5c976013",
+      "bytes": 61307
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【芷萝香囊】.jpg",
+      "sha256": "f140e3efe8c2947a87ca6d3f0f035da8e766348268f44e4159abe94e9eacbe3d",
+      "bytes": 81533
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【藤甲】.png",
+      "sha256": "fdf5e5dfe8de9d9bf5cfa2909f4106e3c6bd7371d01932d214fb00daf157d184",
+      "bytes": 158500
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【虎翼】.jpg",
+      "sha256": "2ae25492b65ca0f1e6de2b90e51fe33bbc850f2778c6bc7000c49f495f604ee6",
+      "bytes": 76702
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【虚妄之冕】.jpg",
+      "sha256": "7c13f4fc9be517ea19dc0779c8b3114eada28fa6ae48b5c3586a40db436dd04d",
+      "bytes": 75413
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【螭纹玉佩】.jpg",
+      "sha256": "82e4b07964e182db1df82e12efab6c9e6bf6c7cff91ebf12f0b5afcdd2686071",
+      "bytes": 78072
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【衠钢槊】.jpg",
+      "sha256": "01d08b67f6a6e4e4428a7a45f86d829503bc59ba397a4c5120320b4a06ae02b6",
+      "bytes": 49868
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【诸葛连弩】.png",
+      "sha256": "e9f14598611adf93e62bf11e1836787ff3d5a9185fa7362b457716c1e67a77d5",
+      "bytes": 114548
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【贯石斧】.png",
+      "sha256": "1ce494ad36834bb5d335ba2483a635ae678d659ffd4b111f258ed8b7f8685bd2",
+      "bytes": 113650
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【赤兔】.jpg",
+      "sha256": "2508b9db864d38d43c33ba98fb4135684fc7259dc9a230403249a5cf03906588",
+      "bytes": 61589
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【赤焰镇魂琴】.jpg",
+      "sha256": "928765fe740d910961be0d6533242acee8476b4c802ba798c130addad3856c75",
+      "bytes": 83228
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【赤血青锋】.jpg",
+      "sha256": "89f4cb1f86a6a778af44a086c6585c4a9eca917b531ab9033c32352fbd20683e",
+      "bytes": 82938
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【追云逐日】.png",
+      "sha256": "30dd39dc0ffe1edc7d02d8c7a934d054388817702d5044f67d396083dd109923",
+      "bytes": 541748
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【遁甲天书】.jpg",
+      "sha256": "40f4c9c7179032c7eaf2ebdd29aa2368b65f904838043e5a913d7ec432594588",
+      "bytes": 77933
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【金乌落日弓】.jpg",
+      "sha256": "fe457ba1d2c6627de84209b35ec0d93ca038da86382a207681ff3a8a05ed8db4",
+      "bytes": 83124
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【铜雀】.jpg",
+      "sha256": "7a337cae53c46e7ae3669dda46cdb4a5435bfd080083dbbc71a502ffe52c37e3",
+      "bytes": 76797
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【锦盒】.jpg",
+      "sha256": "a4d397ec5e1d5dff6fbb46ca07a6f2e7a1a3a9225f29f799a567c67400c6cc18",
+      "bytes": 85060
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【镔铁双戟】.jpg",
+      "sha256": "c1dfb0ab66f256d3211098c3e83dc4226519cc0defbbc3b8237bbdbc187c8e2a",
+      "bytes": 84763
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【长安大舰】.jpg",
+      "sha256": "9e30beb05032f50b3bf22cb76881e3df9f80f6e39484408747b9e9c5f9da2b73",
+      "bytes": 72662
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【阳燧枪】.jpg",
+      "sha256": "4a2c713625aa1519c794a08703ebdf1b38fdce6c553b490f9a04e171e79f59fe",
+      "bytes": 83142
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【隐衣】.jpg",
+      "sha256": "8baed6994e83c053a4816fdebf5eb8b2b4f277d1b1fef146dae36f35cb94a08d",
+      "bytes": 74221
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【雌雄双股剑】.png",
+      "sha256": "8d015b8ccc65e1b61d03301e5d2ab88fa868b3291f1b92c3d3b8ada1d3266475",
+      "bytes": 117630
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【雷击木】.jpg",
+      "sha256": "981c22bae41f52b4f320f40ba7c5cc5a19682359160bb2c9ddb86e8c1adaa1a2",
+      "bytes": 131903
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【霹雳车】-太虚幻境.jpg",
+      "sha256": "333293d2c4d0156a9fc0482120c2f2e769ea0d3bf45eeaa777bccb7f9d7f7030",
+      "bytes": 157300
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【青釭剑】.png",
+      "sha256": "68884b38492f07263dcb9991238c2474702fe6004d6d55dc1b41aed4697934b4",
+      "bytes": 111917
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【青龙偃月刀】.png",
+      "sha256": "f4604c1fe9cd1323149e16ab1ad5d130633dda217653cefff378b83964d24851",
+      "bytes": 115487
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【项羽刀】.jpg",
+      "sha256": "6db164d07c892686b57e85bb2898f95f723179e05362ea7eeb09eb46a64a5573",
+      "bytes": 8362
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【飞将神威剑】.jpg",
+      "sha256": "290ab66026211179b454ff09ee5e60efa9d5c5b54dcc5c9bdd49946b9fd587c4",
+      "bytes": 77552
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【飞龙夺凤】-M.jpg",
+      "sha256": "931a3b043d2a8e0894d46573125bc729f4f8549c9dcffd7040ce0a18521a7c29",
+      "bytes": 80556
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【飞龙夺凤】-太虚幻境.jpg",
+      "sha256": "1f9810f2137f7390f481d34b143420355499cda0b89b3394045a2ca2ae16ba90",
+      "bytes": 147151
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【飞龙夺凤】.jpg",
+      "sha256": "4974bcaae36755e75bdd3f1e75612ce4fdfa1036d0ef9f108513ec9566c1324b",
+      "bytes": 88699
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【驽马】-逐鹿天下.jpg",
+      "sha256": "069e46015d472cc2344aac60797bdfc23cbade4cd89d8564ed70947c74d3e88e",
+      "bytes": 75411
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【骅骝】.jpg",
+      "sha256": "2af49bdec6ff5b66612750e114abfff5d7e2d7c65aee0bbf9148823657acb899",
+      "bytes": 71795
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【鬼龙斩月刀】.jpg",
+      "sha256": "5de6d4ef8ec084dcbaa831faf532bbfbbb0faaa3d0b498efb2435d28c0808764",
+      "bytes": 78409
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【魂·诸葛连弩】.jpg",
+      "sha256": "f62f0f43678bd880f0be8d359485e5bc7ff3e255c0d61015ed2fb48a9230fb30",
+      "bytes": 82734
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【鱼盆】.jpg",
+      "sha256": "78425e63bee7a40e579a3a2deebbb3a5a3c93d609345d53bb5da4e94cba95295",
+      "bytes": 93980
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【鸾凤和鸣剑】.jpg",
+      "sha256": "57f46f759f02f8e5837e41f24017d5d06c1bee5be15f18670e5266ba6b5885c6",
+      "bytes": 83146
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【鹦鹉杯】.jpg",
+      "sha256": "3011081df79ac1aefe848ddde20c6a5a2e86dc1be2e71c3d9a7723eb15c9c53e",
+      "bytes": 81562
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【麒麟弓】-太虚幻境.jpg",
+      "sha256": "edb5c238f8d717a93cb3d767ca2b28b48bbaffa2c92393fdd207de9c15f93c4c",
+      "bytes": 83768
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【麒麟弓】.png",
+      "sha256": "94264ca5658c0557b210a59c3d8fd4e4da094373021b16efd62c0b8bed255939",
+      "bytes": 113541
+    },
+    {
+      "path": "assets/cards/equip/三国杀-【黑光铠】.jpg",
+      "sha256": "49d42501a87acf190b81e50ef6c95893400ecd6cd9c0731863fb4f0ed4476023",
+      "bytes": 81167
+    },
+    {
+      "path": "assets/cards/equip/三国杀-国【方天画戟】.jpg",
+      "sha256": "5db81153d80576926a6c1ef800f5239d5fef270d6af9bed1e96eb71b6d1d9fe9",
+      "bytes": 35330
+    },
+    {
+      "path": "assets/cards/equip/三国杀-国【青龙偃月刀】.png",
+      "sha256": "ba9c4d2a9be796070563911b98515bb362253730142089e6e1a582f3e813b209",
+      "bytes": 154108
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【万箭齐发】.jpg",
+      "sha256": "89fda7c50929d3bc2d9f8ad620bbba5349cd1c5898ed3f8b0251bfdd8f73f880",
+      "bytes": 38481
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【乐不思蜀】-山河煮酒.jpg",
+      "sha256": "9225d9a9bbc14f2621c915b61603139e041492fc566155208443b2e157b9e792",
+      "bytes": 323303
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【乐不思蜀】-幻.jpg",
+      "sha256": "9579ad54504d8391177153cdbb01d9a6d4d39209909a512e85d3f8d322cc1b1d",
+      "bytes": 82142
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【乐不思蜀】.webp",
+      "sha256": "51cce3913d9b4e716424beaca9a0bac1e2b021303cc9fc46f00cacc8071ed596",
+      "bytes": 38832
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【五谷丰登】.png",
+      "sha256": "1b029461e56ef5e3a97f6bad28954a144347fe5bd97f8bcbe79b9d3aa3dcbce1",
+      "bytes": 106665
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【以毒攻毒】.jpg",
+      "sha256": "62b10f031f48f2f2c6e97c81c66f73344d4be68069cee3186a50edbce4cf5f5a",
+      "bytes": 89294
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【以逸待劳】-太虚幻境.jpg",
+      "sha256": "40dcf0f869793fe8e3ff4b27d139573e20e1891c4aae63c78004404f3418c19a",
+      "bytes": 143500
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【以逸待劳】.webp",
+      "sha256": "84f4a3e5d176525e3b350fa50b7804c296afdf366125693d9c79afaa46968e1f",
+      "bytes": 40108
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【借刀杀人】-太虚幻境.jpg",
+      "sha256": "8292b38d152368b2a3acdd95ee4990c5edd093b3ae576688f60d10b4e6fd73cc",
+      "bytes": 181735
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【借刀杀人】.jpg",
+      "sha256": "8db34e9e83d5772ea98a286cd6f9691d5f1697afea6dc82b69cb1a12004ab4fe",
+      "bytes": 35939
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【偷梁换柱】-幻化之战.png",
+      "sha256": "dea0008f07b204c2c49cbfcea4588985849a6b0044a5fa923f59289d3a563df0",
+      "bytes": 482383
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【偷梁换柱】-旧.jpg",
+      "sha256": "5a041fa3b10c88905638b0cd1a55be141f371d333ffd9e2f36c6d89225bceb4f",
+      "bytes": 71849
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【克复中原】.jpg",
+      "sha256": "9aa2f54f776bcccc376de99456e85ab5b1fdafedf6aa87a159e60f109ed9aa4b",
+      "bytes": 82919
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【兵临城下】-兵临城下.jpg",
+      "sha256": "10ab46dd70973fd88dd6ec83b9c572ee7986fdafb908459d470372979fb152c8",
+      "bytes": 140628
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【兵临城下】.webp",
+      "sha256": "02c674020a7fb04e5dbbd3c6141725b81a4fae4ee9c6cde228c98b7f3e3f960d",
+      "bytes": 36022
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【兵粮寸断】-山河煮酒.jpg",
+      "sha256": "085c5d885e531850a0ae297f69db7f416681c07a09b6d86fdc04092981e9d462",
+      "bytes": 333784
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【兵粮寸断】-血战长坂坡.jpg",
+      "sha256": "a931107b135a4fa0a1ceb76cc12160e7256a47e0b600bbdafbb81b027dc03b88",
+      "bytes": 54847
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【兵粮寸断】.webp",
+      "sha256": "c62c97cbeb7dbd776cb4c290321c8f48533f8bd74c2ea9992d50ed11d1bf26df",
+      "bytes": 51904
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【决斗】.png",
+      "sha256": "dcc2f16deaf5fe94a15a96b79c8aa26cf0b11f9d0c8353c2914b9f39a71c0561",
+      "bytes": 217025
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【出其不意】.jpg",
+      "sha256": "6c64f08fd77d4fd0cc59a2d4619c345d24a53833832297c0237baaec240ed119",
+      "bytes": 77870
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【分道扬镳】.jpg",
+      "sha256": "128ce35a7f510aac01deeb3fc35c989ff680330eeb3f39c675dde31c40108334",
+      "bytes": 73537
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【刮骨疗毒】.jpg",
+      "sha256": "59322de5fbe5e6dc4bd06cc6894813f9cea2c04ccd019247a2a2ecd7731be209",
+      "bytes": 85029
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【力争上游】-2019版.jpg",
+      "sha256": "673c7606b02e77c6c2436cbe62df7735e59b63d0e244155532bc3e0f30516cf6",
+      "bytes": 81658
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【勠力同心】-官渡之战.jpg",
+      "sha256": "1655dbfaf82685e2c0b950cfc52aa8f51c41bf4474b43f9e4b9624a00a5dbe0b",
+      "bytes": 87004
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【勠力同心】.jpg",
+      "sha256": "ce80238719974713ff1b663d1605c15ef8f585811b42a0d1a4b3bbe3ddcc491c",
+      "bytes": 86060
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【南蛮入侵】.png",
+      "sha256": "dec669bba7a1d64a6fd15194f62298b78e75f2b0a14cd975d2d15d228f62e20a",
+      "bytes": 111734
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【号令天下】.jpg",
+      "sha256": "0531132d562821e513f9f7899f636da566e6d512bcdd2e004a25ca11a74a31a0",
+      "bytes": 87413
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【同舟共济】-2019版.jpg",
+      "sha256": "d568798f456e51e794132f83050ade7356522c995b2829a6f7b81de3c53751d4",
+      "bytes": 80446
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【咄咄逼人】.jpg",
+      "sha256": "a27e62a865c46bafc3aa1ee2acc5cab511bf99d7df6e65e8d8134e4731c2d8e2",
+      "bytes": 73178
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【唯我独尊】.jpg",
+      "sha256": "b63c83ccfe9801e632bc4cd607ea743504fec897073d3b373c0b90ee3febcb69",
+      "bytes": 138398
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【商鞅变法】.jpg",
+      "sha256": "2ccedfe68bab65e9e1d33118ede56525d0c72c1cb467640806924398d7eaf328",
+      "bytes": 86320
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【回魂】.jpg",
+      "sha256": "dd73713f62c45ae299a4f7952e19435fea89ab28bea113d0d51ab2e43419b43d",
+      "bytes": 81505
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【固国安邦】.jpg",
+      "sha256": "113865d530c776173af4b490e3d61344349cdb59180b6e89b6766880b12ed597",
+      "bytes": 87275
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【图穷匕见】.jpg",
+      "sha256": "3d53faa09e0530e34af5836fcb4d4ad1a5078bb3f6a7e552be9885377b3895d5",
+      "bytes": 74411
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【增兵减灶】.webp",
+      "sha256": "cfb38f506e7b540c10080b2aa0d48e3018f670b576781448d64952617c76c26d",
+      "bytes": 39286
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【声东击西】.webp",
+      "sha256": "a2abfe55bb543b6f5daf45b49ff36db092249bb7f07d1e994f66adf8f35a4848",
+      "bytes": 45126
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【奇正相生】.webp",
+      "sha256": "54e39e983b6b6d776693fcfa2a93edb0510bc8db4a4a787479208f128acf4cec",
+      "bytes": 44632
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【始乱终弃】.jpg",
+      "sha256": "ddba6eb3528b89b53706380ad35425e2a1086e9dca181d7146f898a2aab30237",
+      "bytes": 80041
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【屯粮】.jpg",
+      "sha256": "7b0478d89ef676132237841ac684452849c9fde573ae37a5456d970d03388073",
+      "bytes": 77791
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【巧取豪夺】.jpg",
+      "sha256": "21421a4c2b987c36a8317cd4a9274793aa909a3fbec053aae8ac31d20669e0be",
+      "bytes": 69077
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【弃甲曳兵】.webp",
+      "sha256": "2396791099924fead4619ecae5aacfb821e06f8bb03dbdb3a66e0bda712376fc",
+      "bytes": 39182
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【强兵足食】.jpg",
+      "sha256": "ca9bc4dd7f9608d083878196e312208b34060de459d328b2ba94d86c6079c8fa",
+      "bytes": 75785
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【强易】.jpg",
+      "sha256": "d65a16201b8f711fe010af99030142988953617460d405be15961e4e5547542b",
+      "bytes": 88849
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【挟天子以令诸侯】.jpg",
+      "sha256": "65bcf5e8cac06cdb07175b9b756ea3e234708fe82f9f2f41144612837f820b14",
+      "bytes": 83776
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【推心置腹】.jpg",
+      "sha256": "56004a1779ec29b8ac6bde00fbc9724655783eecbc5caddbde64b282c0c1fcea",
+      "bytes": 81499
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【援军】.jpg",
+      "sha256": "20a5e4a9c5cf5105d5ce09158a50bbf2ecc976daf0ab3286a92f70c4fbdcd140",
+      "bytes": 79186
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【撒豆成兵】-幻.jpg",
+      "sha256": "905a8c3a2a748b7691b4fb9256877547c8d0f66d7e94e1ab62322b41445d28da",
+      "bytes": 83020
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【撒豆成兵】.jpg",
+      "sha256": "2dd56788fe154700bc7159c71dd610f41374c902e56a590b5c7bddb9baceaf27",
+      "bytes": 88531
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【攻守兼备】.jpg",
+      "sha256": "1940548739e829c9a5b533ed2b53da73c207470e25f940c9a71ff62b94abaf1d",
+      "bytes": 87536
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【故步自封】.jpg",
+      "sha256": "7a8b211b65ea2f9af65aa04827649d247179bc97cb69b4c459d598abd4462097",
+      "bytes": 80696
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【整甲缮兵】.jpg",
+      "sha256": "2a0abdb61088584bfa7d68e55d186a9f2cb12107cf126aa0c91fed49b01163e7",
+      "bytes": 291906
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【文和乱武】-新.jpg",
+      "sha256": "faa5b30323078dad77ffea2cb0500c806c7587937e098f326851654774cc6e4b",
+      "bytes": 134710
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【文和乱武】.jpg",
+      "sha256": "0cb9288d38c72f57ca7c1bc86344c4d4f1f60f07d06cd9d0ce127898dca7a945",
+      "bytes": 87813
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【斗转星移】-旧.jpg",
+      "sha256": "d2d13fb53837f123e29be5b5cb321bf356197e351ae8b430b56e86e89f5e0fc8",
+      "bytes": 72209
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【无中生有】.jpg",
+      "sha256": "8fb30852b79dc4447326d04959430c3f4445863a91f2d279b4b8c12ebf31cc1a",
+      "bytes": 32449
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【无懈可击】.png",
+      "sha256": "038d9e12c240d6d172cc0ef75f873ffb513b3c7ce509000dfe8180ab05c16d3e",
+      "bytes": 113815
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【春联】.jpg",
+      "sha256": "85c52f4f22d40af6f061263b8e7d023f6db6220fcdf6a3ebe786b5ba1aad9c94",
+      "bytes": 69379
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【李代桃僵】-旧.jpg",
+      "sha256": "0d0e5ac17c0dad14bcbac492efcd47233279194982285f6bad0d029349a72822",
+      "bytes": 73321
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【树上开花】-逐鹿天下.jpg",
+      "sha256": "8405109c46f899cc1500fef953ee33c93d1d8c59d2b9fd7a8b532790c7a2d138",
+      "bytes": 81788
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【桃园结义】.png",
+      "sha256": "b46c6727535466126f2641ca9aee465f54ea96db594531943225f7e2f3a7ea32",
+      "bytes": 114294
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【毁容】.jpg",
+      "sha256": "ef43ae429a90bfd154197be42a6daffe3b5e66cbfa1df20020de093dd1a60751",
+      "bytes": 82536
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【水淹七军】-1v1.jpg",
+      "sha256": "77c571166db2a8990f1f333a82c33e22fc285fd2a373c97d8f15c634014d4fdb",
+      "bytes": 84963
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【水淹七军】-兵临城下.jpg",
+      "sha256": "c13f436199d1c657c8e42c54340075082dfb0dcc95e272b76ca776e104bf654a",
+      "bytes": 146862
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【水淹七军】-太虚幻境.jpg",
+      "sha256": "4e5cc30e00df04b674a9eab807e88af7c3b20f5bce08749d12aba93a196a8862",
+      "bytes": 143452
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【水淹七军】.jpg",
+      "sha256": "cdec2becae03d03b1f767ef4765f6df84cb462b314fea846906517149e3b4d66",
+      "bytes": 80706
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【洞烛先机】.jpg",
+      "sha256": "d7b4bc5205123b3b4c3a6552518c1a5d7fb09d8260b2a6a383b3ce4aaed621d0",
+      "bytes": 74311
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【洪荒之力】.jpg",
+      "sha256": "d84ef583cce32c7c3f60d0ebe53d28e8271b24fd7676f5e3c6fe8131018cb7d3",
+      "bytes": 78599
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【浮雷】.jpg",
+      "sha256": "a64a82cca094e0093b762e9647ddc581443a501460137c2941f079e096cd606e",
+      "bytes": 49553
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【火攻】-山河煮酒.jpg",
+      "sha256": "c484733923b0e3f1261a7cdf3ac0fa856fe920573027e6ab57d8948e948504e0",
+      "bytes": 351351
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【火攻】.png",
+      "sha256": "f309d825eb05def5c10560a4bb9d735821fb8dc90fcdc09e759f2a2986698d04",
+      "bytes": 159374
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【火烧连营】-太虚幻境.jpg",
+      "sha256": "e56d6094570100408a3938ba289887c6bd38686d85c01f6129533be9f136caea",
+      "bytes": 157318
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【火烧连营】.jpg",
+      "sha256": "c001ba73c1731d89f886f303a17fd6d02cd77559691319483b7abda5e6ee9680",
+      "bytes": 76020
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【炸弹】.jpg",
+      "sha256": "ea3b5968d72f9018b1db317cd27deb24d2e9dc697de890875025422b2a51793d",
+      "bytes": 75025
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【狗尾续貂】.jpg",
+      "sha256": "6f9b419a59459391dab3600f59119edf59e1232844e01a81298a40d20dbe99ee",
+      "bytes": 74579
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【玉石皆碎】.jpg",
+      "sha256": "239cddb8f50fbde92fecb69a33520b9d3204e3828f69d6371bb64a0a92152636",
+      "bytes": 78000
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【白衣渡江】.jpg",
+      "sha256": "85b8f8cbc7feca991c5894154151c88810e673992179d38e7a90c3e3cd9b413d",
+      "bytes": 138823
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【瞒天过海】.webp",
+      "sha256": "82d51be838189db3cdbb41f36ead3791a751f3be9978fee15d32cdfb41e560c7",
+      "bytes": 45048
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【知己知彼】-太虚幻境.jpg",
+      "sha256": "704263f3322384c5b7ff2fcc9a27242dc15cbc7e073ca57d1c6e1e94a7c9d24c",
+      "bytes": 131826
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【知己知彼】.jpg",
+      "sha256": "be37e1cd2ec520347ca5ea447c35f85c57030b16a0ee5c877145cf29168fb3ba",
+      "bytes": 79589
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【祥符聚宝】.jpg",
+      "sha256": "fba841da963bb8d34adbff6d3b5836bc089e1ab2bac7442e74387ea92c874ea1",
+      "bytes": 98208
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【移花接木】.jpg",
+      "sha256": "ffd46c0de3c1fd4fba55fbb3f8a58ea837a7f7d5eb15ca2d161d8cf864a373a7",
+      "bytes": 85674
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【笑里藏刀】.webp",
+      "sha256": "f2e849848515270dd00cb88a05433e9334d64d38429a6c1298a3d00c01ff6573",
+      "bytes": 34918
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【粽子】.png",
+      "sha256": "aa75a77ac46477a171a3496c128d78f643c242c55750b9b08791400ea425c2f7",
+      "bytes": 573412
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【继往开来】.jpg",
+      "sha256": "56612acba5000d7234df2b69f054cf84db184a28c49a572c4fd9fa91925605cd",
+      "bytes": 86340
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【美人计】.webp",
+      "sha256": "5cf5ac42180b3b0bddc4e3b4217641147d634c052fa51a2e63ab7dd16b43d52c",
+      "bytes": 35456
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【联军盛宴】-势备篇.jpg",
+      "sha256": "a03fd53616ff81ad3447e241236330b44a908578ec651928bef10fa1dca1c641",
+      "bytes": 87210
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【联军盛宴】-虎牢关.jpg",
+      "sha256": "d73ae441136fb0983f6085b9598907ed8ad2e85ed9d9b62bddaf823c4ac2b150",
+      "bytes": 80831
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【花言巧语】.jpg",
+      "sha256": "752b55d321ab946736ceb9f9ccc28119b27d3407771041198ba0b4c9ce52b3d2",
+      "bytes": 73134
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【草木皆兵】-太虚幻境.jpg",
+      "sha256": "785ec804d8e59503b03499c2c36374fddaf45c0b57b5a6a6d2df1c08813c6ec5",
+      "bytes": 136966
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【草木皆兵】.webp",
+      "sha256": "9d320d29d27271157d9d547ea0d2328766a898c7563f99471e8831a637d211d1",
+      "bytes": 25806
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【草船借箭】.webp",
+      "sha256": "12e9a7607469d479347d453292d27f7b8d65664fb2839ffc6cc78c5f2896f11d",
+      "bytes": 39104
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【落井下石】.jpg",
+      "sha256": "41b1fba1d02947ba211fc320eb1269c8f93aa7b5c09255d20e2c3d852b062d0c",
+      "bytes": 149970
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【解甲归田】.webp",
+      "sha256": "bb0fa3d3059e06fa9a7d073068aff109a0c1a18f84362c5037285990921dd081",
+      "bytes": 36010
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【调剂盐梅】.webp",
+      "sha256": "eb5b888c038d1432bc537fca9c71ab943f8f42c0b07758f9d40bf7c31ac45f3b",
+      "bytes": 36204
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【调虎离山】-太虚幻境.jpg",
+      "sha256": "470d0496b436cdfc3944a13a3daf1fbe302d001b48627b56ba100682c938bd8c",
+      "bytes": 137733
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【调虎离山】.jpg",
+      "sha256": "d762636a64f553dcfce4b50eb6433d33c08a0cb6a1af005e4d03e26d9557fb1c",
+      "bytes": 82982
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【财源滚滚】.jpg",
+      "sha256": "06edc6575eb3ccc3a4a600955bf238de82878966834d43dcd2934775a14d87cf",
+      "bytes": 76580
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【趁火打劫】.jpg",
+      "sha256": "433f8eea8b2dd346ac54ed8053233c778d6ebda8a3661eaf2cffab08b90cf9e1",
+      "bytes": 85430
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【过河拆桥】.png",
+      "sha256": "f9ced5e2db0cd687f3d84d15816448624a10cdec8823549d02395fcd14a18ea6",
+      "bytes": 107015
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【进退自如】.jpg",
+      "sha256": "d7433875030de63f4907cba335986f9301f6403d55444e56d7ae41e4298f14ce",
+      "bytes": 86086
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【远交近攻】-太虚幻境.jpg",
+      "sha256": "ea16b77eaa6ec94fd56f881f24d990037fb184b26c364c913ce4699dfb44ef91",
+      "bytes": 135671
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【远交近攻】.webp",
+      "sha256": "f0a10cf8a420bdb6d319cdda7d6cfeac2df0bcde7f2781a209bedcc7528c538d",
+      "bytes": 37302
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【逆水行舟】-2019版.jpg",
+      "sha256": "26489a2d20295b5a727f5a49c79a0dad6c15851f39ef97338387e157f3fbc86a",
+      "bytes": 71918
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【逐近弃远】.jpg",
+      "sha256": "829b21e40fa772cfe1d111dfa8b9ee57e8be33d9e69b295218b7d23156cbf25c",
+      "bytes": 81261
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【逐鹿天下】.jpg",
+      "sha256": "ac03a733a37edcc4a1dc411bf757ee06b3f695b4ff39233362de84c2fcc9d047",
+      "bytes": 79375
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【金蝉脱壳】.webp",
+      "sha256": "825286d140d0227ad901fcb6012f3f5a560e118a057582ef8d5b585a5f13c00f",
+      "bytes": 40672
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【釜底抽薪】.png",
+      "sha256": "02e49207d3dfbdff8d67f17654c58f3d685ecff87e5d5991294bac70fda0b666",
+      "bytes": 481469
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【铁索连环】.webp",
+      "sha256": "d0e76b4a630ae1aebbfaa3fcfebbe85e07580618c9b368db1f2a562942c3573a",
+      "bytes": 54092
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【闪电】.webp",
+      "sha256": "d8faa7ca110d1ca92ba7106e65699b715b3d51a8de3d10f267efc0a8e57127e0",
+      "bytes": 31428
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【随机应变】.png",
+      "sha256": "9a8a8c6a36b4d67b7c9909632a5a57b53dcdda9c369d8a79d598b174f52a4264",
+      "bytes": 565697
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-【顺手牵羊】.png",
+      "sha256": "226b95ccb175d06ff6e4eaecd99a0a50459ffd70f46ba7083a5abcbb035c45d7",
+      "bytes": 112822
+    },
+    {
+      "path": "assets/cards/scroll/三国杀-国【无懈可击】.png",
+      "sha256": "9a859fe09739e36835d5cb43cc3625b053b1f3dbf5bcf209bc2af4ef8c2ad478",
+      "bytes": 167923
+    },
+    {
+      "path": "assets/cards/special/三国杀-【藏锋】.jpg",
+      "sha256": "c6845fca2a423e301fcefcd1aba3a8953df3263096ead32824761e1e76f1991d",
+      "bytes": 77591
+    },
+    {
+      "path": "audio/bgm-outgame.v1.mp3",
+      "sha256": "265a3da7cf1b3a1c7ddd7c2b71bbb4d395cc5889e1a76a55e548553963b4bd56",
+      "bytes": 213357
+    },
+    {
+      "path": "battle.css",
+      "sha256": "24211d3e3f7cf230989c309af584aa78c7a87109b2d331e8ec328567cf0f3bd8",
+      "bytes": 34479
+    },
+    {
+      "path": "battle.js",
+      "sha256": "07d8212a189975c36c95584b0bd9db986b4b5041e76bb1e119aa28c404a774d8",
+      "bytes": 71989
+    },
+    {
+      "path": "cards_data.json",
+      "sha256": "f4a4b37065a30c2c275e6a8738661c1acd7b44aac79822829139e744273c16ad",
+      "bytes": 366749
+    },
+    {
+      "path": "cards_index.json",
+      "sha256": "12d740c89cfb8df1c380765cfbdcee1a4589fb134d6f68662faf3020428f53af",
+      "bytes": 79530
+    },
+    {
+      "path": "cards_trial.json",
+      "sha256": "c3c3871cb55bba6de4d46705408f32c7a0abc3182f4f8d91cb4222c772b25478",
+      "bytes": 24419
+    },
+    {
+      "path": "cards_trial2.json",
+      "sha256": "7a539d94e1fed71d7f31a0d69a7cadaf16b1238250c2149afd87c09b3687d016",
+      "bytes": 3672
+    },
+    {
+      "path": "data/cards.json",
+      "sha256": "dbb506dcd619e53b432f5aabac3426a03fa45ae81a8b1f64dcde36eaa2690788",
+      "bytes": 221502
+    },
+    {
+      "path": "data/changelog.json",
+      "sha256": "e054d68c8daf09c5fe20bfacefd3a746666425de126006482c6d640f6cb2ec61",
+      "bytes": 20283
+    },
+    {
+      "path": "data/gameplayRules.json",
+      "sha256": "e1fb28aebfdf7d2bc90f7cf30357cd104019f93ae9be3d2a2c5d049abf7c9b84",
+      "bytes": 18365
+    },
+    {
+      "path": "data/gjf/characters.json",
+      "sha256": "455e726b910bcc630a7ed84c41030fcb76f9cb8842009712da908c51db27be7f",
+      "bytes": 1307790
+    },
+    {
+      "path": "data/gjf/pack_icons.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "data/history/books/houhanshu.json",
+      "sha256": "d247b6b4881b3f39ccf28aadc3dc80fcdcd3570b5dd89c90e6f1177ee13f485e",
+      "bytes": 21972
+    },
+    {
+      "path": "data/history/books/jinshu.json",
+      "sha256": "2deef70de474c4335b0cc84e5b408e3fa136191e368e8de0e08d723130dcf4cc",
+      "bytes": 27358
+    },
+    {
+      "path": "data/history/books/sgz.json",
+      "sha256": "d2adebc245fa3b8739d2f4abd13380cf00c650543d1a4a973350e2a13d1c3bc0",
+      "bytes": 17360
+    },
+    {
+      "path": "data/history/books/tongjian.json",
+      "sha256": "e09b0acbbada24e14746a8ab9bf81cb64cefdbfe14f65e1fa357790258cbb434",
+      "bytes": 4144
+    },
+    {
+      "path": "data/history/cards.json",
+      "sha256": "86d6ed8bd93c7a936c33acd9b14713ee9cbca63022a5ac11afb660a73015ff5d",
+      "bytes": 2786
+    },
+    {
+      "path": "data/history/compare.json",
+      "sha256": "deadaffa79780f89a2664082314d3515c27e891f4279bb30027c01493c9654fc",
+      "bytes": 2923
+    },
+    {
+      "path": "data/history/contents/houhanshu-001.json",
+      "sha256": "7e6dc27801f6a2326d9567113e60b6baed9eff7985f01c64c4da71e0fe18f716",
+      "bytes": 27788
+    },
+    {
+      "path": "data/history/contents/houhanshu-002.json",
+      "sha256": "0fc655b96e34344820f6413f245e477619c24f6845d792c14a77aa762e48569e",
+      "bytes": 28368
+    },
+    {
+      "path": "data/history/contents/houhanshu-003.json",
+      "sha256": "bfdb7ce661e218447b24addc41981be14d0074812bf4bc485a0516eb84eaa9f2",
+      "bytes": 23223
+    },
+    {
+      "path": "data/history/contents/houhanshu-004.json",
+      "sha256": "486d6d78e10fda3094fec7fd3ccbc8373132267593ddd1f61c7e48cda4f6d1fc",
+      "bytes": 24347
+    },
+    {
+      "path": "data/history/contents/houhanshu-005.json",
+      "sha256": "0b39626305b39e3ce48b0f6b43bf3f021012e0612063f789dd7d6858ad37e31d",
+      "bytes": 24437
+    },
+    {
+      "path": "data/history/contents/houhanshu-006.json",
+      "sha256": "2b32cd353f102eb9749c33d6b9190b94051cf3099b9380cf74951efd4694b1fe",
+      "bytes": 27945
+    },
+    {
+      "path": "data/history/contents/houhanshu-007.json",
+      "sha256": "e3f638c04c2a8fdbbdf1c89df0efc296f571fdbcc934f33f2e09bface382f56f",
+      "bytes": 26313
+    },
+    {
+      "path": "data/history/contents/houhanshu-008.json",
+      "sha256": "53abf71027ea5ac831ba7e1e977e7ac84b839137507526f9f16d5b54567ff069",
+      "bytes": 22668
+    },
+    {
+      "path": "data/history/contents/houhanshu-009.json",
+      "sha256": "ce782114cd866ab05170100c2f41e429dc3c3a1ed6f582e435aaa1c2738962fd",
+      "bytes": 19815
+    },
+    {
+      "path": "data/history/contents/houhanshu-010.json",
+      "sha256": "3dc995b27dde97c679dc74c45dbf8ce0aa6b927ce6b8751aec7363648a16965a",
+      "bytes": 15882
+    },
+    {
+      "path": "data/history/contents/houhanshu-011.json",
+      "sha256": "7fefbbad6e44e1a79ad3cf9a2d149084b8e930d7dd26092fb0c673062b61f9e2",
+      "bytes": 32952
+    },
+    {
+      "path": "data/history/contents/houhanshu-012.json",
+      "sha256": "2370da6bacb0f1f970ff5c98425605b481e83d0af7b25a689129d893effb1ce8",
+      "bytes": 21653
+    },
+    {
+      "path": "data/history/contents/houhanshu-013.json",
+      "sha256": "e205fb2ffb835a2903e09a8ff7e42eececbb78a50aa53dda7091d840df10c65a",
+      "bytes": 21280
+    },
+    {
+      "path": "data/history/contents/houhanshu-014.json",
+      "sha256": "82e9ae1a158532820da0258bb1568ba22632dff410a66a86f681b0cca92524ce",
+      "bytes": 19381
+    },
+    {
+      "path": "data/history/contents/houhanshu-015.json",
+      "sha256": "9899b43d375316f0bf0f908da9b7095b6969910411741676f47dd3409ad3d60f",
+      "bytes": 28153
+    },
+    {
+      "path": "data/history/contents/houhanshu-016.json",
+      "sha256": "21169a9f76f1d30dc011054f7f8ab8f2445f109fd66e41344587f1ef5c1a4e06",
+      "bytes": 18508
+    },
+    {
+      "path": "data/history/contents/houhanshu-017.json",
+      "sha256": "b99ee34ab40d6c979bf7efdb389369d9999eed55ab267c970b97f497c5acba04",
+      "bytes": 20290
+    },
+    {
+      "path": "data/history/contents/houhanshu-018.json",
+      "sha256": "8fd04324e1ddc0115e364d7185bb71a5206b861d108be30a61ef90ca7c077705",
+      "bytes": 34009
+    },
+    {
+      "path": "data/history/contents/houhanshu-019.json",
+      "sha256": "51460c823a0e883fb8e02297aad387f1a297df8b0c53518cbf0ec4cabbfc49d8",
+      "bytes": 28692
+    },
+    {
+      "path": "data/history/contents/houhanshu-020.json",
+      "sha256": "23008f1e8332934159481143dcc81f228f636008ed9a7fc80663d2467653ec16",
+      "bytes": 22391
+    },
+    {
+      "path": "data/history/contents/houhanshu-021.json",
+      "sha256": "1c92bd83d59b4804655a95e1a26d6f04984e18a8bb1eb73789b9ecbb0982c461",
+      "bytes": 24027
+    },
+    {
+      "path": "data/history/contents/houhanshu-022.json",
+      "sha256": "f00aa33445a16a79996b95542c3caf4ae04b077cb43762df2310e11c503ba438",
+      "bytes": 17162
+    },
+    {
+      "path": "data/history/contents/houhanshu-023.json",
+      "sha256": "d2fe9460d0f95c3a0cae573860bbfe4fe7ed22158e874d23d1bac1c67788f4f8",
+      "bytes": 15290
+    },
+    {
+      "path": "data/history/contents/houhanshu-024.json",
+      "sha256": "1193d8e6301453a6bf5b1f72fdc7eb94a62cc0ec090788fb209292f9c46d5429",
+      "bytes": 19522
+    },
+    {
+      "path": "data/history/contents/houhanshu-025.json",
+      "sha256": "1f9ccdff86a0bfd703ba5c6a6e3f374a097dac376e4c2c61fd9db9f18c8ab470",
+      "bytes": 26118
+    },
+    {
+      "path": "data/history/contents/houhanshu-026.json",
+      "sha256": "08e44b7f58c542f23dbac502a738e6c88a016dfd2cec49e8888af1daa34510c8",
+      "bytes": 33195
+    },
+    {
+      "path": "data/history/contents/houhanshu-027.json",
+      "sha256": "864edf58f7ba021fcbed4d900749523747a335b76cfb82a5282209ac0f9bde48",
+      "bytes": 18730
+    },
+    {
+      "path": "data/history/contents/houhanshu-028.json",
+      "sha256": "76831fcc2bd5216db67ea69fd48c30231b03d9f13dd31d0905905764980acb42",
+      "bytes": 29519
+    },
+    {
+      "path": "data/history/contents/houhanshu-029.json",
+      "sha256": "d7b5745335fb772719dc457aedec2b4002e839c0520f2b938d48e9528c835da5",
+      "bytes": 19130
+    },
+    {
+      "path": "data/history/contents/houhanshu-030.json",
+      "sha256": "c9e700ce21e0de72536b793001718be7249e79074bb8e07560e8bfbf2f027f23",
+      "bytes": 19164
+    },
+    {
+      "path": "data/history/contents/houhanshu-031.json",
+      "sha256": "5ea0260d32d8825bb88ee6de4e2ddc2a1fd9f2f8285d2ac245012cc0c9b63b09",
+      "bytes": 19778
+    },
+    {
+      "path": "data/history/contents/houhanshu-032.json",
+      "sha256": "ab30b315c77b8feb1bd19b8b8c195be8b566ed9849c6b64c2313ad77122f74ea",
+      "bytes": 21590
+    },
+    {
+      "path": "data/history/contents/houhanshu-033.json",
+      "sha256": "0c5124420135421651f7ec914de7592489ef1206498424a192b96fcac1b0277e",
+      "bytes": 7572
+    },
+    {
+      "path": "data/history/contents/houhanshu-034.json",
+      "sha256": "bea1a875a70efc7c94bd578d719d74bb94367e23174e828cd4cb999107ee1517",
+      "bytes": 27846
+    },
+    {
+      "path": "data/history/contents/houhanshu-035.json",
+      "sha256": "93fd28341fbd70cf7fee8771375d27b8a417e4b176028cd4af351288755f6583",
+      "bytes": 25120
+    },
+    {
+      "path": "data/history/contents/houhanshu-036.json",
+      "sha256": "c7c67ada7c309acc1780dad2aba39f47ee085ec25306390784499c443fa491ba",
+      "bytes": 14668
+    },
+    {
+      "path": "data/history/contents/houhanshu-037.json",
+      "sha256": "88b50199e050da89a7e99c42b380b75fc63dce99fe46c30031b0485051e4628b",
+      "bytes": 20601
+    },
+    {
+      "path": "data/history/contents/houhanshu-038.json",
+      "sha256": "32996d558542bb37eced374c8fa76412add414d8d63404e0124dc0f09c324fcd",
+      "bytes": 22772
+    },
+    {
+      "path": "data/history/contents/houhanshu-039.json",
+      "sha256": "e02975b2297023807b70390d77e8470c67302c17d84d75ed65c86977193688a5",
+      "bytes": 19534
+    },
+    {
+      "path": "data/history/contents/houhanshu-040.json",
+      "sha256": "23a273067c87e19385339e4688e62beb713e6f9d6e46ae68d176379c0ca0f0af",
+      "bytes": 27732
+    },
+    {
+      "path": "data/history/contents/houhanshu-041.json",
+      "sha256": "44c9fb927deb6ba2915b54baebf290ab9ee26c4def942234a8ce857c4eea92f3",
+      "bytes": 17135
+    },
+    {
+      "path": "data/history/contents/houhanshu-042.json",
+      "sha256": "d9766e9fb70dfd209db8b641c43adc981e5628360d69e155c7162e2409ad61d8",
+      "bytes": 15678
+    },
+    {
+      "path": "data/history/contents/houhanshu-043.json",
+      "sha256": "cfae4ded9480b83de86b3c77e408032ee0cecc52f1a15b46315750b54168fe85",
+      "bytes": 24421
+    },
+    {
+      "path": "data/history/contents/houhanshu-044.json",
+      "sha256": "40192eafbe58df69759853d101716d6676fc432b1f97308cfd7c83e2bfc7d424",
+      "bytes": 25089
+    },
+    {
+      "path": "data/history/contents/houhanshu-045.json",
+      "sha256": "a3bcc2eecb40e018b8e34617ba4901a139f9d296b0ea931a070af8e38b720a01",
+      "bytes": 24009
+    },
+    {
+      "path": "data/history/contents/houhanshu-046.json",
+      "sha256": "94309d719de2ec8232f4ac892eb51bb4cdb17b8b6e91bc3aa9da1e6f51d18c9b",
+      "bytes": 25581
+    },
+    {
+      "path": "data/history/contents/houhanshu-047.json",
+      "sha256": "6232f707cabe9d7f10bf5e4b11507635a4a03a3497e0e3fe53f39e19400b1da2",
+      "bytes": 29893
+    },
+    {
+      "path": "data/history/contents/houhanshu-048.json",
+      "sha256": "79a9e2442855ceaf7fbd569380a9ad6c6b402c3914d6f3af1ef6430aa48772d8",
+      "bytes": 29007
+    },
+    {
+      "path": "data/history/contents/houhanshu-049.json",
+      "sha256": "cf76818e1e14d4e299d40702c03223090b6fd6f2eabbdd2b2da089d5a97bb6ee",
+      "bytes": 15530
+    },
+    {
+      "path": "data/history/contents/houhanshu-050.json",
+      "sha256": "728ff7cbaa9112bfb88503fdf8afbaa7102e9010c6b9861e05a102d3cfb23648",
+      "bytes": 23385
+    },
+    {
+      "path": "data/history/contents/houhanshu-051.json",
+      "sha256": "c32f1884c60b3d998d2f6a4d1d0958726db2c272ec970ab16bae560fc70e2ce2",
+      "bytes": 26596
+    },
+    {
+      "path": "data/history/contents/houhanshu-052.json",
+      "sha256": "f73dd0aadf7cbc69611859bda04fc138d60ff7f28584d803b5e9d5623e394b21",
+      "bytes": 23758
+    },
+    {
+      "path": "data/history/contents/houhanshu-053.json",
+      "sha256": "b041ed1d47db5b13d446d82f1427290ed94d9368faf9d3bbd6abb5c2b681df56",
+      "bytes": 31979
+    },
+    {
+      "path": "data/history/contents/houhanshu-054.json",
+      "sha256": "0bfadf9aab46ff2b8d512fe39591d0c51017af1320470c942041d6ea3746d7bb",
+      "bytes": 11223
+    },
+    {
+      "path": "data/history/contents/houhanshu-055.json",
+      "sha256": "827dd025ffdc355fcee12a5b6605bb75586b83c5fff4e50a54f8d4f086123746",
+      "bytes": 16700
+    },
+    {
+      "path": "data/history/contents/houhanshu-056.json",
+      "sha256": "e7fb34846dd6563b0cde5e25fd6862d886dfcf1b798b736b301ae77f58a82d15",
+      "bytes": 22942
+    },
+    {
+      "path": "data/history/contents/houhanshu-057.json",
+      "sha256": "b430b0da2aa0ccc305282e4d292973d741e3f0b8d767825fd51c4252f625f636",
+      "bytes": 12656
+    },
+    {
+      "path": "data/history/contents/houhanshu-058.json",
+      "sha256": "b5638621b66a9bc3ea710410416175ba720f8760c7b9a251331f56680bad0fb3",
+      "bytes": 29191
+    },
+    {
+      "path": "data/history/contents/houhanshu-059.json",
+      "sha256": "2d0ba590a713ad77f4c4c4dbff4dffe9a2f6d987789e12bcbb69ac309824191a",
+      "bytes": 15271
+    },
+    {
+      "path": "data/history/contents/houhanshu-060.json",
+      "sha256": "cba27bd22a518e09a2c04dd8ee1a06941b166f1111fc8e3d1e97292c1019693a",
+      "bytes": 22534
+    },
+    {
+      "path": "data/history/contents/houhanshu-061.json",
+      "sha256": "0f93b8b3ab512aa232863e9b17681b92ff6892dcc7f7c948a55b89e22ceb71f7",
+      "bytes": 21850
+    },
+    {
+      "path": "data/history/contents/houhanshu-062.json",
+      "sha256": "2f416f52501112716e010d8b6bf57bacd762b42d5157e2946f7f1a4a70869e8b",
+      "bytes": 27855
+    },
+    {
+      "path": "data/history/contents/houhanshu-063.json",
+      "sha256": "fa03f21370a294f2a954456244f3c14b14dc2f5688383136fffad83cc551289b",
+      "bytes": 29878
+    },
+    {
+      "path": "data/history/contents/houhanshu-064.json",
+      "sha256": "bb55aed0c5b65511fb62e557fad594bba87c0bfc518ef729b322ca4a75ca232b",
+      "bytes": 16917
+    },
+    {
+      "path": "data/history/contents/houhanshu-065.json",
+      "sha256": "2d6e86ed604b17bf1c3fbb5ed95173fa359119bac859466ad0421d984011495d",
+      "bytes": 28041
+    },
+    {
+      "path": "data/history/contents/houhanshu-066.json",
+      "sha256": "98bae3c1113ea046957d508c76e1b7f19d40a2e25671c1eb6ed1095f441daf3c",
+      "bytes": 32738
+    },
+    {
+      "path": "data/history/contents/houhanshu-067.json",
+      "sha256": "ce1cf0296a5fe299aea8f155eaa0fa395a8bb42573616d9f2b6ae3310a96ce7e",
+      "bytes": 20387
+    },
+    {
+      "path": "data/history/contents/houhanshu-068.json",
+      "sha256": "3c00fcf44f699ddd35dad3068e09493cb168e1c720cce797398af9c8ae420318",
+      "bytes": 22913
+    },
+    {
+      "path": "data/history/contents/houhanshu-069.json",
+      "sha256": "8b208be0521ca8a48abdd49c555109ffd775f6643f66e7080985164d976e884a",
+      "bytes": 22701
+    },
+    {
+      "path": "data/history/contents/houhanshu-070.json",
+      "sha256": "5c9c59673f251c1ce22649131383f56dd40fff49bfbead5273f828e2eef6c4ad",
+      "bytes": 28867
+    },
+    {
+      "path": "data/history/contents/houhanshu-071.json",
+      "sha256": "1b42583e37cea02a817e8cde1d7e7ad76d4f7b64eb0b750203143376ea3397a0",
+      "bytes": 22107
+    },
+    {
+      "path": "data/history/contents/houhanshu-072.json",
+      "sha256": "4a67f23023605f03f8b8c718f9c90371f01244198d6aa97b45604fddb691686f",
+      "bytes": 33181
+    },
+    {
+      "path": "data/history/contents/houhanshu-073.json",
+      "sha256": "351556af571db5085059502c4cdb6a78518be4fd89c14c85611ad1542df27aeb",
+      "bytes": 9128
+    },
+    {
+      "path": "data/history/contents/houhanshu-074.json",
+      "sha256": "8c6c302f47d30b18c2f865aefe87856dad18d8ec19df4e72afb03f0446309aa2",
+      "bytes": 18117
+    },
+    {
+      "path": "data/history/contents/houhanshu-075.json",
+      "sha256": "b71d5f95b8eb589f2df27cf7be8578296b8d8fc881d19070e5836cd74c5da5bc",
+      "bytes": 28306
+    },
+    {
+      "path": "data/history/contents/houhanshu-076.json",
+      "sha256": "5cb289b2b9e934f7a98d662d96609486c6ef72695b5a841efc3c87e4e18dbd10",
+      "bytes": 18786
+    },
+    {
+      "path": "data/history/contents/houhanshu-077.json",
+      "sha256": "af4711a0ea4cc30a5e209089d517d33a37a9cd68d1e619a125288ac8cc9109ce",
+      "bytes": 26870
+    },
+    {
+      "path": "data/history/contents/houhanshu-078.json",
+      "sha256": "4ed037f01a0e5731b92f445192c34591fcc815041192011c22a9066ad076e5a3",
+      "bytes": 17443
+    },
+    {
+      "path": "data/history/contents/houhanshu-079.json",
+      "sha256": "6e99071d8199df66dc14075a54d75798eace0c0969db955f49e4968495054d0b",
+      "bytes": 28073
+    },
+    {
+      "path": "data/history/contents/houhanshu-080.json",
+      "sha256": "3a0bd98c05c3d2edb37832141da1f9620a3cf6019488123812e788199dd23350",
+      "bytes": 17626
+    },
+    {
+      "path": "data/history/contents/houhanshu-081.json",
+      "sha256": "6627b1d97d733af2b869bc6dc6e55e24127fea7a84a23efba5079fb0d2f59650",
+      "bytes": 22278
+    },
+    {
+      "path": "data/history/contents/houhanshu-082.json",
+      "sha256": "85a59dc4994d5b19729307adaa8441f44edf878592b969522e6537cd26342066",
+      "bytes": 25387
+    },
+    {
+      "path": "data/history/contents/houhanshu-083.json",
+      "sha256": "55c15a55ebf35c384c22be4bb9fe0e177a718297067fec161d539eb157d76c81",
+      "bytes": 15689
+    },
+    {
+      "path": "data/history/contents/houhanshu-084.json",
+      "sha256": "4dee88ca897df612f1d7a9d96f7d1f6f9331a5f8c0356704f25e8cdf677d5494",
+      "bytes": 33009
+    },
+    {
+      "path": "data/history/contents/houhanshu-085.json",
+      "sha256": "d500732f6a3e61a9eba25889ba131a0be9b4472a55eb751e0fe0d3d18e2feb20",
+      "bytes": 20645
+    },
+    {
+      "path": "data/history/contents/houhanshu-086.json",
+      "sha256": "819d9779d1bfc28dde541520ed8699cdd9366ba13a6ffae31a3b04462081929c",
+      "bytes": 20411
+    },
+    {
+      "path": "data/history/contents/houhanshu-087.json",
+      "sha256": "7533460e4a724ace3b469413f633f0f6fe31e249c7e1a2f0717a351f2885aa06",
+      "bytes": 20524
+    },
+    {
+      "path": "data/history/contents/houhanshu-088.json",
+      "sha256": "b0927ad6be4da74a9dd089d207e9daf305e0367d2f37e4400cb431fdc6098c6c",
+      "bytes": 24246
+    },
+    {
+      "path": "data/history/contents/houhanshu-089.json",
+      "sha256": "b78a08fb44270adb3cf227c7be3d00bf825912c1dfc151c81901bb4ef91750ce",
+      "bytes": 35173
+    },
+    {
+      "path": "data/history/contents/houhanshu-090.json",
+      "sha256": "90498d60a16da9fc365312a380ca4c4ad948e1d4ae500d5bd240bbfbcd41cc42",
+      "bytes": 20967
+    },
+    {
+      "path": "data/history/contents/houhanshu-091.json",
+      "sha256": "f56fe33508021b1ef61bd0c71b7027ae6920b76e1ed62a4555901cad6422da5c",
+      "bytes": 22500
+    },
+    {
+      "path": "data/history/contents/houhanshu-092.json",
+      "sha256": "f4977d430d4b8cb99a3302cb3c08e873208ba2406848f4869f8ef6f300957367",
+      "bytes": 19038
+    },
+    {
+      "path": "data/history/contents/houhanshu-093.json",
+      "sha256": "e8b259cebdbc9043e3938b640b15289cce83f6c242fe5c09b5e46183e07ca0ec",
+      "bytes": 24382
+    },
+    {
+      "path": "data/history/contents/houhanshu-094.json",
+      "sha256": "273b9ed7595865f7a43bd4052d7b682151f261ae7b10976adb3294b7f0ca6011",
+      "bytes": 18308
+    },
+    {
+      "path": "data/history/contents/houhanshu-095.json",
+      "sha256": "f79e47140e08172816d8c28c2a0423b94c98b7109f69cc250f19ecc8cca97bac",
+      "bytes": 35238
+    },
+    {
+      "path": "data/history/contents/houhanshu-096.json",
+      "sha256": "22ecc761cf275960dc1f3cd7814f80cb79335f4dd8dfcbd542aba803bdf82599",
+      "bytes": 40949
+    },
+    {
+      "path": "data/history/contents/houhanshu-097.json",
+      "sha256": "40702ac324c84a6021370c59ede8fa8791d58441e1e18aa45f8a475191024a5b",
+      "bytes": 29563
+    },
+    {
+      "path": "data/history/contents/houhanshu-098.json",
+      "sha256": "d2df60de19f4079d78c7790166a37250d643afe73e3e3e4ee84a972dc94e6023",
+      "bytes": 34012
+    },
+    {
+      "path": "data/history/contents/houhanshu-099.json",
+      "sha256": "76e9fb732db340c7fddeff17906d67c81bdafa51f1cb7469c885f8cfa399b52c",
+      "bytes": 455528
+    },
+    {
+      "path": "data/history/contents/jinshu-001.json",
+      "sha256": "9e4ce089c788576ded69faed9eaf47fc89b591c43b09758c8bac384055f429b0",
+      "bytes": 29839
+    },
+    {
+      "path": "data/history/contents/jinshu-002.json",
+      "sha256": "eba6a9ed6b966b33e00923b490cf99a8ee2235fc70cdd274971d04990f23c1c2",
+      "bytes": 29405
+    },
+    {
+      "path": "data/history/contents/jinshu-003.json",
+      "sha256": "d4661979a23ff296896ee204a10b30bab228006db2f179982f9c99fb89a99ada",
+      "bytes": 40788
+    },
+    {
+      "path": "data/history/contents/jinshu-004.json",
+      "sha256": "23bf113edcda92521ddb0daeba1f07addb92434ed3bc2b6ca7d8182042f7c4cd",
+      "bytes": 24196
+    },
+    {
+      "path": "data/history/contents/jinshu-005.json",
+      "sha256": "b0b783e716e45d14cef7223b6775845292ee7092251030da5c923cbac18d6f07",
+      "bytes": 30383
+    },
+    {
+      "path": "data/history/contents/jinshu-006.json",
+      "sha256": "c6710172d286e4a6e4197baba9b71210fb901090ed15dc723630ba3909921909",
+      "bytes": 33055
+    },
+    {
+      "path": "data/history/contents/jinshu-007.json",
+      "sha256": "a4736b694127b970f43b2bac4d832556d1d121e694a47c35101e0c4049d9c840",
+      "bytes": 21257
+    },
+    {
+      "path": "data/history/contents/jinshu-008.json",
+      "sha256": "a0d54816b27666695254ff0d79b0ba045f3b63e422c1f8085703265438054771",
+      "bytes": 27369
+    },
+    {
+      "path": "data/history/contents/jinshu-009.json",
+      "sha256": "6590453261556476f85801d7e2d991cbdb98d19199a0c9a0b792686b1a5047c7",
+      "bytes": 27478
+    },
+    {
+      "path": "data/history/contents/jinshu-010.json",
+      "sha256": "fc8d3193b2ecdbbe1d88ca0360e5552f408d9896c9a4f39821c5d50a39589175",
+      "bytes": 24564
+    },
+    {
+      "path": "data/history/contents/jinshu-011.json",
+      "sha256": "a04917b49eb7af7b1e3e0357b71bf8c1c3ee9ce6c0e2cfded8e71d1daca45279",
+      "bytes": 51291
+    },
+    {
+      "path": "data/history/contents/jinshu-012.json",
+      "sha256": "d001eab97158cdbf7c13063805590568fe3793b5ac922d0f27514583fa877582",
+      "bytes": 55768
+    },
+    {
+      "path": "data/history/contents/jinshu-013.json",
+      "sha256": "aae1073061431e0018f43a1352ff130f7d645cd0d161a1dc653906c4f11df2c0",
+      "bytes": 65645
+    },
+    {
+      "path": "data/history/contents/jinshu-014.json",
+      "sha256": "a55993d830a938baee20d20a81f65811f7ebb8d1284923059831cff165347d4e",
+      "bytes": 50273
+    },
+    {
+      "path": "data/history/contents/jinshu-015.json",
+      "sha256": "b78748804ff630043cc3ff092a3354d0f1b46a56c4db0ce91db2c9b5fcb28a20",
+      "bytes": 23758
+    },
+    {
+      "path": "data/history/contents/jinshu-016.json",
+      "sha256": "6a1e0d45295a69f55b4052b0106476d80228261737b6ef91132251ff80532f26",
+      "bytes": 31684
+    },
+    {
+      "path": "data/history/contents/jinshu-017.json",
+      "sha256": "2ce358f06175480587013e8f52331d08f86804e93ed30d0e7bbbddfe306d9866",
+      "bytes": 35792
+    },
+    {
+      "path": "data/history/contents/jinshu-018.json",
+      "sha256": "1282d25680ff38f39dfe15a09e1547ad49c8390762b7b703dc9b98f12b93dd7d",
+      "bytes": 37321
+    },
+    {
+      "path": "data/history/contents/jinshu-019.json",
+      "sha256": "c66a8d67a674393c44972d36abc3382cb8a1a8963033c7d772f9d80dfa6394b4",
+      "bytes": 49366
+    },
+    {
+      "path": "data/history/contents/jinshu-020.json",
+      "sha256": "812d998d1e8ae31847d4941ff2d30cb4d7c05df9a0c4745b379021c61f493948",
+      "bytes": 52880
+    },
+    {
+      "path": "data/history/contents/jinshu-021.json",
+      "sha256": "df95cf9cf098505073d9dd062429be4d53fbe237f6ecf4598d380bfb3b22545b",
+      "bytes": 35454
+    },
+    {
+      "path": "data/history/contents/jinshu-022.json",
+      "sha256": "403bbfc42d791a8c598172da23ff370ceceedf277d091576648de941881ad520",
+      "bytes": 25041
+    },
+    {
+      "path": "data/history/contents/jinshu-023.json",
+      "sha256": "86aa4f9d691c43e4eaaff8b266e6d186a909ac9197c5e959d149d864dccac536",
+      "bytes": 31298
+    },
+    {
+      "path": "data/history/contents/jinshu-024.json",
+      "sha256": "c287d32a4342895e4ad67265f2dd169a0053952a248c7384a7172ea329c2f3f2",
+      "bytes": 36556
+    },
+    {
+      "path": "data/history/contents/jinshu-025.json",
+      "sha256": "90a9fd3de1770f8294976bb404733e81ae0499b5d13aeb15ef9c931317b48662",
+      "bytes": 37636
+    },
+    {
+      "path": "data/history/contents/jinshu-026.json",
+      "sha256": "fd594277fac286df9b2bb9e22b5f834b833692baa4e801c4398246f5ca8ced34",
+      "bytes": 29931
+    },
+    {
+      "path": "data/history/contents/jinshu-027.json",
+      "sha256": "84df6ac3093deb210ca17d2b3b9452439954a645e073bf09d1552ed776719f20",
+      "bytes": 44012
+    },
+    {
+      "path": "data/history/contents/jinshu-028.json",
+      "sha256": "6d715e67aceb37c9210bcfb71f02796cc5cba713bf92496d0560097c1199dc0f",
+      "bytes": 48674
+    },
+    {
+      "path": "data/history/contents/jinshu-029.json",
+      "sha256": "9cedfe2217884fe9250dfcca96b9d02006b3caa926a08fa154a3f829257b1491",
+      "bytes": 53345
+    },
+    {
+      "path": "data/history/contents/jinshu-030.json",
+      "sha256": "a3c61bdb686a8df89b4ae5864229ea5e32e4866d15e50a75e9c5c1d8d8a3a261",
+      "bytes": 45201
+    },
+    {
+      "path": "data/history/contents/jinshu-031.json",
+      "sha256": "33281c4286f16ff4c60ec187dd3574524d7ecc8200e5ea8b90686c3d4c154831",
+      "bytes": 32378
+    },
+    {
+      "path": "data/history/contents/jinshu-032.json",
+      "sha256": "60c5fa0905a4a320128cc951cbec56bb4872a975611c187acf88cc4fe8b9384c",
+      "bytes": 19334
+    },
+    {
+      "path": "data/history/contents/jinshu-033.json",
+      "sha256": "f7a5df65fca8dc866504150a50fc7d45119651fd1cccb6a18ef495499f5fd26b",
+      "bytes": 35864
+    },
+    {
+      "path": "data/history/contents/jinshu-034.json",
+      "sha256": "93eb71c2dd1710b1e2d145b4e850d8119d2a790b290ef155e47cd18f3f76fe91",
+      "bytes": 34094
+    },
+    {
+      "path": "data/history/contents/jinshu-035.json",
+      "sha256": "f93dbdd758a5d76ca5e8098fe828dd21c64c967423e5433c990efdca2963266c",
+      "bytes": 28230
+    },
+    {
+      "path": "data/history/contents/jinshu-036.json",
+      "sha256": "22f9aa3002e9dc6e82d3d86996f369caa8ab2517e413b5ef17e8f6b12b7721d3",
+      "bytes": 38857
+    },
+    {
+      "path": "data/history/contents/jinshu-037.json",
+      "sha256": "d4a730c676ff3e1995b8b110799d1d723987f31eb1714859a7b4cc97fa15b48d",
+      "bytes": 50070
+    },
+    {
+      "path": "data/history/contents/jinshu-038.json",
+      "sha256": "b9d12fb17301d1c4feddbebb0bd994f311887cfd2e9eb7ad3ef137b3f33bd9c9",
+      "bytes": 28856
+    },
+    {
+      "path": "data/history/contents/jinshu-039.json",
+      "sha256": "a1457615839c678940f78314c9a238d7cec4e6ae1c9225664230be39f0bc2c8f",
+      "bytes": 32037
+    },
+    {
+      "path": "data/history/contents/jinshu-040.json",
+      "sha256": "9cb691bd927916b552084fa3f2037a97194dbb9038f08e5515163c43774ac6f3",
+      "bytes": 27389
+    },
+    {
+      "path": "data/history/contents/jinshu-041.json",
+      "sha256": "bd1ff303578cd9dc8defab6298fb7c717e8a22965097abf96ca9e92002028863",
+      "bytes": 21989
+    },
+    {
+      "path": "data/history/contents/jinshu-042.json",
+      "sha256": "c81c8a4cd56a489567ec7b9b2285d851d3d32bbf52d22706242aacdfcbee89ae",
+      "bytes": 30686
+    },
+    {
+      "path": "data/history/contents/jinshu-043.json",
+      "sha256": "d75f860fea3b4b0450119f3f98f8585ad71e764f84039b369dd3df38c84a08a3",
+      "bytes": 37298
+    },
+    {
+      "path": "data/history/contents/jinshu-044.json",
+      "sha256": "8be13d8ed505e2791fc0e95db5edf7782ae2248c2a763330cc0342672b4350f4",
+      "bytes": 29141
+    },
+    {
+      "path": "data/history/contents/jinshu-045.json",
+      "sha256": "b0f2e42e50e0b2feb0d318fa07121c8c25040544a72dfab20e865935e73fa5fd",
+      "bytes": 31432
+    },
+    {
+      "path": "data/history/contents/jinshu-046.json",
+      "sha256": "70f85207289c3cb737a8a74c1d2e52aa719a1ce2b2b71989646beae188e555d2",
+      "bytes": 33879
+    },
+    {
+      "path": "data/history/contents/jinshu-047.json",
+      "sha256": "9289df122bd22612a8c1c2dcb8c337c73122e037aa80f4855aeba1ab59fe247e",
+      "bytes": 27178
+    },
+    {
+      "path": "data/history/contents/jinshu-048.json",
+      "sha256": "df5c4b88a6caeb2de1d3dfcd47143d96a69cb48e43db7ee44936072dec6557bd",
+      "bytes": 34854
+    },
+    {
+      "path": "data/history/contents/jinshu-049.json",
+      "sha256": "a16c5bcc3475b6d963150edf693b4691bc8c2380daee701e9ee723ce6c3be4da",
+      "bytes": 40413
+    },
+    {
+      "path": "data/history/contents/jinshu-050.json",
+      "sha256": "4e668e77160ef23463b36342daa52487a35fce47d9850e732de10f5d8e2f8098",
+      "bytes": 27494
+    },
+    {
+      "path": "data/history/contents/jinshu-051.json",
+      "sha256": "e97804b43ff7955cd92f3627b6162792eeb1ae9945d6233e0f29b52f882d953e",
+      "bytes": 43233
+    },
+    {
+      "path": "data/history/contents/jinshu-052.json",
+      "sha256": "e89ac786784c0f37eaf65218e9ad2268048265a501a443f57f5eeaf876eddf7c",
+      "bytes": 26503
+    },
+    {
+      "path": "data/history/contents/jinshu-053.json",
+      "sha256": "41e711ac1a3f22ce7915293d0c3271efb7c84363a09af0a7b43b769c2f8457eb",
+      "bytes": 12669
+    },
+    {
+      "path": "data/history/contents/jinshu-054.json",
+      "sha256": "d300b5b7365c3a2b81620cb0168384bcbd0b96a280c010fc26254e69c81f7df6",
+      "bytes": 34145
+    },
+    {
+      "path": "data/history/contents/jinshu-055.json",
+      "sha256": "67e618c0674664c00501333f6652b04db5b66b15eac672c391f92c29ac530860",
+      "bytes": 53879
+    },
+    {
+      "path": "data/history/contents/jinshu-056.json",
+      "sha256": "fadcd2a3bc29899c93bb9be2248fb1cf42a3cf7ae6621e48d492c39759a7f06a",
+      "bytes": 29621
+    },
+    {
+      "path": "data/history/contents/jinshu-057.json",
+      "sha256": "fed832bb54c45726800ba481e46b92a73f1f83e586b89c77d764bbb1160c2f75",
+      "bytes": 24619
+    },
+    {
+      "path": "data/history/contents/jinshu-058.json",
+      "sha256": "5528c1e28e50750c777dc6fd84d4f783bd72031261512ce7528ab04b91ec0778",
+      "bytes": 28744
+    },
+    {
+      "path": "data/history/contents/jinshu-059.json",
+      "sha256": "c700dca0a0192d6f1cb1697349cb03049f47b6e2f9dd8820131c2e389fbfac43",
+      "bytes": 62018
+    },
+    {
+      "path": "data/history/contents/jinshu-060.json",
+      "sha256": "19fbc0f0202dcc249080dbbb9e6364805252a43f7247c1f46fff674f74dec2ec",
+      "bytes": 32673
+    },
+    {
+      "path": "data/history/contents/jinshu-061.json",
+      "sha256": "4c9892a16998be3888254b8efbf3d8f5007facc95cb268dfe8b02b6afea15536",
+      "bytes": 31138
+    },
+    {
+      "path": "data/history/contents/jinshu-062.json",
+      "sha256": "0290b137b9f77452ff442f0284723d1851fa6bec3a0658706b263d50f0c66f17",
+      "bytes": 34018
+    },
+    {
+      "path": "data/history/contents/jinshu-063.json",
+      "sha256": "75c5080f798aa0e21fc1252bdbaf8d733f0b0e3e3a8f7890dca0d8dd06da85eb",
+      "bytes": 22446
+    },
+    {
+      "path": "data/history/contents/jinshu-064.json",
+      "sha256": "f9caca5781fceff85b9c70450a19f435e18e45730dae0bf0b4a626cd79e1a8aa",
+      "bytes": 33824
+    },
+    {
+      "path": "data/history/contents/jinshu-065.json",
+      "sha256": "c073ccc751acc4976cb347b8b19e53e07fcc04527186a326544752da199d86e1",
+      "bytes": 24779
+    },
+    {
+      "path": "data/history/contents/jinshu-066.json",
+      "sha256": "f05f5fede8efd533bc6c7d11dc9c5160872b6e0ed8876fb6e46ad4858cf9d4da",
+      "bytes": 31842
+    },
+    {
+      "path": "data/history/contents/jinshu-067.json",
+      "sha256": "776c47eb5e2996797de100d5b8e45e9332b9f8bdee9a064d5746b0f1fc4a95e2",
+      "bytes": 38059
+    },
+    {
+      "path": "data/history/contents/jinshu-068.json",
+      "sha256": "18f7967224c74481d8cc9639dc2ace3578316b26a82d14d94adc4d4b9739edfa",
+      "bytes": 35570
+    },
+    {
+      "path": "data/history/contents/jinshu-069.json",
+      "sha256": "08f18dd33ae0442a555da565bd13e0d5fad95e3e2c78fe4efdc0c6222bfc0073",
+      "bytes": 30015
+    },
+    {
+      "path": "data/history/contents/jinshu-070.json",
+      "sha256": "01d27502b382114e53bfa16d00387797678f866fc09211ecbf1015f7336db9aa",
+      "bytes": 35356
+    },
+    {
+      "path": "data/history/contents/jinshu-071.json",
+      "sha256": "0d46e328c08d1c737cca8403bf70fe7dc012c77ec8c6cb7b689ee4afdd7a1bc2",
+      "bytes": 23947
+    },
+    {
+      "path": "data/history/contents/jinshu-072.json",
+      "sha256": "c9a6d989035e895c3d8700f4066b6acbb0bc79386c9a59c71117569ca855c715",
+      "bytes": 24298
+    },
+    {
+      "path": "data/history/contents/jinshu-073.json",
+      "sha256": "78c41df3d659942759bfc30704fe11a23630a3644c7446d9f9bf4f8c85ec3c66",
+      "bytes": 33232
+    },
+    {
+      "path": "data/history/contents/jinshu-074.json",
+      "sha256": "4343618862430181068018c0d0f1bedf6b0abbf43de23dbe8ccf87e576fed81c",
+      "bytes": 26521
+    },
+    {
+      "path": "data/history/contents/jinshu-075.json",
+      "sha256": "af78d489043418ec2e5e853ba7fee633eb72cbc9d0ba2f3eafd3c9ddb75a213b",
+      "bytes": 55811
+    },
+    {
+      "path": "data/history/contents/jinshu-076.json",
+      "sha256": "f0fce13e753fb0016188aec36ab263674540d7f4e784e7b40625ce09aabb5524",
+      "bytes": 31379
+    },
+    {
+      "path": "data/history/contents/jinshu-077.json",
+      "sha256": "81ff22554e7ff6d0cbdb30f662a5e911822b9d6762787d7557173d5566a3d2e5",
+      "bytes": 41321
+    },
+    {
+      "path": "data/history/contents/jinshu-078.json",
+      "sha256": "3bf61202d8a0a7da1e717ae71e245edd043d76ae72e68bcafd5160baf62b6b39",
+      "bytes": 24386
+    },
+    {
+      "path": "data/history/contents/jinshu-079.json",
+      "sha256": "4f9a42e44069fb03f1cae757385cc11cd30b25f59059f61f07fd82f07e40f005",
+      "bytes": 33938
+    },
+    {
+      "path": "data/history/contents/jinshu-080.json",
+      "sha256": "31855bdda42e95d22306e81171ca286b77e0124990af3352e723cc71fecbe1cf",
+      "bytes": 23008
+    },
+    {
+      "path": "data/history/contents/jinshu-081.json",
+      "sha256": "239a99d16f468e32a2522a1b1e696dbe07669186679a94d103aa446b29596f36",
+      "bytes": 38657
+    },
+    {
+      "path": "data/history/contents/jinshu-082.json",
+      "sha256": "c2cc1181ccb488958ad85ebd3621c42b22727a4dfcf4ef465741f0b4a63b9b13",
+      "bytes": 34061
+    },
+    {
+      "path": "data/history/contents/jinshu-083.json",
+      "sha256": "b6d7e681e039c0527370cc29a84a87d2e271b2f4a4a903f14b2446eac6721f8c",
+      "bytes": 26382
+    },
+    {
+      "path": "data/history/contents/jinshu-084.json",
+      "sha256": "f3990b3e42b3e50570f57764397854c31521a33a9225c2dd9897739465b3cac9",
+      "bytes": 30425
+    },
+    {
+      "path": "data/history/contents/jinshu-085.json",
+      "sha256": "b1a00ba8565c6ee2cef66bbdab250ab75e0625fffef680eb3007e229a8df0f3e",
+      "bytes": 22265
+    },
+    {
+      "path": "data/history/contents/jinshu-086.json",
+      "sha256": "9ddf308c73321002c63ba0c503768b998a11f0ad994c953c471b7b15b4d8e81b",
+      "bytes": 52814
+    },
+    {
+      "path": "data/history/contents/jinshu-087.json",
+      "sha256": "532d65c6c10ea7e12d0b8b7cd79198b09d503229f288b5082fd5e3bb2de0eb9c",
+      "bytes": 23488
+    },
+    {
+      "path": "data/history/contents/jinshu-088.json",
+      "sha256": "ae0b14764cdaf35a5829f873987f543cc3817201a59d412565ff011cfc8a9ad4",
+      "bytes": 32239
+    },
+    {
+      "path": "data/history/contents/jinshu-089.json",
+      "sha256": "0efefcf00d85f1734c354c7beaba9fbfae3436f6ae31f15155c27fd01ca4c3f8",
+      "bytes": 38350
+    },
+    {
+      "path": "data/history/contents/jinshu-090.json",
+      "sha256": "4bb6310bbf4b9547fc9c48985094f4f3c04f61ed491e8d590e8cdc4a51410a46",
+      "bytes": 24638
+    },
+    {
+      "path": "data/history/contents/jinshu-091.json",
+      "sha256": "dc9e76f914f6e937b0961834dee70f9b3c6f7975a04558ad576ef585dce8e548",
+      "bytes": 31356
+    },
+    {
+      "path": "data/history/contents/jinshu-092.json",
+      "sha256": "d659421933aab6a1a8911ed04f4e03235baf25c8c6e78b9286f50282bae5bfc1",
+      "bytes": 55675
+    },
+    {
+      "path": "data/history/contents/jinshu-093.json",
+      "sha256": "8bc8970b2cd7afb6f3e74139f2202f96f495ef3979a8046b92be1d8ab28fa7ec",
+      "bytes": 18384
+    },
+    {
+      "path": "data/history/contents/jinshu-094.json",
+      "sha256": "8bdc67c929a56e761dd01a7c4279a87dcaa194c777b72845f1a1afd6efe5c8e6",
+      "bytes": 53241
+    },
+    {
+      "path": "data/history/contents/jinshu-095.json",
+      "sha256": "9f1819e39bf691791a7d1df0e0e98d97d5d25da55d550cf7bea4be07310dbace",
+      "bytes": 56574
+    },
+    {
+      "path": "data/history/contents/jinshu-096.json",
+      "sha256": "ce4ea3094cbad96babad83bc1f6771250bf79ba9d98294ab5bd5e738e1776441",
+      "bytes": 27733
+    },
+    {
+      "path": "data/history/contents/jinshu-097.json",
+      "sha256": "7e9576b8394feb55138fc551eb5b62d231d60310a7a74e2580d9498f28882a61",
+      "bytes": 28814
+    },
+    {
+      "path": "data/history/contents/jinshu-098.json",
+      "sha256": "d0f350d77aa56486e5a3f264b1b502594127a7ecd8806ffe76f0e704cc7768b8",
+      "bytes": 46175
+    },
+    {
+      "path": "data/history/contents/jinshu-099.json",
+      "sha256": "bc819ffaa759f200deb0036ecad9c53dc88874b81a20c17e81c95731f29a5d23",
+      "bytes": 35406
+    },
+    {
+      "path": "data/history/contents/jinshu-100.json",
+      "sha256": "5a1a1cb12231e216d2d0f850bd6f3ff45f8b8632a1e2c4909c652387b9ae1202",
+      "bytes": 49124
+    },
+    {
+      "path": "data/history/contents/jinshu-101.json",
+      "sha256": "487d0b89b8ebe8930870d4e79a0e735eb801762230e7a8b193c005b49c56b11f",
+      "bytes": 15603
+    },
+    {
+      "path": "data/history/contents/jinshu-102.json",
+      "sha256": "3ba2e8d81bfdc314a537d25680dfd9f275a8eb50df44694b933fa0c5cf8d20c3",
+      "bytes": 38221
+    },
+    {
+      "path": "data/history/contents/jinshu-103.json",
+      "sha256": "c0010bdd2cf2543a41d420863a5433ef9c3379a87b72141ea615563a2cd4bd4e",
+      "bytes": 34594
+    },
+    {
+      "path": "data/history/contents/jinshu-104.json",
+      "sha256": "12f62bdccf569328dcef560c39bba2f08afc26b0647a9f7ae53291729d4c3bec",
+      "bytes": 39695
+    },
+    {
+      "path": "data/history/contents/jinshu-105.json",
+      "sha256": "f8645a3d9413fd29e764ff7f6bcbf775fb105f792de676cf6352234c5aaebf2b",
+      "bytes": 34372
+    },
+    {
+      "path": "data/history/contents/jinshu-106.json",
+      "sha256": "e2b745d8a61bbe2ef3ffdb8dd9ee3398d49d844d7d687d5d30e20b7d1fbe3fe6",
+      "bytes": 27272
+    },
+    {
+      "path": "data/history/contents/jinshu-107.json",
+      "sha256": "5af3ae60e831e6a6849a635fe3378545d2def523b8a0f1f6e84c1406c708feb1",
+      "bytes": 29383
+    },
+    {
+      "path": "data/history/contents/jinshu-108.json",
+      "sha256": "76ce583ad817c08521debaefcf46d1a3426ca8945f307bea9b5d56608b45e61b",
+      "bytes": 15871
+    },
+    {
+      "path": "data/history/contents/jinshu-109.json",
+      "sha256": "aec7e2afa1eb1ebfd84f39f46bfc2e6c70bd9996f7717b8d8d3cc4d8bd44a450",
+      "bytes": 21764
+    },
+    {
+      "path": "data/history/contents/jinshu-110.json",
+      "sha256": "1e5fa0c611dbb19c575d459b5f02fb6d232a0d8e45243639a49470b6d2f03ae0",
+      "bytes": 22460
+    },
+    {
+      "path": "data/history/contents/jinshu-111.json",
+      "sha256": "b7ae0b5de3f0b3b95e6109c851bc6f61378a0b9c65165a6bdc1c12a7ec3b421b",
+      "bytes": 26355
+    },
+    {
+      "path": "data/history/contents/jinshu-112.json",
+      "sha256": "e7c31b0fbf23c02f83530a7159e276f74ec9ccae9d72cf2b47f78524170c145c",
+      "bytes": 21877
+    },
+    {
+      "path": "data/history/contents/jinshu-113.json",
+      "sha256": "aeafa3dd1f9049cab2b65207c8c7e38ad61c3502c434f317c0453d83b3908600",
+      "bytes": 37004
+    },
+    {
+      "path": "data/history/contents/jinshu-114.json",
+      "sha256": "42622260c575d332264cc1d887833946c256372bc76e0540b0ab2545ae5d65b4",
+      "bytes": 47653
+    },
+    {
+      "path": "data/history/contents/jinshu-115.json",
+      "sha256": "6b42612f8fd605bb35baea446e015bf6850ae030e63ed5cbc9e7ae67d31904aa",
+      "bytes": 25237
+    },
+    {
+      "path": "data/history/contents/jinshu-116.json",
+      "sha256": "2ca13586bc41ecb5add86fe2d077bf98796f5490a165aa2c0fede59cf1188507",
+      "bytes": 21927
+    },
+    {
+      "path": "data/history/contents/jinshu-117.json",
+      "sha256": "133dae054d46940985804e29bcdd43f5f11561f09910636de1c5c57f08eef726",
+      "bytes": 20455
+    },
+    {
+      "path": "data/history/contents/jinshu-118.json",
+      "sha256": "76633baf9ee32b57a6cf3040c6b4281632d5b60cf2ff0e552da444f3d1de0219",
+      "bytes": 22841
+    },
+    {
+      "path": "data/history/contents/jinshu-119.json",
+      "sha256": "88f06f8e2f2b91bd39897ff9832fe8f9cea3cd803031ea5366b8577d29e2cf6b",
+      "bytes": 19511
+    },
+    {
+      "path": "data/history/contents/jinshu-120.json",
+      "sha256": "0bb4d03401055b538d7f2327f12ae563475b7e7d760eac3cb74d6a3d19591183",
+      "bytes": 17156
+    },
+    {
+      "path": "data/history/contents/jinshu-121.json",
+      "sha256": "037d889f4254aa263aba80eafb623cdfcafbf550dfa720fe902427b5a21f07ce",
+      "bytes": 22438
+    },
+    {
+      "path": "data/history/contents/jinshu-122.json",
+      "sha256": "9a5551e39eb05635b3f6942a5b0aaca05bf13a46a417d3046ffd8329b750359d",
+      "bytes": 32136
+    },
+    {
+      "path": "data/history/contents/jinshu-123.json",
+      "sha256": "e8bcb4789ec5dd1567e246f6deb1681e2c6d2eaca6c1934cd7687ed78a855884",
+      "bytes": 21747
+    },
+    {
+      "path": "data/history/contents/jinshu-124.json",
+      "sha256": "648d6ecacfdc0ef4369afa7eccacc08f640114fba22f5bc341cdba2eeef8398d",
+      "bytes": 27300
+    },
+    {
+      "path": "data/history/contents/jinshu-125.json",
+      "sha256": "d13bd117a6942e366e40e25854afc48c751a6ef7beb1d55596fa1fe9837927ff",
+      "bytes": 34282
+    },
+    {
+      "path": "data/history/contents/jinshu-126.json",
+      "sha256": "a8cbb702dd3c8a336981a5c4315e282c400ae7f86c3d36dfa3d3bd78fa7f57cf",
+      "bytes": 28422
+    },
+    {
+      "path": "data/history/contents/jinshu-127.json",
+      "sha256": "5cc0fe119c9e803c25242d8d1bd47a01bf1f5a3724a3f0124066376bdc5d6c85",
+      "bytes": 19509
+    },
+    {
+      "path": "data/history/contents/jinshu-128.json",
+      "sha256": "895a8761133eec9bfa4b0c57d8a1936c6ae5419eea2838bfda7e66ae26c56ae7",
+      "bytes": 18783
+    },
+    {
+      "path": "data/history/contents/jinshu-129.json",
+      "sha256": "91394edfd1fb30349df6ec2d3e0d4b5ad6ce1f5778ccb9f4bfba20810e06d49d",
+      "bytes": 16849
+    },
+    {
+      "path": "data/history/contents/jinshu-130.json",
+      "sha256": "8d4126ea1a84c4fff7e78c0ad83e337cb63da1604b21c07d8ae139398e87f117",
+      "bytes": 21064
+    },
+    {
+      "path": "data/history/contents/sgz-001.json",
+      "sha256": "7cf609906cdd2c056a44fcde70087c502d4be215ead47470cc5a07cfe3a7efb8",
+      "bytes": 83264
+    },
+    {
+      "path": "data/history/contents/sgz-002.json",
+      "sha256": "6063890aba66a48cc4d8d714cadd8561cebc9223c33017a3ca935219ad6980e2",
+      "bytes": 59982
+    },
+    {
+      "path": "data/history/contents/sgz-003.json",
+      "sha256": "bc638cd0ea02363ce003059184bf8ecb1b83423495876ef9940a066735f7e518",
+      "bytes": 39869
+    },
+    {
+      "path": "data/history/contents/sgz-004.json",
+      "sha256": "fd409d6f0dac1f2dca2409e62cdf47b0b383a349dfaf8a260765de3686008b60",
+      "bytes": 57830
+    },
+    {
+      "path": "data/history/contents/sgz-005.json",
+      "sha256": "60949d487519100b2a3e575c5a5fd9734f605637a949a7af9f64c7e9ab1216ad",
+      "bytes": 21961
+    },
+    {
+      "path": "data/history/contents/sgz-006.json",
+      "sha256": "db8f52b5d2b093302c0d3151e7c1d0cdc4595e74dfa45eb601fa72271d3c9cec",
+      "bytes": 78863
+    },
+    {
+      "path": "data/history/contents/sgz-007.json",
+      "sha256": "9695360244f13232ddd235baa47d417e2497006135f0bf2a6c04bd0d939e8bef",
+      "bytes": 29605
+    },
+    {
+      "path": "data/history/contents/sgz-008.json",
+      "sha256": "4384ff0f7cef4501c09d178e1c663a2af6e4fdac1101ca6e704e390bb22c51e3",
+      "bytes": 48415
+    },
+    {
+      "path": "data/history/contents/sgz-009.json",
+      "sha256": "e10b26fd9482623f99423a0d0a7ebe19a83d16d6fcfbb4bf3ee0b18f38094996",
+      "bytes": 61983
+    },
+    {
+      "path": "data/history/contents/sgz-010.json",
+      "sha256": "2b4e70a2800602685c469e659e46a179c7c15f0b2a19a6cf7aa2380c9def9ead",
+      "bytes": 41842
+    },
+    {
+      "path": "data/history/contents/sgz-011.json",
+      "sha256": "2e6111172ab48e24e8f8e4555350b5959071c7b70090e83c174058ca59c22695",
+      "bytes": 55304
+    },
+    {
+      "path": "data/history/contents/sgz-012.json",
+      "sha256": "e6fced64b1db666f8b281502f3086ee9dd784afeef12a00a71100809f3a02949",
+      "bytes": 34977
+    },
+    {
+      "path": "data/history/contents/sgz-013.json",
+      "sha256": "6b4c6a1ae91a00e28f93206990bbf7d3ef6dcf8562e2a05b439692470eaa53a2",
+      "bytes": 52376
+    },
+    {
+      "path": "data/history/contents/sgz-014.json",
+      "sha256": "db42b74d4faf17fb9e060a36c0e94ab7f527cdae8ac218a3571c4e742471a0d8",
+      "bytes": 58435
+    },
+    {
+      "path": "data/history/contents/sgz-015.json",
+      "sha256": "4c8708aad9dcd79568031cb59cf75bbf635551577c1e7abd9132904301dc69cb",
+      "bytes": 38718
+    },
+    {
+      "path": "data/history/contents/sgz-016.json",
+      "sha256": "06b131684c303b5f8297dec4a3f0440de5275758a4d40a2e642f6258d012d68d",
+      "bytes": 40634
+    },
+    {
+      "path": "data/history/contents/sgz-017.json",
+      "sha256": "98df7f9f4856b1f76bbbf2c0fa46b7c71e5a704b06eb48a3d6a2846dde44daca",
+      "bytes": 20341
+    },
+    {
+      "path": "data/history/contents/sgz-018.json",
+      "sha256": "b7e494d066f9fc2b0166b329ea00160c6621db5f5b9c705b7a72e59bc4944a38",
+      "bytes": 32750
+    },
+    {
+      "path": "data/history/contents/sgz-019.json",
+      "sha256": "07f252548bedbab3f3e6582beeadeec5046895d2ec3d947ac5d5c38f8b9989cb",
+      "bytes": 35993
+    },
+    {
+      "path": "data/history/contents/sgz-020.json",
+      "sha256": "bb51818ec7c658ba9bcceb8106d775b77e68310e0a438ad2bae66e64629416d6",
+      "bytes": 25609
+    },
+    {
+      "path": "data/history/contents/sgz-021.json",
+      "sha256": "e5080372a377d09e343318c1b6b4cfb6881c4d9f6fb0c7b7a2414ccb24c56725",
+      "bytes": 55301
+    },
+    {
+      "path": "data/history/contents/sgz-022.json",
+      "sha256": "8c0b35d3757688f049633a8d4b8b25fe26aa002f0039f4247ac7bb3bab9003ae",
+      "bytes": 32867
+    },
+    {
+      "path": "data/history/contents/sgz-023.json",
+      "sha256": "6c77b81aa0fc7ef53860c0c496fd0a39226de0808f947c43058260efb3b6a6fa",
+      "bytes": 34489
+    },
+    {
+      "path": "data/history/contents/sgz-024.json",
+      "sha256": "9ecf9cb5871c9c06578e5d98cd2d2f05ea0b11f6d6bab9b0e07a145475a1dffd",
+      "bytes": 26535
+    },
+    {
+      "path": "data/history/contents/sgz-025.json",
+      "sha256": "44faaf34248b073b931d00e636da1b5b1c2759db078dece57906dd901d894ccb",
+      "bytes": 35477
+    },
+    {
+      "path": "data/history/contents/sgz-026.json",
+      "sha256": "1ff2dbde4faf17bd0ca95e95ba7485b3bdba50dfeb2acf1300bfc297cbf4dce1",
+      "bytes": 22981
+    },
+    {
+      "path": "data/history/contents/sgz-027.json",
+      "sha256": "fb5a51f19aedbe693e9e804a864b80d51cba2506a142a1e902b8fd4b284a2f39",
+      "bytes": 26019
+    },
+    {
+      "path": "data/history/contents/sgz-028.json",
+      "sha256": "ce99cc562ee9cc2def886a1e51139b257866070b6865c5b543c4c5da87b54e27",
+      "bytes": 64963
+    },
+    {
+      "path": "data/history/contents/sgz-029.json",
+      "sha256": "f78a2f7617fd978fb7da2fc023031acc5e80a6476cb07917e179b16a6bfb8e8c",
+      "bytes": 52098
+    },
+    {
+      "path": "data/history/contents/sgz-030.json",
+      "sha256": "0f3465e331b6d830c67bc97d9d66627f05562961613ec6768f7e9d374582710e",
+      "bytes": 50916
+    },
+    {
+      "path": "data/history/contents/sgz-031.json",
+      "sha256": "2b988894fdef721f15b273613d1caaf1d5cbec2c356fb7b62b792994fc2cb8d4",
+      "bytes": 9572
+    },
+    {
+      "path": "data/history/contents/sgz-032.json",
+      "sha256": "3359d4004affc7ebe5e68b9b5f6a0e44277906bd75d41364e0fc1b16430343d8",
+      "bytes": 32986
+    },
+    {
+      "path": "data/history/contents/sgz-033.json",
+      "sha256": "3389f4e90af4f2080291dfbbb04a5d8a750b3b5dc0e9e86e01b88cf53274e11a",
+      "bytes": 14467
+    },
+    {
+      "path": "data/history/contents/sgz-034.json",
+      "sha256": "0523c1ca0258ebb5f2cb921c87881ad9be3916fced1c49d61d132f49512f8c0f",
+      "bytes": 5044
+    },
+    {
+      "path": "data/history/contents/sgz-035.json",
+      "sha256": "5e350c90c6afc799b778fbf67dc6ca8f4cad95632eefd0ae341ab98ea61e2dff",
+      "bytes": 43632
+    },
+    {
+      "path": "data/history/contents/sgz-036.json",
+      "sha256": "8b95dda2b7ad77dafb85cf5f63ee64012b45131f9fac355d352c9bf20031450f",
+      "bytes": 20002
+    },
+    {
+      "path": "data/history/contents/sgz-037.json",
+      "sha256": "0c9cc84a18d7e7bfa0a35d3606ebf398140af7e0c3b591ff665071886d1534c7",
+      "bytes": 14693
+    },
+    {
+      "path": "data/history/contents/sgz-038.json",
+      "sha256": "75630eb38ee4bd611c527df71a7dddd0e75bca39d0a2efb1cf3efdf2b7b3be97",
+      "bytes": 20799
+    },
+    {
+      "path": "data/history/contents/sgz-039.json",
+      "sha256": "e0555c588077d2398a279036da58df6a6d1b5c06be1ba924c8cae044bb79df0a",
+      "bytes": 15075
+    },
+    {
+      "path": "data/history/contents/sgz-040.json",
+      "sha256": "b2290f8be789b929fb78b57054c1fdc72ae47ce7c3f35b93c3353abdcd086744",
+      "bytes": 22509
+    },
+    {
+      "path": "data/history/contents/sgz-041.json",
+      "sha256": "b007405c283ede61a91674019c4c715ffd23dd3cc2763c108f514feca5c5f31e",
+      "bytes": 15791
+    },
+    {
+      "path": "data/history/contents/sgz-042.json",
+      "sha256": "c447aec3b01fde24f557044e6a069d90455b9c717e57f29e8cefaccc45dccf26",
+      "bytes": 35198
+    },
+    {
+      "path": "data/history/contents/sgz-043.json",
+      "sha256": "9594a7e1846390e4573ef5e138f1d5fb20647c54bc2fefacec2803fe510d0d8e",
+      "bytes": 17199
+    },
+    {
+      "path": "data/history/contents/sgz-044.json",
+      "sha256": "aebca1050a7831f63b0892b40ca5e942435a75f8e3e1a5812a9b434b275eb538",
+      "bytes": 19147
+    },
+    {
+      "path": "data/history/contents/sgz-045.json",
+      "sha256": "8e8b6fe4a0dddd119caaea50ee0a27844f91f55175494b8bcdb13ef6cec961a3",
+      "bytes": 28738
+    },
+    {
+      "path": "data/history/contents/sgz-046.json",
+      "sha256": "8cc849006d2de05a4bc004bcea36a67cca3bd459f5296d91b2ac068a817fb62e",
+      "bytes": 35354
+    },
+    {
+      "path": "data/history/contents/sgz-047.json",
+      "sha256": "00fe4a4f93cb6a944f68fd5b7590e69ad4417fdb9160f0aa148dd4138dd84347",
+      "bytes": 55146
+    },
+    {
+      "path": "data/history/contents/sgz-048.json",
+      "sha256": "4a271d073fee869ba4625f0e4186950cc7c18518378c5cc2447b27ad9aa21168",
+      "bytes": 51576
+    },
+    {
+      "path": "data/history/contents/sgz-049.json",
+      "sha256": "f40c8303e0372a28ac6cdde28073d77408c1e928f089521bad535d798941642a",
+      "bytes": 16528
+    },
+    {
+      "path": "data/history/contents/sgz-050.json",
+      "sha256": "f718b7282f95d199e93f59ca8cb70d43a5643f91a4b20a6cd0b6da05304a836d",
+      "bytes": 11344
+    },
+    {
+      "path": "data/history/contents/sgz-051.json",
+      "sha256": "ebf47ab7c6cf9a1c1e250c3df5a4ef1866fa8161d5b84f7b5e64a36e28afdc46",
+      "bytes": 19202
+    },
+    {
+      "path": "data/history/contents/sgz-052.json",
+      "sha256": "0f84dbcaae1cd4425e639d7b9a1e28acbb52ad4a4275ad06165ebfbde3fc3c36",
+      "bytes": 35732
+    },
+    {
+      "path": "data/history/contents/sgz-053.json",
+      "sha256": "c76a423137bc58555b31521cfd72e37949f657a20fb04ad6f7790366c0afc796",
+      "bytes": 21103
+    },
+    {
+      "path": "data/history/contents/sgz-054.json",
+      "sha256": "d7c17152ddd43dc15b4a455402df89caad87b321f59956744bdb3cb67c1facb4",
+      "bytes": 34123
+    },
+    {
+      "path": "data/history/contents/sgz-055.json",
+      "sha256": "2cdfc82eba0784bb9ff7d23952bf46508ff3d07a88cade5909e5f683ad60e399",
+      "bytes": 25586
+    },
+    {
+      "path": "data/history/contents/sgz-056.json",
+      "sha256": "70956fc2ca4bda5a6bd01f96e5731316c5299f7ce040ba0d0e191a75959cd84b",
+      "bytes": 18977
+    },
+    {
+      "path": "data/history/contents/sgz-057.json",
+      "sha256": "4f2d1a37956c2a284e34e44fc735356251fd1e4679bca2c7a9e56ea130706a81",
+      "bytes": 38095
+    },
+    {
+      "path": "data/history/contents/sgz-058.json",
+      "sha256": "9fee6590e03bda97ddc7f2abf0f7683ffb0fff92fded09087988d3b8e530b0df",
+      "bytes": 26906
+    },
+    {
+      "path": "data/history/contents/sgz-059.json",
+      "sha256": "2fdc4002605db09b2e7cb56a2de2c1b4371b684377f285a8fa64c89265c6b2db",
+      "bytes": 18723
+    },
+    {
+      "path": "data/history/contents/sgz-060.json",
+      "sha256": "29587a8aecfdff42916295937bde2a4152470cbc87bee15f0721f40eef23f646",
+      "bytes": 26409
+    },
+    {
+      "path": "data/history/contents/sgz-061.json",
+      "sha256": "1e31f7bc413e008c3556acbdb630194d02ffa711316f7095821cfc5e1a77b476",
+      "bytes": 19312
+    },
+    {
+      "path": "data/history/contents/sgz-062.json",
+      "sha256": "ab3b96ed4097534b6c2c6335804f0561447262702ae1d3baa2f8be17957f8a02",
+      "bytes": 10748
+    },
+    {
+      "path": "data/history/contents/sgz-063.json",
+      "sha256": "2a8a0d381955042286ed6902e8f8195b60446dc8485c39bbe18a7e51163cdfb8",
+      "bytes": 9727
+    },
+    {
+      "path": "data/history/contents/sgz-064.json",
+      "sha256": "e2c043bae0b2732e0d00d563177fadd6e576e52c3d21731e4d0f4e62790b7c34",
+      "bytes": 33980
+    },
+    {
+      "path": "data/history/contents/sgz-065.json",
+      "sha256": "e7e92b1cbfdf1999544bbea9b42c2b3900cd3bf7429a9a2c835c8d8d497b3bf2",
+      "bytes": 23375
+    },
+    {
+      "path": "data/history/contents/tongjian-001.json",
+      "sha256": "d4f9239e3ef8ed53ea9c45081f562f91b7fe641a8f3af54173aac3330d4c72d6",
+      "bytes": 34071
+    },
+    {
+      "path": "data/history/contents/tongjian-002.json",
+      "sha256": "b9aad06faf9e4b16b89f416d336c1aa7f95f147336d34470e4598f143b3e19c9",
+      "bytes": 33802
+    },
+    {
+      "path": "data/history/contents/tongjian-003.json",
+      "sha256": "7b3e5ceace5835a7f80283065389e28d109b38b77d69c97af9eb341fc3be8700",
+      "bytes": 36916
+    },
+    {
+      "path": "data/history/contents/tongjian-004.json",
+      "sha256": "4f939805b0b412a16d8b67daaa941aba6a8a2326da03a3bf60d84b2507f3c714",
+      "bytes": 32042
+    },
+    {
+      "path": "data/history/contents/tongjian-005.json",
+      "sha256": "067d82d0b94ad5467fe817277938f3a0286001ef73d2dedfcfb1109e91b43a62",
+      "bytes": 26328
+    },
+    {
+      "path": "data/history/contents/tongjian-006.json",
+      "sha256": "cac8966fd17b9470b5e42edf566d49a7f2bb1fa91e258ce3d78cd35e47d45f41",
+      "bytes": 32124
+    },
+    {
+      "path": "data/history/contents/tongjian-007.json",
+      "sha256": "d64b8c5bca3da9f3130e161209471e761d9db65e007314d7464560e0eb76f41d",
+      "bytes": 28436
+    },
+    {
+      "path": "data/history/contents/tongjian-008.json",
+      "sha256": "7d917e756f9938857df6190ba3bb55753d9a1c911aafc0f9eb04014e0db755eb",
+      "bytes": 24154
+    },
+    {
+      "path": "data/history/contents/tongjian-009.json",
+      "sha256": "c6cf11f0bb5c8b6b2db4820532a46e1b0fde02d18533314cdf57c9acbc29b4e0",
+      "bytes": 29991
+    },
+    {
+      "path": "data/history/contents/tongjian-010.json",
+      "sha256": "6657431f433a900a3302daa4850fcffb4cc6d7712acb2c6aa1a04a831532ecfc",
+      "bytes": 37484
+    },
+    {
+      "path": "data/history/contents/tongjian-011.json",
+      "sha256": "0fa6ad47abdf1d82783f6f4caaaecc949e86bf2d503ba74688fe0e4e228d7d1c",
+      "bytes": 31423
+    },
+    {
+      "path": "data/history/contents/tongjian-012.json",
+      "sha256": "10f1d13193fba1785f4630fe5991fb641920716802a33bb2815d820e7d48c6de",
+      "bytes": 25597
+    },
+    {
+      "path": "data/history/contents/tongjian-013.json",
+      "sha256": "be79364e8dac0bceb19d6cf53cc231c106fce16e42636d978331ef04044d3e39",
+      "bytes": 38207
+    },
+    {
+      "path": "data/history/contents/tongjian-014.json",
+      "sha256": "5f87cb6d594a3e3d8d40578cf3b350db3b847990d734d689012d139948745121",
+      "bytes": 30371
+    },
+    {
+      "path": "data/history/contents/tongjian-015.json",
+      "sha256": "a9bd76de7c13cea3ca15fdc3d43b8d143785fb74280a6b8050e4d998459c7391",
+      "bytes": 34216
+    },
+    {
+      "path": "data/history/contents/tongjian-016.json",
+      "sha256": "8556b777d2d27ae75dedca131c6f4620c13a86ba30fde9e74c4a00c36897c9c6",
+      "bytes": 35717
+    },
+    {
+      "path": "data/history/contents/tongjian-017.json",
+      "sha256": "32c63b2a82e6b4a868d7013aec2b2216ae05862129b8c7d10537ccf650ea4d13",
+      "bytes": 29911
+    },
+    {
+      "path": "data/history/contents/tongjian-018.json",
+      "sha256": "573585ae195c5195aa17898913772ea4b99912e48edb67bcecc0d0d03cb78878",
+      "bytes": 32318
+    },
+    {
+      "path": "data/history/contents/tongjian-019.json",
+      "sha256": "564def72e65f4957730e98965fcbe450708d62de7b12c3de9a6ea61f50a1bbbf",
+      "bytes": 30380
+    },
+    {
+      "path": "data/history/index.json",
+      "sha256": "3f19c0c03c62642c150fa1b5a8be5db4d0ce6c4b114ee7459edfe484b5465497",
+      "bytes": 2792
+    },
+    {
+      "path": "data/history/quiz.json",
+      "sha256": "74063c4c0f4c14d91ffd3b29500a88ebb4ec9ccfdab16d1c8575b231578e6644",
+      "bytes": 3463
+    },
+    {
+      "path": "data/hlsgs/characters.json",
+      "sha256": "f485e06ec6b79eb537ca159e5e2a2f62f1d19acdac98f0397406b5d52ff23abf",
+      "bytes": 1684154
+    },
+    {
+      "path": "data/hlsgs/pack_icons.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "data/index.json",
+      "sha256": "944139eb05d6a7f56b9738bf63a72b198a85c2e176c1b284e57ae2404a7157b4",
+      "bytes": 26271
+    },
+    {
+      "path": "data/kepu_stats.json",
+      "sha256": "100e9b80c815c1b79df517269a742dd59619cf3731ea0a046fd5d5e92968015b",
+      "bytes": 4776
+    },
+    {
+      "path": "data/msgs/characters.json",
+      "sha256": "0b0c277a6d54b7b6e7a45db1abbad1e29484005bffa56ca74f81e7e78ceabc14",
+      "bytes": 4457562
+    },
+    {
+      "path": "data/msgs/pack_icons.json",
+      "sha256": "199eb8965c68f5863c72f23707f6d71c711d41393f27325f78f6e2ebc991455a",
+      "bytes": 7009
+    },
+    {
+      "path": "data/ol_news/covers/20260612_7102_0710.webp",
+      "sha256": "af6a7e64e4559a1982eaa0f6452cfd86ffa0268be99f56d03217c28e4f7b754d",
+      "bytes": 29278
+    },
+    {
+      "path": "data/ol_news/covers/20260615_5224_2617.webp",
+      "sha256": "c9d3896add4c9d044ad232084e15ee19ea7c78088992da76b0bab921273e2c4d",
+      "bytes": 263118
+    },
+    {
+      "path": "data/ol_news/covers/20260615_7728_2719.webp",
+      "sha256": "af6a7e64e4559a1982eaa0f6452cfd86ffa0268be99f56d03217c28e4f7b754d",
+      "bytes": 29278
+    },
+    {
+      "path": "data/ol_news/covers/20260615_9096_2719.webp",
+      "sha256": "af6a7e64e4559a1982eaa0f6452cfd86ffa0268be99f56d03217c28e4f7b754d",
+      "bytes": 29278
+    },
+    {
+      "path": "data/ol_news/covers/20260623_1116_0914.webp",
+      "sha256": "411d5e3d4b75609c71a6c35c5d05e754f4c247cc947052b19ecc6c028f8db1dd",
+      "bytes": 48410
+    },
+    {
+      "path": "data/ol_news/covers/20260701_8519_0210.webp",
+      "sha256": "c7feafac73c0c05d1894fc9e3e6e3e47e0933a5fc438963ec876afc93d1b9569",
+      "bytes": 31452
+    },
+    {
+      "path": "data/ol_news/covers/20260707_6715_4813.webp",
+      "sha256": "0c6d1eef0c79c8e7e3d200194b1a13ca7603039f96b5cd18702b9fcb651a8a31",
+      "bytes": 47050
+    },
+    {
+      "path": "data/ol_news/covers/20260708_3742_3119.webp",
+      "sha256": "f2cabeac5fa14f6e371fc656e17db075fc8932fad3aee8a7f8c63f02c0b66588",
+      "bytes": 18512
+    },
+    {
+      "path": "data/ol_news/covers/20260709_5388_3211.webp",
+      "sha256": "5ef542517876f857a6c0cff158a17cf5f401064c876ef945340549a93044852a",
+      "bytes": 11932
+    },
+    {
+      "path": "data/ol_news/covers/20260710_8109_0911.webp",
+      "sha256": "0c6d1eef0c79c8e7e3d200194b1a13ca7603039f96b5cd18702b9fcb651a8a31",
+      "bytes": 47050
+    },
+    {
+      "path": "data/ol_news/covers/20260710_9479_0911.webp",
+      "sha256": "0c6d1eef0c79c8e7e3d200194b1a13ca7603039f96b5cd18702b9fcb651a8a31",
+      "bytes": 47050
+    },
+    {
+      "path": "data/ol_news/covers/20260715_9776_5613.webp",
+      "sha256": "51cff02108d5d8d5b71fd20faa5d7f7d45d8fbe7ea137e75d0fc1ef9f644c04f",
+      "bytes": 31008
+    },
+    {
+      "path": "data/ol_news/covers/20260717_2294_5910.webp",
+      "sha256": "02383bc3a63be4f9bf21b823c0c22678ef9ce2b6419905bff50fb5032d434edd",
+      "bytes": 503410
+    },
+    {
+      "path": "data/ol_news/covers/20260722_7347_4713.webp",
+      "sha256": "48dcc1bd128517fb25398293aefccf754d01b161a9e40df4d5a38d680f91e4cf",
+      "bytes": 44702
+    },
+    {
+      "path": "data/ol_news/covers/20260728_8983_4913.webp",
+      "sha256": "019e2beb4ea57ee91d699573a8b434520369fc910dc76ca60e5eb9f111090c24",
+      "bytes": 31668
+    },
+    {
+      "path": "data/ol_news/covers/20260731_8356_3414.webp",
+      "sha256": "019e2beb4ea57ee91d699573a8b434520369fc910dc76ca60e5eb9f111090c24",
+      "bytes": 31668
+    },
+    {
+      "path": "data/ol_news/covers/20260731_9730_3414.webp",
+      "sha256": "019e2beb4ea57ee91d699573a8b434520369fc910dc76ca60e5eb9f111090c24",
+      "bytes": 31668
+    },
+    {
+      "path": "data/ol_news/covers/20260805_3800_3413.webp",
+      "sha256": "47b17413e8705d9f3c719a24b942765291551e06ced5e2dc77b0f733025a6350",
+      "bytes": 31494
+    },
+    {
+      "path": "data/ol_news/covers/20260810_9254_1219.webp",
+      "sha256": "c3c5b803447c7831417c9c9aa4315ab4d12d7c6449e4b8ce614407a37ceebf9d",
+      "bytes": 27190
+    },
+    {
+      "path": "data/ol_news/covers/20260811_5151_4813.webp",
+      "sha256": "8d4ae5daac8a4fe155d94cf55b48703a282965dcd3b2a4fe3966f9e32c7754b3",
+      "bytes": 35570
+    },
+    {
+      "path": "data/ol_news/covers/20260812_9583_3810.webp",
+      "sha256": "8d4ae5daac8a4fe155d94cf55b48703a282965dcd3b2a4fe3966f9e32c7754b3",
+      "bytes": 35570
+    },
+    {
+      "path": "data/ol_news/covers/20260818_1951_2713.webp",
+      "sha256": "84c20332cf4164ac84b0d21bbdba599f9e9ca31212a62128fd0446ac302c2877",
+      "bytes": 44026
+    },
+    {
+      "path": "data/ol_news/covers/20260819_6719_4117.webp",
+      "sha256": "31ff4a31b9ccafe5a08706143873055bc2f740dc8c9f9c7967c425f0abcc9bed",
+      "bytes": 55214
+    },
+    {
+      "path": "data/ol_news/covers/20260820_6259_5919.webp",
+      "sha256": "d306fbbed387f4055c5d07c5a027227ca3ef665bc502c39b05133581882af8aa",
+      "bytes": 17906
+    },
+    {
+      "path": "data/ol_news/covers/20260821_4861_2413.webp",
+      "sha256": "84c20332cf4164ac84b0d21bbdba599f9e9ca31212a62128fd0446ac302c2877",
+      "bytes": 44026
+    },
+    {
+      "path": "data/ol_news/covers/20260821_7705_2313.webp",
+      "sha256": "84c20332cf4164ac84b0d21bbdba599f9e9ca31212a62128fd0446ac302c2877",
+      "bytes": 44026
+    },
+    {
+      "path": "data/ol_news/covers/20260821_8788_5510.webp",
+      "sha256": "1b923d687284b718ed430bdfb65075d2241463865591404713d74a58afecdb73",
+      "bytes": 495240
+    },
+    {
+      "path": "data/ol_news/covers/20260826_8520_2813.webp",
+      "sha256": "51cff02108d5d8d5b71fd20faa5d7f7d45d8fbe7ea137e75d0fc1ef9f644c04f",
+      "bytes": 31008
+    },
+    {
+      "path": "data/ol_news/covers/20260827_1539_0217.webp",
+      "sha256": "55155fb98ee5cc320bc546e94c02376f951176b82e4066c3b55a361cf2f6e992",
+      "bytes": 441696
+    },
+    {
+      "path": "data/ol_news/covers/20260902_3884_3119.webp",
+      "sha256": "a250c9298872010baf149b438219f68381f08cea2374edc7f8b976f52bccb800",
+      "bytes": 233954
+    },
+    {
+      "path": "data/ol_news/covers/20260902_7781_1913.webp",
+      "sha256": "a51b9a72803824f0f5abda32e5942dedb43af3f6c3bfbec290065f192b7b2c8f",
+      "bytes": 52904
+    },
+    {
+      "path": "data/ol_news/covers/20260904_6846_5113.webp",
+      "sha256": "a51b9a72803824f0f5abda32e5942dedb43af3f6c3bfbec290065f192b7b2c8f",
+      "bytes": 52904
+    },
+    {
+      "path": "data/ol_news/covers/20260909_7008_2613.webp",
+      "sha256": "455a8c0fffecdc785f3fa9eda9bbcfe2589c99a6a7658ccc40dad979214b0c1b",
+      "bytes": 29566
+    },
+    {
+      "path": "data/ol_news/covers/20260915_2455_0414.webp",
+      "sha256": "d86dea2761e86dcef0d26c3e5ebecf96acf758feb7ba9ba286ac463e8866c9ff",
+      "bytes": 27978
+    },
+    {
+      "path": "data/ol_news/covers/20260917_4651_4609.webp",
+      "sha256": "1c9464d6a889354622e76d64fa774707ea4340edd45e544dbb975ed7f6c2aa2d",
+      "bytes": 19944
+    },
+    {
+      "path": "data/ol_news/covers/20260922_4578_5713.webp",
+      "sha256": "431a1fae8d783cebe55cf1d2da0d3911398c9fdccd15cabbb835614379ce9ff0",
+      "bytes": 41974
+    },
+    {
+      "path": "data/ol_news/covers/20260922_7014_5113.webp",
+      "sha256": "1c9464d6a889354622e76d64fa774707ea4340edd45e544dbb975ed7f6c2aa2d",
+      "bytes": 19944
+    },
+    {
+      "path": "data/ol_news/covers/20260922_7360_5713.webp",
+      "sha256": "224ccb2337e140f97ca86b33796e1e60846de4b23538a92d3d1a8f058544c3da",
+      "bytes": 46700
+    },
+    {
+      "path": "data/ol_news/covers/20260924_2379_0715.webp",
+      "sha256": "b4cab9989d20f1d16b6ee1a0896256eb4440cbf7687161fbd903a3492d5d18f3",
+      "bytes": 40458
+    },
+    {
+      "path": "data/ol_news/covers/20260924_2501_0715.webp",
+      "sha256": "b4cab9989d20f1d16b6ee1a0896256eb4440cbf7687161fbd903a3492d5d18f3",
+      "bytes": 40458
+    },
+    {
+      "path": "data/ol_news/covers/20260924_4191_0815.webp",
+      "sha256": "bca8f6c0e6d8454724091371e7c149c51de69d5b3d0666eda5c39901ba6a830e",
+      "bytes": 28382
+    },
+    {
+      "path": "data/ol_news/covers/20260929_2784_3910.webp",
+      "sha256": "c230ede214048a4b06e583a4cfc26ed74d0da7f85975b1ebea9eb7a3a55aa9aa",
+      "bytes": 543084
+    },
+    {
+      "path": "data/ol_news/covers/20260929_7838_3119.webp",
+      "sha256": "1dc88e9cd514cb6332d1a3c7c0ad1f9de9bd4c9af563e4c131dd9b1fdd3cfde3",
+      "bytes": 16962
+    },
+    {
+      "path": "data/ol_news/covers/20261010_3336_5809.webp",
+      "sha256": "0956f883249e6daef5251d87aa7329c1d5479ddfbb8f3691cdfb1847d42c1f83",
+      "bytes": 473662
+    },
+    {
+      "path": "data/ol_news/covers/20261013_4344_3613.webp",
+      "sha256": "6a897085884432189cbaedd04ee9ee1c87e90ebce6090f1df3bf2def5b6a98dc",
+      "bytes": 23782
+    },
+    {
+      "path": "data/ol_news/covers/20261014_1695_1010.webp",
+      "sha256": "4e5bcd716120d92329261256f5a36e93a35c363d91a419d80cfd0b086fa4f4a6",
+      "bytes": 21248
+    },
+    {
+      "path": "data/ol_news/covers/20261020_4677_1114.webp",
+      "sha256": "5492fc3e1bb4d67cb8423848e2008de94b9e06b6ad64f05c3f7fbe06a191e465",
+      "bytes": 33174
+    },
+    {
+      "path": "data/ol_news/covers/20261023_9077_4915.webp",
+      "sha256": "5ce07890138c98d8e4647466debf74e63a41870b7ec3bfa1abe1f5a0630477c9",
+      "bytes": 36768
+    },
+    {
+      "path": "data/ol_news/covers/20261027_2612_5013.webp",
+      "sha256": "038fbce37642c9099baa608fcd3e0ec0486238369ede063c54eafa566ed1bec1",
+      "bytes": 23832
+    },
+    {
+      "path": "data/ol_news/covers/20261028_5472_5714.webp",
+      "sha256": "4d826a529a0d3964ba311aded5bc69f9e57dba51ccba84489cd960c94bd47247",
+      "bytes": 20912
+    },
+    {
+      "path": "data/ol_news/covers/20261103_4636_0714.webp",
+      "sha256": "781ad0fdc1dcb0837777534078a935c53fb902a20cf8ec3fcc8584652920ea5f",
+      "bytes": 43250
+    },
+    {
+      "path": "data/ol_news/covers/20261103_5025_0810.webp",
+      "sha256": "781ad0fdc1dcb0837777534078a935c53fb902a20cf8ec3fcc8584652920ea5f",
+      "bytes": 43250
+    },
+    {
+      "path": "data/ol_news/covers/20261103_7967_0714.webp",
+      "sha256": "6d06cc46f09f4c9f3176edeca8f0676614131ca1458203acec21a279e1761e59",
+      "bytes": 38800
+    },
+    {
+      "path": "data/ol_news/covers/20261104_1730_3217.webp",
+      "sha256": "85d3d875989d7a922309cbf9119c81ccd94caca19c3fbfa872e7e62254278f04",
+      "bytes": 44184
+    },
+    {
+      "path": "data/ol_news/covers/20261104_9682_0011.webp",
+      "sha256": "525a691c20bc1a1e788ee639f785c0a2ce5ea6117293ed7fed06ef637e1e817f",
+      "bytes": 18382
+    },
+    {
+      "path": "data/ol_news/covers/20261106_5864_1113.webp",
+      "sha256": "46ed6c383c45264d1c5408425ae4f430081eebce931aaf6036a48e0c8c9c4802",
+      "bytes": 44074
+    },
+    {
+      "path": "data/ol_news/news.json",
+      "sha256": "54f947bc94b2136a62c78d310397e10b1dbcc8da60403e18b34edf0115b97427",
+      "bytes": 993602
+    },
+    {
+      "path": "data/recent.json",
+      "sha256": "1f4385e814eaa827014c60d8e77469b5b4e64b81796c8ecabf2ed0c7784b6f34",
+      "bytes": 14668
+    },
+    {
+      "path": "data/search_index.json",
+      "sha256": "a9dc82e96e9248c418ba47d4d308a5fb2478677ca22019718c9b439f09dd49fa",
+      "bytes": 615748
+    },
+    {
+      "path": "data/seriesRef.json",
+      "sha256": "0a4e36640ddb6da2ffff186de492697e163a58ba56672480d37789c929489d4a",
+      "bytes": 19272
+    },
+    {
+      "path": "data/sgs/characters.json",
+      "sha256": "f50297d3d0478f1ff6f6dad66d91b4884b24b35dd1398f5a2899959d6b315836",
+      "bytes": 2524885
+    },
+    {
+      "path": "data/sgs/female_skins.json",
+      "sha256": "38ccfb7db0399fc0b5b9aad2a9841f970fc95aa56d00644c297e9a65839c6cc4",
+      "bytes": 109704
+    },
+    {
+      "path": "data/sgs/pack_icons.json",
+      "sha256": "c071d575f5db51c67219a05b4456216b9429a1f66cc32c4c972bf3082ccc9bb1",
+      "bytes": 7079
+    },
+    {
+      "path": "data/sgs_icons.json",
+      "sha256": "eaffdf91b217780aa11f95333be5d95c166e9e47ea3c703f30d3faa0ba467b37",
+      "bytes": 10320
+    },
+    {
+      "path": "data/sgsol/characters.json",
+      "sha256": "5fa92322f68c47a8c4494cbc2af2942112b952c246afa7501fddd495d9b76b41",
+      "bytes": 5200510
+    },
+    {
+      "path": "data/sgsol/pack_icons.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "bytes": 3
+    },
+    {
+      "path": "data/skill_evolution.json",
+      "sha256": "c199e9f17de04fdf9c2a2727c002c4ccd5d0b6cdb3948767b08c2b5a05b22164",
+      "bytes": 1822712
+    },
+    {
+      "path": "data/wxmini/characters.json",
+      "sha256": "63a144cee15cfac3d0994dad23db2f65a8bab7195033b159fd3c920d0e96e5e6",
+      "bytes": 1017772
+    },
+    {
+      "path": "data/wxmini/pack_icons.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2
+    },
+    {
+      "path": "data/x10_news/covers/20260604_7553_1011.png",
+      "sha256": "8dd70ab12bf70b9bea14209c1243273ed642ec66c5be78da7b7b9aa6dce7a364",
+      "bytes": 35965
+    },
+    {
+      "path": "data/x10_news/covers/20260612_2279_4909.png",
+      "sha256": "d8b14fcef563172a893f8f7170b8ed0089eb0d1fd5cea42849bfa7ae7a72c224",
+      "bytes": 47017
+    },
+    {
+      "path": "data/x10_news/covers/20260616_2004_3116.png",
+      "sha256": "010c26ca755d1f0e05a5f6231d14ac48202e6e61315684feb861461168b3d3e0",
+      "bytes": 43720
+    },
+    {
+      "path": "data/x10_news/covers/20260625_2453_1517.png",
+      "sha256": "f78655c47e87417631c9dd7b72921f5d7a663f68426ff6e1fa0eefee77a7356e",
+      "bytes": 37072
+    },
+    {
+      "path": "data/x10_news/covers/20260703_5467_1816.png",
+      "sha256": "c6ee7c850dc09c0811451a29e93b37b865211149fdc63bb3d86f26826af8f8d6",
+      "bytes": 40958
+    },
+    {
+      "path": "data/x10_news/covers/20260709_1838_3516.png",
+      "sha256": "176cba95a87e37a2ef97566c349fb53ae80ff0dbdbf879522e62a0880a105c4e",
+      "bytes": 48627
+    },
+    {
+      "path": "data/x10_news/covers/20260715_5291_0518.png",
+      "sha256": "be35ff24e46a9dc32f7d1af07c0c349a33feb0a60db812459d19470e60e726ef",
+      "bytes": 44199
+    },
+    {
+      "path": "data/x10_news/covers/20260723_3405_2818.png",
+      "sha256": "461c0594b9a89d3e409caba83606f354d917df7d78671a242324f89028725d53",
+      "bytes": 49684
+    },
+    {
+      "path": "data/x10_news/covers/20260730_9820_3316.png",
+      "sha256": "02b87be157a85bfeec6915c37b1f79b3b567eab07f4af880972d78de7ee8603d",
+      "bytes": 42543
+    },
+    {
+      "path": "data/x10_news/covers/20260806_5173_3719.png",
+      "sha256": "4a37d74d2ea85f6ae06e5883ffe191acce00785d0a50014833d92ce0f4b50ae2",
+      "bytes": 41065
+    },
+    {
+      "path": "data/x10_news/covers/20260813_5161_4718.png",
+      "sha256": "fd0643d99458693144c94bc2b9edefb0b74e4a999dec18dc12be2ca3c343980d",
+      "bytes": 44822
+    },
+    {
+      "path": "data/x10_news/covers/20260819_2635_5019.png",
+      "sha256": "07a3ee9a759581be58f6ee3891547aabba5bf74e693ce607e2d8de524d1cc143",
+      "bytes": 42475
+    },
+    {
+      "path": "data/x10_news/covers/20260828_6287_4410.png",
+      "sha256": "bead3e9d68aa5ac1459acc76c7d2fb48dc953bc7f3d2c903623a2bcf1c289add",
+      "bytes": 47449
+    },
+    {
+      "path": "data/x10_news/covers/20260904_8061_5810.png",
+      "sha256": "5b48c7a7d3066fe9ed71c3b804a56a15e88faf5608fefb812ed193b65051b4a6",
+      "bytes": 41395
+    },
+    {
+      "path": "data/x10_news/covers/20260910_1235_5818.png",
+      "sha256": "8192c2f0448f706165fc8988d550e917fcea53bbdf806df96809fa2177570bcd",
+      "bytes": 52692
+    },
+    {
+      "path": "data/x10_news/covers/20260916_7285_4514.png",
+      "sha256": "1f8c82290d0519502a382048898427fea764277e428bea2ede5ab0db20124f13",
+      "bytes": 45618
+    },
+    {
+      "path": "data/x10_news/covers/20260922_3527_1115.png",
+      "sha256": "ff64edb333949a119d97461e1d8a5f53f48713bfcae0f524c20e059c8ef40501",
+      "bytes": 45336
+    },
+    {
+      "path": "data/x10_news/covers/20260929_3980_1514.png",
+      "sha256": "b353076813c9179575dfc327385201b1cc3c2dd1d774285706d72da8e5a8d0f7",
+      "bytes": 41454
+    },
+    {
+      "path": "data/x10_news/covers/20261009_3645_5011.png",
+      "sha256": "152da178b78dc6f570ba517b20a996ddb583f9d74045b7452ce2c0607a0dfc40",
+      "bytes": 45013
+    },
+    {
+      "path": "data/x10_news/covers/20261012_7678_5410.png",
+      "sha256": "8a140d1b37e7dc9d4c2a70dc0a7cac628cfc0496d3a9feb1176f3e33ad2d7487",
+      "bytes": 54822
+    },
+    {
+      "path": "data/x10_news/covers/20261014_7187_0916.png",
+      "sha256": "1ae4661fe84a5c81dd54308aa278d55e089eec7621ca42e2f7c58e258ebc7caf",
+      "bytes": 48508
+    },
+    {
+      "path": "data/x10_news/covers/20261021_3130_5714.png",
+      "sha256": "c00a690b7b0ec5128b034045051e0b6b959fa0c2b1d4d75b8d2bd42385a3e42d",
+      "bytes": 50817
+    },
+    {
+      "path": "data/x10_news/covers/20261029_2026_0611.png",
+      "sha256": "6f8bfa9e0dd1ad97591196dca36d827e7c0c05af36b10124cc69a8c82e65ba02",
+      "bytes": 41806
+    },
+    {
+      "path": "data/x10_news/covers/20261106_6706_0917.png",
+      "sha256": "861fc9f6b87f05350f27c56845636e406d254223c78fc22e339bec54575fcb9f",
+      "bytes": 43301
+    },
+    {
+      "path": "data/x10_news/heroes/乐曹植.png",
+      "sha256": "bf4646d1a865c466755a5a02cd19bb5e06efef76e2edd3fa9e66c2c865c9c9b1",
+      "bytes": 812325
+    },
+    {
+      "path": "data/x10_news/heroes/于毒.png",
+      "sha256": "494a4c4207ab4e42262a12aad0ccc29c108f90c631c5c5c16af5da3573df703c",
+      "bytes": 701196
+    },
+    {
+      "path": "data/x10_news/heroes/傅干.png",
+      "sha256": "35d91529d3a5ae16989096601e80cf5c66012c2aee6cb652c0e9c9f24262ab85",
+      "bytes": 770817
+    },
+    {
+      "path": "data/x10_news/heroes/刘璿.png",
+      "sha256": "ae0a8f75584430baceaa485e0868f424b94b0f5c2257bc12ddc6b8c196d079ed",
+      "bytes": 694120
+    },
+    {
+      "path": "data/x10_news/heroes/威关银屏.png",
+      "sha256": "29e3d888727d474b1ca37fc3ac84d37b4a9eb9a00c46450194d19175fa379cec",
+      "bytes": 899993
+    },
+    {
+      "path": "data/x10_news/heroes/威曹彰.png",
+      "sha256": "888d2bdbeb57ccf816375dd5a480dd84099b29241608fc34177e2bb9541e6cd6",
+      "bytes": 899162
+    },
+    {
+      "path": "data/x10_news/heroes/威马腾.png",
+      "sha256": "6af85ae9bfd8b282922a7b4d8414837341d5dda67fa2d7a7c5ea2caa47b69213",
+      "bytes": 820292
+    },
+    {
+      "path": "data/x10_news/heroes/崔芷.png",
+      "sha256": "81b9e2cfea2b387b564c339b92e6cc26c1a44d01ebb11b831e167ae8395578da",
+      "bytes": 737475
+    },
+    {
+      "path": "data/x10_news/heroes/木鹿大王.png",
+      "sha256": "8fe88dc9ce1ec2480aa33a35bf5fdf661d62b5eeeb6f31e7921d057366425fb5",
+      "bytes": 916743
+    },
+    {
+      "path": "data/x10_news/heroes/李昭仪.png",
+      "sha256": "ba5125cc90cc94f7b3b3a3016d783718cf012d568f1971ae787bcd8bb75b1625",
+      "bytes": 816113
+    },
+    {
+      "path": "data/x10_news/heroes/武张飞.png",
+      "sha256": "a78b4998ac502bd98befcb2d0bf4edafd87309f147fb315450ed6f8575772ac4",
+      "bytes": 1051803
+    },
+    {
+      "path": "data/x10_news/heroes/武陆抗.png",
+      "sha256": "885d183982c63015eb3d7729986191625105baf6a4464c1c56d7941a758fd4cb",
+      "bytes": 921416
+    },
+    {
+      "path": "data/x10_news/heroes/王元姬.png",
+      "sha256": "20168a8f4c58b7c09e4d8309b3c458b9239416a91813ade58a9240c5b39205e6",
+      "bytes": 646214
+    },
+    {
+      "path": "data/x10_news/heroes/王越.png",
+      "sha256": "abd4e7795ed453060cae0c50f8b86d48dd5353587f95674152e97030ecc911cc",
+      "bytes": 609450
+    },
+    {
+      "path": "data/x10_news/heroes/环怀瑾.png",
+      "sha256": "dbfdc3b5aa099b674888385e00fe7e9829aa6f967fe202fd2b54b9f85afb5cb4",
+      "bytes": 611980
+    },
+    {
+      "path": "data/x10_news/heroes/神曹丕.png",
+      "sha256": "7320d493cae78a6120c3496307139daf7addf48b76291acc60f517423f4eaf7f",
+      "bytes": 875308
+    },
+    {
+      "path": "data/x10_news/heroes/荀勖.png",
+      "sha256": "27a18f335596f5dac75e38d6ced6548a7cc63e0708ec9841354cb8836adc9f32",
+      "bytes": 837115
+    },
+    {
+      "path": "data/x10_news/heroes/谋张任.png",
+      "sha256": "5da4eae1b8d4ba65555626dced7559e4dd57a3d708fbba788d9ab77ad522782a",
+      "bytes": 738497
+    },
+    {
+      "path": "data/x10_news/heroes/谋杨奉.png",
+      "sha256": "2cd905636c29767741565645fd6582698c3d5a6b6d6d8e3fa563895e5997ea55",
+      "bytes": 670139
+    },
+    {
+      "path": "data/x10_news/heroes/谋王平.png",
+      "sha256": "d75452af90a86102c6a1d6a7231f69385c6cfb37ca618df8dd5c0aecdb8e6838",
+      "bytes": 810546
+    },
+    {
+      "path": "data/x10_news/heroes/谋程普.png",
+      "sha256": "7ca84d6fe34d5fa2a1c9e62e9c474aa0cec0771f43abcad51ae7a911c759a09a",
+      "bytes": 802221
+    },
+    {
+      "path": "data/x10_news/heroes/谋诸葛亮.png",
+      "sha256": "7c2a02aebb5e2f9bfec88b738d5eef0f58bf7bc9d1f037f6fd55e6b953b256d6",
+      "bytes": 735128
+    },
+    {
+      "path": "data/x10_news/heroes/谋钟会.png",
+      "sha256": "f9275e76cdf4f42b6b6437ad85c27af169f20df0046e8d0194a4b998d095eb48",
+      "bytes": 772596
+    },
+    {
+      "path": "data/x10_news/heroes/谋马谡.png",
+      "sha256": "451928bedf8b81dd65abd5f13f50a38d94ca07f8b2fe2830cb0d2d9d8538b7b3",
+      "bytes": 757820
+    },
+    {
+      "path": "data/x10_news/news.json",
+      "sha256": "afb330d075cb94e9a380bee117120e8cc8055785647f73fd98e9ac810ddb662e",
+      "bytes": 1002232
+    },
+    {
+      "path": "favicon-32.png",
+      "sha256": "171ba472332d0909211000959dee97fda3618e29ca820a2a6b3411056d78d5d9",
+      "bytes": 5555
+    },
+    {
+      "path": "favicon.ico",
+      "sha256": "cfcd9b20c2550d8bd503f718a19ab3e99e97d924d22377ed3b1e07e0fe04fc61",
+      "bytes": 34157
+    },
+    {
+      "path": "fonts/sgs-hei-bd.woff2",
+      "sha256": "f5aa7fa44690d145f82436409a3fa715dbf218c8f658e442db7ad396bde4827a",
+      "bytes": 1300576
+    },
+    {
+      "path": "fonts/sgs-hei-md.woff2",
+      "sha256": "1b86e55d0fed1a21c4a1709047c5e6e02e676aa4a9fffbed7cd9401582dab482",
+      "bytes": 1293776
+    },
+    {
+      "path": "fonts/sgs-hei.woff2",
+      "sha256": "23e48c175e9f692aa25efbbd8e38a0fc85cf043a8ffa86c88e582a3a66859e9b",
+      "bytes": 1280828
+    },
+    {
+      "path": "fonts/sgs-inter-bd.woff2",
+      "sha256": "67b9a84dc03ddf782f683c7cfe99667db60433f16afee6eb9de9981a7ce90e0e",
+      "bytes": 12828
+    },
+    {
+      "path": "fonts/sgs-inter-md.woff2",
+      "sha256": "89dddfb64060c807aa4b12532ff3930d03b7c770dd7920be295476acb11cd94b",
+      "bytes": 12724
+    },
+    {
+      "path": "fonts/sgs-inter.woff2",
+      "sha256": "257445896afb19fcda56e7ed6eb8e9f9f7ab7b0a8d2840c0f95f1a27918b877b",
+      "bytes": 12460
+    },
+    {
+      "path": "fonts/sgs-juan.woff2",
+      "sha256": "cb294cb8ce0a1e2fc8446a652cfe053de1e7c71bb9988ab6226e674650c7bb0c",
+      "bytes": 3482744
+    },
     {
       "path": "heroes/gjf-001.json",
       "sha256": "7374669a93b2eee39216249eefeedbd99eb9be17e131e11c1ecd7fb4156be21e",
@@ -68,6 +3794,21 @@
       "path": "heroes/wxmini-001.json",
       "sha256": "d57656c9a6cbd5945e8d4263577c78687d80b68243b7b6727de3e9a44f909236",
       "bytes": 749198
+    },
+    {
+      "path": "history.css",
+      "sha256": "4081f2ff3df1fe010f3548238d5897746ae8fe801d7df0ae0295cc14612475d7",
+      "bytes": 11730
+    },
+    {
+      "path": "history.html",
+      "sha256": "a3d4609d6323a031bee5f5f8c5bb36d2cecf187ec221ef280e08ea34b8fcc9b4",
+      "bytes": 1096
+    },
+    {
+      "path": "history.js",
+      "sha256": "1fb0500758498f5f9b12dc299b77f85e506a6466643ad9ad7b20231522a6a951",
+      "bytes": 24437
     },
     {
       "path": "history/books/houhanshu.json",
@@ -1673,6 +5414,21 @@
       "path": "history/quiz.json",
       "sha256": "74063c4c0f4c14d91ffd3b29500a88ebb4ec9ccfdab16d1c8575b231578e6644",
       "bytes": 3463
+    },
+    {
+      "path": "icon-192.png",
+      "sha256": "6b49576f2dc6c62bff3fc5a788151a25081e8d55f50ec7aa8fb87e2f41a59d66",
+      "bytes": 63373
+    },
+    {
+      "path": "icon-512.png",
+      "sha256": "c7fba21261c8dd26c39cdadb0db11034a7e903760258486020c88e26de67df71",
+      "bytes": 354150
+    },
+    {
+      "path": "images/brand/sgs-logo.png",
+      "sha256": "45686cc7089e39ac5fe5a6983663068a3d3408ca90efb0667e68fcc3bf1c0cec",
+      "bytes": 92400
     },
     {
       "path": "images/gjf/av/gjf_baosanniang.webp",
@@ -42650,6 +46406,11 @@
       "bytes": 42162
     },
     {
+      "path": "index.html",
+      "sha256": "3ac264508fdc7feca2f0a58b4b0e3b1808e7450f9749b05c5119f3c7cdb8edaf",
+      "bytes": 59396
+    },
+    {
       "path": "meta/cards.json",
       "sha256": "dbb506dcd619e53b432f5aabac3426a03fa45ae81a8b1f64dcde36eaa2690788",
       "bytes": 221502
@@ -42730,6 +46491,16 @@
       "bytes": 1822712
     },
     {
+      "path": "scripts/series-audit-report.txt",
+      "sha256": "c50e20c8b519b6a7162bed843bd9e4d04c674d4d5a7d2b1f1d80816e8e113ff4",
+      "bytes": 3359
+    },
+    {
+      "path": "services/localAuth.js",
+      "sha256": "32cfabd8fc99750e89903f79e35104c22a3932ae3e73869da3b7a92fbb4e536f",
+      "bytes": 17931
+    },
+    {
       "path": "skins/gjf-001.json",
       "sha256": "21a90fc0f309e079908af69903a48915ff96874ebafcf687ce35be205d2c99d4",
       "bytes": 152990
@@ -42783,6 +46554,26 @@
       "path": "skins/wxmini-001.json",
       "sha256": "f5338aff293f5662942f68ae5ec2873703818d364a3a2112f7c37abc7df68ba7",
       "bytes": 192518
+    },
+    {
+      "path": "style.css",
+      "sha256": "3963757ee075aa45fd45893f560a4662182dea417aca9ec14aeb7281993bba64",
+      "bytes": 137381
+    },
+    {
+      "path": "types/cards.ts",
+      "sha256": "e2bb1e5cf2ee58102a51ed435ea9209c0c57754145e7585f5a46350423d2b928",
+      "bytes": 3054
+    },
+    {
+      "path": "types/gameplay.ts",
+      "sha256": "e7568fe2e8a701776a77a4e8eb210e8bfe8bd115467f2961cccf8e377ebf8dad",
+      "bytes": 4346
+    },
+    {
+      "path": "types/roster.ts",
+      "sha256": "0a19fc914fd753ab3315f2a434d760d5d464d7ad0fd8ddd26d22e7d49530d78b",
+      "bytes": 2814
     }
   ]
 }

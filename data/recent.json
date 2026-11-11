@@ -1,0 +1,632 @@
+{
+ "_about": "「最新更新」筛选数据：每个库各自最近入库的武将（上限 10），由 v2/gen_recent.py 按 data/changelog.json 的更新声明 + 立绘文件入库时间生成，请勿手改。",
+ "generated": "2026-11-11",
+ "app": "3.0.23",
+ "limit": 10,
+ "libs": {
+  "sgsol": [
+   {
+    "id": "misc_wangai",
+    "n": "王皑",
+    "k": "wei",
+    "p": "cuican",
+    "hp": 4,
+    "img": "images/sgsol/il/misc_wangai.webp",
+    "av": "images/sgsol/av/misc_wangai.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "jie_jiezhonghui",
+    "n": "界钟会",
+    "k": "wei",
+    "p": "jieyj",
+    "hp": 4,
+    "img": "images/sgsol/il/jie_jiezhonghui.webp",
+    "av": "images/sgsol/av/jie_jiezhonghui.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "jie_jieliufeng",
+    "n": "界刘封",
+    "k": "shu",
+    "p": "jieyj",
+    "hp": 4,
+    "img": "images/sgsol/il/jie_jieliufeng.webp",
+    "av": "images/sgsol/av/jie_jieliufeng.webp",
+    "date": "2026-10-23"
+   },
+   {
+    "id": "moutianfeng",
+    "n": "谋田丰",
+    "t": "活动获取",
+    "k": "qun",
+    "p": "mou",
+    "hp": 3,
+    "img": "images/sgsol/il/moutianfeng.webp",
+    "av": "images/sgsol/av/moutianfeng.webp",
+    "date": "2026-10-17"
+   },
+   {
+    "id": "std_biaoyuanshu",
+    "n": "标袁术",
+    "t": "野心渐增",
+    "k": "qun",
+    "p": "std",
+    "hp": 4,
+    "img": "images/sgsol/il/std_biaoyuanshu.webp",
+    "av": "images/sgsol/av/std_biaoyuanshu.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "misc_xielingyu",
+    "n": "谢灵毓",
+    "k": "wu",
+    "p": "cuican",
+    "hp": 3,
+    "img": "images/sgsol/il/misc_xielingyu.webp",
+    "av": "images/sgsol/av/misc_xielingyu.webp",
+    "date": "2026-10-10"
+   },
+   {
+    "id": "mou_mouzhouyu",
+    "n": "谋周瑜",
+    "k": "wu",
+    "p": "mou",
+    "hp": 4,
+    "img": "images/sgsol/il/mou_mouzhouyu.webp",
+    "av": "images/sgsol/av/mou_mouzhouyu.webp",
+    "date": "2026-10-10"
+   },
+   {
+    "id": "jie_jieguanping",
+    "n": "界关平",
+    "k": "shu",
+    "p": "jieyj",
+    "hp": 4,
+    "img": "images/sgsol/il/jie_jieguanping.webp",
+    "av": "images/sgsol/av/jie_jieguanping.webp",
+    "date": "2026-10-10"
+   },
+   {
+    "id": "zu_zuzhongyu",
+    "n": "族钟毓",
+    "k": "wei",
+    "p": "zu",
+    "hp": 3,
+    "img": "images/sgsol/il/zu_zuzhongyu.webp",
+    "av": "images/sgsol/av/zu_zuzhongyu.webp",
+    "date": "2026-09-27"
+   },
+   {
+    "id": "zu_zuzhongyao",
+    "n": "族钟繇",
+    "t": "正楷萧曹",
+    "k": "qun",
+    "p": "zu",
+    "hp": 3,
+    "img": "images/sgsol/il/zu_zuzhongyao.webp",
+    "av": "images/sgsol/av/zu_zuzhongyao.webp",
+    "date": "2026-09-27"
+   }
+  ],
+  "msgs": [
+   {
+    "id": "msgs_jieguohuanghou",
+    "n": "界郭皇后",
+    "k": "wei",
+    "p": "jieyijiangchengming",
+    "hp": 3,
+    "img": "images/msgs/il/msgs_jieguohuanghou.webp",
+    "av": "images/msgs/av/msgs_jieguohuanghou.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "msgs_xingmadai",
+    "n": "星马岱",
+    "k": "qun",
+    "p": "xiyouzhuanshu",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_xingmadai.webp",
+    "av": "images/msgs/av/msgs_xingmadai.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "msgs_suyue",
+    "n": "苏越",
+    "k": "wei",
+    "p": "xiyouzhuanshu",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_suyue.webp",
+    "av": "images/msgs/av/msgs_suyue.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "msgs_shizhaoyun",
+    "n": "势赵云",
+    "k": "shu",
+    "p": "bingshipian",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_shizhaoyun.webp",
+    "av": "images/msgs/av/msgs_shizhaoyun.webp",
+    "date": "2026-11-03"
+   },
+   {
+    "id": "msgs_junyuanshao",
+    "n": "君袁绍",
+    "k": "qun",
+    "p": "gz",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_junyuanshao.webp",
+    "av": "images/msgs/av/msgs_junyuanshao.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "msgs_junsunquan",
+    "n": "君孙权",
+    "t": "虎踞江东",
+    "k": "wu",
+    "p": "gz",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_junsunquan.webp",
+    "av": "images/msgs/av/msgs_junsunquan.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "msgs_junliubei",
+    "n": "君刘备",
+    "t": "龙横蜀汉",
+    "k": "shu",
+    "p": "gz",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_junliubei.webp",
+    "av": "images/msgs/av/msgs_junliubei.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "msgs_juncaocao",
+    "n": "君曹操",
+    "t": "凤舞九霄",
+    "k": "wei",
+    "p": "gz",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_juncaocao.webp",
+    "av": "images/msgs/av/msgs_juncaocao.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "msgs_mifangfushiren",
+    "n": "糜芳傅士仁",
+    "t": "逐驾迎尘",
+    "k": "shu",
+    "p": "gz",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_mifangfushiren.webp",
+    "av": "images/msgs/av/msgs_mifangfushiren.webp",
+    "date": "2026-10-12"
+   },
+   {
+    "id": "msgs_jiangwei",
+    "n": "姜维",
+    "t": "龙的衣钵",
+    "k": "shu",
+    "p": "shenhuazailin",
+    "hp": 4,
+    "img": "images/msgs/il/msgs_jiangwei.webp",
+    "av": "images/msgs/av/msgs_jiangwei.webp",
+    "date": "2026-09-27"
+   }
+  ],
+  "sgs": [
+   {
+    "id": "sgs_weicaozhang",
+    "n": "威曹彰",
+    "t": "功武驰誉",
+    "k": "wei",
+    "p": "weizhen",
+    "hp": 5,
+    "img": "images/sgs/il/sgs_weicaozhang.webp",
+    "av": "images/sgs/av/sgs_weicaozhang.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "sgs_mouchengpu",
+    "n": "谋程普",
+    "t": "平江定乱",
+    "k": "wu",
+    "p": "mouding",
+    "hp": 5,
+    "img": "images/sgs/il/sgs_mouchengpu.webp",
+    "av": "images/sgs/av/sgs_mouchengpu.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "sgs_mouzhonghui",
+    "n": "谋钟会",
+    "t": "策诡凌云",
+    "k": "wei",
+    "p": "mouding",
+    "hp": 4,
+    "img": "images/sgs/il/sgs_mouzhonghui.webp",
+    "av": "images/sgs/av/sgs_mouzhonghui.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "sgs_xingzhugejin",
+    "n": "星诸葛瑾",
+    "t": "怀玉之臣",
+    "k": "wu",
+    "p": "xinghecuican",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_xingzhugejin.webp",
+    "av": "images/sgs/av/sgs_xingzhugejin.webp",
+    "date": "2026-11-03"
+   },
+   {
+    "id": "sgs_chuanxiemajun",
+    "n": "传械马钧",
+    "k": "wei",
+    "p": "yijiangchengming",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_chuanxiemajun.webp",
+    "av": "images/sgs/av/sgs_chuanxiemajun.webp",
+    "date": "2026-10-26"
+   },
+   {
+    "id": "sgs_qiaomajun",
+    "n": "奇巧马钧",
+    "k": "wei",
+    "p": "yijiangchengming",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_qiaomajun.webp",
+    "av": "images/sgs/av/sgs_qiaomajun.webp",
+    "date": "2026-10-26"
+   },
+   {
+    "id": "sgs_shendiaochan",
+    "n": "神貂蝉",
+    "k": "god",
+    "p": "xianding",
+    "hp": 4,
+    "img": "images/sgs/il/sgs_shendiaochan.webp",
+    "av": "images/sgs/av/sgs_shendiaochan.webp",
+    "date": "2026-10-26"
+   },
+   {
+    "id": "sgs_zhangzhongjing",
+    "n": "张仲景",
+    "k": "qun",
+    "p": "huicui",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_zhangzhongjing.webp",
+    "av": "images/sgs/av/sgs_zhangzhongjing.webp",
+    "date": "2026-10-26"
+   },
+   {
+    "id": "sgs_liuzhen",
+    "n": "刘桢",
+    "k": "wei",
+    "p": "huicui",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_liuzhen.webp",
+    "av": "images/sgs/av/sgs_liuzhen.webp",
+    "date": "2026-10-26"
+   },
+   {
+    "id": "sgs_mouyangfeng",
+    "n": "谋杨奉",
+    "k": "qun",
+    "p": "mouding",
+    "hp": 3,
+    "img": "images/sgs/il/sgs_mouyangfeng.webp",
+    "av": "images/sgs/av/sgs_mouyangfeng.webp",
+    "date": "2026-10-23"
+   }
+  ],
+  "hlsgs": [
+   {
+    "id": "hlsgs_zhanzhaoyun",
+    "n": "战赵云",
+    "k": "shu",
+    "p": "zhuan",
+    "hp": 4,
+    "img": "images/hlsgs/il/hlsgs_zhanzhaoyun.webp",
+    "av": "images/hlsgs/av/hlsgs_zhanzhaoyun.webp",
+    "date": "2026-11-09"
+   },
+   {
+    "id": "hlsgs_weiliubei",
+    "n": "威刘备",
+    "k": "shu",
+    "p": "xian",
+    "hp": 4,
+    "img": "images/hlsgs/il/hlsgs_weiliubei.webp",
+    "av": "images/hlsgs/av/hlsgs_weiliubei.webp",
+    "date": "2026-11-09"
+   },
+   {
+    "id": "hlsgs_yuezhouyu",
+    "n": "乐周瑜",
+    "k": "wu",
+    "p": "xian",
+    "hp": 3,
+    "img": "images/hlsgs/il/hlsgs_yuezhouyu.webp",
+    "av": "images/hlsgs/av/hlsgs_yuezhouyu.webp",
+    "date": "2026-11-09"
+   },
+   {
+    "id": "hlsgs_moupangtong",
+    "n": "谋庞统",
+    "k": "shu",
+    "p": "xian",
+    "hp": 3,
+    "img": "images/hlsgs/il/hlsgs_moupangtong.webp",
+    "av": "images/hlsgs/av/hlsgs_moupangtong.webp",
+    "date": "2026-11-09"
+   },
+   {
+    "id": "hlsgs_moudengai",
+    "n": "谋邓艾",
+    "k": "wei",
+    "p": "xian",
+    "hp": 4,
+    "img": "images/hlsgs/il/hlsgs_moudengai.webp",
+    "av": "images/hlsgs/av/hlsgs_moudengai.webp",
+    "date": "2026-10-31"
+   },
+   {
+    "id": "hlsgs_duji",
+    "n": "杜畿",
+    "k": "wei",
+    "p": "huo",
+    "hp": 3,
+    "img": "images/hlsgs/il/hlsgs_duji.webp",
+    "av": "images/hlsgs/av/hlsgs_duji.webp",
+    "date": "2026-10-31"
+   },
+   {
+    "id": "hlsgs_xingdaorong",
+    "n": "邢道荣",
+    "k": "qun",
+    "p": "lin",
+    "hp": 6,
+    "img": "images/hlsgs/il/hlsgs_xingdaorong.webp",
+    "av": "images/hlsgs/av/hlsgs_xingdaorong.webp",
+    "date": "2026-10-31"
+   },
+   {
+    "id": "hlsgs_zhugejun",
+    "n": "诸葛均",
+    "k": "shu",
+    "p": "shan",
+    "hp": 3,
+    "img": "images/hlsgs/il/hlsgs_zhugejun.webp",
+    "av": "images/hlsgs/av/hlsgs_zhugejun.webp",
+    "date": "2026-10-25"
+   },
+   {
+    "id": "hlsgs_weicaocao",
+    "n": "威曹操",
+    "k": "wei",
+    "p": "xian",
+    "hp": 4,
+    "img": "images/hlsgs/il/hlsgs_weicaocao.webp",
+    "av": "images/hlsgs/av/hlsgs_weicaocao.webp",
+    "date": "2026-10-17"
+   },
+   {
+    "id": "hlsgs_yuecaiyong",
+    "n": "乐蔡邕",
+    "k": "qun",
+    "p": "xian",
+    "hp": 3,
+    "img": "images/hlsgs/il/hlsgs_yuecaiyong.webp",
+    "av": "images/hlsgs/av/hlsgs_yuecaiyong.webp",
+    "date": "2026-10-17"
+   }
+  ],
+  "gjf": [
+   {
+    "id": "gjf_huansunshangxiang",
+    "n": "幻孙尚香",
+    "k": "wu",
+    "p": "ifpian",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_huansunshangxiang.webp",
+    "av": "images/gjf/av/gjf_huansunshangxiang.webp",
+    "date": "2026-11-11"
+   },
+   {
+    "id": "gjf_manguanyinping",
+    "n": "慢关银屏",
+    "k": "shu",
+    "p": "shixinrumo",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_guanyinping.webp",
+    "av": "images/gjf/av/gjf_guanyinping.webp",
+    "date": "2026-11-11"
+   },
+   {
+    "id": "gjf_xingwanglang",
+    "n": "星王朗",
+    "k": "qun",
+    "p": "sp",
+    "hp": 4,
+    "img": "images/gjf/il/gjf_xingwanglang.webp",
+    "av": "images/gjf/av/gjf_xingwanglang.webp",
+    "date": "2026-11-11"
+   },
+   {
+    "id": "gjf_shisunchen",
+    "n": "势孙綝",
+    "k": "wu",
+    "p": "bingshipian",
+    "hp": 4,
+    "img": "images/gjf/il/gjf_shisunchen.webp",
+    "av": "images/gjf/av/gjf_shisunchen.webp",
+    "date": "2026-11-11"
+   },
+   {
+    "id": "gjf_jiezhoufei",
+    "n": "界周妃",
+    "k": "wu",
+    "p": "jiexiantupo",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_jiezhoufei.webp",
+    "av": "images/gjf/av/gjf_jiezhoufei.webp",
+    "date": "2026-11-11"
+   },
+   {
+    "id": "gjf_zumao",
+    "n": "祖茂",
+    "k": "wu",
+    "p": "sp",
+    "hp": 4,
+    "img": "images/gjf/il/gjf_zumao.webp",
+    "av": "images/gjf/av/gjf_zumao.webp",
+    "date": "2026-10-14"
+   },
+   {
+    "id": "gjf_zoushi",
+    "n": "邹氏",
+    "k": "qun",
+    "p": "guozhan",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_zoushi.webp",
+    "av": "images/gjf/av/gjf_zoushi.webp",
+    "date": "2026-10-14"
+   },
+   {
+    "id": "gjf_zhurong",
+    "n": "祝融",
+    "k": "qun",
+    "p": "fenghuolinshan",
+    "hp": 4,
+    "img": "images/gjf/il/gjf_zhurong.webp",
+    "av": "images/gjf/av/gjf_zhurong.webp",
+    "date": "2026-10-14"
+   },
+   {
+    "id": "gjf_zhugeliang",
+    "n": "诸葛亮",
+    "k": "shu",
+    "p": "fenghuolinshan",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_zhugeliang.webp",
+    "av": "images/gjf/av/gjf_zhugeliang.webp",
+    "date": "2026-10-14"
+   },
+   {
+    "id": "gjf_zhouyu",
+    "n": "周瑜",
+    "k": "wu",
+    "p": "fenghuolinshan",
+    "hp": 3,
+    "img": "images/gjf/il/gjf_zhouyu.webp",
+    "av": "images/gjf/av/gjf_zhouyu.webp",
+    "date": "2026-10-14"
+   }
+  ],
+  "wxmini": [
+   {
+    "id": "wxmini_jimayunlu",
+    "n": "极马云禄",
+    "k": "shu",
+    "p": "ji",
+    "hp": 4,
+    "img": "images/wxmini/il/wxmini_jimayunlu.webp",
+    "av": "images/wxmini/av/wxmini_jimayunlu.webp",
+    "date": "2026-11-08"
+   },
+   {
+    "id": "wxmini_zumao",
+    "n": "祖茂",
+    "k": "wu",
+    "p": "wanxiang",
+    "hp": 4,
+    "img": "images/wxmini/il/wxmini_zumao.webp",
+    "av": "images/wxmini/av/wxmini_zumao.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhuling",
+    "n": "朱灵",
+    "k": "wei",
+    "p": "wanxiang",
+    "hp": 4,
+    "img": "images/wxmini/il/wxmini_zhuling.webp",
+    "av": "images/wxmini/av/wxmini_zhuling.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhuhuan",
+    "n": "朱桓",
+    "k": "wu",
+    "p": "yijiang",
+    "hp": 4,
+    "img": "images/wxmini/il/wxmini_zhuhuan.webp",
+    "av": "images/wxmini/av/wxmini_zhuhuan.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhugezhan",
+    "n": "诸葛瞻",
+    "k": "shu",
+    "p": "shenhua",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhugezhan.webp",
+    "av": "images/wxmini/av/wxmini_zhugezhan.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhugeke",
+    "n": "诸葛恪",
+    "k": "wu",
+    "p": "wanxiang",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhugeke.webp",
+    "av": "images/wxmini/av/wxmini_zhugeke.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhugeguo",
+    "n": "诸葛果",
+    "k": "shu",
+    "p": "wanxiang",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhugeguo.webp",
+    "av": "images/wxmini/av/wxmini_zhugeguo.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhouyu",
+    "n": "周瑜",
+    "k": "wu",
+    "p": "biaozhun",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhouyu.webp",
+    "av": "images/wxmini/av/wxmini_zhouyu.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhoufei",
+    "n": "周妃",
+    "k": "wu",
+    "p": "shenhua",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhoufei.webp",
+    "av": "images/wxmini/av/wxmini_zhoufei.webp",
+    "date": "2026-10-15"
+   },
+   {
+    "id": "wxmini_zhoufang",
+    "n": "周鲂",
+    "k": "wu",
+    "p": "wanxiang",
+    "hp": 3,
+    "img": "images/wxmini/il/wxmini_zhoufang.webp",
+    "av": "images/wxmini/av/wxmini_zhoufang.webp",
+    "date": "2026-10-15"
+   }
+  ]
+ }
+}

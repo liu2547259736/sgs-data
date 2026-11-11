@@ -1,0 +1,8585 @@
+{
+ "meta": {
+  "title": "游戏牌图鉴（第 5 模块 · 牌库）",
+  "sources": [
+   "板块与牌名清单：萌娘百科 Template:三国杀游戏牌「游戏牌总表」「装备牌」折叠板块（用户提供页面截图，2026-09-23，src=capture）",
+   "包/模式归属补充：up/005.md 业务列举（src=task）",
+   "效果/时机/目标正文：仅收录公开规则书的稳定核心牌（标准版+军争篇，src=rulebook）；其余为名录条目，效果留空待 tools/fetch_cards.py 从词条页补全",
+   "牌堆花色点数构成暂缺（suits 留空），待爬虫核实后填充 —— 不编造",
+   "效果/花色点数/卡面图：萌娘百科词条页爬虫（tools/fetch_cards.py，2026-09-24，src=crawl；本次范围 cards_trial.json）",
+   "效果/花色点数/卡面图：萌娘百科词条页爬虫（tools/fetch_cards.py，2026-09-24，src=crawl；本次范围 cards_data.json）"
+  ],
+  "layers": "core=核心层（规则书稳定内容，全字段） / list=名录层（仅牌名与归属，effect 空）",
+  "incomplete": "名录层为节选（截图表量约 300+，仅录高置信条目），全量清单由爬虫脚本增量补全"
+ },
+ "packages": [
+  {
+   "id": "std",
+   "label": "标准版"
+  },
+  {
+   "id": "jz",
+   "label": "军争篇"
+  },
+  {
+   "id": "yjy",
+   "label": "用间篇"
+  },
+  {
+   "id": "yb",
+   "label": "应变篇"
+  },
+  {
+   "id": "sb",
+   "label": "势备篇"
+  },
+  {
+   "id": "jb",
+   "label": "九变篇"
+  },
+  {
+   "id": "gz",
+   "label": "国战"
+  },
+  {
+   "id": "gzstd",
+   "label": "国战标准版"
+  },
+  {
+   "id": "gzjs",
+   "label": "君临天下"
+  },
+  {
+   "id": "bc",
+   "label": "不臣篇"
+  },
+  {
+   "id": "v11",
+   "label": "1v1"
+  },
+  {
+   "id": "whlw",
+   "label": "文和乱武"
+  },
+  {
+   "id": "sht",
+   "label": "山河图"
+  },
+  {
+   "id": "zltz",
+   "label": "逐鹿天下"
+  },
+  {
+   "id": "sjzz",
+   "label": "时空之战"
+  },
+  {
+   "id": "hlg",
+   "label": "虎牢关"
+  },
+  {
+   "id": "shjz",
+   "label": "山河煮酒"
+  },
+  {
+   "id": "sjsm",
+   "label": "始计篇·智"
+  },
+  {
+   "id": "hhzh",
+   "label": "幻化之战"
+  },
+  {
+   "id": "lz",
+   "label": "龙舟争渡"
+  },
+  {
+   "id": "gd",
+   "label": "官渡之战"
+  },
+  {
+   "id": "qf",
+   "label": "祈福"
+  },
+  {
+   "id": "sw",
+   "label": "神武再世"
+  },
+  {
+   "id": "kh",
+   "label": "开黑季限定"
+  },
+  {
+   "id": "cw",
+   "label": "创玩节限定"
+  },
+  {
+   "id": "huan",
+   "label": "三国杀·幻"
+  },
+  {
+   "id": "sp",
+   "label": "SP"
+  },
+  {
+   "id": "fenghuaxueyue",
+   "label": "风花雪月"
+  },
+  {
+   "id": "shanshanjiehuodongxianding",
+   "label": "闪闪节活动限定"
+  },
+  {
+   "id": "xin1v1",
+   "label": "新1V1"
+  },
+  {
+   "id": "doudizhubiaozhunban",
+   "label": "斗地主标准版"
+  },
+  {
+   "id": "zhongdanyingjie",
+   "label": "忠胆英杰"
+  },
+  {
+   "id": "tianjiangshenbing",
+   "label": "天降神兵"
+  },
+  {
+   "id": "shenzhishilian",
+   "label": "神之试炼"
+  },
+  {
+   "id": "hezongkangqin",
+   "label": "合纵抗秦"
+  },
+  {
+   "id": "nianshoudazuozhan",
+   "label": "年兽大作战"
+  },
+  {
+   "id": "shidianyanluo",
+   "label": "十殿阎罗"
+  },
+  {
+   "id": "binglinchengxia",
+   "label": "兵临城下"
+  },
+  {
+   "id": "kaiheimiaomiaosha",
+   "label": "开黑妙妙杀"
+  },
+  {
+   "id": "kaiheijihuodongxianding",
+   "label": "开黑季活动限定"
+  },
+  {
+   "id": "chuangwanjiehuodongxianding",
+   "label": "创玩节活动限定"
+  },
+  {
+   "id": "zhencangfengyin",
+   "label": "珍藏封印"
+  },
+  {
+   "id": "nailongsanguosha",
+   "label": "奶龙三国杀"
+  },
+  {
+   "id": "jinyinzishou",
+   "label": "金印紫绶"
+  },
+  {
+   "id": "gongxifacaifu",
+   "label": "恭喜发财·福"
+  },
+  {
+   "id": "wujiangliezhuan",
+   "label": "武将列传"
+  },
+  {
+   "id": "taixuhuanjing",
+   "label": "太虚幻境"
+  },
+  {
+   "id": "qihuanzhizheng",
+   "label": "戚宦之争"
+  },
+  {
+   "id": "zhengzhanhulao",
+   "label": "征战虎牢"
+  },
+  {
+   "id": "doudizhuhuodongxianding",
+   "label": "斗地主活动限定"
+  },
+  {
+   "id": "gongxifacailu",
+   "label": "恭喜发财·禄"
+  },
+  {
+   "id": "jiexiantupo",
+   "label": "界限突破"
+  },
+  {
+   "id": "gongxifacaishou",
+   "label": "恭喜发财·寿"
+  },
+  {
+   "id": "gongxifacaixi",
+   "label": "恭喜发财·喜"
+  },
+  {
+   "id": "huacaimiaojin",
+   "label": "画彩描金"
+  },
+  {
+   "id": "qimenbazhen",
+   "label": "奇门八阵"
+  },
+  {
+   "id": "tongqueduopao",
+   "label": "铜雀夺袍"
+  }
+ ],
+ "cards": [
+  {
+   "id": "sha",
+   "n": "杀",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段（限一次，除非装备或技能允许）",
+   "target": "攻击范围内的一名其他角色",
+   "effect": "对目标角色造成 1 点伤害。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "10/10/J",
+     "♦": "6/7/8/9/10/K",
+     "♠": "7/8/8/9/9/10/10",
+     "♣": "2/3/4/5/6/7/8/8/9/9/10/10/J/J"
+    },
+    "用间篇": {
+     "♥": "5(赠)/10(赠)/J(赠)/Q(赠)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "应变篇": {
+     "♥": "10/10/J",
+     "♦": "6/7/8(残躯)/9/K",
+     "♠": "9(残躯)/9(残躯)/10(助战)/10",
+     "♣": "2(空巢)/3(空巢)/4(空巢)/5/6/7/8/8/J/J"
+    },
+    "国战标准版": {
+     "♥": "10/Q",
+     "♦": "10/J/Q",
+     "♠": "5/7/8/8/9/10/J",
+     "♣": "2/3/4/5/8/9/10/J/J"
+    },
+    "势备篇": {
+     "♥": "10/J",
+     "♦": "",
+     "♠": "4/7/8",
+     "♣": "4/6/7/8"
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "9",
+     "♠": "4/5",
+     "♣": "4/5/6/7/10"
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【杀】.png",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "leisha",
+   "n": "杀",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "jz"
+   ],
+   "variant": "雷",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段（限一次，除非装备或技能允许）",
+   "target": "攻击范围内的一名其他角色",
+   "effect": "对目标角色造成 1 点雷电伤害。与横置状态的角色结算【铁索连环】传导。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "4/5/6/7/8",
+     "♣": "5/6/7/8"
+    },
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "4/5/6",
+     "♣": "5/6/7/8/9/9/10/10"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "6/7",
+     "♣": "6/7/8"
+    },
+    "势备篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "9/10/J(合)",
+     "♣": "5(合)"
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "6/7/8",
+     "♣": "8"
+    }
+   },
+   "img": "assets/cards/basic/三国杀-雷【杀】.png",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "huosha",
+   "n": "杀",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "jz"
+   ],
+   "variant": "火",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段（限一次，除非装备或技能允许）",
+   "target": "攻击范围内的一名其他角色",
+   "effect": "对目标角色造成 1 点火焰伤害。与横置状态的角色结算【铁索连环】传导，可触发【藤甲】火伤加一。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "应变篇": {
+     "♥": "4/7/10(空巢)",
+     "♦": "4(空巢)/5/10",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "4",
+     "♦": "4/5",
+     "♠": "",
+     "♣": ""
+    },
+    "势备篇": {
+     "♥": "",
+     "♦": "8/9",
+     "♠": "",
+     "♣": ""
+    },
+    "九变篇": {
+     "♥": "7",
+     "♦": "3/4",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-火【杀】.png",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "shan",
+   "n": "闪",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "当你成为【杀】的目标时使用（打出）",
+   "target": "抵消一张【杀】",
+   "effect": "抵消该【杀】的效果。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "2/2/K",
+     "♦": "2/2/3/4/5/6/7/8/9/10/J/J",
+     "♠": "",
+     "♣": ""
+    },
+    "军争篇": {
+     "♥": "8/9/J/Q",
+     "♦": "6/7/8/10/J",
+     "♠": "",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "2(赠)",
+     "♦": "2(赠)/5/6/7/8/Q",
+     "♠": "",
+     "♣": ""
+    },
+    "应变篇": {
+     "♥": "2/2/8/9/J/Q/K",
+     "♦": "2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "2/J/K",
+     "♦": "2/3/6/7/7/8/8/9/10/J/K",
+     "♠": "",
+     "♣": ""
+    },
+    "势备篇": {
+     "♥": "4/5/6(合)/7",
+     "♦": "6/7/K",
+     "♠": "",
+     "♣": ""
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "6/7/8",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【闪】.jpg",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "tao",
+   "n": "桃",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段；或一名角色处于濒死状态时对其使用",
+   "target": "自己（出牌阶段）/ 濒死角色",
+   "effect": "目标角色回复 1 点体力。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "3/4/6/7/8/9/Q",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    },
+    "军争篇": {
+     "♥": "5/6",
+     "♦": "2/3",
+     "♠": "",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "7/8",
+     "♦": "J(赠)",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "4/6/7/8/9/10/Q",
+     "♦": "2",
+     "♠": "",
+     "♣": ""
+    },
+    "势备篇": {
+     "♥": "8/9",
+     "♦": "2/3(合)",
+     "♠": "",
+     "♣": ""
+    },
+    "九变篇": {
+     "♥": "4/5/6",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【桃】.jpg",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "jiu",
+   "n": "酒",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段对自己使用；或自己处于濒死状态时使用",
+   "target": "自己",
+   "effect": "出牌阶段使用：本回合你使用的下一张【杀】伤害 +1（每回合限一次）。濒死时使用：回复 1 点体力。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "9",
+     "♠": "3/9",
+     "♣": "3/9"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "9",
+     "♠": "9",
+     "♣": "9"
+    },
+    "势备篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "6(合)",
+     "♣": "9"
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "9",
+     "♣": "9"
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【酒】.jpg",
+   "note": "；2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "wzsy",
+   "n": "无中生有",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "自己",
+   "effect": "摸两张牌。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【无中生有】.jpg",
+   "note": "卡面图取自萌百「三国杀:无中生有·身份模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "ghcq",
+   "n": "过河拆桥",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名区域里有牌的其他角色",
+   "effect": "弃置目标角色区域里的一张牌。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【过河拆桥】.png",
+   "note": "卡面图直抓萌百「三国杀-【过河拆桥】.png」（2026-09-24 补图）"
+  },
+  {
+   "id": "ssqy",
+   "n": "顺手牵羊",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 1,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "距离为 1 以内、区域里有牌的一名其他角色",
+   "effect": "获得目标角色区域里的一张牌。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "3/4",
+     "♠": "3/4/J",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "3(赠)",
+     "♣": ""
+    },
+    "应变篇": {
+     "♥": "",
+     "♦": "3/4",
+     "♠": "J",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "3",
+     "♠": "3/4",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【顺手牵羊】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "juedou",
+   "n": "决斗",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "由目标角色开始，你与其轮流打出一张【杀】，首先不出【杀】的一方受到另一方造成的 1 点伤害。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【决斗】.png",
+   "note": "卡面图取自萌百「三国杀:决斗·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "jdsr",
+   "n": "借刀杀人",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "装备区里有武器牌的一名其他角色，及你指定的其攻击范围内另一名角色",
+   "effect": "目标角色须对其攻击范围内你指定的另一名角色使用一张【杀】，否则将装备区里的武器牌交给你。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【借刀杀人】.jpg",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q/K"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q"
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:借刀杀人·身份模式及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "wjqf",
+   "n": "万箭齐发",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有其他角色",
+   "effect": "所有目标角色需打出一张【闪】，否则受到你造成的 1 点伤害。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【万箭齐发】.jpg",
+   "note": "卡面图取自萌百「三国杀:万箭齐发·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "nmrq",
+   "n": "南蛮入侵",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有其他角色",
+   "effect": "所有目标角色需打出一张【杀】，否则受到你造成的 1 点伤害。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【南蛮入侵】.png",
+   "note": "卡面图取自萌百「三国杀:南蛮入侵·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "wgfd",
+   "n": "五谷丰登",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色",
+   "effect": "亮出牌堆顶等同于目标角色数的牌，每名目标角色选择并获得其中一张。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【五谷丰登】.png",
+   "note": "卡面图取自萌百「三国杀:五谷丰登·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "tyjy",
+   "n": "桃园结义",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色",
+   "effect": "所有目标角色回复 1 点体力（已满体力则不回复）。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【桃园结义】.png",
+   "note": "卡面图取自萌百「三国杀:桃园结义·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "wxkj",
+   "n": "无懈可击",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "一张锦囊牌生效前打出",
+   "target": "该锦囊牌（或另一张【无懈可击】）",
+   "effect": "抵消目标锦囊牌对一名角色产生的效果，或抵消另一张【无懈可击】。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "J",
+     "♣": "Q/K"
+    },
+    "EX": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    },
+    "军争篇": {
+     "♥": "A/K",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "J",
+     "♣": "J/Q"
+    },
+    "应变篇": {
+     "♥": "A/K(空巢)",
+     "♦": "Q",
+     "♠": "J/K(残躯)",
+     "♣": "Q/K"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "J",
+     "♣": ""
+    },
+    "势备篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q/K",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【无懈可击】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "huogong",
+   "n": "火攻",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名有手牌的其他角色",
+   "effect": "目标角色展示一张手牌，你可以弃置一张与其展示牌同花色的手牌，则对其造成 1 点火焰伤害。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【火攻】.png",
+   "suits": {
+    "军争篇": {
+     "♥": "2/3",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "2/3",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:火攻·身份及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "tslc",
+   "n": "铁索连环",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段；也可重铸（弃置并摸一张牌）",
+   "target": "一至两名角色",
+   "effect": "选择目标角色的武将牌横置（连环）或重置（解除连环）。横置的角色中任一人受到属性伤害时，其余横置角色依次受到同来源、同渠道、同属性的伤害。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "J/Q",
+     "♣": "10/J/Q/K"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": "Q/K"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【铁索连环】.webp",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "lbss",
+   "n": "乐不思蜀",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段，置于目标判定区",
+   "target": "一名其他角色",
+   "effect": "该角色判定阶段进行判定：若结果不为红桃，跳过其出牌阶段；判定后此牌进入弃牌堆。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/scroll/三国杀-【乐不思蜀】.webp",
+   "suits": {
+    "标准版": {
+     "♥": "6",
+     "♦": "",
+     "♠": "6",
+     "♣": "6"
+    },
+    "国战标准版": {
+     "♥": "6",
+     "♦": "",
+     "♠": "",
+     "♣": "6"
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:乐不思蜀·身份模式及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "shandian",
+   "n": "闪电",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段，置于自己判定区",
+   "target": "自己（判定后向传向下家）",
+   "effect": "判定阶段进行判定：若结果为黑桃 2~9，受到 3 点雷电伤害；否则将【闪电】移动至下一名角色的判定区。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    },
+    "EX": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【闪电】.webp",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "blcd",
+   "n": "兵粮寸断",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": 1,
+   "horse": null,
+   "timing": "出牌阶段，置于目标判定区（距离 1 以内）",
+   "target": "距离 1 以内的一名其他角色",
+   "effect": "该角色判定阶段进行判定：若结果不为梅花，跳过其摸牌阶段。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "4"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "10"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【兵粮寸断】.webp",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "zgln",
+   "n": "诸葛连弩",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 1,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：你使用【杀】无次数限制。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【诸葛连弩】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "cxsgj",
+   "n": "雌雄双股剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 2,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "当你使用【杀】指定一名异性角色为目标后，可令其选择一项：弃置一张手牌；或令你摸一张牌。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【雌雄双股剑】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "qhj",
+   "n": "青釭剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 2,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：你使用【杀】无视目标角色的防具。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【青釭剑】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "qlyyd",
+   "n": "青龙偃月刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 3,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "当目标角色使用【闪】抵消你使用的【杀】后，你可以对其追加使用一张【杀】（无距离限制）。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/equip/三国杀-【青龙偃月刀】.png",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:青龙偃月刀·身份模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "zbsm",
+   "n": "丈八蛇矛",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 3,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "你可以将两张手牌当一张【杀】使用或打出。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【丈八蛇矛】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "gsf",
+   "n": "贯石斧",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 3,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "当你的【杀】被目标角色使用的【闪】抵消后，你可以弃置两张牌，则此【杀】依然造成伤害。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【贯石斧】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "fthj",
+   "n": "方天画戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 4,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：当你使用的【杀】是你最后的手牌时，此【杀】可额外指定两个目标。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/equip/三国杀-【方天画戟】.png",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:方天画戟·身份模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "qlg",
+   "n": "麒麟弓",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": 3,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "当你的【杀】对目标角色造成伤害时，你可以弃置其装备区里的一张坐骑牌。",
+   "core": true,
+   "src": "rulebook",
+   "img": "assets/cards/equip/三国杀-【麒麟弓】.png",
+   "suits": {
+    "标准版": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "卡面图取自萌百「三国杀:麒麟弓·身份模式及国战模式」（2026-09-24 补图）"
+  },
+  {
+   "id": "gdd",
+   "n": "古锭刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": 2,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：当你的【杀】对没有手牌的目标角色造成伤害时，此伤害 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【古锭刀】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "zqys",
+   "n": "朱雀羽扇",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": 4,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "你可以将一张普通【杀】当火【杀】使用。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【朱雀羽扇】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "bgz",
+   "n": "八卦阵",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "每当你需要使用或打出【闪】时，你可以进行判定：若结果为红色，视为你使用或打出了一张【闪】。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    },
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【八卦阵】.webp",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "rwd",
+   "n": "仁王盾",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：黑色的【杀】对你无效。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "EX": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【仁王盾】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "tengjia",
+   "n": "藤甲",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：【南蛮入侵】【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    },
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【藤甲】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "byslz",
+   "n": "白银狮子",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "锁定技：当你受到伤害时，若伤害值大于 1，防止超过 1 的部分；当你失去装备区里的【白银狮子】时，你回复 1 点体力。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【白银狮子】.png",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "jueying",
+   "n": "绝影",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "其他角色计算与你的距离 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【绝影】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "zhfhd",
+   "n": "爪黄飞电",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "其他角色计算与你的距离 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【爪黄飞电】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "dilu",
+   "n": "的卢",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "其他角色计算与你的距离 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【的卢】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "chitu",
+   "n": "赤兔",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "你计算与其他角色的距离 -1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【赤兔】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "dawan",
+   "n": "大宛",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "你计算与其他角色的距离 -1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【大宛】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "zicheng",
+   "n": "紫骍",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "你计算与其他角色的距离 -1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "标准版": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【紫骍】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "hualiu",
+   "n": "骅骝",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "jz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "出牌阶段使用，置入装备区",
+   "target": "自己",
+   "effect": "其他角色计算与你的距离 +1。",
+   "core": true,
+   "src": "rulebook",
+   "suits": {
+    "军争篇": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/equip/三国杀-【骅骝】.jpg",
+   "note": "2026-09-24爬虫补全[suits+img]"
+  },
+  {
+   "id": "yb_bingkill",
+   "n": "冰【杀】",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "yb"
+   ],
+   "variant": "冰",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "攻击范围内的一名其他角色",
+   "effect": "出牌阶段限一次，对你攻击范围内的一名其他角色使用。你对其造成1点冰冻伤害（当一名角色造成不为连环伤害的冰冻伤害时，若受伤角色有牌，伤害来源可以防止此伤害，然后依次弃置其两张牌）。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目，效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "7/7/8/8/8",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-冰【杀】.png"
+  },
+  {
+   "id": "yjy_du",
+   "n": "毒",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "当此牌正面朝上离开你的手牌区时，你失去1点体力；当你因摸牌或分发起始手牌而获得【毒】后，你可以将之交给其他角色（正面朝上移动且不触发前一个效果）。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目，效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "4(赠)/5(赠)/9(赠)/10(赠)",
+     "♣": "4"
+    },
+    "毒战": {
+     "♥": "3/4/6/7/8/9",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【毒】.webp"
+  },
+  {
+   "id": "js_ying",
+   "n": "影",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当此牌进入弃牌堆后，销毁之。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·江山如故板块），待爬虫补全；2026-09-24爬虫补全[effect+suits+img]；总表标注「江山如故」，与库内「山河煮酒」(shjz) 对齐",
+   "suits": {
+    "江山如故": {
+     "♥": "",
+     "♦": "",
+     "♠": "A(无限量)",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【影】.jpg"
+  },
+  {
+   "id": "dw_zong",
+   "n": "粽",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "lz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "已受伤的你或队友",
+   "effect": "出牌阶段回复已受伤的你或队友1点体力或令处于濒死状态的你或队友回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·端午/龙舟争渡板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "3/4/5/6/6/7/8/9/Q",
+     "♦": "2/3/Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/basic/三国杀-【粽】.jpg"
+  },
+  {
+   "id": "gd_jiuniang",
+   "n": "酒酿",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "gd"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·官渡之战板块），待爬虫补全；萌百同板块条目为【酗酒】(xujiu)，疑同一牌，待人工核对"
+  },
+  {
+   "id": "sf_jian",
+   "n": "闪",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "kh"
+   ],
+   "variant": "闪风节",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·闪风节行动限定），待爬虫补全；总表另有闪【闪】(shanshan·闪闪节活动限定)，与「闪风节」疑相关，待人工核对；卡面图直抓萌百「三国杀-【闪】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/basic/三国杀-【闪】.jpg"
+  },
+  {
+   "id": "gz_yjyg",
+   "n": "远交近攻",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "gzstd"
+   ],
+   "variant": "国",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他势力角色",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·国战标准版板块），效果待爬虫补全；卡面图取自萌百「三国杀:远交近攻·国战模式」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【远交近攻】.webp",
+   "suits": {
+    "国战标准版": {
+     "♥": "9",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   }
+  },
+  {
+   "id": "gz_yydl",
+   "n": "以逸待劳",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "gzstd"
+   ],
+   "variant": "国",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "自己与同势力角色",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·国战标准版板块），效果待爬虫补全；卡面图取自萌百「三国杀:以逸待劳·国战模式」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【以逸待劳】.webp",
+   "suits": {
+    "国战标准版": {
+     "♥": "J",
+     "♦": "4",
+     "♠": "",
+     "♣": ""
+    }
+   }
+  },
+  {
+   "id": "gz_zjzp",
+   "n": "知己知彼",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "gzstd"
+   ],
+   "variant": "国",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·国战标准版板块），效果待爬虫补全；卡面图取自萌百「三国杀:知己知彼·国战模式」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【知己知彼】.jpg",
+   "suits": {
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "3/4"
+    }
+   }
+  },
+  {
+   "id": "sb_lltx",
+   "n": "勠力同心",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色",
+   "effect": "出牌阶段，对所有大势力角色或所有小势力角色使用。若目标角色的副将牌未横置，则令其横置之，否则令其摸一张牌。重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·势备篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]；总表标注包「官渡之战」与库内 pkg 不一致，待人工核对",
+   "suits": {
+    "势备篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": "10"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【勠力同心】.jpg"
+  },
+  {
+   "id": "sb_hsly",
+   "n": "火烧连营",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名角色及相邻角色",
+   "effect": "出牌阶段，对你的下家和所有与其处于同一队列的其他角色使用。目标角色受到你对其造成的1点火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·势备篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]；总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」",
+   "suits": {
+    "势备篇": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "3",
+     "♣": "J"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【火烧连营】.jpg"
+  },
+  {
+   "id": "sb_xtzy",
+   "n": "挟天子以令诸侯",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "自己",
+   "effect": "出牌阶段，若你是大势力角色，对你使用。你结束出牌阶段，然后弃牌阶段结束时，你可以弃置一张手牌并于回合结束时获得一个额外的回合。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·势备篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]",
+   "suits": {
+    "势备篇": {
+     "♥": "",
+     "♦": "A/4",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【挟天子以令诸侯】.jpg"
+  },
+  {
+   "id": "yb_dzxj",
+   "n": "洞烛先机",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "自己",
+   "effect": "出牌阶段，对你使用。目标角色卜算2[1]，然后摸两张牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·应变篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits]；卡面图直抓萌百「三国杀-【洞烛先机】.jpg」（2026-09-24 补图）",
+   "suits": {
+    "应变篇": {
+     "♥": "7/8/9/J",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【洞烛先机】.jpg"
+  },
+  {
+   "id": "yb_cqbj",
+   "n": "趁火打劫",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。你展示其一张手牌并令其选择一项：1.将此牌交给你；2.受到你造成的1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·应变篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits]；总表标注包「用间篇」与库内 pkg 不一致，待人工核对；卡面图直抓萌百「三国杀-【趁火打劫】.jpg」（2026-09-24 补图）",
+   "suits": {
+    "用间篇": {
+     "♥": "6",
+     "♦": "",
+     "♠": "Q/K",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【趁火打劫】.jpg"
+  },
+  {
+   "id": "yb_sskh",
+   "n": "树上开花",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "自己",
+   "effect": "出牌阶段，对你使用。你弃置至多两张牌，然后摸等量的牌。若你以此法弃置了装备牌，则多摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·应变篇板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits]；总表标注包「用间篇」与库内 pkg 不一致，待人工核对；总表标注包「逐鹿天下」与库内 pkg 不一致，待人工核对；卡面图直抓萌百「三国杀-【树上开花】-逐鹿天下.jpg」（2026-09-24 补图）",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "9/J",
+     "♦": "9",
+     "♠": "",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "",
+     "♦": "3(赠)/4(赠)",
+     "♠": "",
+     "♣": ""
+    },
+    "龙起襄樊": {
+     "♥": "J",
+     "♦": "4",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【树上开花】-逐鹿天下.jpg"
+  },
+  {
+   "id": "sp_xlcd",
+   "n": "笑里藏刀",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。其摸X张牌（X为其已损失的体力值且至多为5），然后你对其造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·SP板块），效果待爬虫补全；2026-09-24爬虫补全[effect+img]",
+   "img": "assets/cards/scroll/三国杀-【笑里藏刀】.webp"
+  },
+  {
+   "id": "sp_mrj",
+   "n": "美人计",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名异性角色",
+   "effect": "出牌阶段，对一名有手牌的其他男性角色使用。所有女性角色各获得其一张手牌并将一张手牌交给你（无则跳过），然后你与其之中手牌较少的角色对另一名角色造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·SP板块），效果待爬虫补全；2026-09-24爬虫补全[effect+img]",
+   "img": "assets/cards/scroll/三国杀-【美人计】.webp"
+  },
+  {
+   "id": "sp_mthg",
+   "n": "瞒天过海",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一至两名区域里有牌的其他角色使用。你依次获得目标角色区域里的一张牌，然后依次交给目标角色一张牌。此牌不计入你的手牌上限。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·SP板块），效果待爬虫补全；2026-09-24爬虫补全[effect+suits+img]",
+   "suits": {
+    "海外服": {
+     "♥": "5",
+     "♦": "5",
+     "♠": "5",
+     "♣": "5"
+    },
+    "移动版": {
+     "♥": "5",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【瞒天过海】.webp"
+  },
+  {
+   "id": "whlw_dzxy",
+   "n": "斗转星移",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名体力值大于你的角色",
+   "effect": "出牌阶段，对一名体力值大于你的角色使用。目标角色失去1点体力，你回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·文和乱武板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]",
+   "suits": {
+    "文和乱武（线上）": {
+     "♥": "A",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    },
+    "文和乱武（线下）": {
+     "♥": "A/6",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【斗转星移】-旧.jpg"
+  },
+  {
+   "id": "whlw_tlhs",
+   "n": "偷梁换柱",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名装备区里的牌数大于你的角色",
+   "effect": "出牌阶段，对一名装备区牌数大于你的角色使用。其将装备区里的X张牌置入你的装备区（X为你与其装备区牌数之差的一半，向上取整）。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·文和乱武板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]；总表标注包「幻化之战」与库内 pkg 不一致，待人工核对",
+   "suits": {
+    "文和乱武": {
+     "♥": "",
+     "♦": "",
+     "♠": "J/K",
+     "♣": "Q/K"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【偷梁换柱】-旧.jpg"
+  },
+  {
+   "id": "sht_tjg",
+   "n": "铁蒺藜骨朵",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "准备阶段，你可以将此牌本回合的攻击范围改为X（X为你的体力值），直到此牌离开你的装备区。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图装备表·山河图板块），待爬虫补全；2026-09-24爬虫补全[effect+suits]；总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」",
+   "suits": {
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   }
+  },
+  {
+   "id": "sjzz_cbhz",
+   "n": "辰宿列张",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sjzz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·时空之战板块），待爬虫补全"
+  },
+  {
+   "id": "sjzz_zez",
+   "n": "周而复始",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sjzz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（截图表·时空之战板块），待爬虫补全"
+  },
+  {
+   "id": "hlg_ljys",
+   "n": "联军盛宴",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "hlg"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "有势力的你和除你的势力外的一个势力的所有角色",
+   "effect": "出牌阶段，你选择一个其他势力，对你和该势力的所有角色使用。你选择一项：1.回复X点体力；2.摸X张牌（X为该势力存活角色数）。然后该势力的每名目标角色各摸一张牌且重置其武将牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·虎牢关板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]；总表标注包「势备篇」与库内 pkg 不一致，待人工核对",
+   "suits": {
+    "势备篇": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【联军盛宴】-势备篇.jpg"
+  },
+  {
+   "id": "zltz_jhgt",
+   "n": "解甲归田",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名装备区里有牌的角色",
+   "effect": "出牌阶段，对一名装备区里有牌的角色使用。目标角色获得其装备区里的所有牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·逐鹿天下板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "3",
+     "♠": "",
+     "♣": "3"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【解甲归田】.webp"
+  },
+  {
+   "id": "qf_nsxz",
+   "n": "逆水行舟",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "qf"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名与你势力不同的角色",
+   "effect": "出牌阶段，对一名与你势力不同的角色使用。你对与其势力相同的所有角色各造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·祈福板块），待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]；总表标注包「龙舟争渡」与库内 pkg 不一致，待人工核对",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "A",
+     "♦": "",
+     "♠": "7/K",
+     "♣": "7"
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【逆水行舟】-2019版.jpg"
+  },
+  {
+   "id": "huan_sdcbing",
+   "n": "撒豆成兵",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "huan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "你",
+   "effect": "出牌阶段，对你使用。你从武将牌堆获得一张新的副将。",
+   "core": false,
+   "src": "crawl",
+   "note": "名录条目（截图表·三国杀·幻板块），待爬虫补全；2026-09-24爬虫补全[effect+suits+img]；2026-09-24爬虫补全[timing+target]；总表标注包「神武再世」与库内 pkg 不一致，待人工核对",
+   "suits": {
+    "幻": {
+     "♥": "6",
+     "♦": "Q",
+     "♠": "J",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/scroll/三国杀-【撒豆成兵】-幻.jpg"
+  },
+  {
+   "id": "sjsm_cf",
+   "n": "藏锋",
+   "cat": "special",
+   "sub": "weapon",
+   "pkg": [
+    "sjsm"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "当【杀】对目标生效前",
+   "target": "此【杀】",
+   "effect": "结束阶段，你可以视为使用一张无距离限制的【杀】，此【杀】仅能被【无懈可击】抵消。",
+   "core": false,
+   "src": "crawl",
+   "note": "双副类别：武器&宝物（005.md 明示例），效果待爬虫补全；2026-09-24爬虫补全[effect+timing+target+suits+img]",
+   "suits": {
+    "始计篇·智": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "img": "assets/cards/special/三国杀-【藏锋】.jpg"
+  },
+  {
+   "id": "shjz_mc",
+   "n": "艨艟",
+   "cat": "special",
+   "sub": "horse_p",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用牌结算结束后，你选择与其他角色互相计算距离+1或-1（至多+2或-2），直到你的下回合开始。",
+   "core": false,
+   "src": "crawl",
+   "note": "双副类别：坐骑&坐骑（005.md 明示例），效果待爬虫补全；2026-09-24爬虫补全[effect+suits]；总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」",
+   "suits": {
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    }
+   }
+  },
+  {
+   "id": "gz_yx",
+   "n": "玉玺",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "gz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "",
+   "core": false,
+   "src": "capture",
+   "note": "名录条目（国战宝物），效果待爬虫补全；卡面图直抓萌百「三国杀-【玉玺】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/equip/三国杀-【玉玺】.jpg"
+  },
+  {
+   "id": "cisha",
+   "n": "杀",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "刺",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段限一次",
+   "target": "（有对应的实体牌的刺【杀】）你的攻击范围内的一名其他角色；（无对应的实体牌的刺【杀】）一名其他角色",
+   "effect": "出牌阶段限一次，对你攻击范围内的一名其他角色使用。你对其造成1点伤害（当目标角色使用【闪】抵消刺【杀】时，若其有手牌，其需弃置一张手牌，否则此刺【杀】依然造成伤害）。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:杀·用间篇，2026-09-24）",
+   "img": "assets/cards/basic/三国杀-刺【杀】.png",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "K",
+     "♠": "6/7/8",
+     "♣": "2/6/7/8/9/10"
+    }
+   }
+  },
+  {
+   "id": "lveshan",
+   "n": "闪",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "jb"
+   ],
+   "variant": "掠",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "抵消【杀】对你的效果，然后你可以获得此【杀】使用者装备区里的一张奇珍牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:闪·九变篇，2026-09-24）",
+   "img": "assets/cards/basic/三国杀-掠【闪】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "8/10/J/Q",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   }
+  },
+  {
+   "id": "baozhu",
+   "n": "爆竹",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "huan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名其他角色使用。目标角色获得1枚“爆”标记（当一名角色拥有3枚“爆”标记时，其受到3点火焰伤害并移去所有“爆”标记）。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:爆竹·幻化之战，2026-09-24）；总表标注包「幻化之战」与库内 pkg 不一致，待人工核对",
+   "img": "assets/cards/basic/三国杀-【爆竹】-幻化之战.png",
+   "suits": {
+    "幻化之战新春版": {
+     "♥": "10/10",
+     "♦": "9/10/K",
+     "♠": "7/10/10",
+     "♣": "2/3/8/8/9/9"
+    }
+   }
+  },
+  {
+   "id": "xionghuangjiu",
+   "n": "酒",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "lz"
+   ],
+   "variant": "雄黄",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段。使用条件：你于此回合内使用过雄黄【酒】的次数小于1",
+   "target": "你",
+   "effect": "出牌阶段令你本回合使用的下一张【杀】伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:酒·龙舟争渡，2026-09-24）",
+   "img": "assets/cards/basic/三国杀-【雄黄酒】.jpg",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "",
+     "♦": "9",
+     "♠": "3/9",
+     "♣": "3/9"
+    }
+   }
+  },
+  {
+   "id": "xujiu",
+   "n": "酗酒",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "gd"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名敌方角色使用。目标角色本回合内受到的伤害+1（每回合同一目标限一次）。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:酗酒·官渡之战，2026-09-24）",
+   "img": "assets/cards/basic/三国杀-【酗酒】.jpg",
+   "suits": {
+    "官渡之战": {
+     "♥": "",
+     "♦": "9",
+     "♠": "3/9",
+     "♣": "3/9"
+    }
+   }
+  },
+  {
+   "id": "hua",
+   "n": "花",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "已受伤的你",
+   "effect": "出牌阶段回复已受伤的你1点体力或令一名处于濒死状态的角色回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/basic/三国杀-【花】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "4(赠)/6(赠)/7(赠)/8(赠)/9(赠)/10(赠)/Q(赠)",
+     "♦": "2(赠)",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:花·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "shanshan",
+   "n": "闪",
+   "cat": "basic",
+   "sub": null,
+   "pkg": [
+    "shanshanjiehuodongxianding"
+   ],
+   "variant": "闪",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "抵消【杀】或锦囊牌对你的效果，并获得此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/basic/三国杀-闪【闪】.png",
+   "suits": {
+    "闪闪节专属": {
+     "♥": "",
+     "♦": "3/5/6",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:闪·闪闪节活动限定，2026-09-24）"
+  },
+  {
+   "id": "guaguliaodu",
+   "n": "刮骨疗毒",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名已受伤的角色",
+   "effect": "出牌阶段，对一名已受伤的角色使用。该角色回复1点体力，然后其可以弃置一张【毒】（以此法弃置【毒】无须失去体力）。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "用间篇": {
+     "♥": "A",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:刮骨疗毒·用间篇，2026-09-24）；卡面图直抓萌百「三国杀-【刮骨疗毒】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【刮骨疗毒】.jpg"
+  },
+  {
+   "id": "tuixinzhifu",
+   "n": "推心置腹",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "距离为1的一名区域里有牌的其他角色",
+   "effect": "出牌阶段，对距离为1的一名其他角色使用。你获得目标角色区域里至多两张牌，然后交给其等量的手牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "9/10",
+     "♠": "",
+     "♣": ""
+    },
+    "绝代智将": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:推心置腹·用间篇，2026-09-24）；卡面图直抓萌百「三国杀-【推心置腹】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【推心置腹】.jpg"
+  },
+  {
+   "id": "chuqibuyi",
+   "n": "出其不意",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名有手牌的其他角色",
+   "effect": "出牌阶段，对一名有手牌的其他角色使用。你展示目标角色的一张手牌，若【出其不意】有花色且与此牌花色不同，你对其造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "应变篇": {
+     "♥": "3",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:出其不意·应变篇，2026-09-24）；卡面图直抓萌百「三国杀-【出其不意】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【出其不意】.jpg"
+  },
+  {
+   "id": "zhujinqiyuan",
+   "n": "逐近弃远",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名区域里有牌的其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。若你与其的距离大于1，你弃置其区域里一张牌；若你与其的距离为1，你获得其区域里一张牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "3/Q(富甲)",
+     "♣": "3(助战)/4(助战)"
+    },
+    "龙起襄樊": {
+     "♥": "",
+     "♦": "3",
+     "♠": "3/4",
+     "♣": ""
+    },
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "",
+     "♠": "3/4/J",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:逐近弃远·应变篇，2026-09-24）；卡面图直抓萌百「三国杀-【逐近弃远】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【逐近弃远】.jpg"
+  },
+  {
+   "id": "suijiyingbian",
+   "n": "随机应变",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "此牌视为你本回合使用/打出的上一张基本牌或普通锦囊牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【随机应变】.png",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:随机应变·应变篇，2026-09-24）"
+  },
+  {
+   "id": "tiaojiyanmei",
+   "n": "调剂盐梅",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "两名手牌数不同的角色",
+   "effect": "出牌阶段，对两名手牌数不同的角色使用。手牌数较多的角色弃置一张牌，手牌数较少的角色摸一张牌。此牌结算结束后，若这两名角色手牌数相同，你可以将弃牌堆中以此法弃置的牌交给一名角色。重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【调剂盐梅】.webp",
+   "suits": {
+    "SP": {
+     "♥": "6",
+     "♦": "6",
+     "♠": "6",
+     "♣": "6"
+    },
+    "额外牌堆": {
+     "♥": "6",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:调剂盐梅·SP，2026-09-24）"
+  },
+  {
+   "id": "binglinchengxia",
+   "n": "兵临城下",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp",
+    "binglinchengxia"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。你亮出牌堆顶的四张牌，然后依次对目标角色使用其中的【杀】，其余的牌置于牌堆顶。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【兵临城下】.webp",
+   "suits": {
+    "移动版": {
+     "♥": "",
+     "♦": "",
+     "♠": "7",
+     "♣": "7/K"
+    },
+    "海外服": {
+     "♥": "",
+     "♦": "",
+     "♠": "A/A/A",
+     "♣": ""
+    },
+    "额外牌堆": {
+     "♥": "",
+     "♦": "",
+     "♠": "7",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:兵临城下·SP，2026-09-24）"
+  },
+  {
+   "id": "qizhengxiangsheng",
+   "n": "奇正相生",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色。执行动作：此牌指定目标后，你选择：1.获得1枚“奇”；2.获得1枚“正”",
+   "effect": "出牌阶段，对一名其他角色使用。你为其指定正兵或奇兵，然后其可以打出一张【杀】或【闪】。若奇兵目标没有打出【杀】，你对其造成1点伤害；若正兵目标没有打出【闪】，你获得其一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【奇正相生】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "2/4/6/8",
+     "♣": "3/5/7/9"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:奇正相生·SP，2026-09-24）"
+  },
+  {
+   "id": "huoqiushu",
+   "n": "火球术",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名其他角色使用。你选择一项：1.对其造成1点火焰伤害；2.令其当前手牌中的伤害牌造成的伤害均改为火焰伤害。此牌：仅焰祝融可以使用；置入牌堆或弃牌堆前销毁之。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP（线上）": {
+     "♥": "A/2/3/4/5/6/7/8/9/10/J/Q/K",
+     "♦": "A/2/3/4/5/6/7/8/9/10/J/Q/K",
+     "♠": "",
+     "♣": ""
+    },
+    "SP（线下）": {
+     "♥": "2",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:祝融/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "dahuoqiushu",
+   "n": "大火球术",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名其他角色使用。你选择一项：1.对其造成1点火焰伤害；2.令其当前手牌中的伤害牌造成的伤害均改为火焰伤害。此牌：仅焰祝融可以使用；置入牌堆或弃牌堆前销毁之。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP（线上）": {
+     "♥": "A/2/3/4/5/6/7/8/9/10/J/Q/K",
+     "♦": "A/2/3/4/5/6/7/8/9/10/J/Q/K",
+     "♠": "",
+     "♣": ""
+    },
+    "SP（线下）": {
+     "♥": "2",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:祝融/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "wugufengdeng",
+   "n": "五菇丰登",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对所有角色使用。你随机亮出五只菌子，每名目标角色选择并获得其中一只菌子，未因此获得菌子的目标角色失去1点体力。◆一名角色获得菌子，即于其回合内获得正面或负面的效果直到回合结束。◆正面效果——使用牌可能执行以下一项：摸两张牌/回复1点体力/此牌额外结算一次/选择至多两名角色，对这些角色造成共计2点伤害/本回合获得一个有用技能◆负面效果——使用牌可能执行以下一项：随机弃置至多两张手牌/失去1点体力/此牌改为随机合法目标/随机重铸一张手牌/本回合获得一个无用技能◆只有懂的人能识别菌子的正面或负面效果，懂的人包括孟获、诸葛亮等南征相关人物。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:五菇丰登·SP，2026-09-24）"
+  },
+  {
+   "id": "guowuxiekeji",
+   "n": "无懈可击",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "gzstd"
+   ],
+   "variant": "国",
+   "range": null,
+   "horse": null,
+   "timing": "当锦囊牌对目标生效前",
+   "target": "此牌",
+   "effect": "当一张锦囊牌对一名角色生效前，抵消此牌对该角色或该角色势力的所有角色的效果；或抵消另一张【无懈可击】的效果。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-国【无懈可击】.png",
+   "suits": {
+    "国战标准版": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": "K"
+    },
+    "势备篇": {
+     "♥": "",
+     "♦": "J",
+     "♠": "",
+     "♣": "K"
+    },
+    "九变篇": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:无懈可击·国战标准版，2026-09-24）"
+  },
+  {
+   "id": "diaohulishan",
+   "n": "调虎离山",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "至多两名其他角色",
+   "effect": "出牌阶段，对一至两名其他角色使用。目标角色于此回合内体力值不会改变，不计入距离和座次的计算，不能使用牌且不能成为牌的目标。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【调虎离山】.jpg",
+   "suits": {
+    "势备篇": {
+     "♥": "2",
+     "♦": "10(合)",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:调虎离山·势备篇，2026-09-24）"
+  },
+  {
+   "id": "duoduobiren",
+   "n": "咄咄逼人",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名已确定势力的角色使用。目标角色可以变更副将，然后你对目标角色造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【咄咄逼人】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "10/J",
+     "♣": "Q/K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:咄咄逼人·九变篇，2026-09-24）"
+  },
+  {
+   "id": "qiaoquhaoduo",
+   "n": "巧取豪夺",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对至多两名其他角色使用。目标角色依次展示手牌，然后你获得目标角色所有因此展示的装备牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【巧取豪夺】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "A/3",
+     "♦": "10",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:巧取豪夺·九变篇，2026-09-24）"
+  },
+  {
+   "id": "fendaoyangbiao",
+   "n": "分道扬镳",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名与你势力相同的其他角色使用。你摸六张牌并交给目标角色三张牌，然后你成为野心家。重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【分道扬镳】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "2",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:分道扬镳·九变篇，2026-09-24）"
+  },
+  {
+   "id": "tuqiongbixian",
+   "n": "图穷匕见",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名其他角色使用。你选择弃牌堆中一张奇珍牌，目标角色使用之；目标角色本回合视为在你的攻击范围内。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【图穷匕见】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A/2/J"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:图穷匕见·九变篇，2026-09-24）"
+  },
+  {
+   "id": "gouweixudiao",
+   "n": "狗尾续貂",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对所有角色使用。每名目标角色依次选择并使用弃牌堆中的一张奇珍牌（没有则改为摸一张牌）。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【狗尾续貂】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "A/2",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:狗尾续貂·九变篇，2026-09-24）"
+  },
+  {
+   "id": "jintuiziru",
+   "n": "进退自如",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，选择一项：1.对所有其他角色使用，其需打出一张【杀】，否则受到你的1点伤害；2.对所有角色使用，亮出牌堆顶三张牌，各获得其中一张。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【进退自如】.jpg",
+   "suits": {
+    "斗地主标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "7",
+     "♣": "7"
+    },
+    "智斗三国": {
+     "♥": "",
+     "♦": "",
+     "♠": "7",
+     "♣": "4/7"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:进退自如·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "gongshoujianbei",
+   "n": "攻守兼备",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，选择一项：1.对所有其他角色使用，其需打出一张【闪】，否则受到你的1点伤害；2.对所有角色使用，其各回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【攻守兼备】.jpg",
+   "suits": {
+    "斗地主标准版": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "智斗三国": {
+     "♥": "A",
+     "♦": "",
+     "♠": "10",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:攻守兼备·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "jiwangkailai",
+   "n": "继往开来",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，选择一项：1.对你使用，弃置所有手牌，然后摸等量的牌；2.对你使用，将所有手牌当任意普通锦囊牌使用。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【继往开来】.jpg",
+   "suits": {
+    "斗地主标准版": {
+     "♥": "6",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:继往开来·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "caiyuangungun",
+   "n": "财源滚滚",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名角色使用。你添加100筹码，然后目标角色摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【财源滚滚】.jpg",
+   "suits": {
+    "斗地主标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "4"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:财源滚滚·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "zhadan",
+   "n": "炸弹",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当一张牌对第一个目标生效前，对此牌使用，抵消此牌的效果，然后本局游戏的底价翻倍。此牌不能被【无懈可击】响应。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【炸弹】.jpg",
+   "suits": {
+    "斗地主标准版": {
+     "♥": "A",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    },
+    "智斗三国": {
+     "♥": "A/4",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:炸弹·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "lidaitaojiang",
+   "n": "李代桃僵",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名手牌数大于你的角色",
+   "effect": "出牌阶段，对一名手牌数大于你的角色使用，其将X张手牌交给你（X为你与其手牌数之差的一半，向上取整）。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【李代桃僵】-旧.jpg",
+   "suits": {
+    "文和乱武": {
+     "♥": "A/K",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:李代桃僵·文和乱武，2026-09-24）"
+  },
+  {
+   "id": "wenheluanwu",
+   "n": "文和乱武",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw",
+    "bc"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有其他角色",
+   "effect": "出牌阶段，对所有其他角色使用。目标角色依次选择一项：1.对其最近的另一名角色使用一张【杀】；2.失去1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【文和乱武】-新.jpg",
+   "suits": {
+    "文和乱武（线上）": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "4"
+    },
+    "文和乱武（线下）": {
+     "♥": "",
+     "♦": "",
+     "♠": "6/10",
+     "♣": "4/6"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:文和乱武·文和乱武，2026-09-24）"
+  },
+  {
+   "id": "qiangbingzushi",
+   "n": "强兵足食",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你获得5枚粮草。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【强兵足食】.jpg",
+   "suits": {
+    "文和乱武·战备": {
+     "♥": "3/4",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「文和乱武·战备」归入母包「文和乱武」；爬虫抓取（萌百 三国杀:强兵足食·文和乱武·战备，2026-09-24）"
+  },
+  {
+   "id": "qiangyi",
+   "n": "强易",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "whlw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名有手牌的其他角色使用。你交给其2枚粮草并观看其手牌，然后你选择一项：1.获得其中一张牌；2.获得其装备区内的一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【强易】.jpg",
+   "suits": {
+    "文和乱武·战备": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": "Q/K"
+    }
+   },
+   "note": "总表标注「文和乱武·战备」归入母包「文和乱武」；爬虫抓取（萌百 三国杀:强易·文和乱武·战备，2026-09-24）"
+  },
+  {
+   "id": "shengdongjixi",
+   "n": "声东击西",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对距离为1的一名其他角色使用。你交给该角色一张手牌并选择除其外的一名其他角色，然后目标角色将两张牌交给该角色。若存活角色数不大于2，你可以重铸此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【声东击西】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "3/4",
+     "♠": "3/4/J",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:声东击西·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "zengbingjianzao",
+   "n": "增兵减灶",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名角色",
+   "effect": "出牌阶段，对一名角色使用。目标角色摸三张牌，然后选择一项：1.弃置一张非基本牌；2.弃置两张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【增兵减灶】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "3/4/7/8/9/J",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:增兵减灶·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "qijiayebing",
+   "n": "弃甲曳兵",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名装备区里有牌的其他角色",
+   "effect": "出牌阶段，对一名装备区有牌的其他角色使用。目标角色展示所有手牌，然后选择一项：1.弃置所有武器牌和进攻坐骑牌；2.弃置所有防具牌和防御坐骑牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【弃甲曳兵】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q/K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:弃甲曳兵·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "jinchantuoqiao",
+   "n": "金蝉脱壳",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "当你成为基本牌或普通锦囊牌的目标后。使用条件：此牌的使用者不为你且你的所有手牌均为【金蝉脱壳】",
+   "target": "此牌",
+   "effect": "当你成为其他角色使用基本牌或锦囊牌的目标后，若你的所有手牌均为【金蝉脱壳】，你展示所有手牌，然后对该牌使用。目标牌对你无效，你摸两张牌。当你因弃置而失去一张【金蝉脱壳】时，你摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【金蝉脱壳】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "A/K",
+     "♦": "Q",
+     "♠": "J/K",
+     "♣": "Q/K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:金蝉脱壳·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "huayanqiaoyu",
+   "n": "花言巧语",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名有手牌的异性角色使用。你视为赠予目标角色一张【花】，然后目标角色赠予你一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【花言巧语】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "6/J",
+     "♦": "4",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:花言巧语·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "shiluanzhongqi",
+   "n": "始乱终弃",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名本回合你赠予过牌的角色使用。你对目标角色造成2点伤害。当你将此牌赠予其他角色的伴侣时，你摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【始乱终弃】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "4/10"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:始乱终弃·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "zhengjiashanbing",
+   "n": "整甲缮兵",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，你选择一项：1.对至多两名角色使用。目标角色各摸一张牌；2.对一名其他角色使用。本回合你与目标角色的距离视为1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【整甲缮兵】.jpg",
+   "suits": {
+    "龙起襄樊": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "3/4"
+    }
+   },
+   "note": "总表标注「山河煮酒·龙起襄樊」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:整甲缮兵·山河煮酒·龙起襄樊，2026-09-24）"
+  },
+  {
+   "id": "yidugongdu",
+   "n": "以毒攻毒",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名已受伤的角色使用。你观看目标角色的手牌，若你与其手牌中均有【毒】，则你弃置其中一张【毒】并与其各摸两张牌，否则你与其各受到1点无来源伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【以毒攻毒】.jpg",
+   "suits": {
+    "关索传": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·龙起襄樊-关索传」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:以毒攻毒·山河煮酒·龙起襄樊-关索传，2026-09-24）"
+  },
+  {
+   "id": "yushijiesui",
+   "n": "玉石皆碎",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名角色",
+   "effect": "出牌阶段，对一名角色使用。你对目标角色造成1点伤害，然后你失去1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【玉石皆碎】.jpg",
+   "suits": {
+    "绝代智将": {
+     "♥": "4",
+     "♦": "4",
+     "♠": "4",
+     "♣": "4"
+    }
+   },
+   "note": "总表标注「山河煮酒·绝代智将」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:玉石皆碎·山河煮酒·绝代智将，2026-09-24）"
+  },
+  {
+   "id": "weiwoduzun",
+   "n": "唯我独尊",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "tianjiangshenbing"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "没有“战神印记”的你",
+   "effect": "出牌阶段，若你没有“战神印记”，对你使用。目标角色获得“战神印记”。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【唯我独尊】.jpg",
+   "suits": {
+    "天降神兵": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:唯我独尊·天降神兵，2026-09-24）"
+  },
+  {
+   "id": "yihuajiemu",
+   "n": "移花接木",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名有牌的其他角色",
+   "effect": "出牌阶段，对一名有牌的其他角色使用。目标角色选择一项：1.使用一张【杀】；2.交给你两张牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q/K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:移花接木·神武再世，2026-09-24）；卡面图直抓萌百「三国杀-【移花接木】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【移花接木】.jpg"
+  },
+  {
+   "id": "gubuzifeng",
+   "n": "故步自封",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。目标角色的随机一个技能失效，直到该角色的下回合结束。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "7",
+     "♠": "",
+     "♣": "5"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:故步自封·神武再世，2026-09-24）；卡面图直抓萌百「三国杀-【故步自封】.jpg」（2026-09-24 补图）",
+   "img": "assets/cards/scroll/三国杀-【故步自封】.jpg"
+  },
+  {
+   "id": "zhulutianxia",
+   "n": "逐鹿天下",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色。执行动作：1.当此牌的使用结算准备工作结束时，系统从牌堆和弃牌堆中亮出X张装备牌（X为此牌的目标对应的角色数）。2.当此牌的使用结算结束后❶，系统将处理区里的以此法亮出的牌置入弃牌堆",
+   "effect": "出牌阶段，对所有角色使用。从牌堆和弃牌堆中亮出等同于目标角色数的装备牌，目标角色将其中一张置于其装备区里。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【逐鹿天下】.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "9"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:逐鹿天下·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "caochuanjiejian",
+   "n": "草船借箭",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "当【杀】或伤害类锦囊牌对你生效前",
+   "target": "此牌",
+   "effect": "当【杀】或伤害类锦囊牌对你生效前，对此牌使用。抵消此牌对你的效果，然后此牌结算结束后，你获得之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【草船借箭】.webp",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "",
+     "♠": "3/6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:草船借箭·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "tongzhougongji",
+   "n": "同舟共济",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "lz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "你或队友",
+   "effect": "出牌阶段，对所有与你势力相同的角色使用。目标角色各摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【同舟共济】-2019版.jpg",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "7/8/9/J",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:同舟共济·龙舟争渡，2026-09-24）"
+  },
+  {
+   "id": "lizhengshangyou",
+   "n": "力争上游",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "lz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色",
+   "effect": "出牌阶段，对所有角色使用。与你势力相同的角色各摸X张牌（X为势力数），其他目标各摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【力争上游】-2019版.jpg",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "A/3/4",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:力争上游·龙舟争渡，2026-09-24）"
+  },
+  {
+   "id": "zongzi",
+   "n": "粽子",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "lz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你摸五张牌。若为本回合首次使用，本回合内龙舟前进速度翻倍。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【粽子】.png",
+   "suits": {
+    "龙舟争渡": {
+     "♥": "A/2/3",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:粽子·龙舟争渡，2026-09-24）"
+  },
+  {
+   "id": "tunliang",
+   "n": "屯粮",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "gd"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一至三名友方角色",
+   "effect": "出牌阶段，对一至三名友方角色使用。目标角色各摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【屯粮】.jpg",
+   "suits": {
+    "官渡之战": {
+     "♥": "3/4",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:屯粮·官渡之战，2026-09-24）"
+  },
+  {
+   "id": "yuanjun",
+   "n": "援军",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "gd"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "至多两名已受伤的友方角色",
+   "effect": "出牌阶段，对一至两名已受伤的友方角色使用。目标角色各回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【援军】.jpg",
+   "suits": {
+    "官渡之战": {
+     "♥": "J/Q",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:援军·官渡之战，2026-09-24）"
+  },
+  {
+   "id": "fudichouxin",
+   "n": "釜底抽薪",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "hhzh"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。目标角色随机失去一个技能。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【釜底抽薪】.png",
+   "suits": {
+    "幻化之战": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": "Q"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:釜底抽薪·幻化之战，2026-09-24）"
+  },
+  {
+   "id": "honghuangzhili",
+   "n": "洪荒之力",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "shenzhishilian"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。若该角色的势力是神，你获得其一张牌，其〖神裔〗无效直到其下家的回合[1]开始；若该角色的势力不是神，其翻面。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【洪荒之力】.jpg",
+   "suits": {
+    "神之试炼": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:洪荒之力·神之试炼，2026-09-24）"
+  },
+  {
+   "id": "shangyangbianfa",
+   "n": "商鞅变法",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "hezongkangqin"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。你对目标角色造成随机1-2点伤害，且当其以此法进入濒死状态时，你判定，若为黑色，除其外的角色不能对其使用【桃】，直到濒死结算结束。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【商鞅变法】.jpg",
+   "suits": {
+    "合纵抗秦": {
+     "♥": "",
+     "♦": "",
+     "♠": "5/7/9",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:商鞅变法·合纵抗秦，2026-09-24）"
+  },
+  {
+   "id": "chunlian",
+   "n": "春联",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "nianshoudazuozhan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "你。执行动作：此牌指定目标后，你将其移出游戏",
+   "effect": "出牌阶段，对你使用。目标角色摸一张牌，获得2个新年积分并将此牌移出游戏。此牌不可被转化或被【无懈可击】响应。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【春联】.jpg",
+   "suits": {
+    "年兽大作战": {
+     "♥": "",
+     "♦": "A/K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:春联·年兽大作战，2026-09-24）"
+  },
+  {
+   "id": "xiangfujubao",
+   "n": "祥符聚宝",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "nianshoudazuozhan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对所有友方角色使用。你从牌堆亮出等同于存活友方角色数量的牌，随机分配给每名目标角色其中的一张。此牌使用后移出游戏。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【祥符聚宝】.jpg",
+   "suits": {
+    "金虎贺岁": {
+     "♥": "A/2/3/4/5/6/7/8/9/10/J/Q/K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:祥符聚宝·年兽大作战，2026-09-24）"
+  },
+  {
+   "id": "huihun",
+   "n": "回魂",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "shidianyanluo"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "所有角色",
+   "effect": "出牌阶段，对所有角色使用。若目标角色因技能〖忘魂〗而失去过技能，其获得该技能。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【回魂】.jpg",
+   "suits": {
+    "十殿阎罗": {
+     "♥": "3",
+     "♦": "",
+     "♠": "",
+     "♣": "4"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:回魂·十殿阎罗，2026-09-24）"
+  },
+  {
+   "id": "baiyidujiang",
+   "n": "白衣渡江",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "binglinchengxia"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对城主使用。你令目标角色将手牌摸至与手牌最多的角色相同，或令其将手牌弃置至与手牌最少的角色相同。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【白衣渡江】.jpg",
+   "suits": {
+    "兵临城下": {
+     "♥": "6",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:白衣渡江·兵临城下，2026-09-24）"
+  },
+  {
+   "id": "luojingxiashi",
+   "n": "落井下石",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "binglinchengxia"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对所有其他已受伤的角色使用。你对目标角色各造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【落井下石】.jpg",
+   "suits": {
+    "兵临城下": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "6"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:落井下石·兵临城下，2026-09-24）"
+  },
+  {
+   "id": "caomujiebing",
+   "n": "草木皆兵",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名其他角色",
+   "effect": "出牌阶段，对一名其他角色使用。将【草木皆兵】置入该角色的判定区，若判定结果不为梅花，摸牌阶段，目标角色少摸一张牌；摸牌阶段结束时，与其距离为1的角色各摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【草木皆兵】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "",
+     "♠": "10",
+     "♣": "4"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:草木皆兵·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "fulei",
+   "n": "浮雷",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "你",
+   "effect": "出牌阶段，对你使用。将【浮雷】置入你的判定区。若判定结果为黑桃，则目标角色受到X点雷电伤害（X为此【浮雷】判定结果为黑桃的次数）。判定完成后，将之置入其下家的判定区。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【浮雷】.jpg",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:浮雷·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "huirong",
+   "n": "毁容",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名其他角色使用。将【毁容】置入该角色的判定区，若判定结果不为红桃，其本回合赠予的牌视为赠予失败且此牌保留在其判定区。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【毁容】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "3/6"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:毁容·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "suibozhuliu",
+   "n": "随波逐流",
+   "cat": "scroll",
+   "sub": "delayed",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。将【随波逐流】置入你的判定区。若判定结果为方块，目标角色将装备区里的一张牌移动至其下家的装备区里（若目标角色的装备区里有坐骑牌，则须选择其中一张），若无法移动则改为其下家获得此装备牌。判定结束后，将之置入其下家的判定区。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "6/9",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:随波逐流·山河煮酒·桃园挽歌，2026-09-24）"
+  },
+  {
+   "id": "haolingtianxia",
+   "n": "号令天下",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "bc"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "一名体力值不为最小的角色。执行动作：1.当此牌被使用时，若你没有势力且你明置后势力为魏，你可选择：1.明置一张武将牌；2.同时明置两张武将牌。2.当此牌被使用时，若你的势力为魏，你将此牌的作用效果改为{除目标对应的角色外的角色各选择：1.{若其势力：为魏，其对目标对应的角色使用无对应的实体牌的普【杀】；不为魏，其弃置一张手牌▷其对目标对应的角色使用无对应的实体牌的普【杀】}；2.{若其势力：为魏，其获得目标对应的角色的一张牌；不为魏，其弃置目标对应的角色的一张牌}；3.获得1枚“令”}",
+   "effect": "出牌阶段，对体力值不是最少的一名角色使用。所有除其外的角色可以选择一项：1.弃置一张手牌，视为对其使用一张【杀】；2.弃置其一张牌。魏：魏势力角色选择1时无需弃置牌，选择2时可以获得弃置的牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【号令天下】.jpg",
+   "suits": {
+    "不臣篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:号令天下·不臣篇，2026-09-24）"
+  },
+  {
+   "id": "kefuzhongyuan",
+   "n": "克复中原",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "bc"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "至少一名角色。执行动作：1.当此牌被使用时，若你没有势力且你明置后势力为蜀，你可选择：1.明置一张武将牌；2.同时明置两张武将牌。2.当此牌被使用时，若你的势力为蜀，你将此牌的作用效果改为{目标对应的角色选择：1.{使用无对应的实体牌的普【杀】→当此【杀】被使用时，若其为蜀势力角色，其令伤害值基数+1}；2.{若其势力：为蜀，其摸两张牌；不为蜀，其摸一张牌}}",
+   "effect": "出牌阶段，对任意名角色使用。目标角色依次选择一项：1.视为使用一张【杀】；2.摸一张牌。蜀：蜀势力角色选择1时【杀】伤害+1，选择2时改为摸两张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【克复中原】.jpg",
+   "suits": {
+    "不臣篇": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:克复中原·不臣篇，2026-09-24）"
+  },
+  {
+   "id": "guguoanbang",
+   "n": "固国安邦",
+   "cat": "scroll",
+   "sub": "faction",
+   "pkg": [
+    "bc"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "出牌阶段",
+   "target": "你。执行动作：1.当此牌被使用时，若你没有势力且你明置后势力为吴，你可选择：1.明置一张武将牌；2.同时明置两张武将牌。2.当此牌被使用时，若你的势力为吴，你将此牌的作用效果改为{目标对应的角色摸八张牌，选择至少六张其能弃置的手牌，可将其以此法选择的牌中的至多六张交给与其势力相同的其他角色，弃置其以此法选择的牌}",
+   "effect": "出牌阶段，对你使用。目标角色摸八张牌，然后弃置至少六张手牌。吴：你可以将以此法弃置的牌交给吴势力角色，每名角色至多两张。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/scroll/三国杀-【固国安邦】.jpg",
+   "suits": {
+    "不臣篇": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:固国安邦·不臣篇，2026-09-24）"
+  },
+  {
+   "id": "hanbingjian",
+   "n": "寒冰剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "std"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成伤害时，若该角色有牌，你可以防止此伤害，改为依次弃置其两张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【寒冰剑】.png",
+   "suits": {
+    "EX": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    },
+    "3V3": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    },
+    "1V1": {
+     "♥": "",
+     "♦": "",
+     "♠": "9",
+     "♣": ""
+    },
+    "国战标准版": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:寒冰剑·标准版，2026-09-24）"
+  },
+  {
+   "id": "wuxinghelingshan",
+   "n": "五行鹤翎扇",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你可以将属性【杀】当任意其他属性【杀】使用。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【五行鹤翎扇】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:五行鹤翎扇·应变篇，2026-09-24）"
+  },
+  {
+   "id": "wutiesuolian",
+   "n": "乌铁锁链",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，若其未横置，你令其横置。[1]",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【乌铁锁链】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    },
+    "国战应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:乌铁锁链·应变篇，2026-09-24）"
+  },
+  {
+   "id": "zheji",
+   "n": "折戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "yjy",
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "这是一把坏掉的武器……",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【折戟】-用间篇.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A(赠)"
+    },
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:折戟·用间篇，2026-09-24）"
+  },
+  {
+   "id": "qixingbaodao",
+   "n": "七星宝刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当此牌置入你的装备区时，你弃置你判定区和装备区里所有的其他牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【七星宝刀】.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2(赠)",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:七星宝刀·用间篇，2026-09-24）"
+  },
+  {
+   "id": "yitianjian",
+   "n": "倚天剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】造成伤害后，你可以弃置一张手牌，然后回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【倚天剑】.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:倚天剑·用间篇，2026-09-24）"
+  },
+  {
+   "id": "yuanrongjingxienu",
+   "n": "元戎精械弩",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp",
+    "hhzh"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "幻化之战": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:马钧/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "lingbaoxianhu",
+   "n": "灵宝仙葫",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你造成大于1点的伤害时或一名角色死亡时，你加1点体力上限并回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【灵宝仙葫】.webp",
+   "suits": {
+    "SP": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:葛玄/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "taijifuchen",
+   "n": "太极拂尘",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你造成大于1点的伤害时或一名角色死亡时，你加1点体力上限并回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【灵宝仙葫】.webp",
+   "suits": {
+    "SP": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:葛玄/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "bintieshuangji",
+   "n": "镔铁双戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你的【杀】被抵消后，你可以失去1点体力，然后获得此【杀】，摸一张牌，本回合使用【杀】的次数+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【镔铁双戟】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:镔铁双戟·SP，2026-09-24）"
+  },
+  {
+   "id": "sizhaojian",
+   "n": "思召剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，该角色不能使用点数小于此【杀】的【闪】以抵消此【杀】。此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【思召剑】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "6",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:思召剑·SP，2026-09-24）"
+  },
+  {
+   "id": "huyi",
+   "n": "虎翼",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成属性伤害时，你可以横置至多两名角色。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【虎翼】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "J",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虎翼·SP，2026-09-24）"
+  },
+  {
+   "id": "xuanjian",
+   "n": "玄剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你可以将一种花色的所有手牌当【杀】使用。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【玄剑】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "9",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:玄剑·SP，2026-09-24）"
+  },
+  {
+   "id": "baipishuangbi",
+   "n": "百辟双匕",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名与你性别不同的角色为目标后，若你没有手牌，此【杀】伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【百辟双匕】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:百辟双匕·SP，2026-09-24）"
+  },
+  {
+   "id": "xuanhuafu",
+   "n": "宣花斧",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定第一个目标时，你令与其距离为1的另一名角色成为此【杀】的额外目标。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【宣花斧】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:宣花斧·SP，2026-09-24）"
+  },
+  {
+   "id": "hunzhugeliannu",
+   "n": "魂·诸葛连弩",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你使用【杀】无次数限制。当你使用【杀】指定目标后，你可以令任意名死亡角色依次观看目标角色的手牌并可以重铸其中一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【魂·诸葛连弩】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:黄月英/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "jian",
+   "n": "剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "dao",
+   "n": "刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "fu",
+   "n": "斧",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "ji",
+   "n": "戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "qiang",
+   "n": "枪",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "gong",
+   "n": "弓",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，你弃置其两张手牌。",
+   "core": false,
+   "src": "crawl",
+   "note": "爬虫抓取（萌百 三国杀:玉真子/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "cailian",
+   "n": "彩莲",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你每轮首次造成的伤害与回复+1，且你与此牌花色相同的手牌不计入手牌上限。此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:彩莲·SP，2026-09-24）"
+  },
+  {
+   "id": "zhanguijian",
+   "n": "斩鬼剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用转化【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:斩鬼剑·SP，2026-09-24）"
+  },
+  {
+   "id": "chixueren",
+   "n": "赤血刃",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，若你没有〖神御〗，此牌攻击范围改为0。当你使用【杀】每回合首次造成伤害时，若受伤角色为攻击范围内座次最远的角色，此伤害+1。当此牌首次替换其他武器牌后，此牌获得该武器牌的技能。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:赤血刃·SP，2026-09-24）"
+  },
+  {
+   "id": "sanjianliangrendao",
+   "n": "三尖两刃刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "gzstd"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成伤害后，你可以弃置一张手牌，然后对其距离1的另一名其他角色造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【三尖两刃刀】.png",
+   "suits": {
+    "国战标准版": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:三尖两刃刀·国战标准版，2026-09-24）"
+  },
+  {
+   "id": "feilongduofeng",
+   "n": "飞龙夺凤",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "gzjs",
+    "taixuhuanjing"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，你可以令其弃置一张牌。当你使用【杀】造成的伤害令目标角色进入濒死状态时，你可以获得其一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【飞龙夺凤】.jpg",
+   "suits": {
+    "君临天下·阵": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「君临天下·阵」归入母包「君临天下」；爬虫抓取（萌百 三国杀:飞龙夺凤·君临天下·阵，2026-09-24）；总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」"
+  },
+  {
+   "id": "jilinqianyi",
+   "n": "戢鳞潜翼",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "jinyinzishou"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你使用【杀】的结算流程中，你攻击范围内的非目标角色不能使用牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【戢鳞潜翼】.jpg",
+   "suits": {
+    "金印紫绶": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:戢鳞潜翼·金印紫绶，2026-09-24）"
+  },
+  {
+   "id": "zhanshejian",
+   "n": "斩蛇剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成伤害后，你回复1点体力。若其为君主或野心家，杀死其。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【斩蛇剑】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "A(珍)",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:斩蛇剑·九变篇，2026-09-24）"
+  },
+  {
+   "id": "yangsuiqiang",
+   "n": "阳燧枪",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】对目标角色造成伤害后，其受到1点无来源火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【阳燧枪】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "J(珍)",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:阳燧枪·九变篇，2026-09-24）"
+  },
+  {
+   "id": "qibaodao",
+   "n": "七宝刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无视目标角色的防具，若其未受伤，此【杀】对其造成的伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【七宝刀】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    },
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:七宝刀·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "zhungangshuo",
+   "n": "衠钢槊",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，你可令该角色弃置你的一张手牌，然后你弃置其一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【衠钢槊】.jpg",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:衠钢槊·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "pochengchui",
+   "n": "破城锤",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你每回合首次对地形角色造成伤害时，此伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【破城锤】.jpg",
+   "suits": {
+    "山河煮酒": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:破城锤·山河煮酒，2026-09-24）"
+  },
+  {
+   "id": "qingmingjian",
+   "n": "青冥剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你于回合内首次弃置至少两张牌时，你可以对一名其他角色造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:青冥剑·山河煮酒·桃园挽歌，2026-09-24）"
+  },
+  {
+   "id": "shangfangbaojian",
+   "n": "尚方宝剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当装备区里的此牌被弃置时，你防止之。与你势力相同的角色使用【杀】指定目标后，你可以选择一项：1.交给其一张手牌；2.获得其一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "桃园挽歌": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·桃园挽歌」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:尚方宝剑·山河煮酒·桃园挽歌，2026-09-24）"
+  },
+  {
+   "id": "liuyedao",
+   "n": "柳叶刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】造成伤害时，你可以弃置两张手牌，令此伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "绝代智将": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·绝代智将」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:柳叶刀·山河煮酒·绝代智将，2026-09-24）"
+  },
+  {
+   "id": "guilongzhanyuedao",
+   "n": "鬼龙斩月刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用红色【杀】不能被【闪】响应。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【鬼龙斩月刀】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:鬼龙斩月刀·神武再世，2026-09-24）"
+  },
+  {
+   "id": "xiuluolianyuji",
+   "n": "修罗炼狱戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】可以指定任意名角色为目标；你使用【杀】对目标角色造成伤害时，此伤害+1；伤害结算后，其回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【修罗炼狱戟】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:修罗炼狱戟·神武再世，2026-09-24）"
+  },
+  {
+   "id": "chiyanzhenhunqin",
+   "n": "赤焰镇魂琴",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你造成的伤害均视为火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【赤焰镇魂琴】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:赤焰镇魂琴·神武再世，2026-09-24）"
+  },
+  {
+   "id": "chixueqingfeng",
+   "n": "赤血青锋",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】指定一名角色为目标后，此【杀】无视其防具且其不能使用或打出手牌，直到此【杀】结算结束。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【赤血青锋】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:赤血青锋·神武再世，2026-09-24）"
+  },
+  {
+   "id": "luanfenghemingjian",
+   "n": "鸾凤和鸣剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用雷【杀】或火【杀】指定目标后，你可以令其选择一项：1.令你摸一张牌；2.弃置一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【鸾凤和鸣剑】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:鸾凤和鸣剑·神武再世，2026-09-24）"
+  },
+  {
+   "id": "jinwuluorigong",
+   "n": "金乌落日弓",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你于出牌阶段内一次性失去至少两张手牌后，你可以弃置一名其他角色等量的牌（不足则全弃）。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【金乌落日弓】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:金乌落日弓·神武再世，2026-09-24）"
+  },
+  {
+   "id": "xingtianpojunfu",
+   "n": "刑天破军斧",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你于出牌阶段内使用牌指定唯一目标后，你可以弃置两张牌，令其本回合不能使用或打出牌且防具无效。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【刑天破军斧】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:刑天破军斧·神武再世，2026-09-24）"
+  },
+  {
+   "id": "wufengjian",
+   "n": "无锋剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】时，你弃置一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【无锋剑】.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:无锋剑·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "yajiaoqiang",
+   "n": "涯角枪",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你于回合外使用黑色牌时，若此牌是你本回合第一次使用的黑色牌，则当此牌结算结束后，你可以获得之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【涯角枪】.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:涯角枪·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "zhenlongchangjian",
+   "n": "真龙长剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "hezongkangqin"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你于一回合内使用的第一张普通锦囊牌不能被【无懈可击】响应。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【真龙长剑】.jpg",
+   "suits": {
+    "合纵抗秦": {
+     "♥": "2",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:真龙长剑·合纵抗秦，2026-09-24）"
+  },
+  {
+   "id": "qinnu",
+   "n": "秦弩",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "hezongkangqin"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一个目标后，你令其防具无效直到此【杀】结算结束；出牌阶段，你可多使用一张【杀】；你失去装备区里的【秦弩】时，销毁之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【秦弩】.jpg",
+   "suits": {
+    "合纵抗秦": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:秦弩·合纵抗秦，2026-09-24）"
+  },
+  {
+   "id": "xiangyudao",
+   "n": "项羽刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "wujiangliezhuan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一个目标后，你可以获得其一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【项羽刀】.jpg",
+   "suits": {
+    "武将列传": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    },
+    "烽火连天": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:项羽刀·武将列传，2026-09-24）"
+  },
+  {
+   "id": "toushiche",
+   "n": "投石车",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "binglinchengxia"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "结束阶段，你令手牌多于你的角色依次弃置一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【投石车】.jpg",
+   "suits": {
+    "兵临城下": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:投石车·兵临城下，2026-09-24）"
+  },
+  {
+   "id": "leijimu",
+   "n": "雷击木",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "taixuhuanjing"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用普通【杀】时，你可以将此【杀】改为雷【杀】。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【雷击木】.jpg",
+   "suits": {
+    "太虚幻境": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:雷击木·太虚幻境，2026-09-24）"
+  },
+  {
+   "id": "cibi",
+   "n": "刺匕",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "qihuanzhizheng"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用黑色牌造成的伤害+1，你使用红色牌造成的伤害-1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【刺匕】.jpg",
+   "suits": {
+    "戚宦之争": {
+     "♥": "",
+     "♦": "",
+     "♠": "2/9",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:刺匕·戚宦之争，2026-09-24）"
+  },
+  {
+   "id": "baipidao",
+   "n": "百辟刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成伤害后，你可以获得其一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【百辟刀】.jpg",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:百辟刀·山河图，2026-09-24）"
+  },
+  {
+   "id": "yinfengyi",
+   "n": "引蜂衣",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你受到锦囊牌的伤害+1；当你因【毒】失去体力时，失去的体力值+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【引蜂衣】.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "3(赠)"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:引蜂衣·用间篇，2026-09-24）"
+  },
+  {
+   "id": "nvzhuang",
+   "n": "女装",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "yjy",
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你成为【杀】的目标后，若你为男性，你进行判定：若结果为黑色，此【杀】伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【女装】.webp",
+   "suits": {
+    "用间篇": {
+     "♥": "9(赠)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:女装·用间篇，2026-09-24）"
+  },
+  {
+   "id": "heiguangkai",
+   "n": "黑光铠",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你成为【杀】、伤害锦囊或黑色锦囊牌的目标后，若你不是唯一目标，此牌对你无效。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【黑光铠】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:黑光铠·应变篇，2026-09-24）"
+  },
+  {
+   "id": "huxinjing",
+   "n": "护心镜",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "yb",
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到大于1点的伤害或致命伤害时，你可以将装备区里的此牌置入弃牌堆，然后防止此伤害。出牌阶段，你可以将手牌中的此牌置入其他角色的装备区。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【护心镜】-应变篇.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:护心镜·应变篇，2026-09-24）"
+  },
+  {
+   "id": "renwangjingangdun",
+   "n": "仁王金刚盾",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "幻化之战": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:马钧/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "tongyoubairenjia",
+   "n": "桐油百韧甲",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "幻化之战": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:马钧/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "zhaoyueshizikui",
+   "n": "照月狮子盔",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "幻化之战": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:马钧/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "xiantianbaguazhen",
+   "n": "先天八卦阵",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】无次数限制。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【元戎精械弩】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": "A"
+    },
+    "幻化之战": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:马钧/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "chongyingshenfu",
+   "n": "冲应神符",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你造成大于1点的伤害时或一名角色死亡时，你加1点体力上限并回复1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【灵宝仙葫】.webp",
+   "suits": {
+    "SP": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:葛玄/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "hunbaguazhen",
+   "n": "魂·八卦阵",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你使用【杀】无次数限制。当你使用【杀】指定目标后，你可以令任意名死亡角色依次观看目标角色的手牌并可以重铸其中一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【魂·诸葛连弩】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:黄月英/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "mengjundadao",
+   "n": "盟军大纛",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置两张牌，防止之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【盟军大纛】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:盟军大纛·SP，2026-09-24）"
+  },
+  {
+   "id": "mingguangkai",
+   "n": "明光铠",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你成为【火烧连营】、【火攻】或火【杀】的目标时，取消之；若你为小势力角色，你的副将牌不能被其他角色横置。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【明光铠】-彩色版.jpg",
+   "suits": {
+    "势备篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:明光铠·势备篇，2026-09-24）"
+  },
+  {
+   "id": "huohuanyi",
+   "n": "火浣衣",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "防止你受到的属性伤害。当你成为【杀】的目标后，你可以弃置一张手牌，对使用者造成1点火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【火浣衣】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "Q(珍)",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:火浣衣·九变篇，2026-09-24）"
+  },
+  {
+   "id": "lanyinjia",
+   "n": "烂银甲",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "zhongdanyingjie"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你可以将一张手牌当【闪】使用或打出；【烂银甲】的技能不会无效且不能被无视；当你受到【杀】造成的伤害时，你弃置装备区里的【烂银甲】。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【烂银甲】.webp",
+   "suits": {
+    "忠胆英杰": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:烂银甲·忠胆英杰，2026-09-24）"
+  },
+  {
+   "id": "yexingyi",
+   "n": "夜行衣",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "shjz",
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，红色的【杀】对你无效。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "绝代智将": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·绝代智将」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:夜行衣·山河煮酒·绝代智将，2026-09-24）；2026-09-24爬虫补全[img]",
+   "img": "assets/cards/equip/三国杀-【夜行衣】.jpg"
+  },
+  {
+   "id": "guofengyupao",
+   "n": "国风玉袍",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你不能成为其他角色使用普通锦囊牌的目标。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【国风玉袍】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "9",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "9",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:国风玉袍·神武再世，2026-09-24）"
+  },
+  {
+   "id": "qimenbagua",
+   "n": "奇门八卦",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，其他角色使用的【杀】对你无效。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【奇门八卦】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:奇门八卦·神武再世，2026-09-24）"
+  },
+  {
+   "id": "sanshou",
+   "n": "三首",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以亮出牌堆顶三张牌，若其中有本回合没使用过的牌的类型，则防止此伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【三首】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:三首·神武再世，2026-09-24）"
+  },
+  {
+   "id": "yinfengjia",
+   "n": "引蜂甲",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你受到锦囊牌的伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【引蜂甲】.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "10",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:引蜂甲·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "yinyi",
+   "n": "隐衣",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "qihuanzhizheng"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，普【杀】对你无效。当此牌于你的回合外离开你的装备区后，你失去1点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【隐衣】.jpg",
+   "suits": {
+    "戚宦之争": {
+     "♥": "",
+     "♦": "6",
+     "♠": "",
+     "♣": "6"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:隐衣·戚宦之争，2026-09-24）"
+  },
+  {
+   "id": "lingling",
+   "n": "軨軨",
+   "cat": "equip",
+   "sub": "horse",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你使用【杀】无次数限制。当你使用【杀】指定目标后，你可以令任意名死亡角色依次观看目标角色的手牌并可以重铸其中一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【魂·诸葛连弩】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:黄月英/衍生牌·SP，2026-09-24）；距离标记 -2（超出 ±1，待人工核）"
+  },
+  {
+   "id": "liulongcanjia",
+   "n": "六龙骖驾",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "gzjs"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，其他角色计算与你的距离+1；你计算与其他角色的距离-1；当【六龙骖驾】置入你的装备区时，弃置你装备区其他坐骑牌；你的装备区不能置入其他坐骑牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【六龙骖驾】.jpg",
+   "suits": {
+    "君临天下·权": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「君临天下·权」归入母包「君临天下」；爬虫抓取（萌百 三国杀:六龙骖驾·君临天下·权，2026-09-24）；总表标注包「SP」与库内 pkg 不一致，待人工核对"
+  },
+  {
+   "id": "xinge",
+   "n": "信鸽",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段限一次，你可以将一张手牌交给一名其他角色。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【信鸽】.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "4",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:信鸽·用间篇，2026-09-24）"
+  },
+  {
+   "id": "taigongyinfu",
+   "n": "太公阴符",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段开始时，你可以横置或重置一名角色；出牌阶段结束时，你可以重铸一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【太公阴符】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "A",
+     "♣": ""
+    },
+    "国战应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:太公阴符·应变篇，2026-09-24）"
+  },
+  {
+   "id": "tianjitu",
+   "n": "天机图",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当此牌进入/离开你的装备区时，你弃置一张其他牌/将手牌摸至五张。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【天机图】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q"
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:天机图·应变篇，2026-09-24）"
+  },
+  {
+   "id": "tongque",
+   "n": "铜雀",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "yb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "每回合限一次，你使用具有应变效果的牌无视条件直接发动该牌的应变效果。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【铜雀】.jpg",
+   "suits": {
+    "应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "K"
+    },
+    "国战应变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "5"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铜雀·应变篇，2026-09-24）"
+  },
+  {
+   "id": "sichengliangyu",
+   "n": "四乘粮舆",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【四乘粮舆】.webp",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:彻里吉/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "tiejixuanyu",
+   "n": "铁蒺玄舆",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【四乘粮舆】.webp",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:彻里吉/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "feilunzhanyu",
+   "n": "飞轮战舆",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【四乘粮舆】.webp",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:彻里吉/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "qiongshu",
+   "n": "琼梳",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置X张牌（X为伤害值），防止此伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【琼梳】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:冯方女/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "xishu",
+   "n": "犀梳",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置X张牌（X为伤害值），防止此伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【琼梳】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:冯方女/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "jinshu",
+   "n": "金梳",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置X张牌（X为伤害值），防止此伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【琼梳】.webp",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:冯方女/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "zhaogujing",
+   "n": "照骨镜",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段结束时，你可以展示一张基本牌或普通锦囊牌，视为使用之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【照骨镜】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:照骨镜·SP，2026-09-24）"
+  },
+  {
+   "id": "chunqiubi",
+   "n": "春秋笔",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段限一次，你可以随机选择一项，然后令一名角色从此项开始正序或逆序依次执行所有项：起，失去1点体力；承，摸已损失体力值张牌；转，回复1点体力；合，弃置已损失体力值张手牌（不足则全弃）。此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【春秋笔】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:春秋笔·SP，2026-09-24）"
+  },
+  {
+   "id": "huntianyi",
+   "n": "浑天仪",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你失去装备区里的此牌后，你从牌堆[1]中随机获得两张与此牌点数相同的锦囊牌。当你受到伤害时，销毁此牌并防止之。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【浑天仪】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "A/3/10/Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:浑天仪·SP，2026-09-24）"
+  },
+  {
+   "id": "chuanguoyuxi",
+   "n": "传国玉玺",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp",
+    "hezongkangqin",
+    "taixuhuanjing"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，弃牌阶段开始时，你摸一张牌且手牌上限+2，然后若你不为主公，你失去1点体力。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:传国玉玺·SP，2026-09-24）；2026-09-24爬虫补全[img]",
+   "img": "assets/cards/equip/三国杀-【传国玉玺】.jpg"
+  },
+  {
+   "id": "qingnangshu",
+   "n": "青囊书",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，准备阶段，你加1点体力上限并回复1点体力（当所有角色累计发动此装备技能三次后，销毁此牌）。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:青囊书·SP，2026-09-24）"
+  },
+  {
+   "id": "huhaibi",
+   "n": "湖海笔",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "结束阶段或当此牌置入你的装备区后，你可以调整笔上势力的顺序；笔上相邻势力的角色互相造成的伤害+1；此牌离开你的装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【湖海笔】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:湖海笔·SP，2026-09-24）"
+  },
+  {
+   "id": "dinglanyemingzhu",
+   "n": "定澜夜明珠",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "gzjs",
+    "taixuhuanjing"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，若你：没有〖制衡〗，你视为拥有〖制衡〗；拥有〖制衡〗，则取消技能描述中弃置牌数的限制。〖制衡〗：出牌阶段限一次，你可以弃置至多X张牌（X为你的体力上限），然后摸等量的牌。〖制衡〗（修改）：出牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【定澜夜明珠】.jpg",
+   "suits": {
+    "君临天下·变": {
+     "♥": "",
+     "♦": "6",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「君临天下·变」归入母包「君临天下」；爬虫抓取（萌百 三国杀:定澜夜明珠·君临天下·变，2026-09-24）"
+  },
+  {
+   "id": "dunjiatianshu",
+   "n": "遁甲天书",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段限两次，你可以变更副将。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【遁甲天书】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "3(珍)",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:遁甲天书·九变篇，2026-09-24）"
+  },
+  {
+   "id": "yingwubei",
+   "n": "鹦鹉杯",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "每回合限九次，你可以将牌堆顶的一张牌当【酒】使用。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【鹦鹉杯】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "9(珍)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:鹦鹉杯·九变篇，2026-09-24）"
+  },
+  {
+   "id": "jiuzhouding",
+   "n": "九州鼎",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "分发起始手牌前或洗牌后，将此牌从牌堆中置入弃牌堆。锁定技，若你装备区里有至少四张奇珍牌，你所在阵营获得胜利。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【九州鼎】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "K(珍)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:九州鼎·九变篇，2026-09-24）"
+  },
+  {
+   "id": "tianshucanjuan",
+   "n": "天书残卷",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "huan"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段限一次，若你的体力值大于1，你可以对自己造成1点伤害，然后摸两张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【天书残卷】.jpg",
+   "suits": {
+    "幻": {
+     "♥": "",
+     "♦": "5",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:天书残卷·三国杀·幻，2026-09-24）"
+  },
+  {
+   "id": "zhiluoxiangnang",
+   "n": "芷萝香囊",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，若你没有伴侣，异性角色将【花】赠予除你以外的角色时，令此次赠予失败。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【芷萝香囊】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "9",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:芷萝香囊·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "xique",
+   "n": "喜鹊",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "fenghuaxueyue"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "每回合限一次，当你赠予其他角色【花】后，该角色可以立即赠予你一张【花】。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【喜鹊】.jpg",
+   "suits": {
+    "风花雪月": {
+     "♥": "",
+     "♦": "6",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:喜鹊·风花雪月，2026-09-24）"
+  },
+  {
+   "id": "zhuiyunzhuri",
+   "n": "追云逐日",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "huacaimiaojin"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "结束阶段，若【追云逐日】位于你的：大拇指，你可以摸两张牌；食指，你可以对一名角色造成1点火焰伤害；中指，你可以获得一名其他角色一张牌；无名指，你可以弃置至多两名角色各一张牌；小拇指，你可以回复1点体力。（当【追云逐日】进入一名角色装备区后，该角色须决定其位置且不能更改）",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【追云逐日】.png",
+   "suits": {
+    "画彩描金": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:追云逐日·画彩描金，2026-09-24）"
+  },
+  {
+   "id": "junyin",
+   "n": "军印",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "shjz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当装备区里的此牌被弃置时，你防止之；准备阶段，你可以将至多X张手牌交给任意名其他角色（X为你装备区里的牌数）。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【军印】.jpg",
+   "suits": {
+    "龙起襄樊": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "总表标注「山河煮酒·龙起襄樊」归入母包「山河煮酒」；爬虫抓取（萌百 三国杀:军印·山河煮酒·龙起襄樊，2026-09-24）"
+  },
+  {
+   "id": "xuwangzhimian",
+   "n": "虚妄之冕",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【虚妄之冕】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "4"
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "4"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虚妄之冕·神武再世，2026-09-24）"
+  },
+  {
+   "id": "shanrangzhaoshu",
+   "n": "禅让诏书",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当其他角色于另一名角色的回合内第一次获得牌时，你可以选择一项：1.交给其一张牌；2.令其交给你一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【禅让诏书】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:禅让诏书·神武再世，2026-09-24）"
+  },
+  {
+   "id": "lingsheji",
+   "n": "灵蛇髻",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段结束时，你可以选择一项：1.摸一张牌；2.将一张牌置于武将牌上，若如此做，你于回合结束时获得此牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【灵蛇髻】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "Q"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:灵蛇髻·神武再世，2026-09-24）"
+  },
+  {
+   "id": "jinhe",
+   "n": "锦盒",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "一名角色使用【锦盒】时，其观看牌堆顶的两张牌并扣置其中一张于【锦盒】下，称为“礼”。出牌阶段，你可将“礼”置入弃牌堆。若如此做，你弃置所有与此“礼”花色相同的手牌和【锦盒】；当【锦盒】未以此法进入弃牌堆时，你弃置所有手牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【锦盒】.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "10"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:锦盒·逐鹿天下，2026-09-24）"
+  },
+  {
+   "id": "sanlve",
+   "n": "三略",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "qimenbazhen"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你的攻击范围+1；你的手牌上限+1；你出牌阶段使用【杀】的次数+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【三略】.jpg",
+   "suits": {
+    "奇门八阵": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    },
+    "SP": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:三略·奇门八阵，2026-09-24）"
+  },
+  {
+   "id": "jianhaojiushou",
+   "n": "见好就收",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你亮出牌堆顶的一张牌，然后猜测牌堆顶的下一张牌点数大于或小于此牌并亮出之。若猜对，你选择一项：1.获得所有亮出的牌；2.重复猜测流程。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "wangmeizhike",
+   "n": "望梅止渴",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对一名角色使用。直到其回合结束，其手牌中的梅花牌均视为【桃】。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "zhisifangxiu",
+   "n": "至死方休",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你将体力上限减至1点，然后可以视为使用至多X张火【杀】（X为你因此减少的体力上限且至多为9）。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "qingsuan",
+   "n": "清算",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你选择一名对你造成过伤害的角色，对其造成0-2点随机伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "huoshangjiaoyou",
+   "n": "火上浇油",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对所有角色使用。目标角色依次展示手牌中所有的伤害牌，这些牌造成的伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "haoyun",
+   "n": "好运",
+   "cat": "scroll",
+   "sub": "normal",
+   "pkg": [
+    "chuangwanjiehuodongxianding"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段，对你使用。你选择一种颜色，然后进行判定，若结果为你选择的颜色，则你重复此流程，否则你获得此前所有的判定牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "创玩节专属": {
+     "♥": "K",
+     "♦": "K",
+     "♠": "K",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:创玩节锦囊·创玩节活动限定，2026-09-24）"
+  },
+  {
+   "id": "nailongzhijian",
+   "n": "奶龙之剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "nailongsanguosha"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名攻击范围大于你的角色为目标后，你可以令其选择一项：1.弃置一张手牌；2.令你摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "奶龙三国杀": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:奶龙装备·奶龙三国杀，2026-09-24）"
+  },
+  {
+   "id": "tanke",
+   "n": "坦克",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "nailongsanguosha"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用【杀】造成的伤害+1。你不能对距离为1的角色使用【杀】。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "奶龙三国杀": {
+     "♥": "Q",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:奶龙装备·奶龙三国杀，2026-09-24）"
+  },
+  {
+   "id": "jiguangjian",
+   "n": "极光剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，你可以弃置其一张牌，然后你摸一张牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "J",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "dihuangzhanji",
+   "n": "帝皇战戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用本轮〖天行〗选择花色的牌无次数限制，其他角色使用此花色的牌不能指定你为目标。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "lieyanbiao",
+   "n": "烈焰镖",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】被抵消后，你可以对攻击范围内的一名角色造成1点火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "lieyandao",
+   "n": "烈焰刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，你可以对其造成1点火焰伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "10",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "lieyangong",
+   "n": "烈焰弓",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用牌造成伤害后，你可以获得一张非伤害锦囊牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "yangan",
+   "n": "烟杆",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "gongxifacaifu"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你每回合使用的第一张【杀】可以指定所有敌方角色为目标；此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【烟杆】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:地主装备·恭喜发财·福，2026-09-24）"
+  },
+  {
+   "id": "wushuangfangtianji",
+   "n": "无双方天戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "hlg"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】对目标角色造成伤害后，你可以摸一张牌或弃置其一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【无双方天戟】.jpg",
+   "suits": {
+    "虎牢关": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虎牢关装备·虎牢关，2026-09-24）"
+  },
+  {
+   "id": "fumojingangchu",
+   "n": "伏魔金刚杵",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zhengzhanhulao"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】指定一名角色为目标后，此【杀】无视其防具。你对有防具的角色造成的伤害+1。当此牌离开装备区时，你弃置所有敌方角色装备区里的防具牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【伏魔金刚杵】.jpg",
+   "suits": {
+    "征战虎牢": {
+     "♥": "",
+     "♦": "",
+     "♠": "K",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:神武装备·征战虎牢，2026-09-24）"
+  },
+  {
+   "id": "feijiangshenweijian",
+   "n": "飞将神威剑",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zhengzhanhulao"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你即将造成的伤害视为失去体力。当一名角色失去1点体力后，你摸一张牌。当此牌离开装备区时，你令随机一名敌方角色失去2点体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【飞将神威剑】.jpg",
+   "suits": {
+    "征战虎牢": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:神武装备·征战虎牢，2026-09-24）"
+  },
+  {
+   "id": "wushuangxiuluoji",
+   "n": "无双修罗戟",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "zhengzhanhulao"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你使用【杀】或【决斗】造成伤害后，你可以对受伤角色的任意名相邻角色各造成1点伤害。当此牌离开装备区时，你对所有敌方角色各造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【无双修罗戟】.jpg",
+   "suits": {
+    "征战虎牢": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:神武装备·征战虎牢，2026-09-24）"
+  },
+  {
+   "id": "leizhen",
+   "n": "雷震",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你每使用三张手牌后，你使用下一张【杀】造成的伤害+1（不叠加）。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "duanhun",
+   "n": "断魂",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你造成的伤害无视受伤角色护甲[1]。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "zhanhundao",
+   "n": "斩魂刀",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你对一名角色造成伤害时，若其未受伤，你可以防止此伤害并令其减1点体力上限。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "yaodaochitong",
+   "n": "妖刀赤瞳",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你使用黑色【杀】造成的伤害+1。当你使用【杀】指定目标后，你进行判定，若结果为黑色，此【杀】随机转移给其他合法目标。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "anqifeiren",
+   "n": "暗器飞刃",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，每名角色每回合限一次，当你对其他角色造成伤害时，你令其随机一个非锁定技失效直到其回合结束。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "yitianshini",
+   "n": "倚天弑逆",
+   "cat": "equip",
+   "sub": "weapon",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【杀】造成伤害时，若受伤角色本阶段手牌数未发生过变化，此伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "6",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "huoguo",
+   "n": "火锅",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "nailongsanguosha"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置两张牌，防止之。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "奶龙三国杀": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:奶龙装备·奶龙三国杀，2026-09-24）"
+  },
+  {
+   "id": "jiguangdun",
+   "n": "极光盾",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你成为【杀】的目标后，你可以摸一张牌，然后弃置当前回合角色一张牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "SP": {
+     "♥": "",
+     "♦": "Q",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:铠甲勇士武将/衍生牌·SP，2026-09-24）"
+  },
+  {
+   "id": "diqi",
+   "n": "地契",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "doudizhubiaozhunban"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到伤害时，你可以弃置装备区里的【地契】，防止此伤害；此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【地契】.jpg",
+   "suits": {
+    "智斗三国": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:地主装备·斗地主标准版，2026-09-24）"
+  },
+  {
+   "id": "linglongshimandai",
+   "n": "玲珑狮蛮带",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "hlg"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当其他角色使用牌指定你为唯一目标后，你可以进行判定，若结果为红桃，此牌对你无效。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【玲珑狮蛮带】.jpg",
+   "suits": {
+    "虎牢关": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": "2"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虎牢关装备·虎牢关，2026-09-24）"
+  },
+  {
+   "id": "hongjinbaihuapao",
+   "n": "红锦百花袍",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "hlg"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，防止你受到的属性伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【红棉百花袍】.jpg",
+   "suits": {
+    "虎牢关": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "A"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虎牢关装备·虎牢关，2026-09-24）"
+  },
+  {
+   "id": "tiejiazhou",
+   "n": "铁甲胄",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "当你受到大于1点的伤害或致命伤害时，你可以将装备区里的此牌置入弃牌堆，然后防止你受到的伤害直到回合结束。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "2"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "gouxiang",
+   "n": "钩镶",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你使用【闪】响应【杀】后，若两张牌花色或点数相同，你随机获得此【杀】使用者一张手牌。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "jinhuanxianlinjia",
+   "n": "金环衔鳞甲",
+   "cat": "equip",
+   "sub": "armor",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，每回合限一次，当你成为其他角色使用牌的目标时，若此牌与其他角色对你使用的上一张牌的点数之差不小于3，此牌无效。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "2",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "numa",
+   "n": "驽马",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "yjy",
+    "zltz"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当【驽马】进入你的装备区后，你弃置装备区里的其他牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【驽马】-逐鹿天下.jpg",
+   "suits": {
+    "逐鹿天下": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "用间篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "K(赠)"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·用间篇，2026-09-24）"
+  },
+  {
+   "id": "zhanxiang",
+   "n": "战象",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "yjy"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，其他角色计算与你的距离+1；其他角色对你赠予的牌视为赠予失败。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【战象】.jpg",
+   "suits": {
+    "用间篇": {
+     "♥": "K(赠)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·用间篇，2026-09-24）"
+  },
+  {
+   "id": "zhaoyeyushizi",
+   "n": "照夜玉狮子",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "sp"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "",
+   "target": "",
+   "effect": "你计算与其他角色的距离-1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【照夜玉狮子】.jpg",
+   "suits": {
+    "SP": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·SP，2026-09-24）"
+  },
+  {
+   "id": "jingfan",
+   "n": "惊帆",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "sb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "",
+   "target": "",
+   "effect": "你计算与其他角色的距离-1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【惊帆】.jpg",
+   "suits": {
+    "势备篇": {
+     "♥": "3(合)",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    },
+    "山河煮酒": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·势备篇，2026-09-24）"
+  },
+  {
+   "id": "tianlu",
+   "n": "天禄",
+   "cat": "equip",
+   "sub": "horse",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "你计算与其他角色的距离-3。若场上没有与你势力相同的君主，你视为拥有你势力的君主技。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【天禄】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "3(珍)"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·九变篇，2026-09-24）；距离标记 -3（超出 ±1，待人工核）"
+  },
+  {
+   "id": "baiqilin",
+   "n": "白麒麟",
+   "cat": "equip",
+   "sub": "horse",
+   "pkg": [
+    "jb"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "其他角色计算与你的距离+2。当你使用此牌时，你对所有体力值大于你的角色各造成1点雷电伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【白麒麟】.jpg",
+   "suits": {
+    "九变篇": {
+     "♥": "",
+     "♦": "",
+     "♠": "2(珍)",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·九变篇，2026-09-24）；距离标记 +2（超出 ±1，待人工核）"
+  },
+  {
+   "id": "guanjiao",
+   "n": "官轿",
+   "cat": "equip",
+   "sub": "horse",
+   "pkg": [
+    "gongxifacailu"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "出牌阶段限一次，你可以将一张基本牌置于【官轿】上；若此牌上有牌，其他角色不能弃置你装备区的牌，但可以弃置此牌上的牌；其他角色计算与你的距离+X（X为此牌上的牌数）；当此牌上的牌达到四张时，你获胜；此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【官轿】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:地主装备·恭喜发财·禄，2026-09-24）"
+  },
+  {
+   "id": "juechenjinge",
+   "n": "绝尘金戈",
+   "cat": "equip",
+   "sub": "horse_p",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": 1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，敌方角色计算与己方其他角色的距离+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【绝尘金戈】-彩色版.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    },
+    "太虚幻境": {
+     "♥": "",
+     "♦": "",
+     "♠": "5",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·神武再世，2026-09-24）"
+  },
+  {
+   "id": "qicaishenlu",
+   "n": "七彩神鹿",
+   "cat": "equip",
+   "sub": "horse_m",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": -1,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你计算与其他角色的距离-1；当你造成属性伤害时，此伤害+1。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【七彩神鹿】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "K",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·神武再世，2026-09-24）"
+  },
+  {
+   "id": "changandajian",
+   "n": "长安大舰",
+   "cat": "equip",
+   "sub": "horse",
+   "pkg": [
+    "sw"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你计算与其他角色的距离-2；此牌离开装备区时销毁，你获得一名其他角色区域里的一张字母牌或弃置一名其他角色区域里的一张非字母牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【长安大舰】.jpg",
+   "suits": {
+    "神武再世": {
+     "♥": "10",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:坐骑·神武再世，2026-09-24）；距离标记 -2（超出 ±1，待人工核）"
+  },
+  {
+   "id": "dishui",
+   "n": "地税",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "gongxifacaishou"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，你攻击范围内的其他角色于弃牌阶段手牌上限-1，若其于此阶段未弃置牌，你摸一张牌；此牌离开装备区时销毁。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【地税】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:地主装备·恭喜发财·寿，2026-09-24）"
+  },
+  {
+   "id": "yupen",
+   "n": "鱼盆",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "gongxifacaixi"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，结束阶段，你失去1点体力，然后摸两张牌并获得100筹码；此牌不能被弃置。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【鱼盆】.jpg",
+   "note": "爬虫抓取（萌百 三国杀:地主装备·恭喜发财·喜，2026-09-24）"
+  },
+  {
+   "id": "shufazijinguan",
+   "n": "束发紫金冠",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "hlg"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "准备阶段，你可以对一名其他角色造成1点伤害。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【束发紫金冠】.jpg",
+   "suits": {
+    "虎牢关": {
+     "♥": "",
+     "♦": "A",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:虎牢关装备·虎牢关，2026-09-24）"
+  },
+  {
+   "id": "honglianzijinguan",
+   "n": "红莲紫金冠",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "zhengzhanhulao"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "回合结束时，或当此牌离开装备区时，你可以随机弃置所有敌方角色各一张牌。其中每有一张：基本牌，你摸两张牌；装备牌，你令随机一名敌方角色失去1点体力；锦囊牌，你随机获得一名敌方角色的一张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【红莲紫金冠】.jpg",
+   "suits": {
+    "征战虎牢": {
+     "♥": "A",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:神武装备·征战虎牢，2026-09-24）"
+  },
+  {
+   "id": "youhuoshepoling",
+   "n": "幽火摄魄令",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "zhengzhanhulao"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "回合结束时，或当此牌离开装备区时，你可以对一名敌方角色造成2点伤害，然后回复等同于本回合造成伤害值的体力。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【幽火摄魄令】.jpg",
+   "suits": {
+    "征战虎牢": {
+     "♥": "",
+     "♦": "",
+     "♠": "",
+     "♣": "K"
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:神武装备·征战虎牢，2026-09-24）"
+  },
+  {
+   "id": "chiwenyupei",
+   "n": "螭纹玉佩",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，出牌阶段结束时，你回复1点体力。摸牌阶段，若你未受伤，你多摸两张牌。",
+   "core": false,
+   "src": "crawl",
+   "img": "assets/cards/equip/三国杀-【螭纹玉佩】.jpg",
+   "suits": {
+    "山河图": {
+     "♥": "5",
+     "♦": "",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "kunlunjing",
+   "n": "昆仑镜",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，当你受到锦囊牌造成的伤害后，防止同名锦囊牌本局游戏对你造成的伤害。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "",
+     "♠": "Q",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  },
+  {
+   "id": "pinganfu",
+   "n": "平安符",
+   "cat": "equip",
+   "sub": "treasure",
+   "pkg": [
+    "sht"
+   ],
+   "variant": "",
+   "range": null,
+   "horse": null,
+   "timing": "",
+   "target": "",
+   "effect": "锁定技，摸牌阶段，你多摸X张牌（X为你本局游戏杀死的角色数）。",
+   "core": false,
+   "src": "crawl",
+   "suits": {
+    "山河图": {
+     "♥": "",
+     "♦": "K",
+     "♠": "",
+     "♣": ""
+    }
+   },
+   "note": "爬虫抓取（萌百 三国杀:山河图装备·山河图，2026-09-24）"
+  }
+ ]
+}

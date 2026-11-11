@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f7f3ec">
+<script>
+/* 首帧之前就把主题定下来，避免深色系统下先渲染一帧宣纸白再切夜版（开屏闪白）。
+   与 app.js 的 themeMode()/systemTheme() 保持同一套判定：存的是选择（auto/paper/ink）。 */
+(function () {
+  try {
+    var m = localStorage.getItem('sgs.theme');
+    var dark = (m === 'ink') || (m !== 'paper' && window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var r = document.documentElement;
+    r.dataset.theme = dark ? 'ink' : 'paper';
+    r.dataset.themeMode = (m === 'paper' || m === 'ink') ? m : 'auto';
+  } catch (e) { /* 隐私模式禁用 localStorage 时走默认日间 */ }
+})();
+</script>
+<title>三分归晋 · 武将速查</title>
+<link rel="icon" href="favicon.ico?v=20261017" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261017">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=20261017">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261017">
+<meta name="theme-color" content="#840A0B">
+<!-- 自托管字体（2026-10-17）：提前抢带宽，避免首屏字形从系统字体跳到苹果黑体 -->
+<link rel="preload" href="fonts/sgs-hei.woff2?v=3" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sgs-inter.woff2?v=3" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sgs-juan.woff2?v=3" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=e542549d57">
+<link rel="stylesheet" href="battle.css?v=vtagfix1">
+<link rel="stylesheet" href="history.css?v=e542549d57">
+<script>/* __SGS_ASSET_V = 资源缓存串。由 v2/bump_asset_version.py 自动生成，写入本段之后那一个
+   script 标签，同时改写 5 个核心资源的 ?v=（style.css / app.js / services/localAuth.js /
+   history.css / history.js）。★ 别在本行手写 __SGS_ASSET_V —— 写了会与注入行不一致
+   （2026-10-14 踩过）；也别在这段注释里写 script 标签字面量，会把脚本块提前闭合导致语法错误。
+   __SGS_APP_V   = app 版本号：跟着现有版本号往上走，**非大更新只动最后一位**（3.0.3 → 3.0.4 → 3.0.5）；
+                   与 Android 包同号，源头是 sgs-heroes-mobile/tools/manifest_merged.xml 的 versionName；
+                   每次改动都要往 data/changelog.json 最前面加一条更新说明（两处版本号保持一致）*/
+window.__SGS_APP_V='3.0.22';</script>
+<script>window.__SGS_ASSET_V='e542549d57';</script>
+</head>
+<body data-tab="home">
+
+<!-- ============ 开屏加载页（SplashScreen · 原生等价组件，onFinish 即 splashFinish 回调） ============ -->
+<div id="splash" class="splash" role="status" aria-label="正在加载">
+  <button id="splashSkip" class="sp-skip kai" type="button">跳过 3s</button>
+  <div class="sp-center">
+    <div class="sp-totem" aria-hidden="true">
+      <div class="sp-spin">
+        <svg viewBox="0 0 100 100" width="150" height="150">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#C59A5A" stroke-width="1.2" opacity=".5"/>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#C59A5A" stroke-width="1.6" opacity=".55" stroke-dasharray="1.5 5.2"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#C59A5A" stroke-width="1" opacity=".45"/>
+          <g fill="#C59A5A" opacity=".65">
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(0 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(45 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(90 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(135 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(180 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(225 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(270 50 50)"/>
+            <rect x="48.6" y="2.2" width="2.8" height="2.8" transform="rotate(315 50 50)"/>
+          </g>
+          <path d="M50 24 A26 26 0 0 1 50 76 A13 13 0 0 1 50 50 A13 13 0 0 0 50 24 Z" fill="#C59A5A" opacity=".88"/>
+          <path d="M50 24 A26 26 0 0 0 50 76 A13 13 0 0 0 50 50 A13 13 0 0 1 50 24 Z" fill="#C59A5A" opacity=".32"/>
+          <circle cx="50" cy="37" r="3.4" fill="#F7F3EC"/>
+          <circle cx="50" cy="63" r="3.4" fill="#C59A5A"/>
+        </svg>
+      </div>
+    </div>
+    <div class="sp-brand">
+      <b class="sp-title kai">三国速查 · 群英录</b>
+    </div>
+  </div>
+  <div class="sp-bottom">
+    <div class="sp-bar"><i id="spFill"></i></div>
+    <p class="sp-status">正在展开武将画卷... <span id="spPct">0%</span></p>
+    <p class="sp-quote serif" id="spQuote">淡泊以明志，宁静以致远。</p>
+  </div>
+</div>
+
+<div id="status" class="status" hidden><i class="spin"></i><span id="statusText">载入中…</span></div>
+<div id="toast" class="toast" hidden></div>
+<!-- 收藏成功 · 宣纸横幅（1.5s 自动隐去） -->
+<div id="favBanner" class="fav-banner" aria-live="polite"><b id="favBannerText">已收入偏爱武将</b></div>
+
+<!-- ============ 免责声明弹窗（DisclaimerModal · 原生等价组件） ============
+     等价于 <DisclaimerModal :visible="dmOpen" @close="dmOpen = false" />：
+     openDisclaimer()/closeDisclaimer() 即 visible 开关，
+     遮罩 / 右上角× / 底部【我已悉知并同意】均为 close 触发器 -->
+<div id="dmask" class="dm-mask" hidden></div>
+<div id="dmodal" class="dm-modal" role="dialog" aria-modal="true" aria-label="免责声明与版权归属" hidden>
+  <button id="dclose" class="dm-close" type="button" aria-label="关闭">×</button>
+  <header class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <h3 class="dm-title kai">免责声明与版权归属</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </header>
+  <div class="dm-body">
+    <section class="dm-sec">
+      <h4>一 · 项目性质声明</h4>
+      <p>本程序为非营利性开源/个人学习交流工具，仅供三国杀爱好者进行武将技能、台词与战术策略的学习交流使用，严禁用于任何形式的商业盈利行为。</p>
+    </section>
+    <section class="dm-sec">
+      <h4>二 · 数据与素材来源说明</h4>
+      <p>本应用收录的全部武将资料、卡牌数据与图片素材，均由<b class="dm-strong">作者本人</b>把下面各个服务器挨个认真看过、逐项核对游戏内的实际内容后整理出来的 —— 武将名单、扩展包分类、图鉴里的排列顺序、技能原文与立绘，都是一条条对过的，不是从某一处现成抄来。其中<b class="dm-strong">OL / 移动版 / 十周年 / 欢乐杀 四个版本</b>的<b class="dm-strong">技能名称与技能原文</b>，已逐条与对应服务器游戏内的实际显示核对并修正（补全缺失条目、纠正改名、按游戏内顺序重排）；<b class="dm-strong">国际服（繁中版）与小程序（微信版）</b>两版直接取自各自官方客户端配置表，<b>未做人工润色</b>，措辞与其余四版不同源，故在图鉴与「技能改革对照」中以「原文」小标单列提示。</p>
+      <ul class="dm-list">
+        <li><b>六大服务器</b>：<b>三国杀 OL</b>、<b>移动版（手杀）</b>、<b>十周年</b>、<b>欢乐杀</b>、<b>国际服（繁中版 / 台服）</b>、<b>小程序（微信版）</b>。各版独立成库、数据互不互通，扩展包与图鉴分类均与各自游戏内保持一致。</li>
+        <li><b>小程序版的收录范围</b>：按 <b>8 个系列</b>（志 / 极 / 万象 / 界限 / 限定 / 神话 / 一将 / 标准）分组收录，其中「极」「志」两个系列为小程序独有，另外五版均不收录。该版本技能描述为官方精简改写版，措辞与其余各版本不一致，跨版本对账一律以本库收录的原文为准。</li>
+        <li><b>武将资料</b>：技能名称与技能原文描述、称号、势力、体力上限、品质与稀有度，以及所属扩展包与游戏内的排列顺序，全部以对应服务器游戏内的实际显示为准。</li>
+        <li><b>标 / 界 两套技能</b>：十周年已把「标准版（标）」与「界限突破（界）」并到同一格，本应用照官方的形态关系把两套技能都留着，详情页可切换查看。</li>
+        <li><b>技能原文对账</b>：OL / 移动版 / 十周年 / 欢乐杀 四版的技能名称与技能原文描述，均已逐条与对应服务器游戏内的实际显示核对并修正——缺失的补全、改过名的纠正、版本内顺序按游戏内重排；同一技能在各版本之间的措辞差异，按各端原样保留，不做统一改写。国际服与小程序直接取自官方配置表、未经人工润色，这类资料带「原文」小标，跨版本比对时其中一部分出入只是官方的另一种写法，不等于规则不同。</li>
+        <li><b>统计数字</b>：武将收录数、扩展包与系列的条目数、技能条数与类型分布、跨版本技能对照等计数，均由程序按已整理的数据自动统计生成，非人工估算；数据随版本更新而变化，展示时以页面内标注的更新日期为准。</li>
+        <li><b>立绘与图标</b>：武将立绘、皮肤原画、卡包圆标与势力图标等图片素材，取自各版本游戏内资源。</li>
+        <li><b>游戏牌种类</b>：卡牌效果、花色与点数分布、卡面图，按游戏内牌堆的实际内容整理。</li>
+        <li><b>台词与语音</b>：武将台词与技能配音，按各版本游戏内实际语音整理（线上版本默认不加载语音）。</li>
+        <li><b>速查与玩法模块</b>：身份局速查、面杀速查、线下速查、国战专区、三国杀科普、武将系列类型、技能改革对照、规则与玩法、游戏牌种类、三国史料，按各版本玩法模式与官方通用规则整理。</li>
+        <li><b>资讯与推荐</b>：首页资讯与每日武荐，以及官方推荐信息（评分、星级、难度、强度、胜率），整理自各版本官网公告与官方推荐页。</li>
+      </ul>
+      <p>整理过程中除游戏内实际内容外，也参考了各版本官方公开资料与玩家社区的公开信息，并逐项与游戏内显示交叉核对；如仍有疏漏或错配，欢迎指正，我会尽快修正。</p>
+    </section>
+    <section class="dm-sec">
+      <h4>三 · 知识产权归属</h4>
+      <p>“三国杀”及其包含的所有武将形象、立绘原画、技能名称、游戏文案、音频音效之著作权与商标权，均归属于<b class="dm-strong">杭州游卡网络技术有限公司</b>所有。</p>
+      <p>本项目无意侵犯任何官方权利主体之合法权益。如权利方认为本工具展示的内容存在侵权争议，请联系开发者，我们将在核实后第一时间进行删除或技术下架处理。</p>
+    </section>
+    <section class="dm-sec">
+      <h4>四 · 字体授权说明</h4>
+      <p>本应用内置<b class="dm-strong">三套字体</b>（共七个字重文件），仅用于非商业性的学习与交流，不作商业用途：</p>
+      <ul class="dm-list">
+        <li><b>HarmonyOS Sans SC</b>（鸿蒙黑体，Regular / Medium / Bold）：承担正文说明、标题按钮与需要加重强调的文字。</li>
+        <li><b>Inter 18pt</b>（Regular / Medium / Bold）：承担全部英文、数字与符号。</li>
+        <li><b>喜鹊聚珍体</b>：承担标题、卡名、武将名等需要书卷气的大字。</li>
+      </ul>
+      <p>以上字体的著作权归各自权利人所有。应用内只打包了本应用展示所需的字符，不提供字体文件的单独分发或下载；如需在商业项目中使用，请自行向权利人取得授权。</p>
+    </section>
+  </div>
+  <button id="dagree" class="dm-agree kai" type="button">我已悉知并同意</button>
+</div>
+
+<!-- ============ 更新优化说明弹窗（UpdateModal · 数据驱动 data/changelog.json） ============
+     内容全部来自 data/changelog.json 的 updates 数组，加一条记录即多一条说明；
+     触发：① 启动时 app 版本号（__SGS_APP_V）与上次看过的不同 → 开屏结束后自动弹一次（每版一次）
+          ② 「我的 → 偏好与设置 → 更新优化说明」随时手动打开，看得到全部历史
+     遮罩 / 右上角× / 底部【知道了】均为 close 触发器 -->
+<div id="umask" class="dm-mask" hidden></div>
+<div id="umodal" class="dm-modal up-modal" role="dialog" aria-modal="true" aria-label="更新优化说明" hidden>
+  <button id="uclose" class="dm-close" type="button" aria-label="关闭">×</button>
+  <header class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <h3 class="dm-title kai">更新优化说明</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </header>
+  <div class="dm-body" id="ubody"></div>
+  <button id="uok" class="dm-agree kai" type="button">知道了</button>
+</div>
+
+<!-- ============ 规则术语速览弹窗（玩法页抬头【速览】唤起） ============ -->
+<div id="gmmask" class="dm-mask dm-sub" hidden></div>
+<div id="gmmodal" class="dm-modal dm-sub" role="dialog" aria-modal="true" aria-label="规则术语速览" hidden>
+  <button id="gmclose" class="dm-close" type="button" aria-label="关闭">×</button>
+  <header class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <h3 class="dm-title kai">规则术语速览</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 24 12" aria-hidden="true"><path d="M2 9.5c0-3 2.4-5 4.9-4.4C7.8 2.6 10.3 1.8 12 3.4 13.7 1.8 16.2 2.6 17.1 5.1 19.6 4.5 22 6.5 22 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </header>
+  <div class="dm-body" id="gmbody"></div>
+  <button id="gmok" class="dm-agree kai" type="button">知道了</button>
+</div>
+
+<!-- ================= 首页 ================= -->
+<main id="page-home" class="page">
+  <!-- 沉浸式轮播 Banner：① 每日武将 ② OL 资讯 ③ 一将成名（十周年）资讯
+       （自动轮播 + 圆点指示，可左右滑动） -->
+  <section class="bx" id="bannerBox" style="--bx-n:3" aria-roledescription="轮播" aria-label="每日武将与游戏资讯">
+    <div class="bx-track" id="bxTrack">
+      <!-- ① 每日武将 -->
+      <article class="banner bx-slide" id="dailyCard" role="button" tabindex="0" aria-label="查看当前展示的十周年女将皮肤">
+        <div class="banner-bg" aria-hidden="true"></div>
+        <!-- ?v= 是品牌图的换图计数器：图片不进 __SGS_ASSET_V 的哈希，URL 不变会被长期缓存，
+             换图时把数字 +1（2026-10-17 换成用户自备的金色书法标）。 -->
+        <img class="brand-logo" src="images/brand/sgs-logo.png?v=2" alt="三国杀" aria-hidden="true">
+        <div class="banner-text">
+          <p class="banner-sub" id="dailyDate">—</p>
+          <div class="daily-meta">
+            <b id="dailyName">—</b>
+            <span id="dailyTitle"></span>
+          </div>
+        </div>
+        <div class="banner-art" id="dailyImgWrap" aria-hidden="true"></div>
+      </article>
+
+      <!-- ② OL 游戏资讯（点进去看全部 OL 资讯内容）
+           封面本身就是一张"成品 banner"（自带标题），所以整图铺满不裁切，
+           文字改放在底部压暗条上，避免两套标题互相打架。 -->
+      <article class="banner bx-slide bx-news" id="newsCard" role="button" tabindex="0" aria-label="查看 OL 资讯">
+        <div class="bx-news-cover" id="newsImgWrap" aria-hidden="true"></div>
+        <div class="bx-news-scrim" aria-hidden="true"></div>
+        <div class="banner-text bx-news-text">
+          <p class="banner-sub" id="newsSub">—</p>
+          <div class="daily">
+            <span class="daily-label">OL资讯</span>
+            <b id="newsTitle">—</b>
+            <i id="newsMeta"></i>
+          </div>
+        </div>
+      </article>
+
+      <!-- ③ 一将成名（三国杀十周年）游戏资讯（点进去看全部新杀资讯内容）
+           官网：x.sanguosha.com/news/activity（《三国杀：一将成名》= 十周年正式版） -->
+      <article class="banner bx-slide bx-news" id="news10Card" role="button" tabindex="0" aria-label="查看一将成名资讯">
+        <div class="bx-news-cover" id="news10ImgWrap" aria-hidden="true"></div>
+        <div class="bx-news-scrim" aria-hidden="true"></div>
+        <div class="banner-text bx-news-text">
+          <p class="banner-sub" id="news10Sub">—</p>
+          <div class="daily">
+            <span class="daily-label">一将成名</span>
+            <b id="news10Title">—</b>
+            <i id="news10Meta"></i>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 圆点指示 -->
+    <div class="bx-dots" id="bxDots" role="tablist" aria-label="轮播切换">
+      <button class="bx-dot active" data-i="0" type="button" role="tab" aria-label="每日武将"></button>
+      <button class="bx-dot" data-i="1" type="button" role="tab" aria-label="OL 资讯"></button>
+      <button class="bx-dot" data-i="2" type="button" role="tab" aria-label="一将成名资讯"></button>
+    </div>
+  </section>
+
+  <h3 class="sec-title kai"><span class="st-main">功能<i>「特色」</i></span><small>速查工具一览</small></h3>
+  <section class="mods">
+    <button class="mod" id="modIdentity" data-seal="查" type="button"><b>身份局速查</b><i>主忠反内选将</i></button>
+    <button class="mod" id="modQuick" data-seal="速" type="button"><b>面杀速查</b><i>技能三行看懂</i></button>
+    <button class="mod" id="modQuickref" data-seal="诀" type="button"><b>线下速查</b><i>技能六型口诀</i></button>
+    <button class="mod" id="modGz" data-seal="战" type="button"><b>国战专区</b><i>暗将双将搭配</i></button>
+    <button class="mod" id="modRank" data-seal="科" type="button"><b>三国杀科普</b><i>全版本区分指南</i></button>
+    <button class="mod" id="modSeries" data-seal="系" type="button"><b>武将系列类型</b><i>名字前缀玄机</i></button>
+    <button class="mod" id="modEvolve" data-seal="演" type="button"><b>技能改革对照</b><i>同将多套写法</i></button>
+    <button class="mod" id="modMode" data-seal="策" type="button"><b>规则与玩法</b><i>全版本规则图解</i></button>
+    <button class="mod" id="modCards" data-seal="牌" type="button"><b>游戏牌种类</b><i>牌谱总表速查</i></button>
+    <button class="mod" id="modHistory" data-seal="史" type="button"><b>三国史料</b><i>正史演义分轨</i></button>
+  </section>
+
+  <h3 class="sec-title kai"><span class="st-main">今日<i>「精选」</i></span><small>每日武将鉴赏 · 点击查看详情</small></h3>
+  <section class="picks" id="pickRow"></section>
+</main>
+
+<!-- ================= 英雄速查 ================= -->
+<main id="page-heroes" class="page" hidden>
+  <!-- 页面大抬头（PageHeader 原生等价组件 · 挂载点①，JS 渲染） -->
+  <header id="heroHead" class="phead"></header>
+  <!-- 吸顶头块：搜索（四版全库）→ 版本切换 → 阵营 + 筛选（整体不透明，杜绝卡片穿图） -->
+  <div class="htop" id="htop">
+    <!-- 搜索模块：夹在页头「群英图谱」与版本切换之间，一个框搜遍四版 -->
+    <label class="search" id="sbar">
+      <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.6c3.2 4.6 5.4 7.5 5.4 10.4a5.4 5.4 0 11-10.8 0C6.6 10.1 8.8 7.2 12 2.6z" fill="currentColor"/></svg>
+      <input id="q" type="search" placeholder="搜索全部武将 / 称号 / 技能名" autocomplete="off">
+    </label>
+
+    <nav class="vtabs" id="vtabs" role="tablist" aria-label="选择版本"></nav>
+
+    <div class="bar">
+    <!-- 阵营行常显，筛选键就贴在「全部」这一行右端 -->
+    <div class="krow">
+      <nav class="kingdoms" id="kingdoms" aria-label="阵营筛选"></nav>
+      <button id="filterBtn" class="fbtn on" type="button" aria-expanded="true" aria-controls="fpanel">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M4 5h16l-6.2 7.2v4.6L10.2 19v-6.8L4 5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span>筛选</span>
+        <i id="filterBadge" class="fbadge" hidden></i>
+      </button>
+    </div>
+    <div class="fpanel open" id="fpanel">
+      <div class="fpanel-in">
+        <div class="filters">
+          <div class="frow" id="packRow"></div>
+          <!-- 二级扩展包：仅当该版本 packs[].children 有数据时出现（欢乐杀），其余版本 hidden -->
+          <div class="frow" id="packSubRow" hidden></div>
+          <div class="frow" id="roleRow"></div>
+          <div class="frow" id="levelRow"></div>
+          <div class="frow" id="futRow" hidden></div>
+        </div>
+      </div>
+    </div>
+    <div class="metaline">
+      <span id="count">—</span>
+      <button id="clearBtn" class="link" type="button" hidden>清除筛选</button>
+    </div>
+    </div>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" hidden>未找到符合条件的武将</div>
+  <!-- A-Z 拼音首字母索引条（虚拟列表吸附跳转） -->
+  <nav id="pybar" class="pybar" aria-label="首字母索引"></nav>
+  <div id="pyTip" class="py-tip kai" aria-hidden="true">A</div>
+</main>
+
+
+
+
+
+<!-- 卡牌详情弹窗（复用 dm 弹窗体系） -->
+<div id="cdmask" class="dm-mask dm-sub" hidden></div>
+<div id="cdmodal" class="dm-modal dm-sub" role="dialog" aria-modal="true" aria-label="卡牌详情" hidden>
+  <button id="cdclose" class="dm-close" type="button" aria-label="关闭">×</button>
+  <div class="dm-body cd-in" id="cdBody"></div>
+</div>
+
+<!-- ================= 规则与玩法（弹层 · 与首页其余卡同一套 dm-modal 外壳） =================
+     2026-10-14 改：原为整页（<main id="page-mode">），现改为原地弹层，不再切 Tab。
+     #page-mode 这个 id 保留在弹层内部，外部按 id 取文本的地方（如规则自检脚本）不受影响。 -->
+<div id="modeMask" class="dm-mask" hidden></div>
+<section id="modeModal" class="dm-modal dm-modal-pane" role="dialog" aria-modal="true" aria-label="规则与玩法" hidden>
+  <button id="modeClose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">规则与玩法</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div class="dm-body pane-host">
+    <div id="page-mode" class="page">
+      <div class="pane-bar">
+        <p class="pane-sub">军争统领 · 官方全版本规则图解</p>
+        <button id="modeGlossary" class="phead-btn kai" type="button">速览</button>
+      </div>
+      <!-- 容器1：玩法规则（可折叠，同"我的"页模块体系） -->
+      <section class="gcard fold-sec" data-sec="mrules">
+        <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+          <h3 class="gtitle kai">玩法规则</h3>
+          <i class="sec-arrow">▾</i>
+        </div>
+        <div class="sec-body" id="sec-mrules"><div class="sec-in"><div class="gcontent">
+          <!-- 第一层：版本分段控制器 -->
+          <div class="seg mverseg" id="mverSeg" role="radiogroup" aria-label="版本切换">
+            <button data-ver="ol" type="button">三国杀OL</button>
+            <button data-ver="mob" type="button">移动版</button>
+            <button data-ver="ten" type="button">十周年</button>
+            <button data-ver="wiki" type="button">通用百科</button>
+          </div>
+          <!-- 第二层：玩法分类印章横滑栏 -->
+          <div class="mcats" id="mcatBar" aria-label="玩法分类"></div>
+          <!-- 模式列表（JS 渲染） -->
+          <section id="modeList" class="modelist" aria-live="polite"></section>
+        </div></div></div>
+      </section>
+
+      <!-- 容器2：牌桌沙盘（可折叠） -->
+      <section class="gcard fold-sec" data-sec="mdesk">
+        <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+          <h3 class="gtitle kai">牌桌沙盘</h3>
+          <i class="sec-arrow">▾</i>
+        </div>
+        <div class="sec-body" id="sec-mdesk"><div class="sec-in"><div class="gcontent">
+          <div class="mviews" id="mviewBar" aria-label="沙盘视图"></div>
+          <div class="desk-wrap">
+            <div class="desk" id="desk" aria-label="牌桌座次沙盘"></div>
+            <div class="desk-info" id="deskInfo" hidden></div>
+          </div>
+        </div></div></div>
+      </section>
+
+      <!-- 容器3：回合时序（可折叠，内层为六阶段手风琴） -->
+      <section class="gcard fold-sec" data-sec="mphase">
+        <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+          <h3 class="gtitle kai">回合时序</h3>
+          <i class="sec-arrow">▾</i>
+        </div>
+        <div class="sec-body" id="sec-mphase"><div class="sec-in"><div class="gcontent">
+          <div id="phaseAcc" class="phase-acc"></div>
+        </div></div></div>
+      </section>
+
+      <!-- 容器3：轻量对战（人机试玩入口 · 原型逻辑 battle.js，方案 battle/DESIGN.md） -->
+      <section class="gcard">
+        <div class="ghead">
+          <h3 class="gtitle kai">轻量对战</h3>
+          <span class="ghead-r" style="font-size:11px;color:var(--ink3)">内测 · 原型</span>
+        </div>
+        <div class="gcontent">
+          <button id="battleEntry" class="battle-entry" type="button">
+            🎮 开一局 · 身份场 5 人
+            <small>点牌 → 点目标 → 确认 · 横屏体验最佳</small>
+          </button>
+        </div>
+      </section>
+      <!-- 容器4：新月杀（单机完整版 · 只有 Android 壳里内置了游戏才出现；网页版由 JS 保持隐藏） -->
+      <section class="gcard" id="fkCard" style="display:none">
+        <div class="ghead">
+          <h3 class="gtitle kai">新月杀 · 单机完整版</h3>
+          <span class="ghead-r" style="font-size:11px;color:var(--ink3)">内置 · 离线可玩</span>
+        </div>
+        <div class="gcontent">
+          <button id="fkEntry" class="battle-entry" type="button" style="border-style:solid;border-color:rgba(178,58,40,.5);background:#fff6f4;color:#a8321f">
+            进入《新月杀》· 人机对战
+            <small>完整规则与卡牌 · 本地自带服务器 · 不联网也能玩</small>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 游戏牌种类（弹层 · 与首页其余卡同一套 dm-modal 外壳） =================
+     2026-10-14 改：原为整页（<main id="page-cards">），现改为原地弹层，不再切 Tab。
+     #page-cards / #cgrid / #cardCatRow 等 id 全部保留在弹层内部。 -->
+<div id="cardMask" class="dm-mask" hidden></div>
+<section id="cardModal" class="dm-modal dm-modal-pane" role="dialog" aria-modal="true" aria-label="游戏牌种类" hidden>
+  <button id="cardClose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">游戏牌种类</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div class="dm-body pane-host">
+    <div id="page-cards" class="page">
+      <div class="pane-bar">
+        <p class="pane-sub">游戏牌图鉴 · 类别与包属一键速查</p>
+      </div>
+      <!-- 筛选：一级类别 + 二级扩展包 -->
+      <nav class="cfil" aria-label="卡牌筛选">
+        <div class="frow" id="cardCatRow"></div>
+        <div class="frow" id="cardPkgRow"></div>
+        <div class="metaline">
+          <span id="cardCount">—</span>
+          <button id="cardClear" class="link" type="button" hidden>清除筛选</button>
+        </div>
+      </nav>
+      <div id="cgrid" class="cgrid"></div>
+      <div id="cempty" class="empty" hidden>该分类下暂无卡牌</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OL 资讯 ================= -->
+<main id="page-olnews" class="page" hidden>
+  <header id="olNewsHead" class="phead"></header>
+
+  <!-- 同步状态条 -->
+  <div class="ol-sync" id="olSync">
+    <span class="ol-sync-dot" aria-hidden="true"></span>
+    <span class="ol-sync-tx" id="olSyncTx">数据加载中…</span>
+    <button id="olSyncBtn" class="link kai" type="button">同步最新</button>
+  </div>
+
+  <!-- 分类筛选（含 New 标签） -->
+  <nav class="frow ol-cats" id="olCats" aria-label="资讯分类"></nav>
+
+  <div class="metaline">
+    <span id="olCount">—</span>
+    <button id="olHeroOnly" class="link" type="button">只看有新武将</button>
+  </div>
+
+  <div id="olGrid" class="ol-grid"></div>
+  <div id="olEmpty" class="empty" hidden>暂无资讯</div>
+</main>
+
+<!-- 资讯详情弹窗（复用 dm 弹窗体系） -->
+<div id="olmask" class="dm-mask" hidden></div>
+<div id="olmodal" class="dm-modal" role="dialog" aria-modal="true" aria-label="资讯详情" hidden>
+  <button id="olclose" class="dm-close" type="button" aria-label="关闭">×</button>
+  <div class="dm-body ol-in" id="olBody"></div>
+</div>
+
+<!-- ================= 一将成名资讯（三国杀十周年 · x.sanguosha.com） ================= -->
+<main id="page-x10news" class="page" hidden>
+  <header id="x10NewsHead" class="phead"></header>
+
+  <!-- 同步状态条 -->
+  <div class="ol-sync" id="x10Sync">
+    <span class="ol-sync-dot" aria-hidden="true"></span>
+    <span class="ol-sync-tx" id="x10SyncTx">数据加载中…</span>
+    <button id="x10SyncBtn" class="link kai" type="button">同步最新</button>
+  </div>
+
+  <!-- 分类筛选 -->
+  <nav class="frow ol-cats" id="x10Cats" aria-label="资讯分类"></nav>
+
+  <div class="metaline">
+    <span id="x10Count">—</span>
+    <button id="x10HeroOnly" class="link" type="button">只看有新武将</button>
+  </div>
+
+  <div id="x10Grid" class="ol-grid"></div>
+  <div id="x10Empty" class="empty" hidden>暂无资讯</div>
+</main>
+
+<!-- 一将成名资讯详情弹窗（复用 dm 弹窗体系） -->
+<div id="x10mask" class="dm-mask" hidden></div>
+<div id="x10modal" class="dm-modal" role="dialog" aria-modal="true" aria-label="一将成名资讯详情" hidden>
+  <button id="x10close" class="dm-close" type="button" aria-label="关闭">×</button>
+  <div class="dm-body ol-in" id="x10Body"></div>
+</div>
+
+<main id="page-profile" class="page" hidden>
+  <!-- 容器1：用户信息与数据概览（合二为一） -->
+  <section class="gcard">
+    <div class="u-head">
+      <button class="pav" id="pav" type="button" title="点击更换头像" aria-label="更换头像">访</button>
+      <div class="pinfo">
+        <div class="pname-row">
+          <b class="kai" id="pname" title="点击登录 / 注册">无名访客</b>
+          <i class="rank-badge" id="rankBadge" hidden>初出茅庐</i>
+        </div>
+        <p id="pstats">收藏 0 名武将 · 未选择版本</p>
+      </div>
+      <button class="login-seal kai" id="loginSeal" type="button">登 录</button>
+    </div>
+    <div class="u-div" aria-hidden="true"></div>
+    <div class="stats3">
+      <div><b id="stFav">0</b><span>已收藏武将</span></div>
+      <div><b id="stHist">0</b><span>历史查阅</span></div>
+      <div><b id="stVer">—</b><span>当前版本</span></div>
+    </div>
+  </section>
+
+  <!-- 容器2：偏爱武将（可折叠） -->
+  <section class="gcard fold-sec" data-sec="fav">
+    <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+      <h3 class="gtitle kai">偏爱武将</h3>
+      <i class="sec-arrow">▾</i>
+    </div>
+    <div class="sec-body" id="sec-fav"><div class="sec-in"><div class="gcontent">
+    <section class="favwrap">
+      <div class="favrow" id="favRow"></div>
+      <div class="favempty" id="favEmpty">
+        <span class="fe-mark kai" aria-hidden="true">將</span>
+        <p>还没有收藏武将 · 在英雄详情底部点「收藏」加入</p>
+        <button id="goExplore" class="fe-btn" type="button">前往武将库</button>
+      </div>
+    </section>
+    </div></div></div>
+  </section>
+
+  <!-- 容器3：战术心法（可折叠，内部为手风琴列表） -->
+  <section class="gcard fold-sec" data-sec="scrolls">
+    <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+      <h3 class="gtitle kai">战术心法</h3>
+      <div class="ghead-r">
+        <nav class="sccats" id="sccats" aria-label="心法分类">
+          <button class="chip active" data-cat="all" type="button">全部</button>
+          <button class="chip" data-cat="mech" type="button">机制</button>
+          <button class="chip" data-cat="identity" type="button">身份</button>
+          <button class="chip" data-cat="gz" type="button">国战</button>
+        </nav>
+        <i class="sec-arrow">▾</i>
+      </div>
+    </div>
+    <div class="sec-body" id="sec-scrolls"><div class="sec-in"><div class="gcontent gcontent-flush">
+    <section class="scrolls" id="scrolls">
+      <article class="scroll open" data-cat="mech">
+        <button class="sc-head" type="button"><h4>技能连招与控场时机</h4><i class="sc-arrow">▾</i></button>
+        <div class="sc-body"><p>卖血流武将的收益在于「以血换牌」，关键是在低血线时预判敌方是否还有伤害手段；过牌型武将则讲究出牌节奏，先摸后打、留足闪桃。</p></div>
+      </article>
+      <article class="scroll" data-cat="identity">
+        <button class="sc-head" type="button"><h4>身份局针对策略</h4><i class="sc-arrow">▾</i></button>
+        <div class="sc-body"><p>主公优先补防御与控制，忠臣选辅助保核，反贼集火能力强命武将，内奸宜低调蓄爆、残局收割——克制关系往往比武将强度更决定胜负。</p></div>
+      </article>
+      <article class="scroll" data-cat="gz">
+        <button class="sc-head" type="button"><h4>国战暗将与双将搭配</h4><i class="sc-arrow">▾</i></button>
+        <div class="sc-body"><p>暗置武将牌保留信息差，明置时机宜选在收益最大的一回合；双将搭配讲究阴阳互补，同势力才能触发势力技，谨防「野心家」判定。</p></div>
+      </article>
+    </section>
+    </div></div></div>
+  </section>
+
+  <!-- 容器4：偏好与设置（可折叠，内部为列表行） -->
+  <section class="gcard fold-sec" data-sec="set">
+    <div class="ghead" role="button" tabindex="0" aria-expanded="false">
+      <h3 class="gtitle kai">偏好与设置</h3>
+      <i class="sec-arrow">▾</i>
+    </div>
+    <div class="sec-body" id="sec-set"><div class="sec-in"><div class="gcontent gcontent-flush">
+    <section class="settings">
+      <div class="setrow">
+        <span id="acctLabel">本地账号<span class="acct-sub">游客数据仅存本机</span></span>
+        <button id="acctBtn" class="setbtn setbtn-zhu" type="button">登录 / 注册</button>
+      </div>
+      <div class="setrow" id="logoutRow" hidden>
+        <span>退出登录<span class="acct-sub">退出后本机浏览数据保留</span></span>
+        <button id="logoutBtn" class="setbtn" type="button">退出</button>
+      </div>
+      <div class="setrow">
+        <span>显示主题</span>
+        <div class="seg" id="themeSeg" role="radiogroup" aria-label="主题">
+          <button data-theme="auto" type="button">跟随系统</button>
+          <button data-theme="paper" type="button">日间宣纸</button>
+          <button data-theme="ink" type="button">夜间水墨</button>
+        </div>
+      </div>
+      <div class="setrow">
+        <span>背景音乐<span class="acct-sub">大厅曲 · 循环播放</span></span>
+        <button id="bgmSwitch" class="switch" type="button" aria-pressed="true" aria-label="背景音乐"><i></i></button>
+      </div>
+      <div class="setrow">
+        <span>仅 Wi-Fi 加载高清立绘与语音</span>
+        <button id="wifiSwitch" class="switch" type="button" aria-pressed="false" aria-label="仅在 Wi-Fi 下加载高清立绘与语音"><i></i></button>
+      </div>
+      <div class="setrow">
+        <span id="verLabel">版本数据</span>
+        <button id="checkBtn" class="setbtn" type="button">检测更新</button>
+      </div>
+      <div class="setrow">
+        <span id="cacheLabel">本地缓存（估算中…）</span>
+        <button id="cacheBtn" class="setbtn" type="button">一键清理</button>
+      </div>
+      <button class="setrow setrow-link" id="updateRow" type="button" aria-haspopup="dialog">
+        <span class="dlabel"><svg class="dicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M20 3.6V8h-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>更新优化说明</span>
+        <span class="dsub" id="updateSub">查看历次更新 <i class="darr" aria-hidden="true">›</i></span>
+      </button>
+      <button class="setrow setrow-link" id="localDataRow" type="button" aria-haspopup="dialog">
+        <span class="dlabel"><svg class="dicon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>本地账号与数据管理</span>
+        <span class="dsub" id="localDataSub">查看本机已注册账号 <i class="darr" aria-hidden="true">›</i></span>
+      </button>
+      <button class="setrow setrow-link" id="disclaimRow" type="button" aria-haspopup="dialog">
+        <span class="dlabel"><svg class="dicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="3" width="11" height="3" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="6.5" y="18" width="11" height="3" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 6v12M16 6v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>免责声明与数据来源</span>
+        <span class="dsub">仅供个人学习 · 版权归游卡所有 <i class="darr" aria-hidden="true">›</i></span>
+      </button>
+      <p class="setnote" id="checkNote">本地缓存 · 可随时重新检测版本清单</p>
+    </section>
+    </div></div></div>
+  </section>
+
+  <footer class="ft">© 2026 三国杀速查 · <button id="ftDisclaim" class="ft-link" type="button">免责声明与数据来源</button></footer>
+</main>
+
+<!-- ================= 轻量对战（battle · 2v2 龙虎 · 真实引擎，军争160牌堆+拆包武将数据） ================= -->
+<main id="page-battle" class="page" hidden>
+  <div class="btl">
+    <!-- 选将层 -->
+    <div class="btl-pick" id="btlPick">
+      <div class="pick-head">
+        <button class="btl-back" id="btlPickBack" type="button">‹ 玩法</button>
+        <div class="pick-title">⚔️ 2v2 龙虎斗 <small>选你的武将</small></div>
+        <div class="pick-chips" id="btlPoolChips">
+          <button class="pchip on" data-pool="impl" type="button">经典实装</button>
+          <button class="pchip" data-pool="all" type="button">全部武将</button>
+        </div>
+        <input class="pick-search" id="btlPickSearch" type="text" placeholder="搜武将名…" maxlength="6">
+      </div>
+      <div class="pick-grid" id="btlPickGrid"></div>
+      <div class="pick-foot">
+        <div class="pick-tip" id="btlPickTip">点一个武将开始（实装技能见卡面小字）</div>
+        <button class="pick-go" id="btlPickGo" type="button" disabled>开始对战</button>
+      </div>
+    </div>
+
+    <!-- 对局层（参考官方 2v2：上敌 / 左友 / 右敌 / 右下我 / 左下手牌 / 中央确认） -->
+    <div class="btl-game" id="btlGame" hidden>
+      <header class="btl-head">
+        <button class="btl-back" id="btlBack" type="button">‹ 认输</button>
+        <div><div class="btl-title">⚔️ 2v2 龙虎斗</div><div class="btl-round" id="btlRound">第 1 轮 · 目标：击败敌方 ×2</div></div>
+        <button class="btl-host" id="btlHost" type="button">🤖 托管 <span class="sw"></span></button>
+      </header>
+      <div class="btl-foeT" id="btlFoeT" aria-label="上家敌人"></div>
+      <div class="btl-foeL" id="btlFoeL" aria-label="队友"></div>
+      <div class="btl-mid">
+        <div class="bdeck" id="btlDeck">🂠 —</div>
+        <div class="blog" id="btlLog" aria-live="polite"></div>
+        <div class="bstage" id="btlStage"></div>
+        <div class="bcenter">
+          <div class="bpills">
+            <button class="bskill" id="btlSk0" type="button" hidden>技能<small>—</small></button>
+            <button class="bskill" id="btlSk1" type="button" hidden>技能<small>—</small></button>
+          </div>
+          <div class="bconfirm">
+            <button class="bgo" id="btlGo" type="button">确定</button>
+            <button class="bend" id="btlEnd" type="button">结束回合</button>
+          </div>
+          <div class="bhint" id="btlHint"></div>
+        </div>
+      </div>
+      <div class="btl-foeR" id="btlFoeR" aria-label="下家敌人"></div>
+      <div class="btl-foot">
+        <div class="bhand" id="btlHand" aria-label="你的手牌"></div>
+        <div class="bme" id="btlMe"></div>
+      </div>
+    </div>
+
+    <!-- 响应弹层（要闪？要桃？） -->
+    <div class="btl-ask" id="btlAsk" hidden>
+      <div class="ask-box">
+        <div class="ask-t" id="btlAskT"></div>
+        <div class="ask-btns" id="btlAskBtns"></div>
+      </div>
+    </div>
+
+    <!-- 结算层 -->
+    <div class="btl-over" id="btlOver" hidden>
+      <div class="over-box">
+        <div class="over-big" id="btlOverT">🏆 龙队胜</div>
+        <div class="over-sub" id="btlOverSub"></div>
+        <div class="over-btns">
+          <button class="over-btn primary" id="btlAgain" type="button">再来一局</button>
+          <button class="over-btn" id="btlQuit" type="button">回到玩法页</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="btoast" id="btlToast"></div>
+    <div class="btl-rotate" id="btlRotate">
+      <div class="big">🔄</div>
+      <p>横过来玩更爽</p>
+      <small>牌桌是横版设计，竖屏能用但不主打</small>
+      <button id="btlRotateSkip" type="button">竖着玩也行</button>
+    </div>
+  </div>
+</main>
+
+<!-- ================= 底部 TabBar ================= -->
+<nav class="tabbar" aria-label="主导航">
+  <i id="tabDot" class="tab-dot" aria-hidden="true"></i>
+  <button class="tab active" data-tab="home" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7M5.5 9.5V20h5v-5.5h3V20h5V9.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>首页</span>
+  </button>
+  <button class="tab" data-tab="heroes" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c2.8 0 5 1.7 5 4.2 0 1.7-1 3-2.4 3.7v2.1h-5.2v-2.1C8 10.7 7 9.4 7 7.7c0-2.5 2.2-4.2 5-4.2zM9.4 13.5h5.2V16H9.4zM8 16h8l1.2 2.2c.3.6 0 1.3-.7 1.3h-9c-.7 0-1-.7-.7-1.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>武将</span>
+  </button>
+  <button class="tab" data-tab="profile" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a3.6 3.6 0 110 7.2 3.6 3.6 0 010-7.2zM5 20c.7-3.6 3.6-5.6 7-5.6s6.3 2 7 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <span>我的</span>
+  </button>
+</nav>
+
+<div id="mask" class="mask" hidden></div>
+<section id="sheet" class="sheet" hidden aria-modal="true" role="dialog">
+  <button id="closeBtn" class="sheet-close" type="button" aria-label="关闭">✕</button>
+  <div id="sheetBody"></div>
+  <div class="d-actions">
+    <button id="favBtn" class="abtn" type="button">☆ 收藏</button>
+    <button id="shareBtn" class="abtn abtn-main" type="button">分享武将卡</button>
+  </div>
+</section>
+
+<!-- 皮肤全屏查看器 -->
+<div id="skview" class="skview" hidden role="dialog" aria-modal="true" aria-label="皮肤查看">
+  <button id="skClose" class="sk-close" type="button" aria-label="关闭">✕</button>
+  <button id="skPrev" class="sk-nav sk-prev" type="button" aria-label="上一张">‹</button>
+  <figure class="sk-stage">
+    <img id="skImg" src="" alt="皮肤大图">
+    <figcaption id="skCap"></figcaption>
+  </figure>
+  <button id="skNext" class="sk-nav sk-next" type="button" aria-label="下一张">›</button>
+</div>
+
+<!-- ================= 登录 / 注册弹窗（Mock 接口层见 app.js AuthAPI，后续接真服务器只换实现） ================= -->
+<div id="lmask" class="lmask" hidden></div>
+<section id="lmodal" class="lmodal" hidden role="dialog" aria-modal="true" aria-label="登录或注册">
+  <button id="lclose" class="lclose" type="button" aria-label="关闭">✕</button>
+  <header class="lhead">
+    <div class="lhead-txt">
+      <h2 class="kai" id="ltitle">登入 · 归位</h2>
+      <p class="lsub" id="lsub">账号密码本地校验 · 收藏 / 历史 / 心得按账号隔离</p>
+    </div>
+  </header>
+  <!-- 顶部主分段：【登入】/【注册】（本地账号） -->
+  <nav class="lmode" id="lmode" role="tablist" aria-label="登入或注册">
+    <button class="active" data-mode="login" type="button">登入</button>
+    <button data-mode="register" type="button">注册</button>
+  </nav>
+  <nav class="ltabs" id="ltabs" role="tablist" aria-label="登录方式">
+    <button class="active" data-via="password" type="button">密码登录</button>
+    <button data-via="code" type="button">验证码登录</button>
+  </nav>
+  <form id="lform" novalidate>
+    <label class="lfield" id="accountField">
+      <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5.5 4.5h9a1.5 1.5 0 011.5 1.5v12a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 014 18V6a1.5 1.5 0 011.5-1.5zM16 7h2.2a.8.8 0 01.8.8v8.4a.8.8 0 01-.8.8H16M7 8.5h6M7 11.5h6M7 14.5h3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input id="laccount" type="text" placeholder="请输入手机号 / 账号名" autocomplete="username" maxlength="24">
+    </label>
+    <label class="lfield" id="pwdField">
+      <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M7.5 10.5V8a4.5 4.5 0 019 0v2.5M6 10.5h12a1 1 0 011 1V19a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 015 19v-7.5a1 1 0 011-1zM12 14v2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input id="lpwd" type="password" placeholder="请输入密码" autocomplete="current-password">
+    </label>
+    <label class="lfield" id="codeField" hidden>
+      <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 3l7 2.6v5.5c0 4.3-3 8.1-7 9.4-4-1.3-7-5.1-7-9.4V5.6L12 3zM9 12l2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input id="lcode" type="text" placeholder="6 位验证码（演示版任意数字均可）" maxlength="6" inputmode="numeric" autocomplete="one-time-code">
+      <button id="sendCodeBtn" class="lcode-btn" type="button">获取验证码</button>
+    </label>
+
+    <!-- 注册表单（本地账号：数据只存本机，可导出备份） -->
+    <div id="regFields" hidden>
+      <label class="lfield">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 12.2a3.6 3.6 0 100-7.2 3.6 3.6 0 000 7.2zM5 20c0-3.3 3.1-5.4 7-5.4s7 2.1 7 5.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="rusername" type="text" placeholder="用户名（登录唯一标识，如手机号 / 字母账号）" autocomplete="username" maxlength="24">
+      </label>
+      <label class="lfield">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M7.5 10.5V8a4.5 4.5 0 019 0v2.5M6 10.5h12a1 1 0 011 1V19a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 015 19v-7.5a1 1 0 011-1zM12 14v2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="rpwd" type="password" placeholder="设置密码（不少于 6 位）" autocomplete="new-password">
+      </label>
+      <label class="lfield">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M9 12l2.2 2.2L15.5 10M12 3l7 2.6v5.5c0 4.3-3 8.1-7 9.4-4-1.3-7-5.1-7-9.4V5.6L12 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="rpwd2" type="password" placeholder="确认密码（两次需一致）" autocomplete="new-password">
+      </label>
+      <label class="lfield">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 6.5h16M4 12h10M4 17.5h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="rnick" type="text" placeholder="玩家雅号 / 昵称（选填，如「江东周郎」）" maxlength="12">
+      </label>
+      <p class="lnote">账号与收藏、历史、心得均保存在本机浏览器，不上传服务器；可在「我的 → 偏好与设置 → 本地账号与数据管理」中导出备份。</p>
+    </div>
+
+    <p class="lerr" id="lerr" hidden></p>
+    <button id="lsubmit" class="lsubmit kai" type="submit">一键登入</button>
+  </form>
+  <div class="ldiv" id="ldiv"><span>或</span></div>
+  <button id="lwechat" class="lwechat" type="button">
+    <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M9.3 4C5.8 4 3 6.3 3 9.2c0 1.6.9 3.1 2.3 4l-.6 2 2.2-1.1c.6.2 1.3.3 2 .3h.4A5.4 5.4 0 019 13c0-2.8 2.7-5 6-5h.3C14.7 5.7 12.2 4 9.3 4zM7.4 6.7a.8.8 0 110 1.6.8.8 0 010-1.6zm3.8 0a.8.8 0 110 1.6.8.8 0 010-1.6zM15 9c-3 0-5.5 2-5.5 4.5S12 18 15 18c.6 0 1.2-.1 1.7-.2l1.9 1-.5-1.7c1.2-.8 1.9-2 1.9-3.6C20 11 17.9 9 15 9zm-1.9 2.6a.7.7 0 110 1.4.7.7 0 010-1.4zm3.8 0a.7.7 0 110 1.4.7.7 0 010-1.4z" fill="currentColor"/></svg>
+    微信一键快捷登录
+  </button>
+  <button id="lguest" class="lguest" type="button">暂不登录，以游客身份继续浏览</button>
+</section>
+
+<!-- ================= 三国杀科普弹窗（复用 dm 弹窗家族 · 内容数据见 app.js KEPU_TOPICS） ================= -->
+<div id="kmask" class="dm-mask" hidden></div>
+<section id="kmodal" class="dm-modal" role="dialog" aria-modal="true" aria-label="三国杀科普" hidden>
+  <button id="kclose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai" id="kTitle">三国杀科普</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div id="kbody" class="dm-body"></div>
+</section>
+
+<!-- ================= 更换头像（用武将立绘当头像 · 数据与逻辑见 app.js） ================= -->
+<div id="avmask" class="dm-mask dm-sub" hidden></div>
+<section id="avmodal" class="dm-modal dm-sub av-modal" role="dialog" aria-modal="true" aria-label="更换头像" hidden>
+  <button id="avclose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">选择头像</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div class="av-tabs" id="avTabs">
+    <button class="av-tab active" data-sex="female" type="button">女将</button>
+    <button class="av-tab" data-sex="male" type="button">男将</button>
+    <button class="av-tab" data-sex="none" type="button">恢复默认</button>
+  </div>
+  <input id="avQ" class="av-q" type="search" placeholder="搜索武将名" autocomplete="off" enterkeyhint="search">
+  <div id="avGrid" class="dm-body av-grid"></div>
+</section>
+
+<!-- ================= 面杀速查（线下辅助 · 输入武将出技能三行卡 · 数据与逻辑见 app.js） ================= -->
+<div id="qmask" class="dm-mask" hidden></div>
+<section id="qmodal" class="dm-modal" role="dialog" aria-modal="true" aria-label="面杀速查" hidden>
+  <button id="qclose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">面杀速查</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div id="qbody" class="dm-body"></div>
+</section>
+
+<!-- ================= 三国史料学习（内嵌整模块 · 逻辑见 history.js，数据见 data/history/） ================= -->
+<div id="hmask" class="dm-mask" hidden></div>
+<section id="hmodal" class="dm-modal dm-modal-tall" role="dialog" aria-modal="true" aria-label="三国史料学习" hidden>
+  <button id="hclose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">三国史料学习</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div id="hpageBody" class="dm-body"></div>
+</section>
+
+<!-- ================= 本地账号与数据管理（抽屉 · 检视本机已注册账号） ================= -->
+<div id="adm" class="dm-mask" hidden></div>
+<section id="admodal" class="dm-modal" role="dialog" aria-modal="true" aria-label="本地账号与数据管理" hidden>
+  <button id="adClose" class="dm-close" type="button" aria-label="关闭">✕</button>
+  <div class="dm-head">
+    <svg class="dm-cloud" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+    <h3 class="dm-title kai">本地账号与数据管理</h3>
+    <svg class="dm-cloud flip" viewBox="0 0 30 16" aria-hidden="true"><path d="M6 12c-2.4 0-4-1.3-4-3s1.6-3 4-3c.5-2.3 2.6-4 5.2-4 2.2 0 4.1 1.2 4.9 3 .4-.2.9-.2 1.4-.2 2 0 3.5 1.3 3.5 3s-1.5 3-3.5 3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+  </div>
+  <div class="dm-body">
+    <div class="ad-stat" id="adStat"></div>
+    <div id="adList" class="ad-list"></div>
+    <p class="ad-note">数据存储于本机浏览器 localStorage（键 <code>sgs_local_users</code>），不上传任何服务器；每个账号的收藏 / 历史 / 心得相互隔离。</p>
+  </div>
+  <div class="ad-foot">
+    <button id="adExport" class="ad-btn ad-btn-main" type="button">导出全部数据 (JSON)</button>
+    <button id="adImport" class="ad-btn" type="button">导入备份</button>
+    <input id="adFile" type="file" accept=".json,application/json" hidden>
+  </div>
+  <button id="adClear" class="dm-agree ad-danger" type="button">清空重置所有本地账号</button>
+</section>
+
+<script src="services/localAuth.js?v=e542549d57"></script>
+<script src="app.js?v=e542549d57"></script>
+<script src="history.js?v=e542549d57"></script>
+<script src="battle.js?v=b7platefit1"></script>
+</body>
+</html>

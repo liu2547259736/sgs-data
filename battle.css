@@ -1,0 +1,568 @@
+/* ============================================================
+   轻量对战（battle）—— 横版布局 · 轻量休闲风
+   规范：纯色卡+emoji、零立绘、动效只用 fade/位移/高亮且 ≤150ms（--bdur）
+   作用域全部挂在 #page-battle / .btl 下，不与主 app 的 .card 等类名冲突
+   ============================================================ */
+
+/* ---- 覆盖 .page 默认版式：对战页是全屏固定布局 ---- */
+#page-battle{
+  position:fixed;inset:0;z-index:40;
+  max-width:none;margin:0;padding:0;animation:none;
+  background:#f4f6f3;
+}
+html[data-theme="ink"] #page-battle{background:#211c15}
+body[data-tab="battle"]{overflow:hidden}
+body[data-tab="battle"] .tabbar{display:none}
+
+.btl{
+  --bdur:.14s;                       /* 全站唯一动效时长（≤150ms） */
+  --bhi:#ff8a3d;                     /* 高亮描边 */
+  position:absolute;inset:0;
+  display:grid;gap:8px;
+  grid-template-columns:1fr 116px;
+  grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"head head" "foes foes" "mid acts" "foot acts";
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  color:#2b2f2a;
+}
+html[data-theme="ink"] .btl{color:#ece4d6}
+
+/* ---- 顶栏：返回 + 模式信息 + 托管 ---- */
+.btl-head{grid-area:head;display:flex;align-items:center;gap:10px;min-width:0}
+.btl-back{border:2px solid #e2e6e0;background:#fff;border-radius:12px;padding:6px 13px;
+  font:700 13px/1 inherit;color:#6b7268;cursor:pointer;transition:background var(--bdur),color var(--bdur)}
+.btl-back:active{background:#eef0ec;color:#2b2f2a}
+.btl-title{font-weight:800;font-size:15px;white-space:nowrap}
+.btl-round{font-size:12px;color:#6b7268}
+.btl-host{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12.5px;color:#6b7268;
+  background:#fff;border:1px solid #e2e6e0;border-radius:20px;padding:5px 10px;cursor:pointer;
+  transition:background var(--bdur)}
+.btl-host.on{background:#fff3e6;border-color:var(--bhi);color:#c56a1e}
+.btl-host .sw{width:28px;height:15px;border-radius:8px;background:#d5d9d3;position:relative;transition:background var(--bdur)}
+.btl-host .sw::after{content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:#fff;transition:left var(--bdur)}
+.btl-host.on .sw{background:var(--bhi)}
+.btl-host.on .sw::after{left:15px}
+
+/* ---- 对手行：紧凑横排，点选即选目标 ---- */
+.btl-foes{grid-area:foes;display:flex;gap:8px}
+.bfoe{flex:1;min-width:0;background:#fff;border-radius:12px;padding:7px 4px 6px;text-align:center;
+  border:2px solid transparent;cursor:pointer;position:relative;
+  transition:border-color var(--bdur),opacity var(--bdur),transform var(--bdur)}
+.bfoe .btag{position:absolute;top:-7px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:800;
+  color:#fff;background:#8d9298;border-radius:8px;padding:1px 7px;white-space:nowrap}
+.bfoe.zhu .btag{background:#e8574f}
+.bfoe .bdot{width:26px;height:26px;border-radius:50%;margin:3px auto 3px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;color:#fff}
+.bfoe .bnm{font-size:12.5px;font-weight:700}
+.bfoe .bhp{font-size:10.5px;letter-spacing:1px;color:#e0473c;margin-top:1px}
+.bfoe .bcnt{display:inline-block;margin-top:2px;font-size:9.5px;color:#6b7268;background:#f0f2ee;border-radius:8px;padding:1px 6px}
+.bfoe.b-targetable{border-color:var(--bhi);background:#fff8f1}
+.bfoe.b-dim{opacity:.38}
+.bfoe.b-picked{border-color:var(--bhi);background:#fff0e2;transform:translateY(-3px)}
+
+/* ---- 中部：桌面区（出牌展示 + 口语化日志） ---- */
+.btl-mid{grid-area:mid;position:relative;min-height:0}
+.blog{position:absolute;right:2px;top:0;text-align:right;font-size:11.5px;color:#6b7268;line-height:1.85;
+  pointer-events:none;max-width:60%}
+.blog div{animation:bfade var(--bdur)}
+.blog div:last-child{color:#2b2f2a;font-weight:600}
+html[data-theme="ink"] .blog div:last-child{color:#ece4d6}
+@keyframes bfade{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.bstage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;pointer-events:none}
+.bstage .bmini{animation:bpop var(--bdur)}
+@keyframes bpop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+
+/* ---- 卡牌本体：纯色 + emoji + 文字（与主 app 的 .card 无关） ---- */
+.bcard{width:58px;height:82px;border-radius:10px;color:#fff;position:relative;flex:0 0 auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  box-shadow:0 2px 6px rgba(0,0,0,.14);cursor:pointer;user-select:none;
+  transition:transform var(--bdur),box-shadow var(--bdur),opacity var(--bdur)}
+.bcard .bic{font-size:21px;line-height:1}
+.bcard .bnm2{font-size:12.5px;font-weight:800;letter-spacing:1px;text-indent:1px}
+.bcard .bcorner{position:absolute;top:3px;left:5px;font-size:9.5px;opacity:.92;line-height:1.15}
+.bmini{width:44px;height:63px;border-radius:9px}
+.bmini .bic{font-size:16px}.bmini .bnm2{font-size:10.5px}
+/* 类别底色（与数据字段一一对应） */
+.k-sha{background:#e8574f}.k-shan{background:#2fa98c}.k-tao{background:#f0889b}
+.k-jiu{background:#e2a23c}.k-trick{background:#8f6fd3}.k-equip{background:#6b87a8}
+
+/* ---- 底部：自己信息 + 手牌 ---- */
+.btl-foot{grid-area:foot;display:flex;flex-direction:column;gap:5px;min-width:0}
+.bme{display:flex;align-items:center;gap:8px}
+.bme .bdot{width:34px;height:34px;border-radius:50%;background:#d9604f;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.bme .bnm{font-weight:800;font-size:13px}
+.bme .bhp{font-size:11.5px;color:#e0473c;letter-spacing:1px}
+.bme .btip{margin-left:auto;font-size:12px;color:#c56a1e;background:#fff3e6;border-radius:16px;padding:4px 12px;animation:bfade var(--bdur);max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bhand{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 2px}
+.bhand::-webkit-scrollbar{display:none}
+.bhand .bcard.b-sel{transform:translateY(-9px);box-shadow:0 0 0 3px var(--bhi),0 6px 12px rgba(0,0,0,.2)}
+.bhand .bcard.b-used{opacity:0;transform:translateY(-20px) scale(.92)}
+
+/* ---- 右侧动作列：3 个控件，不藏菜单 ---- */
+.btl-acts{grid-area:acts;display:flex;flex-direction:column;gap:9px;justify-content:flex-end}
+.bskill{width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid #e2e6e0;align-self:flex-end;
+  font:700 11.5px/1.15 inherit;color:#2b2f2a;cursor:pointer;transition:border-color var(--bdur),background var(--bdur),opacity var(--bdur)}
+.bskill small{display:block;font-size:8.5px;color:#6b7268;font-weight:400}
+.bskill.b-dis{opacity:.45}
+.bskill.b-on{border-color:var(--bhi);background:#fff3e6}
+.bgo{height:56px;border:0;border-radius:14px;font:800 16px/1.2 inherit;color:#fff;
+  background:#c9cec7;cursor:not-allowed;transition:background var(--bdur),transform var(--bdur)}
+.bgo.b-ready{background:#e8574f;cursor:pointer}
+.bgo.b-ready:active{transform:scale(.97)}
+.bend{height:44px;border:2px solid #e2e6e0;border-radius:12px;background:#fff;
+  font:700 12.5px/1 inherit;color:#6b7268;cursor:pointer;transition:background var(--bdur)}
+.bend:active{background:#eef0ec}
+
+/* ---- 轻提示（代替系统弹窗） ---- */
+.btoast{position:absolute;left:50%;bottom:120px;transform:translateX(-50%);background:rgba(43,47,42,.88);color:#fff;
+  font-size:12.5px;border-radius:20px;padding:7px 16px;opacity:0;pointer-events:none;transition:opacity var(--bdur);z-index:5;white-space:nowrap}
+.btoast.b-show{opacity:1}
+
+/* ---- 玩法页入口按钮 ---- */
+.battle-entry{
+  display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;
+  border:2px dashed rgba(255,138,61,.55);border-radius:14px;background:#fffaf4;
+  padding:16px 12px;font:800 17px/1.3 inherit;color:#c56a1e;cursor:pointer;
+  transition:transform .14s,background .14s;
+}
+.battle-entry small{font-size:11.5px;font-weight:400;color:#8a8f85}
+.battle-entry:active{transform:scale(.98);background:#fff3e6}
+html[data-theme="ink"] .battle-entry{background:rgba(255,138,61,.08);border-color:rgba(255,138,61,.4);color:#e8c39a}
+
+/* ---- 竖屏：提示横过来玩（可跳过，同时给一套能用的竖排布局） ---- */
+.btl-rotate{display:none;position:absolute;inset:0;z-index:9;background:rgba(43,47,42,.86);
+  flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center;padding:20px}
+.btl-rotate .big{font-size:34px;animation:bpop var(--bdur)}
+.btl-rotate p{font-size:15px;font-weight:700}
+.btl-rotate small{font-size:12px;opacity:.75}
+.btl-rotate button{border:0;border-radius:14px;padding:10px 22px;font:700 14px/1 inherit;
+  background:#ff8a3d;color:#fff;cursor:pointer}
+@media (orientation:portrait){
+  .btl-rotate{display:flex}
+  /* 竖屏降级布局：单列，可用但不主打 */
+  .btl{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto auto;
+    grid-template-areas:"head" "foes" "mid" "foot" "acts"}
+  .btl-acts{flex-direction:row;justify-content:stretch;align-items:center}
+  .btl-acts .bskill{align-self:auto}
+  .bgo{flex:1;height:50px}
+  .bend{width:86px;height:50px}
+}
+
+/* ---- 宽屏（平板/桌面）：整体放大一号 ---- */
+@media (min-width:1000px) and (orientation:landscape){
+  .btl{grid-template-columns:1fr 150px;gap:12px;padding:18px 26px calc(18px + env(safe-area-inset-bottom))}
+  .bfoe .bdot{width:32px;height:32px;font-size:14px}
+  .bfoe .bnm{font-size:14px}
+  .bcard{width:72px;height:100px}
+  .bcard .bic{font-size:26px}.bcard .bnm2{font-size:15px}
+  .bgo{height:64px;font-size:18px}
+  .blog{font-size:13px}
+}
+
+/* ============================================================
+   真实引擎版补充样式（2v2 龙虎 · 选将 / 队友 / 装备判定 / 响应 / 结算）
+   ============================================================ */
+
+/* ---- 图层开关 ---- */
+.btl-game[hidden]{display:none}
+.btl-pick{position:absolute;inset:0;display:flex;flex-direction:column;background:#f4f6f3;z-index:6}
+html[data-theme="ink"] .btl-pick{background:#211c15}
+
+/* ---- 选将层 ---- */
+.pick-head{display:flex;align-items:center;gap:10px;padding:10px 16px 6px;flex-wrap:wrap}
+.pick-title{font-weight:800;font-size:16px}
+.pick-title small{font-weight:400;font-size:11.5px;color:#6b7268;margin-left:6px}
+.pick-chips{display:flex;gap:6px;margin-left:auto}
+.pchip{border:1.5px solid #e2e6e0;background:#fff;border-radius:16px;padding:5px 12px;
+  font:700 12px/1 inherit;color:#6b7268;cursor:pointer;transition:all var(--bdur)}
+.pchip.on{background:#fff3e6;border-color:var(--bhi);color:#c56a1e}
+.pick-search{border:1.5px solid #e2e6e0;border-radius:16px;background:#fff;padding:6px 12px;
+  font:12.5px/1 inherit;color:#2b2f2a;width:110px;outline:none}
+.pick-search:focus{border-color:var(--bhi)}
+.pick-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:8px;padding:8px 16px;align-content:start}
+.phero{display:flex;gap:8px;background:#fff;border:2px solid #e8ebe6;border-radius:12px;padding:7px;
+  cursor:pointer;transition:border-color var(--bdur),transform var(--bdur);align-items:center;min-width:0}
+.phero:hover{border-color:#c9cec7}
+.phero.on{border-color:var(--bhi);background:#fff8f1;transform:translateY(-2px)}
+.phero img{width:44px;height:44px;border-radius:9px;object-fit:cover;background:#e8ebe6;flex:0 0 auto}
+.phero .pno{width:44px;height:44px;border-radius:9px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#fff;font-size:15px}
+.phero .pnm{font-weight:800;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phero .pmet{font-size:10.5px;color:#6b7268;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phero .psk{font-size:10px;color:#8a8f85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phero .php{color:#e0473c;font-weight:700}
+.phero .pnot{color:#b3413a;background:#fbeeea;border-radius:6px;padding:0 4px}
+.pick-foot{display:flex;align-items:center;gap:12px;padding:8px 16px calc(10px + env(safe-area-inset-bottom))}
+.pick-tip{flex:1;font-size:12px;color:#6b7268;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pick-go{border:0;border-radius:14px;padding:12px 26px;font:800 15px/1 inherit;color:#fff;background:#c9cec7;cursor:not-allowed;transition:background var(--bdur)}
+.pick-go.b-ready{background:#e8574f;cursor:pointer}
+.pick-go.b-ready:active{transform:scale(.97)}
+
+/* ---- 玩家座板（敌我通用）：头像+名+体力+手牌数+装备判定 ---- */
+.bplate{background:#fff;border-radius:12px;padding:6px 8px;border:2px solid transparent;cursor:pointer;
+  display:flex;align-items:center;gap:7px;min-width:0;position:relative;
+  transition:border-color var(--bdur),opacity var(--bdur),transform var(--bdur)}
+.bplate .bav{width:38px;height:38px;border-radius:9px;object-fit:cover;background:#e8ebe6;flex:0 0 auto}
+.bplate .bavno{width:38px;height:38px;border-radius:9px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#fff;font-size:14px}
+.bplate .bcol{min-width:0;flex:1}
+.bplate .bnm{font-size:12.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bplate .bhp2{font-size:11px;color:#e0473c;font-weight:700;letter-spacing:.5px}
+.bplate .bmeta{font-size:9.5px;color:#6b7268;white-space:nowrap}
+.bplate .bteam{position:absolute;top:-8px;left:8px;font-size:9.5px;font-weight:800;color:#fff;border-radius:8px;padding:1px 7px}
+.bplate .bteam.dragon{background:#c34a42}.bplate .bteam.tiger{background:#c98a1e}
+.bplate .bjudge{position:absolute;top:-8px;right:6px;display:flex;gap:2px;font-size:10px}
+.bplate .bturn{position:absolute;inset:-2px;border-radius:12px;border:2px solid var(--bhi);pointer-events:none;opacity:0;transition:opacity var(--bdur)}
+.bplate.b-active .bturn{opacity:1}
+.bplate.b-targetable{border-color:var(--bhi);background:#fff8f1}
+.bplate.b-dim{opacity:.38}
+.bplate.b-picked{border-color:var(--bhi);background:#fff0e2;transform:translateY(-3px)}
+.bplate.b-dead{opacity:.4;filter:grayscale(1)}
+.bplate .bfx{position:absolute;right:6px;bottom:5px;font-size:10px;color:#8a8f85}
+
+/* ---- 队友位（左）+ 敌位 ---- */
+.btl-foes{grid-area:foes;display:flex;gap:8px;align-items:stretch}
+.btl-foes .bplate{flex:1}
+
+/* ---- 中部桌面：牌堆计数 + 日志 + 出牌展示 ---- */
+.bdeck{position:absolute;left:2px;bottom:2px;font-size:11px;color:#6b7268;background:#fff;
+  border:1px solid #e2e6e0;border-radius:10px;padding:3px 9px;z-index:2}
+
+/* ---- 我的区域 ---- */
+.bme .bplate{cursor:default}
+.bme .bplate{border-color:#e8ebe6}
+.bme .bequips{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
+.beq{font-size:9.5px;background:#f0f2ee;border-radius:6px;padding:1px 5px;color:#4d554c;white-space:nowrap}
+.beq.on{background:#eaf3ee;color:#2f7a55}
+
+/* ---- 响应弹层 ---- */
+.btl-ask{position:absolute;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;
+  background:rgba(43,47,42,.45);backdrop-filter:blur(1px)}
+.btl-ask[hidden]{display:none}
+.ask-box{background:#fff;border-radius:16px;padding:16px 20px;max-width:420px;width:86%;text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);animation:bpop var(--bdur)}
+.ask-t{font-weight:800;font-size:14.5px;color:#2b2f2a;line-height:1.5}
+.ask-btns{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.ask-btns button{border:0;border-radius:12px;padding:11px 20px;font:800 13.5px/1 inherit;cursor:pointer;
+  transition:transform var(--bdur)}
+.ask-btns button:active{transform:scale(.96)}
+.ask-btns .ayes{background:#e8574f;color:#fff}
+.ask-btns .ano{background:#eef0ec;color:#5a6157}
+
+/* ---- 结算层 ---- */
+.btl-over{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;
+  background:rgba(43,47,42,.62)}
+.btl-over[hidden]{display:none}
+.over-box{background:#fff;border-radius:18px;padding:26px 34px;text-align:center;animation:bpop var(--bdur)}
+.over-big{font-size:22px;font-weight:900}
+.over-sub{font-size:12.5px;color:#6b7268;margin-top:6px;max-width:300px;line-height:1.7}
+.over-btns{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.over-btn{border:2px solid #e2e6e0;background:#fff;border-radius:12px;padding:11px 20px;
+  font:800 13.5px/1 inherit;color:#5a6157;cursor:pointer}
+.over-btn.primary{background:#e8574f;border-color:#e8574f;color:#fff}
+
+/* ---- 手牌转化标记（武圣→杀 等） ---- */
+.bcard .bconv{position:absolute;bottom:3px;left:0;right:0;font-size:8.5px;opacity:.95;font-weight:700}
+
+/* ---- 竖屏降级里选将层照常 ---- */
+@media (orientation:portrait){
+  .pick-grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+}
+
+/* ---- 头像兜底容器：图挂了露出首字色块 ---- */
+.bavwrap{position:relative;width:38px;height:38px;border-radius:9px;overflow:hidden;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+.bavwrap.pav{width:44px;height:44px;font-size:16px}
+.bavwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.bnote{font-size:11px;color:#6b7268;margin-left:4px}
+
+/* ============================================================
+   参考微信小游戏 2v2 视觉（纯 CSS，零贴图）：深色牌桌 + 白底牌面
+   ============================================================ */
+/* 牌桌整体：深棕桌面 */
+.btl-game{background:radial-gradient(120% 90% at 50% 42%,#4a4136 0%,#332d25 55%,#262119 100%)}
+html[data-theme="ink"] .btl-game{background:radial-gradient(120% 90% at 50% 42%,#3a332a 0%,#2a251e 55%,#1d1913 100%)}
+.btl-game .btl-back{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#d8d2c4}
+.btl-game .btl-title{color:#f0e9d8}
+.btl-game .btl-round{color:#b3ab98}
+.btl-game .btl-host{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#d8d2c4}
+
+/* 座板：深色玻璃 + 敌/友色 */
+.btl-game .bplate{background:rgba(30,26,20,.86);border:1.5px solid rgba(255,255,255,.1);box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.btl-game .bplate .bnm{color:#f0e9d8}
+.btl-game .bplate .bmeta{color:#a89f8c}
+.btl-game .bplate.b-active{border-color:rgba(255,190,90,.85);box-shadow:0 0 0 1.5px rgba(255,190,90,.5),0 2px 12px rgba(0,0,0,.4)}
+.btl-game .bplate.b-targetable{border-color:#ff8a3d;background:rgba(70,45,20,.9)}
+.btl-game .bplate.b-picked{border-color:#ff8a3d;background:rgba(90,55,22,.95);transform:translateY(-3px)}
+.btl-game .bplate.b-dead{opacity:.45;filter:grayscale(1)}
+.bplate .bteam.enemy{background:#c0392b}
+.bplate .bteam.ally{background:#2e8b57}
+/* 阵亡印章 */
+.bplate .bstamp{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%) rotate(-14deg);
+  font-weight:900;font-size:15px;color:#e8d7b0;background:rgba(90,30,20,.85);border:2px solid #b3413a;
+  border-radius:6px;padding:2px 8px;letter-spacing:2px}
+
+/* 日志：居中事件文案风 */
+.btl-game .blog{left:0;right:0;max-width:100%;text-align:center;bottom:4px;top:auto;font-size:12px;color:#cfc6b2}
+.btl-game .blog div{color:#cfc6b2}
+.btl-game .blog div:last-child{color:#ffe9c2;font-weight:700}
+.btl-game .blog .bq{color:#e8c39a;font-style:italic}
+
+/* 手牌：白底真牌面 */
+.btl-game .bcard{background:#f7f3e8;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.45);color:#2b2620}
+.bcard .bic{font-size:22px;margin-top:-4px}
+.bcard .bnm2{color:#2b2620}
+.bcard .bcorner{color:#222;font-weight:900}
+.bcard.c-red .bcorner{color:#c0392b}
+/* 内胆：类别色淡底 */
+.bcard.k-sha{background:linear-gradient(160deg,#fff 0%,#fde8e2 55%,#f8cfc2 100%)}
+.bcard.k-shan{background:linear-gradient(160deg,#fff 0%,#e2f3ee 55%,#c6e6dc 100%)}
+.bcard.k-tao{background:linear-gradient(160deg,#fff 0%,#fdeaef 55%,#f8cdd8 100%)}
+.bcard.k-jiu{background:linear-gradient(160deg,#fff 0%,#fbeed7 55%,#f2d9a8 100%)}
+.bcard.k-trick{background:linear-gradient(160deg,#fff 0%,#efe8fa 55%,#d8c8f0 100%)}
+.bcard.k-equip{background:linear-gradient(160deg,#fff 0%,#e7edf4 55%,#cdd9e6 100%)}
+.bhand .bcard.b-sel{box-shadow:0 0 0 2.5px #ffce7a,0 6px 14px rgba(0,0,0,.5)}
+.bcard .bconv{color:#8a5a17}
+
+/* 中央出牌展示的迷你牌同款 */
+.btl-game .bstage .bmini{background:#f7f3e8}
+
+/* 动作列：确认橙 / 结束蓝 药丸 */
+.btl-game .bgo.b-ready{background:linear-gradient(180deg,#ff9d4d,#e8632c);box-shadow:0 3px 10px rgba(232,99,44,.4)}
+.btl-game .bend{background:rgba(46,86,140,.85);border-color:rgba(120,160,210,.4);color:#dce8f8}
+.btl-game .bend:active{background:rgba(60,104,166,.95)}
+.btl-game .bskill{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18);color:#f0e9d8}
+.btl-game .bskill small{color:#b3ab98}
+.btl-game .bskill.b-on{border-color:var(--bhi);background:rgba(255,138,61,.2)}
+.btl-game .bdeck{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#cfc6b2}
+
+/* 弹层/结算在深色下同步 */
+.btl-game ~ .btl-ask .ask-box,
+#page-battle .ask-box{background:#2e2a24}
+#page-battle .ask-t{color:#f0e9d8}
+#page-battle .ask-btns .ano{background:rgba(255,255,255,.12);color:#d8d2c4}
+#page-battle .over-box{background:#2e2a24}
+#page-battle .over-big{color:#f0e9d8}
+#page-battle .over-btn{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#d8d2c4}
+#page-battle .over-btn.primary{background:linear-gradient(180deg,#ff9d4d,#e8632c);border-color:#e8632c;color:#fff}
+
+/* ---- 修正：网格布局落在 .btl-game 上（原 .btl 网格被 pick/game 两层结构架空） ---- */
+.btl{display:block}
+.btl-game{position:absolute;inset:0;display:grid;gap:8px;
+  grid-template-columns:1fr 116px;grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"head head" "foes foes" "mid acts" "foot acts";
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));min-height:0}
+.btl-game .btl-mid{min-height:0}
+.btl-game .btl-foot{min-height:0}
+@media (orientation:portrait){
+  .btl-game{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto auto;
+    grid-template-areas:"head" "foes" "mid" "foot" "acts"}
+  .btl-game .btl-acts{flex-direction:row;justify-content:stretch;align-items:center}
+  .btl-game .btl-acts .bskill{align-self:auto}
+  .btl-game .bgo{flex:1;height:50px}
+  .btl-game .bend{width:86px;height:50px}
+}
+@media (min-width:1000px) and (orientation:landscape){
+  .btl-game{grid-template-columns:1fr 150px;gap:12px;padding:18px 26px calc(18px + env(safe-area-inset-bottom))}
+}
+/* ---- 日志只显示最新几行，不越界压座板 ---- */
+.btl-game .blog{left:6%;right:6%;bottom:2px;top:auto;max-height:66px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
+
+/* ============================================================
+   对齐官方 2v2 布局：上敌/左友/右敌/右下我/左下手牌/中央金色确认
+   ============================================================ */
+.btl-game{
+  grid-template-columns:118px 1fr 118px;
+  grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"head head head" "foeT foeT foeT" "foeL mid foeR" "foot foot foot";
+  background:
+    linear-gradient(90deg,rgba(20,15,8,.55),transparent 18%,transparent 82%,rgba(20,15,8,.55)),
+    url('wxres/res/image/bg/paijvnei@2x.jpg') center/cover no-repeat,
+    radial-gradient(120% 90% at 50% 42%,#4a4136 0%,#332d25 55%,#262119 100%)}
+.btl-foeT{grid-area:foeT;display:flex;justify-content:center;align-items:flex-start}
+.btl-foeL{grid-area:foeL;align-self:center;justify-self:start;display:flex;flex-direction:column;align-items:center}
+.btl-foeR{grid-area:foeR;align-self:center;justify-self:end;display:flex;flex-direction:column;align-items:center}
+.btl-mid{grid-area:mid;position:relative;min-width:0;min-height:0}
+.btl-foot{grid-area:foot;display:flex;align-items:flex-end;gap:14px;min-height:0}
+.btl-foot .bhand{flex:1;min-width:0}
+.btl-foot .bme{flex:0 0 auto;display:flex;flex-direction:column;align-items:center}
+
+/* ---- 竖版武将大卡：顶栏 = 名字 + 体力点；立绘区独立、不再被遮挡 ---- */
+/* 改前问题（2026-09-28 实测 1080x545）：名字是左侧 22px 竖条、血点又压在立绘左下，
+   82px 宽的立绘只剩 51px 净宽（被吃掉 38%），再叠加 cover 横向裁切 -> 脸只剩一半。 */
+.vplate{display:block;width:104px;cursor:default;position:relative;padding:0;border-radius:9px;
+  background:#15130f;border:2px solid rgba(214,186,130,.45);
+  box-shadow:0 3px 12px rgba(0,0,0,.5);transition:border-color var(--bdur),box-shadow var(--bdur),transform var(--bdur)}
+.vplate.vme{width:124px}
+.vtop{display:flex;align-items:center;gap:4px;height:20px;padding:0 5px;
+  background:linear-gradient(180deg,#3b2d19,#241a0e);border-bottom:1px solid rgba(214,186,130,.35);
+  border-radius:7px 7px 0 0}
+.vtop .vnm{flex:1;min-width:0;font-size:11.5px;font-weight:900;color:#ffe9c2;letter-spacing:.5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 2px rgba(0,0,0,.85)}
+.vtop .vhp{flex:0 0 auto;display:flex;gap:2px;align-items:center}
+.vtop .vhp i{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.6);
+  border:1px solid rgba(255,255,255,.3);transition:background var(--bdur)}
+.vtop .vhp i.on{background:radial-gradient(circle at 35% 30%,#7fe096,#2e9e4d);border-color:#bdf0c9;
+  box-shadow:0 0 4px rgba(70,200,110,.85)}
+/* 立绘区：源图全是 256x256 正方形 -> 这里也做 1:1，cover 退化为「零裁剪」，整张立绘完整可见 */
+.vplate .vface{position:relative;width:100%;aspect-ratio:1/1;height:auto;overflow:hidden;background:#15130f}
+.bavwrap.vav{position:absolute;inset:0;width:auto;height:auto;border-radius:0;font-size:26px}
+.bavwrap.vav img{z-index:1}
+.vface::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,transparent 68%,rgba(10,8,5,.5) 100%)}
+/* 手牌数：右下蓝色小方块（官方样式） */
+.vhand{position:absolute;right:4px;bottom:5px;z-index:3;font-size:10.5px;font-weight:800;
+  color:#fff;background:linear-gradient(180deg,#3f74c0,#2b5aa8);border:1px solid #6f9bd8;
+  border-radius:5px;padding:1px 5px;text-shadow:0 1px 1px rgba(0,0,0,.4)}
+/* 敌/友/我 角标：立绘右上角（不压脸）。
+   ⚠ 必须限定在 .btl 内：app.js 的武将卡右下角「版本徽标」也叫 .vtag（见 style.css），
+   而 battle.css 在 style.css 之后加载 —— 裸 .vtag 会把 position/right/top/z-index
+   泄漏到卡片上，导致版本徽标脱离 .card-chips 流、压在品质徽标上（2026-10-08 修复）。 */
+.btl .vtag{position:absolute;right:0;top:0;z-index:3;font-size:12px;font-weight:900;color:#fff;
+  padding:2px 8px;border-radius:0 7px 0 8px;text-shadow:0 1px 1px rgba(0,0,0,.45)}
+.btl .vtag.enemy{background:linear-gradient(180deg,#d9503f,#a72c1e)}
+.btl .vtag.ally{background:linear-gradient(180deg,#43a06b,#2a7a4c)}
+.btl .vtag.me{background:linear-gradient(180deg,#e0a23c,#b57716)}
+/* 判定区徽章：右上角下侧 */
+.vjudge{position:absolute;right:3px;top:24px;z-index:3;display:flex;flex-direction:column;gap:2px;font-size:12px}
+/* 卡下信息：位置距离+技能 */
+.vinfo{margin-top:3px;font-size:10px;color:#cfc6b2;max-width:112px;text-align:center;line-height:1.4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vinfo span{color:#a89f8c}
+.vme-eq{display:flex;gap:3px;flex-wrap:wrap;justify-content:center;margin-top:3px;max-width:130px}
+.vme-eq .beq{font-size:9.5px}
+/* 我的卡：行动中金框呼吸 */
+.vplate.vme.b-active{animation:vglow 1.6s ease-in-out infinite alternate}
+@keyframes vglow{from{box-shadow:0 0 0 1.5px rgba(255,217,138,.4),0 0 10px rgba(255,190,90,.25)}to{box-shadow:0 0 0 2px rgba(255,217,138,.7),0 0 20px rgba(255,190,90,.55)}}
+
+/* ---- 中央：技能药丸 + 金色确认/蓝取消 + 提示 ---- */
+.bcenter{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
+.bpills{display:flex;gap:8px;pointer-events:auto}
+.bcenter .bskill{background:rgba(24,20,14,.82);border:1.5px solid rgba(214,186,130,.5);
+  color:#ffe9c2;border-radius:16px;padding:6px 16px;font-weight:800;font-size:13px}
+.bcenter .bskill small{display:block;font-weight:400;font-size:9.5px;color:#b3ab98;letter-spacing:1px}
+.bcenter .bskill.b-on{border-color:#ffce7a;background:rgba(90,55,22,.9);box-shadow:0 0 10px rgba(255,170,60,.45)}
+.bconfirm{display:flex;gap:12px;pointer-events:auto}
+.bgo{border:2px solid #b98a2e;border-radius:11px;padding:10px 34px;font-weight:900;font-size:17px;letter-spacing:4px;
+  color:#4a3200;background:linear-gradient(180deg,#f8dd8b,#d9a441);cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.6);transition:all var(--bdur)}
+.bgo.b-ready{background:linear-gradient(180deg,#ffe9a8,#e8b44e);box-shadow:0 0 16px rgba(255,200,90,.75),0 3px 10px rgba(0,0,0,.4)}
+.bgo:not(.b-ready){filter:saturate(.35) brightness(.8);cursor:default}
+.bgo:active{transform:scale(.96)}
+.bend{border:2px solid #6f9bd8;border-radius:11px;padding:10px 22px;font-weight:800;font-size:14px;letter-spacing:2px;
+  color:#eaf2ff;background:linear-gradient(180deg,#4a7cc0,#31599b);cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.25)}
+.bend:active{transform:scale(.96)}
+.bhint{font-size:12.5px;color:#ffe9c2;text-shadow:0 1px 2px rgba(0,0,0,.8);min-height:18px;font-weight:700}
+
+/* ---- 手牌：官方竖排牌面（左上大角标+竖排名+中央示意） ---- */
+.vbcard{width:76px;height:104px;border-radius:7px;position:relative;flex:0 0 auto;
+  border:1.5px solid rgba(120,100,70,.4);cursor:pointer;transition:transform var(--bdur),box-shadow var(--bdur)}
+.vbcard .vcorner{position:absolute;left:5px;top:3px;font-size:15px;font-weight:900;color:#222;z-index:1;line-height:1}
+.vbcard.c-red .vcorner{color:#c0392b}
+.vbcard .vname2{position:absolute;right:5px;top:7px;writing-mode:vertical-rl;font-size:14px;font-weight:900;
+  color:#2b2620;letter-spacing:1px;max-height:82px;overflow:hidden;z-index:1}
+.vbcard .vic{position:absolute;left:6px;bottom:8px;font-size:26px;line-height:1;z-index:0;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
+.vbcard.b-sel{transform:translateY(-16px);box-shadow:0 0 0 2.5px #ffce7a,0 8px 16px rgba(0,0,0,.55);z-index:2}
+.vbcard:hover{transform:translateY(-8px)}
+
+/* ---- 出牌展示迷你牌同款竖排 ---- */
+.btl-game .bstage .bmini{background:#f7f3e8;border:1.5px solid rgba(120,100,70,.4)}
+
+/* ---- 响应弹层里手牌选择用竖排牌面 ---- */
+.btl-ask .vbcard{display:inline-block;margin:4px}
+
+/* ---- 横屏矮窗口压缩 ---- */
+@media (max-height:430px) and (orientation:landscape){
+  .vplate{width:88px}
+  .vplate.vme{width:104px}
+  .vbcard{width:66px;height:92px}
+  .bcenter{bottom:26px}
+  .bgo{padding:8px 26px;font-size:15px}.bend{padding:8px 16px;font-size:12.5px}
+}
+/* ---- 竖屏：敌方上、左右并排、我下 ---- */
+@media (orientation:portrait){
+  .btl-game{grid-template-columns:1fr 1fr;
+    grid-template-areas:"head head" "foeT foeT" "foeL foeR" "mid mid" "foot foot"}
+  .btl-foeL{justify-self:end;padding-right:6px}
+  .btl-foeR{justify-self:start;padding-left:6px}
+  .vplate{width:96px}
+}
+
+/* ---- 修正：矮横屏压缩 + 日志移到上方 + 信息两行 ---- */
+.btl-game .blog{top:2px;bottom:auto;left:8%;right:8%;max-height:42px;font-size:11px}
+.bcenter{bottom:10px;gap:5px}
+.bhint{min-height:0;font-size:11.5px}
+.vinfo{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;line-height:1.35;max-width:116px}
+/* 阈值 470→640：常见窗口高度（470~640）也走压缩档，否则大卡+大按钮把中央区挤满，按钮叠日志 */
+@media (max-height:640px) and (orientation:landscape){
+  .vplate{width:84px}
+  .vplate.vme{width:98px}
+  .vtop .vnm{font-size:10px;letter-spacing:0}
+  .vbcard{width:58px;height:82px}
+  .vbcard .vname2{font-size:12px}
+  .vbcard .vic{font-size:20px;bottom:5px}
+  .btl-foot{gap:10px}
+  .bgo{padding:7px 22px;font-size:14px;letter-spacing:2px}
+  .bend{padding:7px 14px;font-size:12px}
+  .bpills .bskill{padding:4px 12px;font-size:12px}
+  .bcenter .bskill small{font-size:8.5px}
+  .vinfo{font-size:9px;max-width:100px}
+  .btl-game{padding-top:6px}
+  .btl-head{padding-bottom:2px}
+  .btl-title{font-size:13px}
+  .bdeck{font-size:10px;padding:2px 6px}
+}
+
+/* ---- 修复：旧版 foot 是 column、hand 限高，覆盖为新布局 ---- */
+.btl-game .btl-foot{flex-direction:row;align-items:flex-end;height:auto}
+.btl-game .bhand{overflow-y:visible;padding-top:20px;flex:1}
+.btl-game .bme{margin-left:0}
+
+/* ---- 矮横屏：左右敌卡绝对定位贴边，我的卡信息叠加卡内，避免重叠 ---- */
+@media (max-height:470px) and (orientation:landscape){
+  .btl-game{gap:6px}
+  .btl-foeL{position:absolute;left:14px;top:116px;z-index:2}
+  .btl-foeR{position:absolute;right:14px;top:76px;z-index:2}
+  
+  .vplate{width:80px}
+  .vplate.vme{width:98px}
+  
+  .vplate.vme .vinfo{position:absolute;left:0;right:0;bottom:1px;margin:0;z-index:4;
+    font-size:8.5px;max-width:none;text-align:center;text-shadow:0 1px 2px #000;-webkit-line-clamp:1}
+  .vplate.vme .vme-eq{position:absolute;left:0;right:0;bottom:14px;margin:0;z-index:4;justify-content:center}
+  .vplate.vme .vme-eq .beq{font-size:8.5px;padding:0 3px}
+  .btl-game .blog{max-height:22px;left:16%;right:16%}
+  .bcenter{bottom:6px;gap:4px}
+  .bgo{padding:6px 20px;font-size:13px}
+  .bend{padding:6px 12px;font-size:11.5px}
+  .bpills .bskill{padding:3px 10px;font-size:11px}
+  .vinfo{font-size:8.5px}
+}
+
+/* ---- 修正：绝对定位的格内子元素必须脱离 grid area 作为定位基准 ---- */
+@media (max-height:470px) and (orientation:landscape){
+  .btl-foeL,.btl-foeR{grid-area:auto}
+  .btl-foeL{left:14px;top:128px}
+  .btl-foeR{left:auto;right:14px;top:78px}
+  
+  .vplate{width:78px}
+  .vplate.vme{width:98px}
+  
+  .btl-game .blog{top:0;left:20%;right:20%;max-height:15px;font-size:9.5px;line-height:1.4}
+  .bcenter{bottom:0;gap:1px}
+  .bgo{padding:3px 16px;font-size:11.5px;letter-spacing:2px}
+  .bend{padding:4px 10px;font-size:10.5px}
+  .bpills .bskill{padding:2px 8px;font-size:10px}
+  .bhint{font-size:9.5px}
+}
+/* ---- 极矮横屏（手机横屏）：中央提示让位给日志，避免按钮叠日志 ---- */
+@media (max-height:430px) and (orientation:landscape){
+  .bhint{display:none}
+  .bcenter{gap:0}
+  .bpills .bskill{padding:1px 8px;font-size:9.5px}
+}

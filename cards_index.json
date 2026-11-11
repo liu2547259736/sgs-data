@@ -1,0 +1,2890 @@
+[
+ {
+  "name": "普【杀】",
+  "entry": "三国杀:杀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%80",
+  "cat": "basic",
+  "sub": null,
+  "pack": "标准版"
+ },
+ {
+  "name": "【闪】",
+  "entry": "三国杀:闪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%97%AA",
+  "cat": "basic",
+  "sub": null,
+  "pack": "标准版"
+ },
+ {
+  "name": "【桃】",
+  "entry": "三国杀:桃",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%A1%83",
+  "cat": "basic",
+  "sub": null,
+  "pack": "标准版"
+ },
+ {
+  "name": "【酒】",
+  "entry": "三国杀:酒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%85%92",
+  "cat": "basic",
+  "sub": null,
+  "pack": "军争篇"
+ },
+ {
+  "name": "雷【杀】",
+  "entry": "三国杀:杀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%80",
+  "cat": "basic",
+  "sub": null,
+  "pack": "军争篇"
+ },
+ {
+  "name": "火【杀】",
+  "entry": "三国杀:杀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%80",
+  "cat": "basic",
+  "sub": null,
+  "pack": "军争篇"
+ },
+ {
+  "name": "【毒】",
+  "entry": "三国杀:毒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%AF%92",
+  "cat": "basic",
+  "sub": null,
+  "pack": "用间篇"
+ },
+ {
+  "name": "刺【杀】",
+  "entry": "三国杀:杀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%80",
+  "cat": "basic",
+  "sub": null,
+  "pack": "用间篇"
+ },
+ {
+  "name": "冰【杀】",
+  "entry": "三国杀:杀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%80",
+  "cat": "basic",
+  "sub": null,
+  "pack": "应变篇"
+ },
+ {
+  "name": "【影】",
+  "entry": "三国杀:影",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BD%B1",
+  "cat": "basic",
+  "sub": null,
+  "pack": "江山如故"
+ },
+ {
+  "name": "掠【闪】",
+  "entry": "三国杀:闪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%97%AA",
+  "cat": "basic",
+  "sub": null,
+  "pack": "九变篇"
+ },
+ {
+  "name": "【花】",
+  "entry": "三国杀:花",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%8A%B1",
+  "cat": "basic",
+  "sub": null,
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【爆竹】",
+  "entry": "三国杀:爆竹",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%88%86%E7%AB%B9",
+  "cat": "basic",
+  "sub": null,
+  "pack": "幻化之战"
+ },
+ {
+  "name": "【粽】",
+  "entry": "三国杀:粽",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%B2%BD",
+  "cat": "basic",
+  "sub": null,
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "雄黄【酒】",
+  "entry": "三国杀:酒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%85%92",
+  "cat": "basic",
+  "sub": null,
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "【酗酒】",
+  "entry": "三国杀:酗酒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%85%97%E9%85%92",
+  "cat": "basic",
+  "sub": null,
+  "pack": "官渡之战"
+ },
+ {
+  "name": "闪【闪】",
+  "entry": "三国杀:闪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%97%AA",
+  "cat": "basic",
+  "sub": null,
+  "pack": "闪闪节活动限定"
+ },
+ {
+  "name": "【决斗】",
+  "entry": "三国杀:决斗",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%86%B3%E6%96%97",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【借刀杀人】",
+  "entry": "三国杀:借刀杀人",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%80%9F%E5%88%80%E6%9D%80%E4%BA%BA",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【万箭齐发】",
+  "entry": "三国杀:万箭齐发",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%87%E7%AE%AD%E9%BD%90%E5%8F%91",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【南蛮入侵】",
+  "entry": "三国杀:南蛮入侵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8D%97%E8%9B%AE%E5%85%A5%E4%BE%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【过河拆桥】",
+  "entry": "三国杀:过河拆桥",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%BF%87%E6%B2%B3%E6%8B%86%E6%A1%A5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【顺手牵羊】",
+  "entry": "三国杀:顺手牵羊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A1%BA%E6%89%8B%E7%89%B5%E7%BE%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【无中生有】",
+  "entry": "三国杀:无中生有",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%97%A0%E4%B8%AD%E7%94%9F%E6%9C%89",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【五谷丰登】",
+  "entry": "三国杀:五谷丰登",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BA%94%E8%B0%B7%E4%B8%B0%E7%99%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【桃园结义】",
+  "entry": "三国杀:桃园结义",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%A1%83%E5%9B%AD%E7%BB%93%E4%B9%89",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "普【无懈可击】",
+  "entry": "三国杀:无懈可击",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%97%A0%E6%87%88%E5%8F%AF%E5%87%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "标准版"
+ },
+ {
+  "name": "【火攻】",
+  "entry": "三国杀:火攻",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%81%AB%E6%94%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【铁索连环】",
+  "entry": "三国杀:铁索连环",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%81%E7%B4%A2%E8%BF%9E%E7%8E%AF",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【刮骨疗毒】",
+  "entry": "三国杀:刮骨疗毒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%AE%E9%AA%A8%E7%96%97%E6%AF%92",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【推心置腹】",
+  "entry": "三国杀:推心置腹",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【趁火打劫】",
+  "entry": "三国杀:趁火打劫",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B6%81%E7%81%AB%E6%89%93%E5%8A%AB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【树上开花】",
+  "entry": "三国杀:树上开花",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%A0%91%E4%B8%8A%E5%BC%80%E8%8A%B1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【洞烛先机】",
+  "entry": "三国杀:洞烛先机",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B4%9E%E7%83%9B%E5%85%88%E6%9C%BA",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【出其不意】",
+  "entry": "三国杀:出其不意",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%87%BA%E5%85%B6%E4%B8%8D%E6%84%8F",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【逐近弃远】",
+  "entry": "三国杀:逐近弃远",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%80%90%E8%BF%91%E5%BC%83%E8%BF%9C",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【水淹七军】",
+  "entry": "三国杀:水淹七军",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B0%B4%E6%B7%B9%E4%B8%83%E5%86%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【随机应变】",
+  "entry": "三国杀:随机应变",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9A%8F%E6%9C%BA%E5%BA%94%E5%8F%98",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【笑里藏刀】",
+  "entry": "三国杀:笑里藏刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%AC%91%E9%87%8C%E8%97%8F%E5%88%80",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【美人计】",
+  "entry": "三国杀:美人计",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%BE%8E%E4%BA%BA%E8%AE%A1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【瞒天过海】",
+  "entry": "三国杀:瞒天过海",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%9E%92%E5%A4%A9%E8%BF%87%E6%B5%B7",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【调剂盐梅】",
+  "entry": "三国杀:调剂盐梅",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B0%83%E5%89%82%E7%9B%90%E6%A2%85",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【兵临城下】",
+  "entry": "三国杀:兵临城下",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%B5%E4%B8%B4%E5%9F%8E%E4%B8%8B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【奇正相生】",
+  "entry": "三国杀:奇正相生",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%87%E6%AD%A3%E7%9B%B8%E7%94%9F",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【火球术】",
+  "entry": "三国杀:祝融/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9D%E8%9E%8D/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【大火球术】",
+  "entry": "三国杀:祝融/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9D%E8%9E%8D/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【五菇丰登】",
+  "entry": "三国杀:五菇丰登",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BA%94%E8%8F%87%E4%B8%B0%E7%99%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "SP"
+ },
+ {
+  "name": "【远交近攻】",
+  "entry": "三国杀:远交近攻",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%BF%9C%E4%BA%A4%E8%BF%91%E6%94%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "【以逸待劳】",
+  "entry": "三国杀:以逸待劳",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BB%A5%E9%80%B8%E5%BE%85%E5%8A%B3",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "【知己知彼】",
+  "entry": "三国杀:知己知彼",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%9F%A5%E5%B7%B1%E7%9F%A5%E5%BD%BC",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "国【无懈可击】",
+  "entry": "三国杀:无懈可击",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%97%A0%E6%87%88%E5%8F%AF%E5%87%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "【敕令】",
+  "entry": "三国杀:敕令",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%95%95%E4%BB%A4",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【调虎离山】",
+  "entry": "三国杀:调虎离山",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B0%83%E8%99%8E%E7%A6%BB%E5%B1%B1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【火烧连营】",
+  "entry": "三国杀:火烧连营",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%81%AB%E7%83%A7%E8%BF%9E%E8%90%A5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【联军盛宴】",
+  "entry": "三国杀:联军盛宴",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%81%94%E5%86%9B%E7%9B%9B%E5%AE%B4",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【勠力同心】",
+  "entry": "三国杀:勠力同心",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8B%A0%E5%8A%9B%E5%90%8C%E5%BF%83",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【水淹七军】",
+  "entry": "三国杀:水淹七军",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B0%B4%E6%B7%B9%E4%B8%83%E5%86%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【挟天子以令诸侯】",
+  "entry": "三国杀:挟天子以令诸侯",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8C%9F%E5%A4%A9%E5%AD%90%E4%BB%A5%E4%BB%A4%E8%AF%B8%E4%BE%AF",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【咄咄逼人】",
+  "entry": "三国杀:咄咄逼人",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%92%84%E5%92%84%E9%80%BC%E4%BA%BA",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【巧取豪夺】",
+  "entry": "三国杀:巧取豪夺",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B7%A7%E5%8F%96%E8%B1%AA%E5%A4%BA",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【分道扬镳】",
+  "entry": "三国杀:分道扬镳",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%86%E9%81%93%E6%89%AC%E9%95%B3",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【图穷匕见】",
+  "entry": "三国杀:图穷匕见",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9B%BE%E7%A9%B7%E5%8C%95%E8%A7%81",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【狗尾续貂】",
+  "entry": "三国杀:狗尾续貂",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8B%97%E5%B0%BE%E7%BB%AD%E8%B2%82",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【水淹七军】",
+  "entry": "三国杀:水淹七军",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B0%B4%E6%B7%B9%E4%B8%83%E5%86%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "新1V1"
+ },
+ {
+  "name": "【进退自如】",
+  "entry": "三国杀:进退自如",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%BF%9B%E9%80%80%E8%87%AA%E5%A6%82",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【攻守兼备】",
+  "entry": "三国杀:攻守兼备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%94%BB%E5%AE%88%E5%85%BC%E5%A4%87",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【继往开来】",
+  "entry": "三国杀:继往开来",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%BB%A7%E5%BE%80%E5%BC%80%E6%9D%A5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【财源滚滚】",
+  "entry": "三国杀:财源滚滚",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B4%A2%E6%BA%90%E6%BB%9A%E6%BB%9A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【炸弹】",
+  "entry": "三国杀:炸弹",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%82%B8%E5%BC%B9",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【斗转星移】",
+  "entry": "三国杀:斗转星移",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%97%E8%BD%AC%E6%98%9F%E7%A7%BB",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武"
+ },
+ {
+  "name": "【偷梁换柱】",
+  "entry": "三国杀:偷梁换柱",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%81%B7%E6%A2%81%E6%8D%A2%E6%9F%B1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武"
+ },
+ {
+  "name": "【李代桃僵】",
+  "entry": "三国杀:李代桃僵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9D%8E%E4%BB%A3%E6%A1%83%E5%83%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武"
+ },
+ {
+  "name": "【文和乱武】",
+  "entry": "三国杀:文和乱武",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%87%E5%92%8C%E4%B9%B1%E6%AD%A6",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武"
+ },
+ {
+  "name": "【强兵足食】",
+  "entry": "三国杀:强兵足食",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%BA%E5%85%B5%E8%B6%B3%E9%A3%9F",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武·战备"
+ },
+ {
+  "name": "【强易】",
+  "entry": "三国杀:强易",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%BA%E6%98%93",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "文和乱武·战备"
+ },
+ {
+  "name": "【声东击西】",
+  "entry": "三国杀:声东击西",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A3%B0%E4%B8%9C%E5%87%BB%E8%A5%BF",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【增兵减灶】",
+  "entry": "三国杀:增兵减灶",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A2%9E%E5%85%B5%E5%87%8F%E7%81%B6",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【弃甲曳兵】",
+  "entry": "三国杀:弃甲曳兵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%83%E7%94%B2%E6%9B%B3%E5%85%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【金蝉脱壳】",
+  "entry": "三国杀:金蝉脱壳",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%87%91%E8%9D%89%E8%84%B1%E5%A3%B3",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【撒豆成兵】",
+  "entry": "三国杀:撒豆成兵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%92%92%E8%B1%86%E6%88%90%E5%85%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "三国杀·幻"
+ },
+ {
+  "name": "【花言巧语】",
+  "entry": "三国杀:花言巧语",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%8A%B1%E8%A8%80%E5%B7%A7%E8%AF%AD",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【始乱终弃】",
+  "entry": "三国杀:始乱终弃",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A7%8B%E4%B9%B1%E7%BB%88%E5%BC%83",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【整甲缮兵】",
+  "entry": "三国杀:整甲缮兵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%95%B4%E7%94%B2%E7%BC%AE%E5%85%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "山河煮酒·龙起襄樊"
+ },
+ {
+  "name": "【火烧连营】",
+  "entry": "三国杀:火烧连营",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%81%AB%E7%83%A7%E8%BF%9E%E8%90%A5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【以毒攻毒】",
+  "entry": "三国杀:以毒攻毒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BB%A5%E6%AF%92%E6%94%BB%E6%AF%92",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "山河煮酒·龙起襄樊-关索传"
+ },
+ {
+  "name": "【玉石皆碎】",
+  "entry": "三国杀:玉石皆碎",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9F%B3%E7%9A%86%E7%A2%8E",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "山河煮酒·绝代智将"
+ },
+ {
+  "name": "【联军盛宴】",
+  "entry": "三国杀:联军盛宴",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%81%94%E5%86%9B%E7%9B%9B%E5%AE%B4",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "虎牢关"
+ },
+ {
+  "name": "【唯我独尊】",
+  "entry": "三国杀:唯我独尊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%94%AF%E6%88%91%E7%8B%AC%E5%B0%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "天降神兵"
+ },
+ {
+  "name": "【撒豆成兵】",
+  "entry": "三国杀:撒豆成兵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%92%92%E8%B1%86%E6%88%90%E5%85%B5",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【移花接木】",
+  "entry": "三国杀:移花接木",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A7%BB%E8%8A%B1%E6%8E%A5%E6%9C%A8",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【故步自封】",
+  "entry": "三国杀:故步自封",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%95%85%E6%AD%A5%E8%87%AA%E5%B0%81",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【解甲归田】",
+  "entry": "三国杀:解甲归田",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%A7%A3%E7%94%B2%E5%BD%92%E7%94%B0",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【树上开花】",
+  "entry": "三国杀:树上开花",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%A0%91%E4%B8%8A%E5%BC%80%E8%8A%B1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【逐鹿天下】",
+  "entry": "三国杀:逐鹿天下",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%80%90%E9%B9%BF%E5%A4%A9%E4%B8%8B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【草船借箭】",
+  "entry": "三国杀:草船借箭",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【同舟共济】",
+  "entry": "三国杀:同舟共济",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%90%8C%E8%88%9F%E5%85%B1%E6%B5%8E",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "【力争上游】",
+  "entry": "三国杀:力争上游",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8A%9B%E4%BA%89%E4%B8%8A%E6%B8%B8",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "【逆水行舟】",
+  "entry": "三国杀:逆水行舟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%80%86%E6%B0%B4%E8%A1%8C%E8%88%9F",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "【粽子】",
+  "entry": "三国杀:粽子",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%B2%BD%E5%AD%90",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "龙舟争渡"
+ },
+ {
+  "name": "【屯粮】",
+  "entry": "三国杀:屯粮",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%AF%E7%B2%AE",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "官渡之战"
+ },
+ {
+  "name": "【援军】",
+  "entry": "三国杀:援军",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8F%B4%E5%86%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "官渡之战"
+ },
+ {
+  "name": "【勠力同心】",
+  "entry": "三国杀:勠力同心",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8B%A0%E5%8A%9B%E5%90%8C%E5%BF%83",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "官渡之战"
+ },
+ {
+  "name": "【釜底抽薪】",
+  "entry": "三国杀:釜底抽薪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%87%9C%E5%BA%95%E6%8A%BD%E8%96%AA",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "幻化之战"
+ },
+ {
+  "name": "【偷梁换柱】",
+  "entry": "三国杀:偷梁换柱",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%81%B7%E6%A2%81%E6%8D%A2%E6%9F%B1",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "幻化之战"
+ },
+ {
+  "name": "【洪荒之力】",
+  "entry": "三国杀:洪荒之力",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B4%AA%E8%8D%92%E4%B9%8B%E5%8A%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "神之试炼"
+ },
+ {
+  "name": "【商鞅变法】",
+  "entry": "三国杀:商鞅变法",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%95%86%E9%9E%85%E5%8F%98%E6%B3%95",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "合纵抗秦"
+ },
+ {
+  "name": "【春联】",
+  "entry": "三国杀:春联",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%98%A5%E8%81%94",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "年兽大作战"
+ },
+ {
+  "name": "【爆竹】",
+  "entry": "三国杀:爆竹",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%88%86%E7%AB%B9",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "年兽大作战"
+ },
+ {
+  "name": "【祥符聚宝】",
+  "entry": "三国杀:祥符聚宝",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%A5%E7%AC%A6%E8%81%9A%E5%AE%9D",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "年兽大作战"
+ },
+ {
+  "name": "【回魂】",
+  "entry": "三国杀:回魂",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9B%9E%E9%AD%82",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "十殿阎罗"
+ },
+ {
+  "name": "【白衣渡江】",
+  "entry": "三国杀:白衣渡江",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%99%BD%E8%A1%A3%E6%B8%A1%E6%B1%9F",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "兵临城下"
+ },
+ {
+  "name": "【水淹七军】",
+  "entry": "三国杀:水淹七军",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B0%B4%E6%B7%B9%E4%B8%83%E5%86%9B",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "兵临城下"
+ },
+ {
+  "name": "【落井下石】",
+  "entry": "三国杀:落井下石",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%90%BD%E4%BA%95%E4%B8%8B%E7%9F%B3",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "兵临城下"
+ },
+ {
+  "name": "【劝酒】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【你死我活】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【两肋插刀】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【天雷】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【有难同当】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【鹰狼】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【武圣归来】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【义父】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【躺赢】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【有福同享】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【烈火】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【神兵】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【大师】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【富贵】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【金铙】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑妙妙杀"
+ },
+ {
+  "name": "【生死与共】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【红运当头】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【有难同当】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【落井下石】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【雷公助我】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【劝酒】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【两肋插刀】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【兄弟齐心】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【无天无界】",
+  "entry": "三国杀:开黑季锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%80%E9%BB%91%E5%AD%A3%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "开黑季活动限定"
+ },
+ {
+  "name": "【见好就收】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【望梅止渴】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【至死方休】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【清算】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【火上浇油】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【好运】",
+  "entry": "三国杀:创玩节锦囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%9B%E7%8E%A9%E8%8A%82%E9%94%A6%E5%9B%8A",
+  "cat": "scroll",
+  "sub": "normal",
+  "pack": "创玩节活动限定"
+ },
+ {
+  "name": "【乐不思蜀】",
+  "entry": "三国杀:乐不思蜀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B9%90%E4%B8%8D%E6%80%9D%E8%9C%80",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "标准版"
+ },
+ {
+  "name": "【闪电】",
+  "entry": "三国杀:闪电",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%97%AA%E7%94%B5",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "标准版"
+ },
+ {
+  "name": "【兵粮寸断】",
+  "entry": "三国杀:兵粮寸断",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%B5%E7%B2%AE%E5%AF%B8%E6%96%AD",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【草木皆兵】",
+  "entry": "三国杀:草木皆兵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%8D%89%E6%9C%A8%E7%9A%86%E5%85%B5",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【浮雷】",
+  "entry": "三国杀:浮雷",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B5%AE%E9%9B%B7",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【毁容】",
+  "entry": "三国杀:毁容",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%AF%81%E5%AE%B9",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【随波逐流】",
+  "entry": "三国杀:随波逐流",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9A%8F%E6%B3%A2%E9%80%90%E6%B5%81",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【兵临城下】",
+  "entry": "三国杀:兵临城下",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%B5%E4%B8%B4%E5%9F%8E%E4%B8%8B",
+  "cat": "scroll",
+  "sub": "delayed",
+  "pack": "兵临城下"
+ },
+ {
+  "name": "【号令天下】",
+  "entry": "三国杀:号令天下",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8F%B7%E4%BB%A4%E5%A4%A9%E4%B8%8B",
+  "cat": "scroll",
+  "sub": "faction",
+  "pack": "不臣篇"
+ },
+ {
+  "name": "【克复中原】",
+  "entry": "三国杀:克复中原",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%8B%E5%A4%8D%E4%B8%AD%E5%8E%9F",
+  "cat": "scroll",
+  "sub": "faction",
+  "pack": "不臣篇"
+ },
+ {
+  "name": "【固国安邦】",
+  "entry": "三国杀:固国安邦",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9B%BA%E5%9B%BD%E5%AE%89%E9%82%A6",
+  "cat": "scroll",
+  "sub": "faction",
+  "pack": "不臣篇"
+ },
+ {
+  "name": "【文和乱武】",
+  "entry": "三国杀:文和乱武",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%87%E5%92%8C%E4%B9%B1%E6%AD%A6",
+  "cat": "scroll",
+  "sub": "faction",
+  "pack": "不臣篇"
+ },
+ {
+  "name": "【诸葛连弩】",
+  "entry": "三国杀:诸葛连弩",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%AF%B8%E8%91%9B%E8%BF%9E%E5%BC%A9",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【雌雄双股剑】",
+  "entry": "三国杀:雌雄双股剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9B%8C%E9%9B%84%E5%8F%8C%E8%82%A1%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【寒冰剑】",
+  "entry": "三国杀:寒冰剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%AF%92%E5%86%B0%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【青釭剑】",
+  "entry": "三国杀:青釭剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9D%92%E9%87%AD%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【丈八蛇矛】",
+  "entry": "三国杀:丈八蛇矛",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%88%E5%85%AB%E8%9B%87%E7%9F%9B",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【贯石斧】",
+  "entry": "三国杀:贯石斧",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B4%AF%E7%9F%B3%E6%96%A7",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【青龙偃月刀】",
+  "entry": "三国杀:青龙偃月刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9D%92%E9%BE%99%E5%81%83%E6%9C%88%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【方天画戟】",
+  "entry": "三国杀:方天画戟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%B9%E5%A4%A9%E7%94%BB%E6%88%9F",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【麒麟弓】",
+  "entry": "三国杀:麒麟弓",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%BA%92%E9%BA%9F%E5%BC%93",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "标准版"
+ },
+ {
+  "name": "【古锭刀】",
+  "entry": "三国杀:古锭刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%8F%A4%E9%94%AD%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【朱雀羽扇】",
+  "entry": "三国杀:朱雀羽扇",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9C%B1%E9%9B%80%E7%BE%BD%E6%89%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【银月枪】",
+  "entry": "三国杀:银月枪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%B6%E6%9C%88%E6%9E%AA",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "珍藏封印"
+ },
+ {
+  "name": "【五行鹤翎扇】",
+  "entry": "三国杀:五行鹤翎扇",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BA%94%E8%A1%8C%E9%B9%A4%E7%BF%8E%E6%89%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【乌铁锁链】",
+  "entry": "三国杀:乌铁锁链",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B9%8C%E9%93%81%E9%94%81%E9%93%BE",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【折戟】",
+  "entry": "三国杀:折戟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8A%98%E6%88%9F",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【七星宝刀】",
+  "entry": "三国杀:七星宝刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%83%E6%98%9F%E5%AE%9D%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【倚天剑】",
+  "entry": "三国杀:倚天剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%80%9A%E5%A4%A9%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【奶龙之剑】",
+  "entry": "三国杀:奶龙装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%B6%E9%BE%99%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "奶龙三国杀"
+ },
+ {
+  "name": "【坦克】",
+  "entry": "三国杀:奶龙装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%B6%E9%BE%99%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "奶龙三国杀"
+ },
+ {
+  "name": "【银月枪】",
+  "entry": "三国杀:银月枪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%B6%E6%9C%88%E6%9E%AA",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【霹雳车】",
+  "entry": "三国杀:霹雳车",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9C%B9%E9%9B%B3%E8%BD%A6",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【元戎精械弩】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【红缎枪】",
+  "entry": "三国杀:蒲元/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%92%B2%E5%85%83/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【烈淬刀】",
+  "entry": "三国杀:蒲元/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%92%B2%E5%85%83/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【混毒弯匕】",
+  "entry": "三国杀:蒲元/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%92%B2%E5%85%83/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【水波剑】",
+  "entry": "三国杀:蒲元/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%92%B2%E5%85%83/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【天雷刃】",
+  "entry": "三国杀:蒲元/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%92%B2%E5%85%83/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【灵宝仙葫】",
+  "entry": "三国杀:葛玄/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%91%9B%E7%8E%84/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【太极拂尘】",
+  "entry": "三国杀:葛玄/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%91%9B%E7%8E%84/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【镔铁双戟】",
+  "entry": "三国杀:镔铁双戟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%95%94%E9%93%81%E5%8F%8C%E6%88%9F",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【思召剑】",
+  "entry": "三国杀:思召剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%80%9D%E5%8F%AC%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【大攻车】",
+  "entry": "三国杀:大攻车",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%A7%E6%94%BB%E8%BD%A6",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【虎翼】",
+  "entry": "三国杀:虎翼",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%8E%E7%BF%BC",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【玄剑】",
+  "entry": "三国杀:玄剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%84%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【百辟双匕】",
+  "entry": "三国杀:百辟双匕",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%99%BE%E8%BE%9F%E5%8F%8C%E5%8C%95",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【宣花斧】",
+  "entry": "三国杀:宣花斧",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%AE%A3%E8%8A%B1%E6%96%A7",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【魂·诸葛连弩】",
+  "entry": "三国杀:黄月英/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%BB%84%E6%9C%88%E8%8B%B1/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【剑】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【刀】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【斧】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【戟】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【枪】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【弓】",
+  "entry": "三国杀:玉真子/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%9C%9F%E5%AD%90/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【极光剑】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【帝皇战戟】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【烈焰镖】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【烈焰刀】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【烈焰弓】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【彩莲】",
+  "entry": "三国杀:彩莲",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BD%A9%E8%8E%B2",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【斩鬼剑】",
+  "entry": "三国杀:斩鬼剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%A9%E9%AC%BC%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【赤血刃】",
+  "entry": "三国杀:赤血刃",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B5%A4%E8%A1%80%E5%88%83",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "SP"
+ },
+ {
+  "name": "【吴六剑】",
+  "entry": "三国杀:吴六剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%90%B4%E5%85%AD%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "【三尖两刃刀】",
+  "entry": "三国杀:三尖两刃刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%89%E5%B0%96%E4%B8%A4%E5%88%83%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "国战标准版"
+ },
+ {
+  "name": "【飞龙夺凤】",
+  "entry": "三国杀:飞龙夺凤",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A3%9E%E9%BE%99%E5%A4%BA%E5%87%A4",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "君临天下·阵"
+ },
+ {
+  "name": "【戢鳞潜翼】",
+  "entry": "三国杀:戢鳞潜翼",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%88%A2%E9%B3%9E%E6%BD%9C%E7%BF%BC",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "金印紫绶"
+ },
+ {
+  "name": "【斩蛇剑】",
+  "entry": "三国杀:斩蛇剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%96%A9%E8%9B%87%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【阳燧枪】",
+  "entry": "三国杀:阳燧枪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%98%B3%E7%87%A7%E6%9E%AA",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【烟杆】",
+  "entry": "三国杀:地主装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9C%B0%E4%B8%BB%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "恭喜发财·福"
+ },
+ {
+  "name": "【七宝刀】",
+  "entry": "三国杀:七宝刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%83%E5%AE%9D%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【衠钢槊】",
+  "entry": "三国杀:衠钢槊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%A1%A0%E9%92%A2%E6%A7%8A",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【破城锤】",
+  "entry": "三国杀:破城锤",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A0%B4%E5%9F%8E%E9%94%A4",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒"
+ },
+ {
+  "name": "【青冥剑】",
+  "entry": "三国杀:青冥剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9D%92%E5%86%A5%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【飞龙夺凤】",
+  "entry": "三国杀:飞龙夺凤",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A3%9E%E9%BE%99%E5%A4%BA%E5%87%A4",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【尚方宝剑】",
+  "entry": "三国杀:尚方宝剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B0%9A%E6%96%B9%E5%AE%9D%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【铁蒺藜骨朵】",
+  "entry": "三国杀:铁蒺藜骨朵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%81%E8%92%BA%E8%97%9C%E9%AA%A8%E6%9C%B5",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【柳叶刀】",
+  "entry": "三国杀:柳叶刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9F%B3%E5%8F%B6%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河煮酒·绝代智将"
+ },
+ {
+  "name": "【无双方天戟】",
+  "entry": "三国杀:虎牢关装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%8E%E7%89%A2%E5%85%B3%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "虎牢关"
+ },
+ {
+  "name": "【鬼龙斩月刀】",
+  "entry": "三国杀:鬼龙斩月刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%AC%BC%E9%BE%99%E6%96%A9%E6%9C%88%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【修罗炼狱戟】",
+  "entry": "三国杀:修罗炼狱戟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BF%AE%E7%BD%97%E7%82%BC%E7%8B%B1%E6%88%9F",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【赤焰镇魂琴】",
+  "entry": "三国杀:赤焰镇魂琴",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B5%A4%E7%84%B0%E9%95%87%E9%AD%82%E7%90%B4",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【赤血青锋】",
+  "entry": "三国杀:赤血青锋",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%B5%A4%E8%A1%80%E9%9D%92%E9%94%8B",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【鸾凤和鸣剑】",
+  "entry": "三国杀:鸾凤和鸣剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%B8%BE%E5%87%A4%E5%92%8C%E9%B8%A3%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【金乌落日弓】",
+  "entry": "三国杀:金乌落日弓",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%87%91%E4%B9%8C%E8%90%BD%E6%97%A5%E5%BC%93",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【刑天破军斧】",
+  "entry": "三国杀:刑天破军斧",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%91%E5%A4%A9%E7%A0%B4%E5%86%9B%E6%96%A7",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【折戟】",
+  "entry": "三国杀:折戟",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8A%98%E6%88%9F",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【无锋剑】",
+  "entry": "三国杀:无锋剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%97%A0%E9%94%8B%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【涯角枪】",
+  "entry": "三国杀:涯角枪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B6%AF%E8%A7%92%E6%9E%AA",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【元戎精械弩】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "幻化之战"
+ },
+ {
+  "name": "【真龙长剑】",
+  "entry": "三国杀:真龙长剑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%9C%9F%E9%BE%99%E9%95%BF%E5%89%91",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "合纵抗秦"
+ },
+ {
+  "name": "【秦弩】",
+  "entry": "三国杀:秦弩",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A7%A6%E5%BC%A9",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "合纵抗秦"
+ },
+ {
+  "name": "【项羽刀】",
+  "entry": "三国杀:项羽刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A1%B9%E7%BE%BD%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "武将列传"
+ },
+ {
+  "name": "【投石车】",
+  "entry": "三国杀:投石车",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8A%95%E7%9F%B3%E8%BD%A6",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "兵临城下"
+ },
+ {
+  "name": "【雷击木】",
+  "entry": "三国杀:雷击木",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9B%B7%E5%87%BB%E6%9C%A8",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "太虚幻境"
+ },
+ {
+  "name": "【飞龙夺凤】",
+  "entry": "三国杀:飞龙夺凤",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A3%9E%E9%BE%99%E5%A4%BA%E5%87%A4",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "太虚幻境"
+ },
+ {
+  "name": "【刺匕】",
+  "entry": "三国杀:刺匕",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%88%BA%E5%8C%95",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "戚宦之争"
+ },
+ {
+  "name": "【伏魔金刚杵】",
+  "entry": "三国杀:神武装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9E%E6%AD%A6%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "征战虎牢"
+ },
+ {
+  "name": "【飞将神威剑】",
+  "entry": "三国杀:神武装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9E%E6%AD%A6%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "征战虎牢"
+ },
+ {
+  "name": "【无双修罗戟】",
+  "entry": "三国杀:神武装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9E%E6%AD%A6%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "征战虎牢"
+ },
+ {
+  "name": "【百辟刀】",
+  "entry": "三国杀:百辟刀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%99%BE%E8%BE%9F%E5%88%80",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【雷震】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【断魂】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【斩魂刀】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【妖刀赤瞳】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【暗器飞刃】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【倚天弑逆】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "山河图"
+ },
+ {
+  "name": "【如意金箍棒】",
+  "entry": "三国杀:如意金箍棒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A6%82%E6%84%8F%E9%87%91%E7%AE%8D%E6%A3%92",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "斗地主活动限定"
+ },
+ {
+  "name": "【真·诸葛连弩】",
+  "entry": "三国杀:真诸葛连弩",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%9C%9F%E8%AF%B8%E8%91%9B%E8%BF%9E%E5%BC%A9",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "斗地主活动限定"
+ },
+ {
+  "name": "【洛阳铲】",
+  "entry": "三国杀:洛阳铲",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B4%9B%E9%98%B3%E9%93%B2",
+  "cat": "equip",
+  "sub": "weapon",
+  "pack": "斗地主活动限定"
+ },
+ {
+  "name": "【八卦阵】",
+  "entry": "三国杀:八卦阵",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%AB%E5%8D%A6%E9%98%B5",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "标准版"
+ },
+ {
+  "name": "【仁王盾】",
+  "entry": "三国杀:仁王盾",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BB%81%E7%8E%8B%E7%9B%BE",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "标准版"
+ },
+ {
+  "name": "【藤甲】",
+  "entry": "三国杀:藤甲",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%97%A4%E7%94%B2",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【白银狮子】",
+  "entry": "三国杀:白银狮子",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%99%BD%E9%93%B6%E7%8B%AE%E5%AD%90",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【引蜂衣】",
+  "entry": "三国杀:引蜂衣",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%95%E8%9C%82%E8%A1%A3",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【女装】",
+  "entry": "三国杀:女装",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%B3%E8%A3%85",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【黑光铠】",
+  "entry": "三国杀:黑光铠",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%BB%91%E5%85%89%E9%93%A0",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【护心镜】",
+  "entry": "三国杀:护心镜",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8A%A4%E5%BF%83%E9%95%9C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【火锅】",
+  "entry": "三国杀:奶龙装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%B6%E9%BE%99%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "奶龙三国杀"
+ },
+ {
+  "name": "【仁王金刚盾】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【桐油百韧甲】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【照月狮子盔】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【先天八卦阵】",
+  "entry": "三国杀:马钧/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%A9%AC%E9%92%A7/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【冲应神符】",
+  "entry": "三国杀:葛玄/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%91%9B%E7%8E%84/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【魂·八卦阵】",
+  "entry": "三国杀:黄月英/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%BB%84%E6%9C%88%E8%8B%B1/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【极光盾】",
+  "entry": "三国杀:铠甲勇士武将/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%A0%E7%94%B2%E5%8B%87%E5%A3%AB%E6%AD%A6%E5%B0%86/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【盟军大纛】",
+  "entry": "三国杀:盟军大纛",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%9B%9F%E5%86%9B%E5%A4%A7%E7%BA%9B",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "SP"
+ },
+ {
+  "name": "【太平要术】",
+  "entry": "三国杀:太平要术",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%AA%E5%B9%B3%E8%A6%81%E6%9C%AF",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "君临天下·势"
+ },
+ {
+  "name": "【明光铠】",
+  "entry": "三国杀:明光铠",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%98%8E%E5%85%89%E9%93%A0",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【护心镜】",
+  "entry": "三国杀:护心镜",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%8A%A4%E5%BF%83%E9%95%9C",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【火浣衣】",
+  "entry": "三国杀:火浣衣",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%81%AB%E6%B5%A3%E8%A1%A3",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【地契】",
+  "entry": "三国杀:地主装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9C%B0%E4%B8%BB%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "斗地主标准版"
+ },
+ {
+  "name": "【烂银甲】",
+  "entry": "三国杀:烂银甲",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%83%82%E9%93%B6%E7%94%B2",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "忠胆英杰"
+ },
+ {
+  "name": "【夜行衣】",
+  "entry": "三国杀:夜行衣",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%9C%E8%A1%8C%E8%A1%A3",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "山河煮酒·绝代智将"
+ },
+ {
+  "name": "【玲珑狮蛮带】",
+  "entry": "三国杀:虎牢关装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%8E%E7%89%A2%E5%85%B3%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "虎牢关"
+ },
+ {
+  "name": "【红锦百花袍】",
+  "entry": "三国杀:虎牢关装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%8E%E7%89%A2%E5%85%B3%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "虎牢关"
+ },
+ {
+  "name": "【国风玉袍】",
+  "entry": "三国杀:国风玉袍",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9B%BD%E9%A3%8E%E7%8E%89%E8%A2%8D",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【奇门八卦】",
+  "entry": "三国杀:奇门八卦",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%87%E9%97%A8%E5%85%AB%E5%8D%A6",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【三首】",
+  "entry": "三国杀:三首",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%89%E9%A6%96",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【引蜂甲】",
+  "entry": "三国杀:引蜂甲",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BC%95%E8%9C%82%E7%94%B2",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【女装】",
+  "entry": "三国杀:女装",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A5%B3%E8%A3%85",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【夜行衣】",
+  "entry": "三国杀:夜行衣",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%9C%E8%A1%8C%E8%A1%A3",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【隐衣】",
+  "entry": "三国杀:隐衣",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9A%90%E8%A1%A3",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "戚宦之争"
+ },
+ {
+  "name": "【铁甲胄】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "山河图"
+ },
+ {
+  "name": "【钩镶】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "山河图"
+ },
+ {
+  "name": "【金环衔鳞甲】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "armor",
+  "pack": "山河图"
+ },
+ {
+  "name": "【大宛】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【赤兔】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【紫骍】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【绝影】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【爪黄飞电】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【的卢】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "标准版"
+ },
+ {
+  "name": "【骅骝】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "军争篇"
+ },
+ {
+  "name": "【驽马】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【战象】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【照夜玉狮子】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "SP"
+ },
+ {
+  "name": "【軨軨】(-2)",
+  "entry": "三国杀:黄月英/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%BB%84%E6%9C%88%E8%8B%B1/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "SP"
+ },
+ {
+  "name": "【惊帆】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【六龙骖驾】(+1 -1)",
+  "entry": "三国杀:六龙骖驾",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%AD%E9%BE%99%E9%AA%96%E9%A9%BE",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "君临天下·权"
+ },
+ {
+  "name": "【天禄】(-3)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【白麒麟】(+2)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【官轿】",
+  "entry": "三国杀:地主装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9C%B0%E4%B8%BB%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "恭喜发财·禄"
+ },
+ {
+  "name": "【箭舟】",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【斗舰】",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【船堡】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【楼船】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "山河煮酒·桃园挽歌"
+ },
+ {
+  "name": "【绝尘金戈】(+1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【七彩神鹿】(-1)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【长安大舰】(-2)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【驽马】",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "equip",
+  "sub": "horse",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【木牛流马】",
+  "entry": "三国杀:木牛流马",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%9C%A8%E7%89%9B%E6%B5%81%E9%A9%AC",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "界限突破"
+ },
+ {
+  "name": "【信鸽】",
+  "entry": "三国杀:信鸽",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BF%A1%E9%B8%BD",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "用间篇"
+ },
+ {
+  "name": "【太公阴符】",
+  "entry": "三国杀:太公阴符",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%AA%E5%85%AC%E9%98%B4%E7%AC%A6",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【天机图】",
+  "entry": "三国杀:天机图",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%A9%E6%9C%BA%E5%9B%BE",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【铜雀】",
+  "entry": "三国杀:铜雀",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%93%9C%E9%9B%80",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "应变篇"
+ },
+ {
+  "name": "【四乘粮舆】",
+  "entry": "三国杀:彻里吉/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BD%BB%E9%87%8C%E5%90%89/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【铁蒺玄舆】",
+  "entry": "三国杀:彻里吉/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BD%BB%E9%87%8C%E5%90%89/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【飞轮战舆】",
+  "entry": "三国杀:彻里吉/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%BD%BB%E9%87%8C%E5%90%89/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【琼梳】",
+  "entry": "三国杀:冯方女/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%86%AF%E6%96%B9%E5%A5%B3/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【犀梳】",
+  "entry": "三国杀:冯方女/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%86%AF%E6%96%B9%E5%A5%B3/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【金梳】",
+  "entry": "三国杀:冯方女/衍生牌",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%86%AF%E6%96%B9%E5%A5%B3/%E8%A1%8D%E7%94%9F%E7%89%8C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【照骨镜】",
+  "entry": "三国杀:照骨镜",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%85%A7%E9%AA%A8%E9%95%9C",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【春秋笔】",
+  "entry": "三国杀:春秋笔",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%98%A5%E7%A7%8B%E7%AC%94",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【浑天仪】",
+  "entry": "三国杀:浑天仪",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B5%91%E5%A4%A9%E4%BB%AA",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【传国玉玺】",
+  "entry": "三国杀:传国玉玺",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BC%A0%E5%9B%BD%E7%8E%89%E7%8E%BA",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【青囊书】",
+  "entry": "三国杀:青囊书",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%9D%92%E5%9B%8A%E4%B9%A6",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【六龙骖驾】",
+  "entry": "三国杀:六龙骖驾",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%85%AD%E9%BE%99%E9%AA%96%E9%A9%BE",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【湖海笔】",
+  "entry": "三国杀:湖海笔",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%B9%96%E6%B5%B7%E7%AC%94",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "SP"
+ },
+ {
+  "name": "【玉玺】",
+  "entry": "三国杀:玉玺",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%8E%89%E7%8E%BA",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "势备篇"
+ },
+ {
+  "name": "【定澜夜明珠】",
+  "entry": "三国杀:定澜夜明珠",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%AE%9A%E6%BE%9C%E5%A4%9C%E6%98%8E%E7%8F%A0",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "君临天下·变"
+ },
+ {
+  "name": "【诏书】",
+  "entry": "三国杀:诏书",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%AF%8F%E4%B9%A6",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "不臣篇"
+ },
+ {
+  "name": "【遁甲天书】",
+  "entry": "三国杀:遁甲天书",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%81%81%E7%94%B2%E5%A4%A9%E4%B9%A6",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【鹦鹉杯】",
+  "entry": "三国杀:鹦鹉杯",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%B9%A6%E9%B9%89%E6%9D%AF",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【九州鼎】",
+  "entry": "三国杀:九州鼎",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B9%9D%E5%B7%9E%E9%BC%8E",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "九变篇"
+ },
+ {
+  "name": "【地税】",
+  "entry": "三国杀:地主装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9C%B0%E4%B8%BB%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "恭喜发财·寿"
+ },
+ {
+  "name": "【鱼盆】",
+  "entry": "三国杀:地主装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9C%B0%E4%B8%BB%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "恭喜发财·喜"
+ },
+ {
+  "name": "【天书残卷】",
+  "entry": "三国杀:天书残卷",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%A4%A9%E4%B9%A6%E6%AE%8B%E5%8D%B7",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "三国杀·幻"
+ },
+ {
+  "name": "【芷萝香囊】",
+  "entry": "三国杀:芷萝香囊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%8A%B7%E8%90%9D%E9%A6%99%E5%9B%8A",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【喜鹊】",
+  "entry": "三国杀:喜鹊",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%96%9C%E9%B9%8A",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "风花雪月"
+ },
+ {
+  "name": "【追云逐日】",
+  "entry": "三国杀:追云逐日",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%BF%BD%E4%BA%91%E9%80%90%E6%97%A5",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "画彩描金"
+ },
+ {
+  "name": "【军印】",
+  "entry": "三国杀:军印",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%86%9B%E5%8D%B0",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "山河煮酒·龙起襄樊"
+ },
+ {
+  "name": "【束发紫金冠】",
+  "entry": "三国杀:虎牢关装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%8E%E7%89%A2%E5%85%B3%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "虎牢关"
+ },
+ {
+  "name": "【虚妄之冕】",
+  "entry": "三国杀:虚妄之冕",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%99%9A%E5%A6%84%E4%B9%8B%E5%86%95",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【禅让诏书】",
+  "entry": "三国杀:禅让诏书",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A6%85%E8%AE%A9%E8%AF%8F%E4%B9%A6",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【灵蛇髻】",
+  "entry": "三国杀:灵蛇髻",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%81%B5%E8%9B%87%E9%AB%BB",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "神武再世"
+ },
+ {
+  "name": "【锦盒】",
+  "entry": "三国杀:锦盒",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E9%94%A6%E7%9B%92",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "逐鹿天下"
+ },
+ {
+  "name": "【传国玉玺】",
+  "entry": "三国杀:传国玉玺",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BC%A0%E5%9B%BD%E7%8E%89%E7%8E%BA",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "合纵抗秦"
+ },
+ {
+  "name": "【三略】",
+  "entry": "三国杀:三略",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%B8%89%E7%95%A5",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "奇门八阵"
+ },
+ {
+  "name": "【传国玉玺】",
+  "entry": "三国杀:传国玉玺",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E4%BC%A0%E5%9B%BD%E7%8E%89%E7%8E%BA",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "太虚幻境"
+ },
+ {
+  "name": "【定澜夜明珠】",
+  "entry": "三国杀:定澜夜明珠",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%AE%9A%E6%BE%9C%E5%A4%9C%E6%98%8E%E7%8F%A0",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "太虚幻境"
+ },
+ {
+  "name": "【红莲紫金冠】",
+  "entry": "三国杀:神武装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9E%E6%AD%A6%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "征战虎牢"
+ },
+ {
+  "name": "【幽火摄魄令】",
+  "entry": "三国杀:神武装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E7%A5%9E%E6%AD%A6%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "征战虎牢"
+ },
+ {
+  "name": "【西川红锦袍】",
+  "entry": "三国杀:西川红锦袍",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%A5%BF%E5%B7%9D%E7%BA%A2%E9%94%A6%E8%A2%8D",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "铜雀夺袍"
+ },
+ {
+  "name": "【螭纹玉佩】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "山河图"
+ },
+ {
+  "name": "【昆仑镜】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "山河图"
+ },
+ {
+  "name": "【平安符】",
+  "entry": "三国杀:山河图装备",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%B1%B1%E6%B2%B3%E5%9B%BE%E8%A3%85%E5%A4%87",
+  "cat": "equip",
+  "sub": "treasure",
+  "pack": "山河图"
+ },
+ {
+  "name": "【藏锋】(武器&宝物)",
+  "entry": "三国杀:藏锋",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E8%97%8F%E9%94%8B",
+  "cat": "special",
+  "sub": null,
+  "pack": "始计篇·智"
+ },
+ {
+  "name": "【艨艟】(坐骑&坐骑)",
+  "entry": "三国杀:坐骑",
+  "href": "/%E4%B8%89%E5%9B%BD%E6%9D%80:%E5%9D%90%E9%AA%91",
+  "cat": "special",
+  "sub": null,
+  "pack": "山河煮酒·桃园挽歌"
+ }
+]

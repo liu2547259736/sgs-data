@@ -321,9 +321,14 @@ def main():
 
     version = a.version or next_version()
     print('[2] 重建下游（version=%s）' % version)
-    run(TOOLS / 'migrate.py')
+    # snapshot 必须在 migrate 之前：copy_shell() 读的是 legacy-web 镜像，
+    # 先刷新镜像才能保证 data-repo 的页面骨架与本体是同一版。
     run(TOOLS / 'snapshot.py')
+    run(TOOLS / 'migrate.py')
     run(TOOLS / 'build_manifest.py', version)
+    # manifest 定版之后再刷随包页面：shell.json / shell_hashes.json 的
+    # version 与 CDN tag 必须完全一致，否则首次基线会误判成「有新版本」。
+    run(FLUTTER / 'app' / 'tools' / 'sync_shell_assets.py')
 
     mf = json.loads((DATA / 'manifest.json').read_text(encoding='utf-8'))
     print('[3] 写同步状态')

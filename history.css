@@ -1,0 +1,196 @@
+/* ============================================================
+   三国史料学习模块 · 独立样式
+   只用 style.css 里的既有 token（--paper/--zhu/--bronze/--ink/...）
+   本文件不覆盖任何主 app 样式
+   ============================================================ */
+
+/* ---------- 书库（以书为中心的默认首屏） ---------- */
+.h-bookgrid{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:520px){.h-bookgrid{grid-template-columns:repeat(2,1fr)}}
+.h-book{display:flex;gap:12px;background:var(--card-bg);backdrop-filter:var(--card-blur);
+  border:var(--card-border);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:14px;align-items:stretch}
+.h-book-na{opacity:.62;pointer-events:none}
+.h-book-spine{flex:0 0 8px;border-radius:4px;
+  background:linear-gradient(180deg,var(--zhu),var(--zhu-deep))}
+.h-accent-bronze{background:linear-gradient(180deg,var(--bronze),#a67c3d)}
+.h-accent-wei{background:linear-gradient(180deg,var(--wei),#23406b)}
+.h-accent-jin2{background:linear-gradient(180deg,var(--jin2),#4d3670)}
+.h-accent-wu{background:linear-gradient(180deg,var(--wu),#235c42)}
+.h-book-main{flex:1;min-width:0}
+.h-book-author{margin:0 0 4px;font:12px var(--sans);color:var(--ink3)}
+.h-book-arrow{align-self:center;font:700 24px var(--serif);color:var(--bronze)}
+
+/* ---------- 书库分组 ---------- */
+.h-shelf-group{margin:6px 0 10px;padding-left:9px;border-left:3px solid var(--zhu);
+  font:700 14px/1.5 var(--kai);letter-spacing:1px;color:var(--ink)}
+.h-shelf-group:not(:first-child){margin-top:22px}
+.h-shelf-hint{display:block;margin-top:2px;font:11px/1.5 var(--sans);
+  font-weight:400;letter-spacing:0;color:var(--ink3)}
+
+/* ---------- 原文无标点提示 ---------- */
+.h-src-note{margin:0 0 10px;padding:7px 11px;border-radius:9px;
+  background:var(--bronze-soft);color:#8a6a2f;font:11.5px/1.6 var(--sans)}
+
+/* ---------- 卷目录 ---------- */
+.h-cat-part{margin:16px 0 8px;padding-left:9px;border-left:3px solid var(--zhu);
+  font:700 14px/1.4 var(--kai);letter-spacing:1px;color:var(--ink)}
+.h-cat-list{display:flex;flex-direction:column;gap:6px}
+.h-cat-row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;
+  padding:10px 12px;border:1px solid var(--line);border-radius:11px;
+  background:var(--card-bg);cursor:pointer;font-family:var(--sans)}
+.h-cat-row:disabled{opacity:.45;cursor:default}
+.h-cat-vol{flex:0 0 58px;font:500 12px var(--serif);color:var(--zhu)}
+.h-cat-t{flex:1;min-width:0;font:14px/1.5 var(--kai);color:var(--ink);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.h-cat-pending{font-size:11px;color:var(--ink3)}
+
+/* ---------- 返回条 ---------- */
+.h-back{display:inline-block;margin-bottom:10px;padding:6px 14px;border-radius:999px;
+  border:1px solid var(--line);background:var(--paper2);cursor:pointer;
+  font:13px var(--sans);color:var(--ink2)}
+
+/* ---------- 阅读器 ---------- */
+.h-reader{padding:16px}
+.h-orig{margin:0 0 12px;font:15px/2 var(--kai);color:var(--ink);text-indent:2em}
+/* 四库本无标点卷：句子偏长，略加字距与行距提升可读性 */
+.h-reader.has-nopunct .h-orig{line-height:2.15;letter-spacing:.02em;text-align:justify}
+.h-rsec{margin:16px 0 0;padding-top:12px;border-top:1px dashed var(--line2)}
+.h-rsec h4{margin:0 0 8px;font:700 13px var(--sans);letter-spacing:2px;color:var(--zhu)}
+.h-summ{margin:0;font:13.5px/1.9 var(--sans);color:var(--ink2)}
+.h-pz{margin:0 0 12px;padding:10px 12px;background:var(--paper3);border-radius:10px;border:1px solid var(--line)}
+.h-pz .h-orig{font-size:13.5px;line-height:1.9;text-indent:0;margin:0;color:var(--ink2)}
+.h-pz-src{display:block;margin-top:6px;font:11px var(--sans);color:var(--ink3);font-style:normal}
+.h-pitfall{background:var(--zhu-soft);padding:10px 12px;border-radius:10px;color:var(--zhu-deep)}
+.h-fiction-banner{margin:0 0 10px;padding:8px 12px;border-radius:10px;background:var(--zhu);
+  color:#fff6e8;font:500 13px var(--sans);letter-spacing:1px}
+.h-fiction-item{margin:6px 0;padding:8px 12px;border-radius:10px;background:var(--zhu-soft);
+  color:var(--zhu-deep);font:12.5px/1.8 var(--sans)}
+.h-modern{margin:6px 0 0;font-size:11px;color:var(--ink3)}
+.h-cref{margin:16px 0 0;padding-top:10px;border-top:1px dashed var(--line2);
+  font:11.5px var(--sans);color:var(--ink3)}
+
+/* ---------- 内嵌容器（主 app 弹层内挂载时用 .hpage 包一层） ----------
+   .hpage 是滚动容器；去掉独立整页时的顶部安全区与底部大留白 */
+#hpageBody{overflow-y:auto;-webkit-overflow-scrolling:touch}
+.hpage{display:block}
+
+/* 史料弹层：比常规 dm 弹窗更宽更高，内边距交给史料模块自己管 */
+#hmodal.dm-modal{width:min(760px,96%);padding:16px 6px 10px;max-height:calc(100dvh - 24px - var(--sb-top) - var(--sb-bottom))}
+#hmodal .dm-head{margin:2px 30px 8px}
+#hpageBody{padding:0}
+
+/* 内嵌时：弹层 dm-head 已给标题，模块自己的页头只留副标题（避免标题重复） */
+.hpage .h-head{padding:0 12px}
+.hpage .h-head h1{display:none}
+.hpage .h-diffbar{padding:8px 12px 0}
+.hpage .h-main{padding:10px 12px 24px}
+.hpage .h-disclaim{margin:0 12px calc(16px + env(safe-area-inset-bottom,0px))}
+
+/* ---------- 页头 ---------- */
+.h-head{padding:calc(16px + env(safe-area-inset-top,0px) + 4px) 16px 0}
+/* 内嵌时去掉顶部安全区（弹层自身已避开状态栏） */
+.hpage .h-head{padding:4px 16px 0}
+.hpage .h-main{padding-bottom:24px}
+.hpage .h-disclaim{margin:0 16px calc(20px + env(safe-area-inset-bottom,0px))}
+/* 内嵌时知识点弹层要盖在史料弹层之上（主 app 弹层 z-index 见 index.html） */
+.hpage .h-modal{z-index:120}
+.h-head-inner{position:relative}
+.h-head h1{margin:0;font:700 22px/1.3 var(--serif);color:var(--ink);letter-spacing:2px}
+.h-head-sub{margin:4px 0 0;font:13px/1.6 var(--sans);color:var(--ink3)}
+.h-theme-btn{position:absolute;right:0;top:0;border:none;background:none;font-size:18px;cursor:pointer;opacity:.7}
+.h-disclaim{margin:10px 0 0;padding:8px 10px;font:11px/1.7 var(--sans);color:var(--ink3);
+  background:var(--paper3);border:1px solid var(--line);border-radius:10px}
+
+/* ---------- 子导航 ---------- */
+.h-subnav{display:flex;gap:6px;padding:12px 16px 0;overflow-x:auto;scrollbar-width:none;
+  scroll-padding-left:16px}
+.h-subnav::-webkit-scrollbar{display:none}
+.h-subnav::after{content:'';flex:0 0 8px}
+.h-subtab{flex:0 0 auto;padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+  background:var(--paper2);color:var(--ink2);font:13px var(--sans);cursor:pointer}
+.h-subtab.active{background:var(--zhu);border-color:var(--zhu);color:#fff;font-weight:500}
+/* 内嵌时收窄子导航，5 项在 430px 档一行可容（无需横滑） */
+.hpage .h-subnav{padding:10px 12px 0;gap:4px}
+.hpage .h-subtab{padding:6px 9px;font-size:12.5px}
+
+/* ---------- 难度筛选 ---------- */
+.h-diffbar{display:flex;gap:6px;padding:10px 16px 0}
+.h-chip{padding:4px 12px;border-radius:999px;border:1px solid var(--line2);
+  background:transparent;color:var(--ink3);font:12px var(--sans);cursor:pointer}
+.h-chip.active{background:var(--bronze-soft);border-color:var(--bronze);color:var(--ink);font-weight:500}
+
+/* ---------- 卡片列表 ---------- */
+.h-main{padding:12px 16px calc(80px + env(safe-area-inset-bottom,0px))}
+.h-view{display:none}
+.h-view.active{display:block}
+.h-cards{display:flex;flex-direction:column;gap:12px}
+
+.h-card{background:var(--card-bg);backdrop-filter:var(--card-blur);
+  border:var(--card-border);border-radius:var(--r-lg);box-shadow:var(--shadow);
+  padding:14px 14px 12px}
+.h-card-title{margin:0 0 6px;font:500 16px/1.4 var(--serif);color:var(--ink)}
+.h-card-sum{margin:0 0 10px;font:13px/1.7 var(--sans);color:var(--ink2)}
+.h-card-quote{margin:0 0 10px;padding:8px 10px;border-left:3px solid var(--bronze);
+  background:var(--paper3);border-radius:0 8px 8px 0;
+  font:13px/1.8 var(--kai);color:var(--ink2)}
+.h-card-quote cite{display:block;margin-top:4px;font:11px var(--sans);color:var(--ink3);font-style:normal}
+
+/* 徽章族 */
+.h-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.h-badge{padding:2px 9px;border-radius:999px;font:11px/1.7 var(--sans)}
+.h-badge.diff-beginner{background:#e8f0e4;color:#4a6b3f}
+.h-badge.diff-intermediate{background:var(--bronze-soft);color:#8a6a2f}
+.h-badge.diff-advanced{background:var(--zhu-soft);color:var(--zhu-deep)}
+.h-badge.src{background:var(--paper3);color:var(--ink3)}
+.h-badge.fiction{background:var(--zhu);color:#fff;font-weight:500}
+.h-badge.rel{background:var(--paper3);color:var(--ink2);cursor:default}
+
+/* 对照卡（正史 vs 演义） */
+.h-cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.h-cmp-col{padding:10px;border-radius:10px;font:12.5px/1.7 var(--sans)}
+.h-cmp-history{background:var(--paper3);border:1px solid var(--line);color:var(--ink2)}
+.h-cmp-fiction{background:var(--zhu-soft);border:1px solid rgba(152,43,43,.25);color:var(--ink2)}
+.h-cmp-col h4{margin:0 0 4px;font:12px var(--sans);letter-spacing:1px}
+.h-cmp-history h4{color:var(--ink)}
+.h-cmp-fiction h4{color:var(--zhu-deep)}
+
+/* ---------- 题库 ---------- */
+.h-quiz-setup{background:var(--card-bg);border:var(--card-border);border-radius:var(--r-lg);
+  box-shadow:var(--shadow);padding:14px;margin-bottom:12px}
+.h-quiz-scope{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.h-scope{padding:6px 12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--paper3);font:13px var(--sans);color:var(--ink2);cursor:pointer}
+.h-scope.active{background:var(--zhu);border-color:var(--zhu);color:#fff;font-weight:500}
+.h-btn-primary{width:100%;padding:11px;border:none;border-radius:12px;cursor:pointer;
+  background:var(--zhu);color:#fff;font:500 15px var(--serif);letter-spacing:4px}
+.h-btn-primary:active{background:var(--zhu-deep)}
+
+.h-q{background:var(--card-bg);border:var(--card-border);border-radius:var(--r-lg);
+  box-shadow:var(--shadow);padding:14px;margin-bottom:12px}
+.h-q-type{display:inline-block;margin-bottom:6px;padding:2px 9px;border-radius:999px;
+  background:var(--bronze-soft);color:#8a6a2f;font:11px var(--sans)}
+.h-q-stem{margin:0 0 10px;font:15px/1.7 var(--sans);color:var(--ink)}
+.h-q-opts{display:flex;flex-direction:column;gap:8px}
+.h-q-opt{padding:10px 12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--paper3);font:13.5px/1.6 var(--sans);color:var(--ink2);cursor:pointer;text-align:left}
+.h-q-opt.sel{border-color:var(--bronze);background:var(--bronze-soft)}
+.h-q-opt.right{border-color:#4a6b3f;background:#e8f0e4;color:#33502a}
+.h-q-opt.wrong{border-color:var(--zhu);background:var(--zhu-soft);color:var(--zhu-deep)}
+.h-q-opt:disabled{cursor:default}
+.h-q-exp{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;
+  background:var(--paper3);font:12.5px/1.8 var(--sans);color:var(--ink2)}
+.h-q-exp.show{display:block}
+.h-q-exp b{color:var(--ink)}
+.h-q-submit{margin-top:10px;width:100%;padding:9px;border:none;border-radius:10px;cursor:pointer;
+  background:var(--bronze);color:#fff;font:500 14px var(--sans)}
+.h-quiz-score{text-align:center;padding:16px;font:500 17px var(--serif);color:var(--ink)}
+
+/* ---------- 详情弹层 ---------- */
+.h-modal{position:fixed;inset:0;z-index:90}
+.h-modal-mask{position:absolute;inset:0;background:rgba(20,15,10,.45)}
+.h-modal-body{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(560px,100%);max-height:82vh;overflow-y:auto;
+  background:var(--paper-solid);border:var(--card-border);border-radius:var(--r-lg) var(--r-lg) 0 0;
+  padding:18px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.h-modal-body h3{margin:0 0 4px;font:700 18px/1.4 var(--serif);color:var(--ink)}
+.h-modal-body .h-card-sum,.h-modal-body .h-card-quote{font-size:14px}

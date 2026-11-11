@@ -32,6 +32,23 @@ META_FILES = [
 HISTORY_SRC = APP + '/data/history'
 HISTORY_DST = OUT + '/history'
 
+# 原页面 1:1 骨架。App 的 WebView 壳按 URL 路径读覆盖层，覆盖层路径就是
+# data-repo 相对路径，所以这里必须按 legacy-web 的原样路径平铺到 OUT 根下。
+# 用镜像快照而不是主程序目录，保证随包 assets/shell 与 CDN 是同一份字节。
+SHELL_SRC = ROOT + '/sgs-flutter/legacy-web'
+# 与 app/tools/sync_shell_assets.py 的 SKIP_* 必须逐条一致
+SHELL_SKIP_DIRS = {
+    '.git', '_backups', '__pycache__', 'node_modules',
+    'tools', 'v2', '_shots', 'unreleased',
+}
+SHELL_SKIP_NAMES = {'serve.py', '_launch.vbs', '.gitignore', '.DS_Store', 'Thumbs.db'}
+SHELL_SKIP_PREFIX = ('e2e_', 'shot', '_shot')
+SHELL_SKIP_SUFFIX = ('.py', '.pyc', '.bat', '.vbs', '.ps1', '.md', '.log', '.bak', '.cjs', '.mjs')
+
+
+def rel_out(path, base=OUT):
+    return os.path.relpath(path, base).replace(chr(92), '/')
+
 
 def load(path):
     with open(path, encoding='utf-8') as f:
@@ -53,24 +70,34 @@ def dump(path, obj):
 
 
 def prune():
-    """删掉主程序里已不存在、但上次同步残留下来的文件。
-    只作用于 heroes/ skins/ images/ meta/ 四个数据目录，绝不触碰 .git/tools。
+    """镜像清理：主程序/镜像里已不存在的文件，数据仓库里也删掉。
+
+    范围是本脚本能产出的全部数据目录（含原页面骨架）；.git / tools /
+    __pycache__ 与人工维护的 manifest.json / README.md / .gitignore 不碰。
     """
+    manual = {'manifest.json', 'README.md', '.gitignore'}
+    skip = {'.git', 'tools', '__pycache__'}
     removed = 0
-    for sub in ('heroes', 'skins', 'images', 'meta', 'history'):
-        base = OUT + '/' + sub
-        if not os.path.isdir(base):
+    for root, dirs, names in os.walk(OUT):
+        top = rel_out(root).split('/')[0]
+        if top in skip:
+            dirs[:] = []
             continue
-        for root, dirs, names in os.walk(base):
-            for name in names:
-                p = root + '/' + name
-                if os.path.relpath(p, OUT).replace('\\', '/') in KEPT:
-                    continue
-                os.remove(p)
-                removed += 1
-        for root, dirs, names in os.walk(base, topdown=False):
-            if not os.listdir(root):
-                os.rmdir(root)
+        dirs[:] = [d for d in dirs if d not in skip]
+        for name in names:
+            path = os.path.join(root, name)
+            r = rel_out(path)
+            if r in KEPT or r in manual:
+                continue
+            os.remove(path)
+            removed += 1
+    for root, dirs, names in os.walk(OUT, topdown=False):
+        if root == OUT:
+            continue
+        if rel_out(root).split('/')[0] in skip:
+            continue
+        if not os.listdir(root):
+            os.rmdir(root)
     return removed
 
 
@@ -210,16 +237,56 @@ def copy_history():
     return n, total
 
 
+def _shell_keep(name):
+    if name in SHELL_SKIP_NAMES or name.startswith(SHELL_SKIP_PREFIX):
+        return False
+    return not name.lower().endswith(SHELL_SKIP_SUFFIX)
+
+
+def copy_shell():
+    """把原页面骨架按原路径平铺进 data-repo；返回 (文件数, 字节数)。
+
+    images/<版本>/<il|av|icons>/ 已由 copy_images() 生成，跳过以免重复搬运
+    149MB；images/brand/ 这类页面自有图标仍要带上。皮肤 sk/ 与语音 voice/
+    按工程约定永不进 git。
+    """
+    if not os.path.isdir(SHELL_SRC):
+        return 0, 0
+    n = 0
+    total = 0
+    for root, dirs, names in os.walk(SHELL_SRC):
+        dirs[:] = sorted(d for d in dirs
+                         if d not in SHELL_SKIP_DIRS and d not in ('sk', 'voice'))
+        for name in sorted(names):
+            if not _shell_keep(name):
+                continue
+            sp = os.path.join(root, name)
+            rpath = os.path.relpath(sp, SHELL_SRC).replace(chr(92), '/')
+            parts = rpath.split('/')
+            if (len(parts) >= 3 and parts[0] == 'images'
+                    and parts[1] in VERSIONS and parts[2] in IMAGE_KINDS):
+                continue
+            dp = OUT + '/' + rpath
+            os.makedirs(os.path.dirname(dp), exist_ok=True)
+            shutil.copy2(sp, dp)
+            keep(dp)
+            n += 1
+            total += os.path.getsize(dp)
+    return n, total
+
+
 def main():
-    print('[1/5] 生成 heroes/ 与 skins/ 分片')
+    print('[1/6] 生成 heroes/ 与 skins/ 分片')
     heroes, skins, parts = build_heroes_and_skins()
-    print('[2/5] 复制非皮肤图片')
+    print('[2/6] 复制非皮肤图片')
     imgs, img_bytes = copy_images()
-    print('[3/5] 复制元数据')
+    print('[3/6] 复制元数据')
     meta = copy_meta()
-    print('[4/5] 复制史料数据')
+    print('[4/6] 复制史料数据')
     hist, hist_bytes = copy_history()
-    print('[5/5] 镜像清理残留文件')
+    print('[5/6] 复制原页面 1:1 骨架')
+    shell, shell_bytes = copy_shell()
+    print('[6/6] 镜像清理残留文件')
     stale = prune()
 
     print('')
@@ -227,6 +294,8 @@ def main():
     print('图片 %d 张 / %.2f MB' % (imgs, img_bytes / 1024 / 1024))
     print('元数据 %d 个文件 / 史料 %d 个文件 %.2f MB' % (
         meta, hist, hist_bytes / 1024 / 1024))
+    print('原页面骨架 %d 个文件 / %.2f MB' % (
+        shell, shell_bytes / 1024 / 1024))
     print('清理上次同步残留 %d 个文件' % stale)
 
 

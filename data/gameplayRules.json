@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "generated": "2026-09-23",
+    "note": "模式文字实抓自 OL 官网 /mode、移动版官网 mode-info-1~5、十周年官网 main.html（自走棋简介为官网原文）；通用规则 fandom 直连不可达，依据官方通用规则整理。座位示意按官方规则标准配置排布。"
+  },
+  "versions": [
+    {
+      "id": "ol",
+      "label": "三国杀OL",
+      "home": "https://www.sanguosha.com/mode",
+      "cats": [
+        { "id": "identity", "label": "身份军争" },
+        { "id": "kingdom", "label": "阵营国战" },
+        { "id": "team", "label": "多人组队" },
+        { "id": "fun", "label": "娱乐活动" }
+      ],
+      "modes": [
+        {
+          "id": "ol-identity",
+          "name": "身份场",
+          "players": "5-8人",
+          "cat": "identity",
+          "desc": "游戏开始时随机获得一个身份，包括主公、忠臣、反贼和内奸四种角色。",
+          "roles": [
+            { "name": "主公", "goal": "游戏的中心角色，目标是消灭所有的反贼和内奸。" },
+            { "name": "忠臣", "goal": "辅助主公，目标是保护主公并消灭反贼和内奸。" },
+            { "name": "反贼", "goal": "目标是杀死主公。" },
+            { "name": "内奸", "goal": "目标是成为最后存活的玩家，需要先消灭除主公外的所有其他玩家，最后杀死主公。" }
+          ],
+          "source": "https://www.sanguosha.com/mode"
+        },
+        {
+          "id": "ol-guozhan",
+          "name": "国战模式",
+          "players": "8人",
+          "cat": "kingdom",
+          "desc": "同势力的玩家组成团队，按照国籍进行武将大乱斗。魏、蜀、吴、群、野心家纷纷上场，引入了双将、暗将、珠联璧合等全新的游戏规则，以消灭其他势力为目标。玩家需消灭与自己不同势力的所有角色。野心家（没有势力或势力玩家数超过一半时产生的玩家）需要消灭所有其他角色。",
+          "source": "https://www.sanguosha.com/mode"
+        },
+        {
+          "id": "ol-2v2rank",
+          "name": "2v2排位",
+          "players": "4人",
+          "cat": "team",
+          "desc": "2v2的竞技模式。1号位和4号位是同一阵营，2号位和3号位是另一阵营。当同一阵营的两名玩家都阵亡时，场上存活角色的阵营获胜。每一月为一赛季，根据赛季中排位段位，可以领取丰厚奖励。",
+          "source": "https://www.sanguosha.com/mode"
+        },
+        {
+          "id": "ol-2v2casual",
+          "name": "2v2休闲",
+          "players": "4人",
+          "cat": "team",
+          "desc": "2v2的休闲模式。1号位和4号位是同一阵营，2号位和3号位是另一阵营。当同一阵营的两名玩家都阵亡时，场上存活角色的阵营获胜。",
+          "source": "https://www.sanguosha.com/mode"
+        },
+        {
+          "id": "ol-doudizhu",
+          "name": "斗地主",
+          "players": "3人",
+          "cat": "fun",
+          "desc": "地主与两个农民战斗，击败对方即可获胜。地主拥有额外技能。",
+          "source": "https://www.sanguosha.com/mode"
+        },
+        {
+          "id": "ol-pve",
+          "name": "专属活动副本",
+          "players": "1人",
+          "cat": "fun",
+          "desc": "PVE玩法，单人挑战副本。该模式存在多个剧本，每期会开放其中的一个剧本以供游玩。各剧本会有独特的剧情、事件、战法等。",
+          "source": "https://www.sanguosha.com/mode"
+        }
+      ]
+    },
+    {
+      "id": "mob",
+      "label": "移动版",
+      "home": "https://www.sanguosha.cn/pc/mode-info-1.html",
+      "cats": [
+        { "id": "identity", "label": "身份军争" },
+        { "id": "kingdom", "label": "阵营国战" },
+        { "id": "team", "label": "多人组队" },
+        { "id": "fun", "label": "娱乐模式" }
+      ],
+      "modes": [
+        {
+          "id": "mob-identity",
+          "name": "身份场",
+          "players": "8人",
+          "cat": "identity",
+          "minutes": "15分钟",
+          "desc": "该模式下有4种身份，不同身份的获胜条件不同。主公与忠臣搭档，忠臣则需要保护主公，击杀所有的反贼与内奸获得胜利；反贼需要孤注一掷，全力推翻主公，即可获得胜利；内奸见风使舵，击溃反贼、谋害忠臣，存活到最后并诛杀主公获得胜利。",
+          "tips": [
+            "主公推荐选择拥有主公技的武将",
+            "忠臣推荐选择配合主公技能的武将",
+            "反贼推荐选择有输出能力或钳制主公技能的武将",
+            "内奸推荐选择生存能力强的武将"
+          ],
+          "source": "https://www.sanguosha.cn/pc/mode-info-1.html"
+        },
+        {
+          "id": "mob-guozhan",
+          "name": "国战",
+          "players": "8人",
+          "cat": "kingdom",
+          "minutes": "15分钟",
+          "desc": "国籍双将系统，武将技能特别重制。根据魏蜀吴群划分阵营，消灭其他全部势力才算胜利。野心家与其他野心家不属同个势力，野心家需要消灭其他势力才算胜利。",
+          "tips": ["根据自己分配到的武将，尽量选择有配合的组合。"],
+          "source": "https://www.sanguosha.cn/pc/mode-info-4.html"
+        },
+        {
+          "id": "mob-2v2rank",
+          "name": "排位赛",
+          "players": "4人",
+          "cat": "team",
+          "minutes": "5分钟",
+          "desc": "龙虎两队进行2v2对战，击败对方即可获胜。",
+          "tips": [
+            "优先选择与队友配合的武将",
+            "一号位尽量选择先发制人的武将，四号位尽量选择有一定生存能力的武将"
+          ],
+          "source": "https://www.sanguosha.cn/pc/mode-info-2.html"
+        },
+        {
+          "id": "mob-3v3",
+          "name": "团战3V3",
+          "players": "6人",
+          "cat": "team",
+          "minutes": "10分钟",
+          "desc": "龙虎两队进行3v3对战，击败对方即可获胜。",
+          "tips": ["优先选择与队友配合的武将。"],
+          "source": "https://www.sanguosha.cn/pc/mode-info-3.html"
+        },
+        {
+          "id": "mob-doudizhu",
+          "name": "欢乐斗地主",
+          "players": "3人",
+          "cat": "fun",
+          "minutes": "5分钟",
+          "desc": "地主与两个农民战斗，击败对方即可获胜。地主拥有额外技能。",
+          "tips": [
+            "地主推荐选择有爆发能力的武将，尽快击败一名敌人",
+            "农民推荐选择有一定生存能力的武将，防止被开局快速击杀"
+          ],
+          "source": "https://www.sanguosha.cn/pc/mode-info-5.html"
+        }
+      ]
+    },
+    {
+      "id": "ten",
+      "label": "十周年",
+      "home": "https://sanguosha.youxi.com/main.html",
+      "cats": [
+        { "id": "team", "label": "对抗自走" },
+        { "id": "identity", "label": "身份国战" },
+        { "id": "fun", "label": "活动玩法" }
+      ],
+      "modes": [
+        {
+          "id": "ten-zizouqi",
+          "name": "自走棋",
+          "players": "8人",
+          "cat": "team",
+          "desc": "每局游戏共8名玩家，通过每回合选取武将、挑选搭配出不同的组合，并与其他玩家对抗，获取经验和铜钱、招募刷新武将、升阶将灵等级，不断强化自己的组合来获取最终的胜利。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        },
+        {
+          "id": "ten-shangbing",
+          "name": "上兵伐谋",
+          "players": "多人",
+          "cat": "team",
+          "desc": "十周年官方于 8 月发布《上兵伐谋玩法说明》，为策略对抗玩法，规则细节以官网说明页为准。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        },
+        {
+          "id": "ten-zhulu",
+          "name": "逐鹿天下",
+          "players": "1人",
+          "cat": "fun",
+          "desc": "闯关制 PVE 玩法，官方攻略站收录「新逐鹿天下100关全攻略」，逐关推进获取奖励。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        },
+        {
+          "id": "ten-wenhe",
+          "name": "文和乱武",
+          "players": "多人",
+          "cat": "fun",
+          "desc": "十周年特色活动模式，无阵营绝境乱斗，全员混战至最后一人（大逃杀式规则），以官网当期开放说明为准。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        },
+        {
+          "id": "ten-identity",
+          "name": "身份场",
+          "players": "5-8人",
+          "cat": "identity",
+          "desc": "十周年经典身份玩法，主公忠臣反贼内奸四种身份，获胜条件与通用身份场规则一致。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        },
+        {
+          "id": "ten-guozhan",
+          "name": "国战",
+          "players": "8人",
+          "cat": "identity",
+          "desc": "十周年国战玩法，魏蜀吴群双将暗将体系，消灭其他全部势力获胜。",
+          "source": "https://sanguosha.youxi.com/main.html"
+        }
+      ]
+    },
+    {
+      "id": "wiki",
+      "label": "通用规则百科",
+      "home": "https://sanguosha.fandom.com/zh/wiki/%E8%A7%84%E5%88%99",
+      "cats": [
+        { "id": "basic", "label": "基础规则" }
+      ],
+      "modes": [
+        {
+          "id": "wiki-seat",
+          "name": "座次与距离算法",
+          "players": "通用",
+          "cat": "basic",
+          "desc": "座次按座位号环形排布，结算时按座位号逆时针进行。相邻座次基础距离为 1，不相邻取环形最短路径。计算进攻距离时以「-1 马」（进攻马）减算；他人计算对你的距离时以「+1 马」（防御马）加算。坐骑只影响相应方向的距离计算。",
+          "source": "https://sanguosha.fandom.com/zh/wiki/%E8%A7%84%E5%88%99",
+          "sourceNote": "fandom 规则页直连不可达，依据官方通用规则整理"
+        },
+        {
+          "id": "wiki-turn",
+          "name": "回合时序链条",
+          "players": "通用",
+          "cat": "basic",
+          "desc": "一个回合依次经过六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。判定阶段中判定区里的延时锦囊按「后置先判」结算：最后放入判定区的锦囊最先判定（如乐不思蜀与兵粮寸断同时在场的先后次序）。",
+          "source": "https://sanguosha.fandom.com/zh/wiki/%E8%A7%84%E5%88%99",
+          "sourceNote": "fandom 规则页直连不可达，依据官方通用规则整理"
+        },
+        {
+          "id": "wiki-dying",
+          "name": "濒死与求桃响应链",
+          "players": "通用",
+          "cat": "basic",
+          "desc": "角色体力降至 0 及以下进入濒死状态，从濒死者本人开始，按行动顺序（座位逆时针）依次询问其他角色是否使用桃。奖惩结算：任何人杀死一名反贼，立即摸三张牌；主公杀死忠臣，须立即弃置所有手牌与装备牌；杀死内奸或忠臣（非主公所为）无奖惩。",
+          "source": "https://sanguosha.fandom.com/zh/wiki/%E8%A7%84%E5%88%99",
+          "sourceNote": "fandom 规则页直连不可达，依据官方通用规则整理"
+        },
+        {
+          "id": "wiki-zhu",
+          "name": "身份场胜利与主公上限",
+          "players": "通用",
+          "cat": "basic",
+          "desc": "身份场中主公明置且第一个行动，体力上限 +1（5 人及以上对局适用）。各身份获胜条件：主公与忠臣——消灭所有反贼与内奸；反贼——杀死主公；内奸——先消灭除主公外的所有角色，最后成为唯一存活者杀死主公。",
+          "source": "https://sanguosha.fandom.com/zh/wiki/%E8%A7%84%E5%88%99",
+          "sourceNote": "fandom 规则页直连不可达，依据官方通用规则整理"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "zhu",
+      "name": "主公",
+      "alias": "暖色主帅",
+      "color": "#982B2B",
+      "totem": "龙",
+      "goals": ["消灭所有反贼与内奸"],
+      "hpNote": "5 人及以上对局主公体力上限 +1，明置身份且第一个行动",
+      "reward": "主公杀死忠臣，须立即弃置所有手牌与装备牌"
+    },
+    {
+      "id": "zhong",
+      "name": "忠臣",
+      "alias": "暖色前锋",
+      "color": "#C59A5A",
+      "totem": "虎",
+      "goals": ["保护主公，与主公同胜负", "消灭所有反贼与内奸"],
+      "hpNote": "体力上限不变",
+      "reward": "主公杀死忠臣时，主公须弃置所有手牌与装备牌"
+    },
+    {
+      "id": "zei",
+      "name": "反贼",
+      "alias": "冷色前锋",
+      "color": "#2D7C66",
+      "totem": "翎",
+      "goals": ["杀死主公即全队获胜"],
+      "hpNote": "体力上限不变",
+      "reward": "任何人杀死反贼，立即摸三张牌"
+    },
+    {
+      "id": "jian",
+      "name": "内奸",
+      "alias": "冷色主帅",
+      "color": "#234B73",
+      "totem": "眸",
+      "goals": ["先消灭除主公外的所有角色", "最后成为唯一存活者，杀死主公"],
+      "hpNote": "体力上限不变",
+      "reward": "杀死内奸无奖惩"
+    }
+  ],
+  "sandbox": {
+    "views": [
+      {
+        "id": "sanguo3v3",
+        "label": "3v3 统领三军",
+        "note": "主帅前锋阵型：暖色方（主帅 + 两名前锋）居于下方，冷色方居于上方，本方两名前锋分列本方主帅两翼。座次按逆时针结算，进攻距离按环形最短路径计算。奖惩：杀死任意角色可摸 2 张手牌。",
+        "seats": [
+          { "no": 1, "x": 50, "y": 82, "role": "zhu",   "team": "warm" },
+          { "no": 2, "x": 82, "y": 72, "role": "zhong", "team": "warm" },
+          { "no": 3, "x": 82, "y": 22, "role": "zei",   "team": "cold" },
+          { "no": 4, "x": 50, "y": 12, "role": "jian",  "team": "cold" },
+          { "no": 5, "x": 18, "y": 22, "role": "zei",   "team": "cold" },
+          { "no": 6, "x": 18, "y": 72, "role": "zhong", "team": "warm" }
+        ]
+      },
+      {
+        "id": "identity8",
+        "label": "8人身份场",
+        "note": "标准 8 人配置：1 主公 + 2 忠臣 + 4 反贼 + 1 内奸。1 号位主公明置，从主公开始按座位号逆时针行动（下家在右手边）；相邻座次距离 1。",
+        "seats": [
+          { "no": 1, "x": 50,   "y": 80, "role": "zhu",   "team": "warm" },
+          { "no": 2, "x": 78.3, "y": 70, "role": "jian",  "team": "cold" },
+          { "no": 3, "x": 90,   "y": 46, "role": "zhong", "team": "warm" },
+          { "no": 4, "x": 78.3, "y": 22, "role": "zei",   "team": "cold" },
+          { "no": 5, "x": 50,   "y": 12, "role": "zei",   "team": "cold" },
+          { "no": 6, "x": 21.7, "y": 22, "role": "zei",   "team": "cold" },
+          { "no": 7, "x": 10,   "y": 46, "role": "zei",   "team": "cold" },
+          { "no": 8, "x": 21.7, "y": 70, "role": "zhong", "team": "warm" }
+        ]
+      },
+      {
+        "id": "duel2v2",
+        "label": "2v2 对抗",
+        "note": "官网规则：1 号位和 4 号位是同一阵营，2 号位和 3 号位是另一阵营（座次 1→2→3→4 逆时针排列）。当同一阵营的两名玩家都阵亡时，场上存活角色的阵营获胜。",
+        "seats": [
+          { "no": 1, "x": 50, "y": 82, "role": "zhong", "team": "warm" },
+          { "no": 2, "x": 88, "y": 46, "role": "zei",   "team": "cold" },
+          { "no": 3, "x": 50, "y": 12, "role": "zei",   "team": "cold" },
+          { "no": 4, "x": 12, "y": 46, "role": "zhong", "team": "warm" }
+        ]
+      }
+    ]
+  },
+  "phases": [
+    {
+      "idx": 1,
+      "name": "准备阶段",
+      "act": "回合正式开始，处理「回合开始时」触发的技能与效果，重置本回合计数。",
+      "skills": "准备阶段类触发技（观星、自立等）",
+      "trap": "在回合计数上不设上限：游戏可能进行任意多个回合，直到分出胜负。"
+    },
+    {
+      "idx": 2,
+      "name": "判定阶段",
+      "act": "结算判定区里的延时类锦囊牌：闪电（黑桃2-9 造成 3 点雷电伤害）、乐不思蜀（无则跳过出牌阶段）、兵粮寸断（无则跳过摸牌阶段）。",
+      "skills": "改判类技能（天妒、鬼道、天香等）在判定牌生效前介入",
+      "trap": "后置先判：最后放入判定区的锦囊最先结算——乐不思蜀与兵粮寸断同时在座时，后放置者先判。"
+    },
+    {
+      "idx": 3,
+      "name": "摸牌阶段",
+      "act": "从牌堆顶摸两张牌加入手牌（默认值）。",
+      "skills": "摸牌阶段修改类技能（英姿多摸、突袭改为拿他人手牌等）",
+      "trap": "判定区有兵粮寸断且判定生效时，本阶段整体跳过——先判后跳，时序不可逆。"
+    },
+    {
+      "idx": 4,
+      "name": "出牌阶段",
+      "act": "可使用任意张牌：装备、锦囊、基本牌，发起决斗、借刀、顺手牵羊等交互。",
+      "skills": "出牌阶段限定的主动技与转化类技能（苦肉、离间、龙胆等）",
+      "trap": "普通「杀」每回合限使用一次（诸葛连弩、咆哮等可解除限制）；判定区有乐不思蜀且判定生效时本阶段跳过。"
+    },
+    {
+      "idx": 5,
+      "name": "弃牌阶段",
+      "act": "手牌数超过当前体力值（手牌上限）时，弃置多余的手牌。",
+      "skills": "手牌上限修改类技能（恃才、蓄爆类）",
+      "trap": "体力值为 0 或以下已进入濒死未救回者不会走到本阶段——濒死结算优先于一切后续阶段。"
+    },
+    {
+      "idx": 6,
+      "name": "结束阶段",
+      "act": "结算「回合结束时」触发的技能，然后回合转移至下一座位玩家。",
+      "skills": "回合结束类触发技（据守、克己类）",
+      "trap": "回合转移按座次逆时针进行；连续行动类技能（神速等额外回合）在结束阶段插入执行。"
+    }
+  ]
+}

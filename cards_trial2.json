@@ -1,0 +1,119 @@
+{
+ "meta": {
+  "fetched_at": "2026-09-24 00:46:06",
+  "tool": "tools/fetch_cards.py (2026-09-24 实测重写版)",
+  "table_url": "https://zh.moegirl.org.cn/Template:%E4%B8%89%E5%9B%BD%E6%9D%80%E6%B8%B8%E6%88%8F%E7%89%8C",
+  "index_count": 361,
+  "entry_count": 2,
+  "variant_count": 2,
+  "image_ok": 2,
+  "image_fail": 0,
+  "note": "变体共用词条（普/火/雷【杀】→ 三国杀:杀）；合并进 data/cards.json 用 scripts/merge_cards.py，同名同包跳过不覆盖"
+ },
+ "entries": [
+  {
+   "entry": "三国杀:桃",
+   "url": "https://zh.moegirl.org.cn/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%A1%83",
+   "cat": "basic",
+   "sub": null,
+   "display_names": [
+    "【桃】"
+   ],
+   "packs": [
+    "标准版"
+   ],
+   "variants": [
+    {
+     "name": "【桃】",
+     "image_url": "https://storage.moegirl.org.cn/moegirl/commons/7/74/%E4%B8%89%E5%9B%BD%E6%9D%80-%E3%80%90%E6%A1%83%E3%80%91.jpg",
+     "image_file": "三国杀-【桃】.jpg",
+     "local_image_path": "assets/cards/basic/三国杀-【桃】.jpg",
+     "effect": "出牌阶段回复已受伤的你1点体力或令一名处于濒死状态的角色回复1点体力。",
+     "timing": "出牌阶段",
+     "target": "已受伤的你",
+     "effect_full": "使用时机：出牌阶段。使用目标：已受伤的你。作用效果：目标对应的角色回复1点体力。",
+     "suits": {
+      "标准版": {
+       "♥": "3/4/6/7/8/9/Q",
+       "♦": "Q",
+       "♠": "",
+       "♣": ""
+      },
+      "军争篇": {
+       "♥": "5/6",
+       "♦": "2/3",
+       "♠": "",
+       "♣": ""
+      },
+      "用间篇": {
+       "♥": "7/8",
+       "♦": "J(赠)",
+       "♠": "",
+       "♣": ""
+      },
+      "国战标准版": {
+       "♥": "4/6/7/8/9/10/Q",
+       "♦": "2",
+       "♠": "",
+       "♣": ""
+      },
+      "势备篇": {
+       "♥": "8/9",
+       "♦": "2/3(合)",
+       "♠": "",
+       "♣": ""
+      },
+      "九变篇": {
+       "♥": "4/5/6",
+       "♦": "5",
+       "♠": "",
+       "♣": ""
+      }
+     },
+     "note": ""
+    }
+   ],
+   "note": ""
+  },
+  {
+   "entry": "三国杀:毒",
+   "url": "https://zh.moegirl.org.cn/%E4%B8%89%E5%9B%BD%E6%9D%80:%E6%AF%92",
+   "cat": "basic",
+   "sub": null,
+   "display_names": [
+    "【毒】"
+   ],
+   "packs": [
+    "用间篇"
+   ],
+   "variants": [
+    {
+     "name": "【毒】",
+     "image_url": "https://storage.moegirl.org.cn/moegirl/commons/0/0d/%E4%B8%89%E5%9B%BD%E6%9D%80-%E3%80%90%E6%AF%92%E3%80%91.webp",
+     "image_file": "三国杀-【毒】.webp",
+     "local_image_path": "assets/cards/basic/三国杀-【毒】.webp",
+     "effect": "当此牌正面朝上离开你的手牌区时，你失去1点体力；当你因摸牌或分发起始手牌而获得【毒】后，你可以将之交给其他角色（正面朝上移动且不触发前一个效果）。",
+     "timing": "出牌阶段",
+     "target": "你",
+     "effect_full": "使用时机：出牌阶段。使用目标：你。作用效果：无。◆当牌正面朝上从一名角色的手牌区移至目标区域后❷，若这些牌中有【毒】，其失去X点体力（X为这些牌中的【毒】数）。◆【毒】也被当作牌面信息中记述了“体力”的牌。[1]",
+     "suits": {
+      "用间篇": {
+       "♥": "",
+       "♦": "",
+       "♠": "4(赠)/5(赠)/9(赠)/10(赠)",
+       "♣": "4"
+      },
+      "毒战": {
+       "♥": "3/4/6/7/8/9",
+       "♦": "",
+       "♠": "",
+       "♣": ""
+      }
+     },
+     "note": ""
+    }
+   ],
+   "note": ""
+  }
+ ]
+}

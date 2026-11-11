@@ -1,0 +1,46 @@
+{
+  "v": 1,
+  "data_type": "history",
+  "items": [
+    {
+      "id": "card-chenshou",
+      "title": "陈寿：写正史的人",
+      "category": "作者专题",
+      "data_type": "history",
+      "source_type": "chenshou",
+      "reliability_level": "A",
+      "difficulty": "beginner",
+      "priority": 1,
+      "summary": "陈寿（233-297），字承祚，蜀汉巴西安汉人。曾在蜀汉任观阁令史，蜀亡后入晋为官，晚年撰成《三国志》65卷，被时人赞善叙事，称其有良史之才。",
+      "content_text": "陈寿少时受学于蜀中名士谯周。蜀汉灭亡时他约三十一岁，后入仕晋朝，历任佐著作郎、治书侍御史。《三国志》成书约在太康年间（280年代）之后，当时三国各自的原有史著（魏书、吴书等）尚在，陈寿加以取舍整合，加之身为蜀人写三国，视角独特。裴松之（南朝宋）为其作注，补入大量异说史料。",
+      "quote": "撰魏吴蜀《三国志》，凡六十五篇。时人称其善叙事，有良史之才。",
+      "quote_source": "《晋书·陈寿传》",
+      "reference": "《晋书·卷八十二·陈寿传》",
+      "related_ids": ["card-sgz-structure"],
+      "related_sgs_character_id": [],
+      "tags": ["陈寿", "作者", "三国志"],
+      "is_fiction": false,
+      "pitfall": "陈寿是『晋朝官员』，写的是刚统一不久的三国近当代史；不要把他当成明代或后世学者。"
+    },
+    {
+      "id": "card-sgz-structure",
+      "title": "《三国志》的体例：三书合一，无表无志",
+      "category": "书籍通识",
+      "data_type": "history",
+      "source_type": "sanguozhi",
+      "reliability_level": "A",
+      "difficulty": "beginner",
+      "priority": 2,
+      "summary": "全书65卷分《魏书》30卷、《蜀书》15卷、《吴书》20卷。只有纪传，没有表和志（典章制度部分），是二十四史中的特例。",
+      "content_text": "魏主称帝，故立『纪』；蜀、吴君主列传体而实为纪。三书原本各自单行，北宋刻本始合为一书。因无志，三国职官、地理、食货等制度细节多需借《晋书》诸志补看。裴松之注成于元嘉六年（429），引书二百余种，字数接近或超过陈寿原文，是『注优于史』的著名例子。",
+      "quote": "",
+      "quote_source": "",
+      "reference": "《三国志》全书结构；裴松之《上三国志注表》",
+      "related_ids": ["card-chenshou"],
+      "related_sgs_character_id": [],
+      "tags": ["三国志", "裴松之注", "体例"],
+      "is_fiction": false,
+      "pitfall": "《魏书》《蜀书》《吴书》是《三国志》内部的三部分，别和北齐魏收所著《魏书》混淆。"
+    }
+  ]
+}
