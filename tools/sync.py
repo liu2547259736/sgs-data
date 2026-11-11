@@ -16,6 +16,8 @@
         额外 push（需要各仓库已配置 origin）。
     python data-repo/tools/sync.py --commit --gh <user>/<repo>
         额外验证 jsDelivr 能取到这个 tag 的 manifest.json。
+    python data-repo/tools/sync.py --verify-cdn <user>/<repo>
+        只验证 CDN 连通性，不扫描本体、不写文件、不碰 git。
     python data-repo/tools/sync.py --allow-shrink
         确实要删武将时放行（默认会拦住「老武将消失 / 武将数减少」）。
 
@@ -56,6 +58,20 @@ REPOS = [
     ('legacy-web', FLUTTER / 'legacy-web'),
     ('app', FLUTTER / 'app'),
 ]
+
+# jsDelivr 镜像。2026-11-11 实测：前三个国内直连能取到内容，
+# cdn.jsdelivr.net 在本机 TLS 握手失败，保留供其它网络环境兜底。
+CDN_HOSTS = [
+    'fastly.jsdelivr.net',
+    'gcore.jsdelivr.net',
+    'testingcf.jsdelivr.net',
+    'cdn.jsdelivr.net',
+]
+
+# 环境变量 HTTP_PROXY 指向 WorkBuddy 沙箱代理，对 github.com 返回
+# "CONNECT tunnel failed 502"。实测显式清空代理后 git 直连 3/3 成功，
+# 因此所有访问远端的 git 命令都要带 direct=True，本地命令不受影响。
+NO_PROXY_GIT = ['-c', 'http.proxy=', '-c', 'https.proxy=']
 
 
 def now_iso():
@@ -160,8 +176,9 @@ def run(script, *args):
     subprocess.run(cmd, check=True)
 
 
-def git(path, *args, check=True):
-    return subprocess.run(['git'] + list(args), cwd=str(path), check=check,
+def git(path, *args, check=True, direct=False):
+    cmd = ['git'] + (NO_PROXY_GIT if direct else []) + list(args)
+    return subprocess.run(cmd, cwd=str(path), check=check,
                           capture_output=True, text=True)
 
 
@@ -188,9 +205,9 @@ def commit_all(version, push):
             if 'origin' not in git(path, 'remote').stdout.split():
                 print('  %-12s 未配置 origin，跳过 push' % name)
                 continue
-            git(path, 'push', '-q', 'origin', 'HEAD')
+            git(path, 'push', '-q', 'origin', 'HEAD', direct=True)
             if name == 'data-repo':
-                git(path, 'push', '-q', 'origin', tag)
+                git(path, 'push', '-q', 'origin', tag, direct=True)
             print('  %-12s pushed' % name)
     if not git(APP, 'config', 'user.name', check=False).stdout.strip():
         print('  提示：建议配置 git user.name / user.email，本次用了临时提交身份')
@@ -198,19 +215,34 @@ def commit_all(version, push):
 
 
 def verify_cdn(gh, tag, version):
-    url = 'https://cdn.jsdelivr.net/gh/%s@%s/manifest.json' % (gh, tag)
-    print('  GET ' + url)
-    try:
-        with urllib.request.urlopen(url, timeout=15) as r:
-            doc = json.loads(r.read().decode('utf-8'))
-        ok = doc.get('version') == version
-        print('  返回 version=%s  files=%d  %s' % (
-            doc.get('version'), len(doc.get('files') or []),
-            'OK' if ok else '版本不一致，CDN 可能尚未刷新'))
-        return ok
-    except Exception as e:
-        print('  CDN 验证失败（push 后 jsDelivr 需要几分钟）: ' + str(e))
-        return False
+    """逐个试数据源，任一返回匹配版本即算通过。
+
+    用空 ProxyHandler 走直连：沙箱代理对 cdn.jsdelivr.net 和
+    raw.githubusercontent.com 会 SSL EOF，而直连实测可用。
+    push 完成后 jsDelivr 首次拉取可能要几分钟，失败不抛异常。
+    """
+    direct = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    urls = ['https://%s/gh/%s@%s/manifest.json' % (h, gh, tag)
+            for h in CDN_HOSTS]
+    urls.append('https://raw.githubusercontent.com/%s/%s/manifest.json'
+                % (gh, tag))
+    for url in urls:
+        host = url.split('/')[2]
+        try:
+            with direct.open(url, timeout=12) as r:
+                doc = json.loads(r.read().decode('utf-8'))
+            got = doc.get('version')
+            files = len(doc.get('files') or [])
+            ok = got == version
+            print('  %-26s version=%s files=%d %s' % (
+                host, got, files,
+                'OK' if ok else '版本不一致（CDN 可能未刷新）'))
+            if ok:
+                return True
+        except Exception as e:
+            print('  %-26s 不可用: %s' % (host, str(e)[:60]))
+    print('  全部数据源均未返回匹配版本')
+    return False
 
 
 def main():
@@ -222,7 +254,16 @@ def main():
     ap.add_argument('--push', action='store_true')
     ap.add_argument('--gh', default='', help='data-repo 的 GitHub user/repo')
     ap.add_argument('--allow-shrink', action='store_true')
+    ap.add_argument('--verify-cdn', default='',
+                    help='只验证 CDN 连通性：<user>/<repo>，不写文件、不碰 git')
     a = ap.parse_args()
+
+    if a.verify_cdn:
+        st = json.loads(STATE.read_text(encoding='utf-8')) if STATE.is_file() else {}
+        ver = st.get('version') or ''
+        vtag = 'data-v' + ver if ver else ''
+        print('[CDN] 本地当前版本 %s / tag %s' % (ver or '(无)', vtag or '(无)'))
+        sys.exit(0 if verify_cdn(a.verify_cdn, vtag, ver) else 1)
 
     state = json.loads(STATE.read_text(encoding='utf-8')) if STATE.is_file() else {}
     print('[0] 扫描主程序本体 ...')
