@@ -24,8 +24,13 @@ IMAGE_KINDS = ('il', 'av', 'icons')   # 皮肤 sk / 语音 voice 不复制
 META_FILES = [
     'index.json', 'search_index.json', 'cards.json', 'gameplayRules.json',
     'seriesRef.json', 'sgs_icons.json', 'kepu_stats.json', 'changelog.json',
-    'skill_evolution.json',
+    'skill_evolution.json', 'recent.json',
 ]
+
+# 三国史料模块的自有数据（books/ contents/ cards/ compare/ ...），11 MB 纯文本。
+# 主程序 history.js 只读这个目录；Flutter 端要做史料模块，必须一起进数据仓库。
+HISTORY_SRC = APP + '/data/history'
+HISTORY_DST = OUT + '/history'
 
 
 def load(path):
@@ -52,7 +57,7 @@ def prune():
     只作用于 heroes/ skins/ images/ meta/ 四个数据目录，绝不触碰 .git/tools。
     """
     removed = 0
-    for sub in ('heroes', 'skins', 'images', 'meta'):
+    for sub in ('heroes', 'skins', 'images', 'meta', 'history'):
         base = OUT + '/' + sub
         if not os.path.isdir(base):
             continue
@@ -183,20 +188,45 @@ def copy_meta():
     return n
 
 
+def copy_history():
+    """镜像复制 data/history/（含 books/contents 二级目录），返回 (文件数, 字节数)。"""
+    if not os.path.isdir(HISTORY_SRC):
+        return 0, 0
+    n = 0
+    total = 0
+    for root, dirs, names in os.walk(HISTORY_SRC):
+        rel = os.path.relpath(root, HISTORY_SRC).replace('\\', '/')
+        sub = '' if rel == '.' else '/' + rel
+        dst = HISTORY_DST + sub
+        os.makedirs(dst, exist_ok=True)
+        for name in names:
+            sp, dp = root + '/' + name, dst + '/' + name
+            if not os.path.isfile(sp):
+                continue
+            shutil.copy2(sp, dp)
+            keep(dp)
+            n += 1
+            total += os.path.getsize(dp)
+    return n, total
+
+
 def main():
-    print('[1/4] 生成 heroes/ 与 skins/ 分片')
+    print('[1/5] 生成 heroes/ 与 skins/ 分片')
     heroes, skins, parts = build_heroes_and_skins()
-    print('[2/4] 复制非皮肤图片')
+    print('[2/5] 复制非皮肤图片')
     imgs, img_bytes = copy_images()
-    print('[3/4] 复制元数据')
+    print('[3/5] 复制元数据')
     meta = copy_meta()
-    print('[4/4] 镜像清理残留文件')
+    print('[4/5] 复制史料数据')
+    hist, hist_bytes = copy_history()
+    print('[5/5] 镜像清理残留文件')
     stale = prune()
 
     print('')
     print('武将 %d 条 / 皮肤图引用 %d 条 / 分片 %d 个' % (heroes, skins, parts))
     print('图片 %d 张 / %.2f MB' % (imgs, img_bytes / 1024 / 1024))
-    print('元数据 %d 个文件' % meta)
+    print('元数据 %d 个文件 / 史料 %d 个文件 %.2f MB' % (
+        meta, hist, hist_bytes / 1024 / 1024))
     print('清理上次同步残留 %d 个文件' % stale)
 
 

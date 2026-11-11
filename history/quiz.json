@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "data_type": "history",
+  "scopes": [
+    { "id": "scope-chenshou", "label": "陈寿生平", "source": "cards.json#card-chenshou" },
+    { "id": "scope-sgz", "label": "三国志通识", "source": "cards.json#card-sgz-structure" },
+    { "id": "scope-compare", "label": "演义虚构辨析", "source": "compare.json" }
+  ],
+  "items": [
+    {
+      "id": "quiz-001",
+      "scope_id": "scope-chenshou",
+      "type": "single",
+      "difficulty": "beginner",
+      "stem": "《三国志》的作者是谁？",
+      "options": ["司马迁", "陈寿", "范晔", "罗贯中"],
+      "answer": [1],
+      "explanation": "《三国志》为西晋陈寿所撰。《史记》作者是司马迁；《后汉书》是南朝宋范晔；《三国演义》是元末明初罗贯中的小说。",
+      "exam_source": "陈寿生平 / 《晋书·陈寿传》"
+    },
+    {
+      "id": "quiz-002",
+      "scope_id": "scope-sgz",
+      "type": "multi",
+      "difficulty": "intermediate",
+      "stem": "关于《三国志》的体例，下列说法正确的有？",
+      "options": [
+        "全书分魏、蜀、吴三书，共65卷",
+        "有纪、有传，但没有表和志",
+        "裴松之注成书于南朝宋，引书二百余种",
+        "三书原本各自单行，后世合刻为一书"
+      ],
+      "answer": [0, 1, 2, 3],
+      "explanation": "四项均正确：《三国志》魏书30、蜀书15、吴书20卷；只有纪传无表志；裴松之注于元嘉六年（429）完成；三书原本单行，北宋合刻。",
+      "exam_source": "《三国志》体例通识"
+    },
+    {
+      "id": "quiz-003",
+      "scope_id": "scope-compare",
+      "type": "judge",
+      "difficulty": "beginner",
+      "stem": "正史中『温酒斩华雄』的华雄，是被关羽斩杀的。",
+      "answer": [false],
+      "explanation": "正史中华雄被孙坚在阳人之战击败并斩杀（《三国志·吴书·孙破虏讨逆传》）；『关羽温酒斩华雄』是《三国演义》的文学虚构。",
+      "exam_source": "温酒斩华雄史实辨析"
+    },
+    {
+      "id": "quiz-004",
+      "scope_id": "scope-compare",
+      "type": "single",
+      "difficulty": "beginner",
+      "stem": "『草船借箭』故事的历史原型最接近下列哪位人物的事迹？",
+      "options": ["周瑜", "诸葛亮", "孙权", "鲁肃"],
+      "answer": [2],
+      "explanation": "原型是濡须之战中孙权乘船受箭的记载，出自《三国志·吴书·吴主传》裴注引《魏略》。发生在濡须（213年），与赤壁和诸葛亮均无关。",
+      "exam_source": "草船借箭史实辨析"
+    },
+    {
+      "id": "quiz-005",
+      "scope_id": "scope-compare",
+      "type": "short",
+      "difficulty": "intermediate",
+      "stem": "简答：为什么说『空城计』在正史上并不成立？请至少给出一条依据。",
+      "answer": [0],
+      "answer_text": "参考答案（任答其一即可）：①此说仅见于裴注引『郭冲三事』，裴松之本人已辨其不实；②其时司马懿任荆州都督，驻宛城附近，并不在西城对阵诸葛亮，事件缺乏对手方记载。",
+      "options": [],
+      "explanation": "空城计出自《三国志·蜀书·诸葛亮传》裴注引郭冲之说，裴松之考订时指出司马懿其时不在关中前线，故事无从发生；演义第九十五回系文学虚构。",
+      "exam_source": "空城计史实辨析"
+    }
+  ]
+}

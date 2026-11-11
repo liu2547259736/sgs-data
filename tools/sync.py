@@ -69,9 +69,41 @@ CDN_HOSTS = [
 ]
 
 # 环境变量 HTTP_PROXY 指向 WorkBuddy 沙箱代理，对 github.com 返回
-# "CONNECT tunnel failed 502"。实测显式清空代理后 git 直连 3/3 成功，
-# 因此所有访问远端的 git 命令都要带 direct=True，本地命令不受影响。
-NO_PROXY_GIT = ['-c', 'http.proxy=', '-c', 'https.proxy=']
+# "CONNECT tunnel failed 502"；而本机 7890 代理实测稳定（2026-11-11 推送成功）。
+# 因此远端 git 命令要绕开沙箱代理：优先探测本地代理，找不到才退回直连。
+# 与 setup_github.py 的 effective_proxy() 保持同一套候选，避免两处行为不一致。
+PROXY_CANDIDATES = [
+    'http://127.0.0.1:7890',
+    'http://127.0.0.1:7897',
+    'http://127.0.0.1:10809',
+    'http://127.0.0.1:1080',
+]
+_PROXY_CACHE = None
+
+
+def effective_proxy():
+    global _PROXY_CACHE
+    if _PROXY_CACHE is not None:
+        return _PROXY_CACHE
+    for proxy in PROXY_CANDIDATES:
+        try:
+            opener = urllib.request.build_opener(
+                urllib.request.ProxyHandler({'http': proxy, 'https': proxy}))
+            with opener.open('https://github.com/', timeout=6) as r:
+                if r.status < 400:
+                    _PROXY_CACHE = proxy
+                    return proxy
+        except Exception:
+            pass
+    _PROXY_CACHE = ''
+    return ''
+
+
+def git_net_args():
+    proxy = effective_proxy()
+    if proxy:
+        return ['-c', 'http.proxy=' + proxy, '-c', 'https.proxy=' + proxy]
+    return ['-c', 'http.proxy=', '-c', 'https.proxy=']
 
 
 def now_iso():
@@ -177,7 +209,7 @@ def run(script, *args):
 
 
 def git(path, *args, check=True, direct=False):
-    cmd = ['git'] + (NO_PROXY_GIT if direct else []) + list(args)
+    cmd = ['git'] + (git_net_args() if direct else []) + list(args)
     return subprocess.run(cmd, cwd=str(path), check=check,
                           capture_output=True, text=True)
 

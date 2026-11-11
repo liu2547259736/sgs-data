@@ -1,0 +1,47 @@
+{
+  "module": "history",
+  "data_type": "history",
+  "version": 2,
+  "disclaim": "古籍属公有领域；历史科普仅供爱好者学习参考，不构成学术定论。本模块内容与三国杀游戏设定相互隔离。",
+  "books": [
+    { "id": "sgz", "title": "三国志", "author": "陈寿（西晋）撰 · 裴松之（南朝宋）注", "kind": "shishu", "coverage": "65卷：魏书30、蜀书15、吴书20", "catalog": "books/sgz.json", "is_core": true, "accent": "zhu", "rel": "core" },
+    { "id": "tongjian", "title": "资治通鉴", "author": "司马光（北宋）撰", "kind": "biannian", "coverage": "三国部分 19卷（卷60~78）", "catalog": "books/tongjian.json", "is_core": true, "accent": "wu", "rel": "core" },
+    { "id": "houhanshu", "title": "后汉书", "author": "范晔（南朝宋）撰", "kind": "shishu", "coverage": "99卷（纪传，汉末人物）", "catalog": "books/houhanshu.json", "is_core": false, "accent": "wei", "rel": "related" },
+    { "id": "jinshu", "title": "晋书", "author": "房玄龄等（唐）撰", "kind": "shishu", "coverage": "130卷（帝纪20、志30、列传50、载记30）", "catalog": "books/jinshu.json", "is_core": false, "accent": "jin2", "rel": "related" }
+  ],
+  "route": [
+    {
+      "id": "route-1",
+      "title": "第一阶 · 搭框架：陈寿与《三国志》",
+      "difficulty": "beginner",
+      "priority": 1,
+      "summary": "先弄清『正史是什么』：陈寿是谁、为什么《三国志》是二十四史之一、裴松之注补了什么。读完能分清『三国志说的』和『演义演的』。",
+      "card_ids": ["card-chenshou", "card-sgz-structure"],
+      "book_refs": [{ "book_id": "sgz", "chapter_id": "sgz-001" }],
+      "estimated_min": 15
+    },
+    {
+      "id": "route-2",
+      "title": "第二阶 · 分真假：演义虚构对照入门",
+      "difficulty": "beginner",
+      "priority": 2,
+      "summary": "用最著名的几个桥段（温酒斩华雄、草船借箭、空城计）建立『小说≠历史』的直觉，掌握虚构情节的常见来源。",
+      "card_ids": ["cmp-wenjiu", "cmp-caochuan", "cmp-kongcheng"],
+      "book_refs": [{ "book_id": "sgz", "chapter_id": "sgz-032" }],
+      "estimated_min": 20
+    },
+    {
+      "id": "route-3",
+      "title": "第三阶 · 读原文：人物传记与裴注异说",
+      "difficulty": "intermediate",
+      "priority": 3,
+      "summary": "进入《三国志》列传原文，配合裴注引书对照阅读，学习史源辨析的基本方法。可并用《资治通鉴》编年部分互证。",
+      "card_ids": [],
+      "book_refs": [
+        { "book_id": "sgz", "chapter_id": "sgz-035" },
+        { "book_id": "tongjian", "chapter_id": "tongjian-001" }
+      ],
+      "estimated_min": 40
+    }
+  ]
+}
