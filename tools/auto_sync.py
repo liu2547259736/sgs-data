@@ -188,7 +188,13 @@ def detect_changes():
         except subprocess.TimeoutExpired:
             log('皮肤 --check 超时（忽略，不阻塞数据同步）')
         else:
-            if rs.returncode == 0 and 'CHANGED' in (rs.stdout or ''):
+            # 必须整行精确匹配：'CHANGED' 是 'UNCHANGED' 的子串，
+            # 直接做 in 判断会把「无变更」误判成「有变更」，导致每次定时同步
+            # 都重推 706MB 皮肤仓。
+            skin_changed = any(
+                line.strip() == 'CHANGED'
+                for line in (rs.stdout or '').splitlines())
+            if rs.returncode == 0 and skin_changed:
                 reasons.append('皮肤资源变更（独立仓 sgs-skins）')
             elif rs.returncode != 0:
                 log('皮肤 --check 失败（忽略）：%s'
