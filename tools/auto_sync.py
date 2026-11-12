@@ -43,6 +43,7 @@ DATA = HERE.parent                              # data-repo
 FLUTTER = DATA.parent                           # sgs-flutter
 APP = FLUTTER.parent / 'sgs-heroes-app'         # 唯一真源
 SYNC = HERE / 'sync.py'
+SKIN_SYNC = FLUTTER / 'skins-repo' / 'tools' / 'sync.py'  # 皮肤独立仓、独立 tag
 LOGDIR = FLUTTER / 'logs'                       # 根目录，不属于任何 git 仓库
 LOG = LOGDIR / 'auto-sync.log'
 LOCK = LOGDIR / 'auto-sync.lock'
@@ -56,15 +57,18 @@ REPOS = [
     ('app', FLUTTER / 'app'),
 ]
 
-# 与 sync.py::scan_source() 完全相同的排除口径，保证监听看到的
-# 就是同步真正会纳入的那批文件（皮肤大图 / 语音不触发同步）。
+# 与 sync.py::scan_source() 的排除口径对齐。
+# 语音（1621 MB / 26556 个）永不入 git，监听也剪掉；
+# 皮肤 sk/ 纳入指纹（改图能被监听到），但发布走独立仓 sgs-skins、独立 tag，
+# 不进数据仓库版本号，也不因皮肤仓有未提交就触发数据仓库打新 tag。
 EXCLUDE_DIRS = {'_backups', 'unreleased', '.git', '__pycache__'}
-EXCLUDE_IMG_KINDS = {'sk', 'voice'}
+EXCLUDE_IMG_KINDS = {'voice'}
 
 POLL = 15        # 监听轮询间隔（秒）
 QUIET = 30       # 文件停止变化多久后开始同步（防抖）
 MAX_WAIT = 180   # 持续编辑时最多压多久，超时强制同步一次
 SYNC_TIMEOUT = 1800   # 首次推 200MB 的 app 仓可能较慢
+SKIN_TIMEOUT = 3600   # 皮肤仓首次 706MB / 12901 文件，留足时间
 
 
 def log(msg):
@@ -175,6 +179,20 @@ def detect_changes():
         lines = [ln for ln in (g.stdout or '').splitlines() if ln.strip()]
         if lines:
             reasons.append('%s 仓有 %d 项未提交' % (name, len(lines)))
+
+    # 皮肤独立仓：单独判定。注意不要把它加进 REPOS，否则皮肤仓有未提交
+    # 会误触发数据仓库打新 tag。
+    if SKIN_SYNC.is_file():
+        try:
+            rs = run([sys.executable, SKIN_SYNC, '--check'], timeout=300)
+        except subprocess.TimeoutExpired:
+            log('皮肤 --check 超时（忽略，不阻塞数据同步）')
+        else:
+            if rs.returncode == 0 and 'CHANGED' in (rs.stdout or ''):
+                reasons.append('皮肤资源变更（独立仓 sgs-skins）')
+            elif rs.returncode != 0:
+                log('皮肤 --check 失败（忽略）：%s'
+                    % (rs.stderr or '').strip()[-200:])
     return reasons, None
 
 
@@ -203,23 +221,54 @@ def sync_once(source, force=False, dry=False):
             log('--dry：只检测，不执行同步')
             return None
 
-        note = ('auto/%s: %s' % (source, '; '.join(reasons)))[:200]
-        cmd = [sys.executable, SYNC, '--commit', '--push', '--gh', GH,
-               '--note', note]
-        log('开始同步：$ sync.py --commit --push --gh %s' % GH)
-        try:
-            r = run(cmd, timeout=SYNC_TIMEOUT)
-        except subprocess.TimeoutExpired:
-            log('同步超时（%ds），请查看日志排查' % SYNC_TIMEOUT)
-            return False
-        for line in (r.stdout or '').splitlines():
-            if line.strip():
-                log('  | ' + line.rstrip())
-        if r.returncode != 0:
-            log('同步失败（exit %d）：%s' % (
-                r.returncode, (r.stderr or '').strip()[-600:]))
-            return False
-        log('同步完成 OK（来源 %s）' % source)
+        # 数据与皮肤是两条独立发布线：各自仓库、各自 tag、各自版本，
+        # 只是共用这一把锁和一次触发，避免并发推送。
+        skin_changed = any('皮肤资源变更' in r for r in reasons)
+        data_reasons = [r for r in reasons if '皮肤资源变更' not in r]
+        published = False
+
+        if force or data_reasons:
+            note = ('auto/%s: %s' % (source, '; '.join(data_reasons)))[:200]
+            cmd = [sys.executable, SYNC, '--commit', '--push', '--gh', GH,
+                   '--note', note]
+            log('开始同步：$ sync.py --commit --push --gh %s' % GH)
+            try:
+                r = run(cmd, timeout=SYNC_TIMEOUT)
+            except subprocess.TimeoutExpired:
+                log('同步超时（%ds），请查看日志排查' % SYNC_TIMEOUT)
+                return False
+            for line in (r.stdout or '').splitlines():
+                if line.strip():
+                    log('  | ' + line.rstrip())
+            if r.returncode != 0:
+                log('同步失败（exit %d）：%s' % (
+                    r.returncode, (r.stderr or '').strip()[-600:]))
+                return False
+            published = True
+            log('数据同步完成 OK（来源 %s）' % source)
+
+        if (force or skin_changed) and SKIN_SYNC.is_file():
+            cmd = [sys.executable, SKIN_SYNC, '--commit', '--push', '--tag',
+                   '--note', 'auto/%s: 皮肤资源变更' % source]
+            log('开始皮肤同步：$ skins-repo/tools/sync.py --commit --push --tag')
+            try:
+                r = run(cmd, timeout=SKIN_TIMEOUT)
+            except subprocess.TimeoutExpired:
+                log('皮肤同步超时（%ds）' % SKIN_TIMEOUT)
+                return False
+            for line in (r.stdout or '').splitlines():
+                if line.strip():
+                    log('  | ' + line.rstrip())
+            if r.returncode != 0:
+                log('皮肤同步失败（exit %d）：%s' % (
+                    r.returncode, (r.stderr or '').strip()[-600:]))
+                return False
+            published = True
+            log('皮肤同步完成 OK（独立仓 sgs-skins，不绑定数据版本）')
+
+        if not published:
+            log('无实际发布动作（来源 %s）' % source)
+            return None
         return True
     finally:
         release_lock(fh)
@@ -229,8 +278,9 @@ def fingerprint():
     """主程序纳入范围内的轻量指纹：路径 + size + mtime_ns。
 
     不读文件内容、不解析 characters.json，15 秒一次开销很低；
-    用 os.walk 在目录层就剪掉 .git / _backups / images/*/sk|voice，
-    避免把几万个 git 对象也枚举一遍。精确判定仍交给 sync.py --check。
+    用 os.walk 在目录层剪掉 .git / _backups / images/*/voice。
+    皮肤 sk/ 纳入指纹（这样改图能被监听到），但发布时走独立仓、不进数据 tag。
+    精确判定仍交给两个 sync.py --check。
     """
     h = hashlib.sha256()
     count = 0
