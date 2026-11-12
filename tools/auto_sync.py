@@ -346,6 +346,14 @@ def stop_watch():
         pass
 
 
+def _say(text):
+    """输出被 `| head` 之类的管道提前关闭时，Windows 会抛 OSError 22。"""
+    try:
+        print(text, flush=True)
+    except (OSError, ValueError):
+        pass
+
+
 def status():
     alive = False
     pid = ''
@@ -355,13 +363,14 @@ def status():
             alive = pid_alive(int(pid))
         except ValueError:
             pass
-    print('监听状态 : %s %s' % ('运行中' if alive else '未运行', ('pid=' + pid) if alive else ''))
-    print('日志文件 : %s' % LOG)
+    _say('监听状态 : %s %s' % (
+        '运行中' if alive else '未运行', ('pid=' + pid) if alive else ''))
+    _say('日志文件 : %s' % LOG)
     if LOG.exists():
-        print('--- 最近 15 行 ---')
+        _say('--- 最近 15 行 ---')
         lines = LOG.read_text(encoding='utf-8', errors='replace').splitlines()
         for line in lines[-15:]:
-            print(line)
+            _say(line)
 
 
 def main():
