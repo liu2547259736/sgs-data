@@ -42,7 +42,7 @@
      只含最近 10 位（跨版本）的卡片字段。缺文件时整条筛选行自动隐藏，不影响其它功能。 */
   const RECENT_URL = vq(DATA_DIR + 'recent.json');
   const dataUrl = (version) => vq(`${DATA_DIR}${version}/characters.json`);
-  const IMG_V = { hlsgs: '6', sgs: '3', gjf: '1', sgsol: '2', msgs: '2', wxmini: '1' };
+  const IMG_V = { hlsgs: '7', sgs: '3', gjf: '1', sgsol: '2', msgs: '2', wxmini: '1' };
   // msgs 1 / wxmini 1：2026-10-15 图片瘦身，sk/il/av 由 jpg/png 统一转 webp（msgs 皮肤、
   // 小程序立绘/头像/皮肤），URL 后缀变了但同源目录可能仍命中旧缓存，故登记破缓存。
   // 换图后 +1。gjf 1：2026-10-14 22:30 修正IF篇·霸王问鼎 4 张立绘

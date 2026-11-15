@@ -1,10 +1,21 @@
 {
  "_about": "「最新更新」筛选数据：每个库各自最近入库的武将（上限 10），由 v2/gen_recent.py 按 data/changelog.json 的更新声明 + 立绘文件入库时间生成，请勿手改。",
- "generated": "2026-11-11",
- "app": "3.0.23",
+ "generated": "2026-11-15",
+ "app": "3.0.28",
  "limit": 10,
  "libs": {
   "sgsol": [
+   {
+    "id": "zu_zuchentai",
+    "n": "族陈泰",
+    "t": "弘济简至",
+    "k": "wei",
+    "p": "zu",
+    "hp": 4,
+    "img": "images/sgsol/il/zu_zuchentai.webp",
+    "av": "images/sgsol/av/zu_zuchentai.webp",
+    "date": "2026-11-15"
+   },
    {
     "id": "misc_wangai",
     "n": "王皑",
@@ -95,17 +106,6 @@
     "hp": 3,
     "img": "images/sgsol/il/zu_zuzhongyu.webp",
     "av": "images/sgsol/av/zu_zuzhongyu.webp",
-    "date": "2026-09-27"
-   },
-   {
-    "id": "zu_zuzhongyao",
-    "n": "族钟繇",
-    "t": "正楷萧曹",
-    "k": "qun",
-    "p": "zu",
-    "hp": 3,
-    "img": "images/sgsol/il/zu_zuzhongyao.webp",
-    "av": "images/sgsol/av/zu_zuzhongyao.webp",
     "date": "2026-09-27"
    }
   ],
@@ -324,6 +324,16 @@
   ],
   "hlsgs": [
    {
+    "id": "hlsgs_mouwangling",
+    "n": "谋王凌",
+    "k": "wei",
+    "p": "xian",
+    "hp": 4,
+    "img": "images/hlsgs/il/hlsgs_mouwangling.webp",
+    "av": "images/hlsgs/av/hlsgs_mouwangling.webp",
+    "date": "2026-11-15"
+   },
+   {
     "id": "hlsgs_zhanzhaoyun",
     "n": "战赵云",
     "k": "shu",
@@ -411,16 +421,6 @@
     "hp": 4,
     "img": "images/hlsgs/il/hlsgs_weicaocao.webp",
     "av": "images/hlsgs/av/hlsgs_weicaocao.webp",
-    "date": "2026-10-17"
-   },
-   {
-    "id": "hlsgs_yuecaiyong",
-    "n": "乐蔡邕",
-    "k": "qun",
-    "p": "xian",
-    "hp": 3,
-    "img": "images/hlsgs/il/hlsgs_yuecaiyong.webp",
-    "av": "images/hlsgs/av/hlsgs_yuecaiyong.webp",
     "date": "2026-10-17"
    }
   ],
