@@ -310,25 +310,80 @@ def fingerprint():
     return h.hexdigest(), count
 
 
-def pid_alive(pid):
-    """Windows 上 os.kill(pid, 0) 会真的 TerminateProcess，绝不能拿它探活。
+def _proc_creation(pid):
+    """取进程创建时间（Windows FILETIME, int）当身份凭证，取不到返回 None。
 
-    这里只 OpenProcess 拿一个查询句柄，随即关闭，不碰目标进程。
+    pid 会被系统复用，光看「这个 pid 存在」会把无关进程当成自己的监听。
+    创建时间几乎不可能撞车，所以用它区分「同一个 pid 的后来者」。
     """
     try:
         import ctypes
         from ctypes import wintypes
+
+        class _FT(ctypes.Structure):
+            _fields_ = [('lo', wintypes.DWORD), ('hi', wintypes.DWORD)]
+
         k = ctypes.WinDLL('kernel32', use_last_error=True)
         k.OpenProcess.argtypes = (wintypes.DWORD, wintypes.BOOL, wintypes.DWORD)
         k.OpenProcess.restype = wintypes.HANDLE
-        handle = k.OpenProcess(0x1000, False, int(pid))  # QUERY_LIMITED_INFORMATION
-        if not handle:
-            return False
-        k.CloseHandle.argtypes = (wintypes.HANDLE,)
-        k.CloseHandle(handle)
-        return True
+        h = k.OpenProcess(0x1000, False, int(pid))  # QUERY_LIMITED_INFORMATION
+        if not h:
+            return None
+        try:
+            k.GetProcessTimes.argtypes = (
+                wintypes.HANDLE, ctypes.POINTER(_FT), ctypes.POINTER(_FT),
+                ctypes.POINTER(_FT), ctypes.POINTER(_FT))
+            k.GetProcessTimes.restype = wintypes.BOOL
+            ct, et, kt, ut = _FT(), _FT(), _FT(), _FT()
+            if not k.GetProcessTimes(h, ctypes.byref(ct), ctypes.byref(et),
+                                     ctypes.byref(kt), ctypes.byref(ut)):
+                return None
+            return (ct.hi << 32) | ct.lo
+        finally:
+            k.CloseHandle.argtypes = (wintypes.HANDLE,)
+            k.CloseHandle(h)
     except Exception:
+        return None
+
+
+def _pid_record():
+    """读 PID 文件 → (pid, token)。旧格式（纯 pid）或无凭证 → token=None。"""
+    if not PID.exists():
+        return None, None
+    try:
+        parts = PID.read_text(encoding='ascii').strip().split('|', 1)
+    except OSError:
+        return None, None
+    token = None
+    if len(parts) == 2:
+        try:
+            token = int(parts[1]) or None
+        except ValueError:
+            pass
+    try:
+        return int(parts[0]), token
+    except ValueError:
+        return None, None
+
+
+def pid_alive(pid, token=None):
+    """Windows 上 os.kill(pid, 0) 会真的 TerminateProcess，绝不能拿它探活。
+
+    必须连带校验创建时间凭证：pid 会被复用，只看「进程还在」会把完全无关的
+    进程误认成自己的监听（2026-11-16 实测：--status 谎报运行中、--watch
+    因此拒绝启动、--stop 还会误杀那个无关进程）。没有凭证的旧 PID 文件
+    一律不认，这样能自愈历史遗留的脏状态。
+    """
+    if token is None:
         return False
+    if os.name != 'nt':
+        try:
+            os.kill(int(pid), 0)  # POSIX 下 signal 0 才是安全探活
+        except OSError:
+            return False
+        return True
+    now = _proc_creation(pid)
+    return now is not None and now == token
 
 
 def watch():
@@ -336,7 +391,10 @@ def watch():
     if watch_already_running():
         return
     LOGDIR.mkdir(parents=True, exist_ok=True)
-    PID.write_text(str(os.getpid()), encoding='ascii')
+    token = _proc_creation(os.getpid())
+    if token is None:
+        log('警告：取不到自身进程创建时间，监听状态校验不可用')
+    PID.write_text('%d|%d' % (os.getpid(), token or 0), encoding='ascii')
     base, count = fingerprint()
     log('监听启动 pid=%d，纳入 %d 个文件，轮询 %ds / 防抖 %ds' % (
         os.getpid(), count, POLL, QUIET))
@@ -373,29 +431,32 @@ def watch():
 
 
 def watch_already_running():
-    """watch 启动时的单实例检查：PID 文件 + 进程存活判断。"""
-    if not PID.exists():
+    """watch 启动时的单实例检查：PID 文件 + 创建时间凭证。"""
+    old, token = _pid_record()
+    if old is None:
         return False
-    try:
-        old = int(PID.read_text(encoding='ascii').strip())
-    except (ValueError, OSError):
-        return False
-    if pid_alive(old):
+    if pid_alive(old, token):
         log('监听已在运行（pid=%d），本次不重复启动' % old)
         return True
+    log('PID 文件过期（pid=%d 已退出或凭证不匹配），清理后重新启动' % old)
     return False
 
 
 def stop_watch():
-    if not PID.exists():
+    old, token = _pid_record()
+    if old is None:
         log('没有正在运行的监听')
         return
-    try:
-        old = int(PID.read_text(encoding='ascii').strip())
-        os.kill(old, signal.SIGTERM)
-        log('已停止监听 pid=%d' % old)
-    except (ValueError, OSError) as e:
-        log('停止失败（可能已退出）：%s' % e)
+    # 身份校验通过才发信号：Windows 的 os.kill 是 TerminateProcess，
+    # pid 已被复用时贸然发信号会杀掉完全无关的进程。
+    if pid_alive(old, token):
+        try:
+            os.kill(old, signal.SIGTERM)
+            log('已停止监听 pid=%d' % old)
+        except OSError as e:
+            log('停止失败（可能已退出）：%s' % e)
+    else:
+        log('pid=%d 已退出或凭证不匹配，不发信号，仅清理 PID 文件' % old)
     try:
         PID.unlink()
     except OSError:
@@ -411,16 +472,10 @@ def _say(text):
 
 
 def status():
-    alive = False
-    pid = ''
-    if PID.exists():
-        pid = PID.read_text(encoding='ascii').strip()
-        try:
-            alive = pid_alive(int(pid))
-        except ValueError:
-            pass
+    pid, token = _pid_record()
+    alive = pid_alive(pid, token) if pid is not None else False
     _say('监听状态 : %s %s' % (
-        '运行中' if alive else '未运行', ('pid=' + pid) if alive else ''))
+        '运行中' if alive else '未运行', ('pid=%d' % pid) if alive else ''))
     _say('日志文件 : %s' % LOG)
     if LOG.exists():
         _say('--- 最近 15 行 ---')
