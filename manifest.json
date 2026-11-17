@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "version": "2026.11.17-3",
-  "updated_at": "2026-11-17T11:25:17+08:00",
+  "version": "2026.11.17-4",
+  "updated_at": "2026-11-17T11:57:43+08:00",
   "counts": {
     "heroes": 3748,
     "skins": 15636,
@@ -12,8 +12,8 @@
   "files": [
     {
       "path": "app.js",
-      "sha256": "8441de9181402df58acff2e7a99df99639be353dd4aa4d16f38792fe8ef18e94",
-      "bytes": 325030
+      "sha256": "2112abd3c741da93d50747ea35cc102a203e82ec03a0288dee3987e4f966cdcd",
+      "bytes": 325431
     },
     {
       "path": "apple-touch-icon.png",
@@ -46452,7 +46452,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "3ed879861538d39a58d7f9af9f1dea0d69bdf2cabd9cddb9e57993ffbdffdea3",
+      "sha256": "05a522413c6fb76b08779b407dcb1f6cdc35b44f1d05ba36e26ff7e2c6d78413",
       "bytes": 59853
     },
     {

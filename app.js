@@ -1585,6 +1585,12 @@
         const seenH = new Set(history().map(key));
         const mergedH = history().concat((cloud.history || []).filter((h) => h && !seenH.has(key(h))));
         safeSet(sk(HIST_KEY), JSON.stringify(mergedH.slice(0, HIST_MAX)));
+        // 心得也必须拉下来：只合收藏/历史的话，换台设备打开「心得」是空的，
+        // 用户会以为自己写的战术笔记丢了。
+        if (cloud.notes && typeof cloud.notes === 'object') {
+          const mergedN = Object.assign({}, cloud.notes, notes() || {});  // 同键以本机为准
+          safeSet(sk('sgs.notes'), JSON.stringify(mergedN));
+        }
       }
       await AuthAPI.saveProfile(s, cloudProfile());  // 合并结果回写账号档案
     } catch (e) { /* 容错：读写异常时保持本地模式 */ }
