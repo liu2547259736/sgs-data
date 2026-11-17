@@ -387,6 +387,89 @@
     return () => global.removeEventListener('sgs-auth-change', h);
   }
 
+  /* ---------- 云端镜像（仅 services/cloudAuth.js 使用） ----------
+   * 本机账号表在云端模式下不再是权威源，而是「服务端账号的离线副本」：
+   * 登录/注册成功后把云端账号与数据写成本机记录，原页面所有读取继续走本机，
+   * 断网时也能看到上次同步下来的收藏与历史。
+   *
+   * password 有值时会记下摘要 —— 这样断网后仍能用同一套账号密码登入（读镜像）。
+   * session 传 null 表示「只更新账号与数据，不动当前会话」（拉取档案时用）。
+   */
+  function migrateScope(oldId, newId) {
+    if (!oldId || !newId || oldId === newId) return 0;
+    let n = 0;
+    try {
+      const hits = [];
+      for (let i = 0; i < global.localStorage.length; i++) {
+        const k = global.localStorage.key(i);
+        if (k && k.indexOf(SCOPE_SEP + oldId) > -1) hits.push(k);
+      }
+      hits.forEach((k) => {
+        const to = k.split(SCOPE_SEP + oldId).join(SCOPE_SEP + newId);
+        const v = get(k);
+        if (v != null) { set(to, v); del(k); n++; }
+      });
+    } catch (e) { /* 忽略 */ }
+    return n;
+  }
+
+  function adoptRemote(remoteUser, data, session, password) {
+    if (!remoteUser || !remoteUser.id) return null;
+    const list = readUsers();
+    let u = list.find((x) => x.id === remoteUser.id);
+    if (!u) {
+      const lc = norm(remoteUser.username).toLowerCase();
+      u = list.find((x) => norm(x.username).toLowerCase() === lc);
+    }
+    if (!u) {
+      u = {
+        id: remoteUser.id,
+        username: norm(remoteUser.username),
+        // 没有密码摘要 = 只能在线登录（离线时密码校验不过）
+        password: password ? hash(password) : 'cloud$' + Math.random().toString(36).slice(2),
+        nickname: norm(remoteUser.nickname) || norm(remoteUser.username),
+        avatar: remoteUser.avatar || AVATAR_DEFAULT,
+        createdAt: remoteUser.createdAt || now(),
+        updatedAt: now(),
+        userData: emptyData()
+      };
+      list.push(u);
+    } else {
+      // 老的本机账号首次认领到云端：本地 id 与云端 id 不同，把隔离数据搬过去，
+      // 否则登录后收藏/历史会因为换命名空间而「看不见了」。
+      if (u.id !== remoteUser.id) {
+        migrateScope(u.id, remoteUser.id);
+        u.id = remoteUser.id;
+      }
+      if (norm(remoteUser.username)) u.username = norm(remoteUser.username);
+      if (norm(remoteUser.nickname)) u.nickname = norm(remoteUser.nickname);
+      if (remoteUser.avatar) u.avatar = remoteUser.avatar;
+      if (password) u.password = hash(password);
+      u.updatedAt = now();
+    }
+    normalize(u);
+    if (data && typeof data === 'object') {
+      const d = u.userData;
+      if (Array.isArray(data.favorites)) d.favorites = data.favorites.slice(0, FAV_MAX);
+      if (Array.isArray(data.history)) d.history = data.history.slice(0, FAV_MAX);
+      if (data.notes && typeof data.notes === 'object') d.notes = data.notes;
+      if (data.settings && typeof data.settings === 'object') d.settings = data.settings;
+    }
+    normalize(u);
+    writeUsers(list);
+
+    let sess = null;
+    if (session && session.token) {
+      sess = {
+        userId: u.id, username: u.username, nickname: u.nickname,
+        avatar: u.avatar, token: session.token, loginAt: session.loginAt || now()
+      };
+      set(SESSION_KEY, JSON.stringify(sess));
+    }
+    emit('adopt', { userId: u.id });
+    return { user: u, session: sess };
+  }
+
   global.LocalAuthService = {
     USERS_KEY: USERS_KEY, SESSION_KEY: SESSION_KEY, AVATAR_DEFAULT: AVATAR_DEFAULT,
     PWD_MIN: PWD_MIN,
@@ -395,6 +478,7 @@
     getUserData: getUserData, syncUserData: syncUserData,
     updateUser: updateUser, removeUser: removeUser,
     exportData: exportData, downloadData: downloadData, importData: importData,
-    clearAll: clearAll, scopeKey: scopeKey, on: on
+    clearAll: clearAll, scopeKey: scopeKey, on: on,
+    adoptRemote: adoptRemote
   };
 })(window);

@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "version": "2026.11.16",
-  "updated_at": "2026-11-16T03:01:54+08:00",
+  "version": "2026.11.17-2",
+  "updated_at": "2026-11-17T10:56:29+08:00",
   "counts": {
     "heroes": 3748,
     "skins": 15636,
     "images": 8200,
-    "shell": 8961,
-    "files": 9321
+    "shell": 8962,
+    "files": 9322
   },
   "files": [
     {
       "path": "app.js",
-      "sha256": "35cbc2fe9d6429151dc44dc7e1724e41690937f913ab73ef1bfc210aa65b171d",
-      "bytes": 321511
+      "sha256": "2a3897ecfd9487704f10f1d51235ff6ab9c42685ce89b2e98942eb67ffbb8134",
+      "bytes": 324388
     },
     {
       "path": "apple-touch-icon.png",
@@ -46447,8 +46447,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "1c7fd6ce4c2d0f14b81382b25b0289006a8c2bb6a8aefc2dd91dce606de2eba7",
-      "bytes": 59396
+      "sha256": "c0b2009df6cac6f6f19dfab034a47ccdd2b3ff44e3a4046bb8353f62bd020455",
+      "bytes": 59853
     },
     {
       "path": "meta/cards.json",
@@ -46536,9 +46536,14 @@
       "bytes": 3359
     },
     {
+      "path": "services/cloudAuth.js",
+      "sha256": "d9aa2e47b503e7aab2d2c0f2287b92c07aadb24d82be4b677d78351d97ccdd93",
+      "bytes": 9414
+    },
+    {
       "path": "services/localAuth.js",
-      "sha256": "32cfabd8fc99750e89903f79e35104c22a3932ae3e73869da3b7a92fbb4e536f",
-      "bytes": 17931
+      "sha256": "db167460391f34c11128cc15026165a9dcb42bf3b3289a740298d40b070bf978",
+      "bytes": 21461
     },
     {
       "path": "skins/gjf-001.json",

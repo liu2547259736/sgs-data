@@ -1474,19 +1474,54 @@
   const AuthAPI = {
     _delay(ms) { return new Promise((r) => setTimeout(r, ms)); },
     async sendCode(account) { await this._delay(400); return { ok: true }; },
-    /* 读取该账号档案（原「云端档案」位，现为本地账号 userData） */
+    /* 读取该账号档案：配了账号服务器就以云端为准，否则读本机镜像 */
     async fetchProfile(session) {
       const S = LAS();
-      if (!S || !session || !session.userId) return null;
-      return S.getUserData(session.userId);
+      const local = (S && session && session.userId) ? S.getUserData(session.userId) : null;
+      const CA = window.CloudAuth;
+      if (CA && CA.available()) {
+        const r = await CA.pull();
+        if (r.ok) return r.data;       // 云端连得上：返回云端档案（顺带刷新本机镜像）
+      }
+      return local;                    // 断网 / 未配置服务器：用本机镜像
     },
     /* 写回该账号档案（退出登录、登出前落盘、防抖同步均走这里） */
     async saveProfile(session, profile) {
       const S = LAS();
+      const CA = window.CloudAuth;
+      // 云端失败不影响本地：手机弱网时收藏照样先存本机，联网后自动补推
+      if (CA && CA.available()) CA.push(profile).catch(() => {});
       if (!S || !session || !session.userId) return { ok: false };
       return S.syncUserData(session.userId, profile);
     }
   };
+
+  /* 登录：有服务器优先走云端；连不上退本机；本机老账号首次登录自动认领到云端 */
+  async function authLogin(account, pwd, S) {
+    const CA = window.CloudAuth;
+    if (CA && CA.available()) {
+      const r = await CA.login(account, pwd);
+      if (r.ok || r.code !== 'notfound') return r;
+      // 云端说没这个号：可能是升级前在本机注册的，本地校验通过就把它认领到云端
+      const lr = S.login(account, pwd);
+      if (lr.ok) {
+        const cr = await CA.register(account, pwd, lr.user.nickname);
+        if (cr.ok) return cr;
+      }
+      return r;
+    }
+    return S.login(account, pwd);
+  }
+
+  /* 注册：有服务器就注册到云端（用户名全局唯一）；断网才建本机账号 */
+  async function authRegister(username, pwd, nick, S) {
+    const CA = window.CloudAuth;
+    if (CA && CA.available()) {
+      const cr = await CA.register(username, pwd, nick);
+      if (cr.ok || cr.code !== 'offline') return cr;
+    }
+    return S.register(username, pwd, nick);
+  }
   const UserStore = {
     user: null,                       // 当前会话 {userId,username,nickname,avatar,token,loginAt}
     isLogin() { return !!this.user; },
@@ -1500,6 +1535,8 @@
     logout() {
       const s = this.user;
       if (s) { try { AuthAPI.saveProfile(s, cloudProfile()); } catch (e) { /* 忽略 */ } }  // 退出前落盘
+      // 注销服务端会话（内部会先等未完成的档案上传落地，避免刚写的收藏被 401 丢掉）
+      if (window.CloudAuth) { try { window.CloudAuth.logout(); } catch (e) { /* 忽略 */ } }
       if (LAS()) LAS().logout();                     // 清 session（收藏保留在该账号命名空间里）
       this.user = null;
       try { localStorage.removeItem(USER_KEY); } catch (e) { /* 忽略 */ }
@@ -1861,6 +1898,10 @@
         if (v) UserStore.user.nickname = v;
         safeSet(USER_KEY, JSON.stringify(UserStore.user));
         if (LAS() && v) LAS().updateUser(UserStore.user.userId, { nickname: v });
+        // 昵称同时写云端账号（收藏等业务数据由 syncSoon 推）
+        if (v && window.CloudAuth && window.CloudAuth.available()) {
+          window.CloudAuth.profile({ nickname: v }).catch(() => {});
+        }
         applyName();
         renderAuth();
         syncSoon();
@@ -4199,7 +4240,7 @@
     if (!pwd) { show('请输入密码'); return; }
     btn.disabled = true; btn.classList.add('loading');
     try {
-      const r = S.login(account, pwd);
+      const r = await authLogin(account, pwd, S);
       if (!r.ok) {
         show(r.error);
         if (/没有这个账号/.test(r.error)) {            // 没账号→引导去注册
@@ -4233,7 +4274,7 @@
     const btn = $('lsubmit');
     btn.disabled = true; btn.classList.add('loading');
     try {
-      const r = S.register(username, pwd, nick);
+      const r = await authRegister(username, pwd, nick, S);
       if (!r.ok) { show(r.error); return; }
       const lr = S.login(username, pwd);               // 注册成功即自动登入
       if (!lr.ok) { show('注册成功，但自动登入失败：' + lr.error); return; }
@@ -4255,6 +4296,21 @@
     setModalMode('login');
     renderAuth();
     updateLocalDataSub();
+    // 注册表单底部说明：配了账号服务器就改成「服务器同步」，
+    // 不能让用户以为账号还只存在本机（这句话是承诺，必须跟着实现走）。
+    const regNote = document.querySelector('#regFields .lnote');
+    if (regNote && window.CloudAuth && window.CloudAuth.available()) {
+      regNote.textContent = '账号由服务器校验 · 收藏 / 历史 / 心得可跨设备同步；'
+        + '断网时先存本机，联网后自动补传。';
+    }
+    // 登录态开屏：静默拉一次云端，把别的设备改过的收藏/历史合并过来（断网直接跳过）
+    if (s && window.CloudAuth && window.CloudAuth.available()) {
+      setTimeout(() => {
+        mergeCloud()
+          .then(() => { renderAuth(); refreshAccountUI(); })
+          .catch(() => {});
+      }, 400);
+    }
     // 唤起入口：头部朱印 / 设置卡账号行（游客=登录，登录态=切换账号）
     $('loginSeal').addEventListener('click', openLogin);
     $('acctBtn').addEventListener('click', openLogin);
