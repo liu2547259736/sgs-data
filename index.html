@@ -28,9 +28,9 @@
 <link rel="preload" href="fonts/sgs-hei.woff2?v=3" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/sgs-inter.woff2?v=3" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/sgs-juan.woff2?v=3" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=cd7e7c137d">
+<link rel="stylesheet" href="style.css?v=e534175ed7">
 <link rel="stylesheet" href="battle.css?v=vtagfix1">
-<link rel="stylesheet" href="history.css?v=cd7e7c137d">
+<link rel="stylesheet" href="history.css?v=e534175ed7">
 <script>/* __SGS_ASSET_V = 资源缓存串。由 v2/bump_asset_version.py 自动生成，写入本段之后那一个
    script 标签，同时改写 5 个核心资源的 ?v=（style.css / app.js / services/localAuth.js /
    history.css / history.js）。★ 别在本行手写 __SGS_ASSET_V —— 写了会与注入行不一致
@@ -38,8 +38,8 @@
    __SGS_APP_V   = app 版本号：跟着现有版本号往上走，**非大更新只动最后一位**（3.0.3 → 3.0.4 → 3.0.5）；
                    与 Android 包同号，源头是 sgs-heroes-mobile/tools/manifest_merged.xml 的 versionName；
                    每次改动都要往 data/changelog.json 最前面加一条更新说明（两处版本号保持一致）*/
-window.__SGS_APP_V='3.0.28';</script>
-<script>window.__SGS_ASSET_V='cd7e7c137d';</script>
+window.__SGS_APP_V='3.0.31';</script>
+<script>window.__SGS_ASSET_V='e534175ed7';</script>
 </head>
 <body data-tab="home">
 
@@ -108,6 +108,9 @@ window.__SGS_APP_V='3.0.28';</script>
       <p>本应用收录的全部武将资料、卡牌数据与图片素材，均由<b class="dm-strong">作者本人</b>把下面各个服务器挨个认真看过、逐项核对游戏内的实际内容后整理出来的 —— 武将名单、扩展包分类、图鉴里的排列顺序、技能原文与立绘，都是一条条对过的，不是从某一处现成抄来。其中<b class="dm-strong">OL / 移动版 / 十周年 / 欢乐杀 四个版本</b>的<b class="dm-strong">技能名称与技能原文</b>，已逐条与对应服务器游戏内的实际显示核对并修正（补全缺失条目、纠正改名、按游戏内顺序重排）；<b class="dm-strong">国际服（繁中版）与小程序（微信版）</b>两版直接取自各自官方客户端配置表，<b>未做人工润色</b>，措辞与其余四版不同源，故在图鉴与「技能改革对照」中以「原文」小标单列提示。</p>
       <ul class="dm-list">
         <li><b>六大服务器</b>：<b>三国杀 OL</b>、<b>移动版（手杀）</b>、<b>十周年</b>、<b>欢乐杀</b>、<b>国际服（繁中版 / 台服）</b>、<b>小程序（微信版）</b>。各版独立成库、数据互不互通，扩展包与图鉴分类均与各自游戏内保持一致。</li>
+        <li><b class="dm-strong">「新月集」不是官方服务器</b>：它是本应用额外收录的一档<b>玩家社区合集</b>，内容来自开源三国杀项目 <b>FreeKill（新月杀）</b> 的武将数据表，按其中 17 个分类表（标准包、神话再临、一将成名、界限突破·标准包、SP、国战、OL、十周年、手杀、线下、国际服、小程序、十周年小程序、江山如故、蚀心入魔、脑洞包、游戏模式）分组展示。<b class="dm-strong">该库与游卡运营的任何服务器都没有关系</b>，也不代表任何官方版本的内容规划、上线节奏或规则判定；把它放在一起只是方便对照「同一个武将在各版本 / 各扩展里长什么样」。</li>
+        <li><b>「新月集的收录口径」</b>：只收武将条目本身 —— 名字、称号、势力、体力、性别、技能原文、台词、画师与所属分类；<b class="dm-strong">不收录任何源码</b>。数据表里同一位武将在不同扩展包下的多个版本<b>按原表分条收录、不做合并</b>（所以会看到多个「曹操」，分别属于不同扩展包）；表内标注为「魔 / 秦 / 西 / 野 / 鸽」等民间自定义势力的，图鉴里按最接近的官方势力归入<b>神</b>或<b>群</b>，原势力名保留在分类行末的括号里。少数条目在数据表中没有技能定义（国战标记牌、纯立绘条），图鉴里如实显示为空。</li>
+        <li><b>「新月集的更新与准确性」</b>：该数据表由社区持续更新，图鉴提供重新读取的更新入口，重跑后条目数、分类与技能原文会随之变化。表内文字为社区整理成果，可能与实体卡或其它版本存在出入，<b class="dm-strong">仅作交流参考，不作为规则判定依据</b>。</li>
         <li><b>小程序版的收录范围</b>：按 <b>8 个系列</b>（志 / 极 / 万象 / 界限 / 限定 / 神话 / 一将 / 标准）分组收录，其中「极」「志」两个系列为小程序独有，另外五版均不收录。该版本技能描述为官方精简改写版，措辞与其余各版本不一致，跨版本对账一律以本库收录的原文为准。</li>
         <li><b>武将资料</b>：技能名称与技能原文描述、称号、势力、体力上限、品质与稀有度，以及所属扩展包与游戏内的排列顺序，全部以对应服务器游戏内的实际显示为准。</li>
         <li><b>标 / 界 两套技能</b>：十周年已把「标准版（标）」与「界限突破（界）」并到同一格，本应用照官方的形态关系把两套技能都留着，详情页可切换查看。</li>
@@ -125,6 +128,7 @@ window.__SGS_APP_V='3.0.28';</script>
       <h4>三 · 知识产权归属</h4>
       <p>“三国杀”及其包含的所有武将形象、立绘原画、技能名称、游戏文案、音频音效之著作权与商标权，均归属于<b class="dm-strong">杭州游卡网络技术有限公司</b>所有。</p>
       <p>本项目无意侵犯任何官方权利主体之合法权益。如权利方认为本工具展示的内容存在侵权争议，请联系开发者，我们将在核实后第一时间进行删除或技术下架处理。</p>
+      <p><b class="dm-strong">关于「新月集」的第三方内容</b>：该库的武将资料整理自开源项目 FreeKill（新月杀）公开的武将数据表，本项目<b>仅作非营利性的整理与展示</b>，不主张任何权利，也不对其中的考证结论背书；其中涉及的武将形象、技能名称与游戏文案，权利同样归属于前述权利主体或其各自的原始权利人。若原始整理者或权利人希望调整、署名或移除其中的内容，请联系开发者处理。</p>
     </section>
     <section class="dm-sec">
       <h4>四 · 字体授权说明</h4>
@@ -891,14 +895,14 @@ window.__SGS_APP_V='3.0.28';</script>
   <button id="adClear" class="dm-agree ad-danger" type="button">清空重置所有本地账号</button>
 </section>
 
-<script src="services/localAuth.js?v=cd7e7c137d"></script>
+<script src="services/localAuth.js?v=e534175ed7"></script>
 <!-- 云端账号服务器地址：留空 = 自动判断（同源有 /api 就用，否则关掉，纯本机账号）。
      部署到自己的服务器后，把 'https://你的域名' 填进 SGS_API_BASE 即可；
      也可以在控制台执行 localStorage.setItem('sgs.api.base','http://192.168.1.20:8080') 临时切换。 -->
 <script>window.SGS_API_BASE = window.SGS_API_BASE || '';</script>
-<script src="services/cloudAuth.js?v=cd7e7c137d"></script>
-<script src="app.js?v=cd7e7c137d"></script>
-<script src="history.js?v=cd7e7c137d"></script>
+<script src="services/cloudAuth.js?v=e534175ed7"></script>
+<script src="app.js?v=e534175ed7"></script>
+<script src="history.js?v=e534175ed7"></script>
 <script src="battle.js?v=b7platefit1"></script>
 </body>
 </html>

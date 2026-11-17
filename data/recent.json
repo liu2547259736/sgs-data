@@ -1,7 +1,7 @@
 {
  "_about": "「最新更新」筛选数据：每个库各自最近入库的武将（上限 10），由 v2/gen_recent.py 按 data/changelog.json 的更新声明 + 立绘文件入库时间生成，请勿手改。",
- "generated": "2026-11-15",
- "app": "3.0.28",
+ "generated": "2026-11-17",
+ "app": "3.0.30",
  "limit": 10,
  "libs": {
   "sgsol": [
@@ -626,6 +626,118 @@
     "img": "images/wxmini/il/wxmini_zhoufang.webp",
     "av": "images/wxmini/av/wxmini_zhoufang.webp",
     "date": "2026-10-15"
+   }
+  ],
+  "fks": [
+   {
+    "id": "caocao",
+    "n": "曹操",
+    "t": "魏武帝",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/caocao.webp",
+    "av": "images/fks/av/caocao.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "simayi",
+    "n": "司马懿",
+    "t": "狼顾之鬼",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 3,
+    "img": "images/fks/il/simayi.webp",
+    "av": "images/fks/av/simayi.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "xiahoudun",
+    "n": "夏侯惇",
+    "t": "独眼的罗刹",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/xiahoudun.webp",
+    "av": "images/fks/av/xiahoudun.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "zhangliao",
+    "n": "张辽",
+    "t": "前将军",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/zhangliao.webp",
+    "av": "images/fks/av/zhangliao.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "xuchu",
+    "n": "许褚",
+    "t": "虎痴",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/xuchu.webp",
+    "av": "images/fks/av/xuchu.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "guojia",
+    "n": "郭嘉",
+    "t": "早终的先知",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 3,
+    "img": "images/fks/il/guojia.webp",
+    "av": "images/fks/av/guojia.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "zhenji",
+    "n": "甄姬",
+    "t": "薄幸的美人",
+    "k": "wei",
+    "p": "fk01",
+    "hp": 3,
+    "img": "images/fks/il/zhenji.webp",
+    "av": "images/fks/av/zhenji.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "liubei",
+    "n": "刘备",
+    "t": "乱世的枭雄",
+    "k": "shu",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/liubei.webp",
+    "av": "images/fks/av/liubei.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "guanyu",
+    "n": "关羽",
+    "t": "美髯公",
+    "k": "shu",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/guanyu.webp",
+    "av": "images/fks/av/guanyu.webp",
+    "date": "2026-11-17"
+   },
+   {
+    "id": "zhangfei",
+    "n": "张飞",
+    "t": "万夫不当",
+    "k": "shu",
+    "p": "fk01",
+    "hp": 4,
+    "img": "images/fks/il/zhangfei.webp",
+    "av": "images/fks/av/zhangfei.webp",
+    "date": "2026-11-17"
    }
   ]
  }

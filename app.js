@@ -42,7 +42,7 @@
      只含最近 10 位（跨版本）的卡片字段。缺文件时整条筛选行自动隐藏，不影响其它功能。 */
   const RECENT_URL = vq(DATA_DIR + 'recent.json');
   const dataUrl = (version) => vq(`${DATA_DIR}${version}/characters.json`);
-  const IMG_V = { hlsgs: '7', sgs: '3', gjf: '1', sgsol: '2', msgs: '2', wxmini: '1' };
+  const IMG_V = { hlsgs: '7', sgs: '3', gjf: '1', sgsol: '2', msgs: '2', wxmini: '1', fks: '1' };
   // msgs 1 / wxmini 1：2026-10-15 图片瘦身，sk/il/av 由 jpg/png 统一转 webp（msgs 皮肤、
   // 小程序立绘/头像/皮肤），URL 后缀变了但同源目录可能仍命中旧缓存，故登记破缓存。
   // 换图后 +1。gjf 1：2026-10-14 22:30 修正IF篇·霸王问鼎 4 张立绘
@@ -125,7 +125,7 @@
      「移动版」在 index.json 里叫移动版，这里原先写「手杀」，导致计数栏与卡片角标各叫各的）。 */
   /* unreleased = 第 5 个版本「未实装」（OL/移动版/十周年 官方配置里尚未上线的条目）：
      数据独立成篇、不并入任何正式版，也刻意不进跨版本搜索索引（搜索四版时不搜它）。 */
-  const VN = { sgsol: 'OL', msgs: '移动版', sgs: '十周年', hlsgs: '欢乐杀', gjf: '国际服', wxmini: '小程序', unreleased: '未实装' };
+  const VN = { sgsol: 'OL', msgs: '移动版', sgs: '十周年', hlsgs: '欢乐杀', gjf: '国际服', wxmini: '小程序', fks: '新月集', unreleased: '未实装' };
   const UNRELEASED_ID = 'unreleased';
 
   /* ============ 状态 ============ */
@@ -362,7 +362,7 @@
     for (const b of document.querySelectorAll('.tabbar .tab')) {
       b.classList.toggle('active', b.dataset.tab === tab);
     }
-    if (tab === 'heroes') { vgMeasure(); vgSchedule(); loadSearchIndexSoon(); loadRecentSoon(); }  // 页面可见后重新度量虚拟列表，并静默预取全库索引与最新更新
+    if (tab === 'heroes') { vgMeasure(); vgSchedule(); loadSearchIndexSoon(); loadRecentSoon(); centerVtab(); }  // 页面可见后重新度量虚拟列表，并静默预取全库索引与最新更新
     if (tab === 'olnews') { loadOlNews(); markOlNewsSeen(); }                    // OL 资讯页：按需加载本地 JSON
     if (tab === 'x10news') { loadX10News(); markX10NewsSeen(); }                 // 一将成名资讯页：按需加载本地 JSON
     syncSheetTab(tab);                                                           // 详情页随归属 Tab 挂起/恢复
@@ -510,6 +510,22 @@
   /* 版本 tab：浏览态 = 切版本；搜索态 = 收窄「搜索范围」（多一枚「全部」）。
      同一行两套语义是刻意的 —— 搜索态的结果本来就是四版混排，此时切版本没有意义，
      而用户想「只看 OL」时最自然的手势就是点那一格。 */
+  /* 版本条满 7 个库后（新月集 3636），末尾的当前版本会滚到视野外 ——
+     手机上看到的是「OL 702 移动版 609…」，高亮那格反而看不见。
+     只动容器自身的 scrollLeft，不用 scrollIntoView：后者会连带滚整个页面。
+     注意要留一份「切回武将页时再调一次」—— 首次渲染时这一页还 hidden，
+     宽度是 0，量不出溢出，等页面显示出来已经不会再渲染了。 */
+  function centerVtab() {
+    const vw = $('vtabs');
+    if (!vw || vw.scrollWidth <= vw.clientWidth + 1) return;
+    const act = vw.querySelector('.vtab.active');
+    if (!act) return;
+    const left = act.getBoundingClientRect().left - vw.getBoundingClientRect().left + vw.scrollLeft;
+    vw.scrollLeft = Math.max(0, Math.min(
+      left - (vw.clientWidth - act.offsetWidth) / 2,
+      vw.scrollWidth - vw.clientWidth));
+  }
+
   function renderTabs() {
     const searching = isSearching();
     const allChip = searching
@@ -523,6 +539,7 @@
          aria-selected="${act}" data-v="${v.id}">
          <b>${v.short}</b><i>${v.count}</i></button>`;
     }).join('');
+    centerVtab();
     // 搜索框提示随范围变，让「现在搜的是哪一版」在输入前就看得见
     // 措辞不写死版本数（原为「四版」，加国际服后每加一库就要改一次）
     const q = $('q');
@@ -2247,7 +2264,10 @@
     const g = detailHero();
     if (!g) return;
     const skills = (g.s || []).map((s) => s.name).join('、');
-    const text = `【${g.n} · ${g.t || ''}】${KN[g.k] || ''}势力 · ${g.gr} · 技能：${skills}（来自 三分归晋·武将速查）`;
+    // 「三分归晋·武将速查」是应用自己的旧名，对外分享沿用；
+    // 新月集不是官方服，分享时把来源写成它自己的分类，免得被当成某个服务器
+    const src = V.id === 'fks' ? '新月集·玩家整理合集' : '三分归晋·武将速查';
+    const text = `【${g.n} · ${g.t || ''}】${KN[g.k] || ''}势力 · ${g.gr} · 技能：${skills}（来自 ${src}）`;
     const done = () => toast('武将卡已复制到剪贴板');
     if (navigator.share) {
       navigator.share({ title: g.n, text }).catch(() => {});
@@ -2305,7 +2325,10 @@
         if (i >= 0) out.push({ label: shortLamp(p.label), i });
       }
     }
-    return out.length > 1 ? out : [];
+    // 条目太少没有跳转价值。
+    // 一级包超过 16 个时（新月集 17 个）这条两字标签导航会顶满整个侧边、还挡卡片，
+    // 不如不显示 —— 上方包 chip 行本身可以横向滚。≤16 的库（OL 15 / 移动版 14 …）行为不变。
+    return out.length > 1 && out.length <= 16 ? out : [];
   }
   function renderPybar() {
     const bar = $('pybar');
@@ -2452,7 +2475,9 @@
      ⚠ 文案里**不要写死版本个数**（别出现「四／五大」这类计数），一律用 KEPU_VERS.length 现算；
        也不要用相对说法（如「另外 N 款」），改成「各版本 / 其余版本」，加版本才不用回改。
      图鉴里存在但不属于「独立游戏版本」的条目（未实装等）由 KEPU_NONVER 排除。 */
-  const KEPU_NONVER = ['unreleased'];
+  /* fks「新月集」不是官方服务器，是玩家整理的开源武将合集，故与未实装一样排除在
+     「独立游戏版本」科普与对账之外（它有自己的免责说明，见 index.html 数据来源声明）。 */
+  const KEPU_NONVER = ['unreleased', 'fks'];
   const KEPU_VERS = [
     { id: 'sgsol', name: '三国杀OL', aka: '老杀 / 经典服', blurb: 'OL复古休闲',
       plat: 'PC 网页端 + OL 互通版 App，<b>双端数据互通</b>',
