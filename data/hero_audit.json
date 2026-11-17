@@ -1,0 +1,3789 @@
+{
+ "generated": "2026-11-17 11:03:37",
+ "fetch": true,
+ "counts": {
+  "hlsgs": {
+   "ver": "hlsgs",
+   "label": "欢乐杀",
+   "index_count": 667,
+   "items": 667,
+   "visible": 667,
+   "jie": 0,
+   "pack_sum": 667,
+   "multi_owned": 0,
+   "packs": [
+    {
+     "id": "biao",
+     "label": "标",
+     "chip": 28,
+     "actual": 28,
+     "child_sum": 28,
+     "children": [
+      {
+       "id": "biao-hu",
+       "label": "虎",
+       "count": 5
+      },
+      {
+       "id": "biao-zhu",
+       "label": "主",
+       "count": 3
+      },
+      {
+       "id": "biao-meng",
+       "label": "猛",
+       "count": 5
+      },
+      {
+       "id": "biao-jiao",
+       "label": "娇",
+       "count": 5
+      },
+      {
+       "id": "biao-po",
+       "label": "魄",
+       "count": 5
+      },
+      {
+       "id": "biao-lue",
+       "label": "略",
+       "count": 5
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "feng",
+     "label": "风",
+     "chip": 12,
+     "actual": 12,
+     "child_sum": 12,
+     "children": [
+      {
+       "id": "feng-xiao",
+       "label": "骁",
+       "count": 4
+      },
+      {
+       "id": "feng-li",
+       "label": "离",
+       "count": 2
+      },
+      {
+       "id": "feng-zhi",
+       "label": "志",
+       "count": 3
+      },
+      {
+       "id": "feng-xian",
+       "label": "仙",
+       "count": 3
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "lin",
+     "label": "林",
+     "chip": 43,
+     "actual": 43,
+     "child_sum": 43,
+     "children": [
+      {
+       "id": "lin-zhi",
+       "label": "智",
+       "count": 13
+      },
+      {
+       "id": "lin-man",
+       "label": "蛮",
+       "count": 8
+      },
+      {
+       "id": "lin-xiong",
+       "label": "雄",
+       "count": 11
+      },
+      {
+       "id": "lin-xian",
+       "label": "贤",
+       "count": 4
+      },
+      {
+       "id": "lin-yong",
+       "label": "庸",
+       "count": 7
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "huo",
+     "label": "火",
+     "chip": 96,
+     "actual": 96,
+     "child_sum": 96,
+     "children": [
+      {
+       "id": "huo-zhong",
+       "label": "忠",
+       "count": 21
+      },
+      {
+       "id": "huo-yi",
+       "label": "义",
+       "count": 15
+      },
+      {
+       "id": "huo-ren",
+       "label": "仁",
+       "count": 9
+      },
+      {
+       "id": "huo-yong",
+       "label": "勇",
+       "count": 19
+      },
+      {
+       "id": "huo-lian",
+       "label": "廉",
+       "count": 9
+      },
+      {
+       "id": "huo-bi",
+       "label": "愎",
+       "count": 23
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shan",
+     "label": "山",
+     "chip": 94,
+     "actual": 94,
+     "child_sum": 94,
+     "children": [
+      {
+       "id": "shan-zhen",
+       "label": "贞",
+       "count": 14
+      },
+      {
+       "id": "shan-si",
+       "label": "嗣",
+       "count": 15
+      },
+      {
+       "id": "shan-liang",
+       "label": "良",
+       "count": 15
+      },
+      {
+       "id": "shan-ce",
+       "label": "策",
+       "count": 21
+      },
+      {
+       "id": "shan-ji",
+       "label": "继",
+       "count": 16
+      },
+      {
+       "id": "shan-xian",
+       "label": "娴",
+       "count": 13
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "ming",
+     "label": "名",
+     "chip": 102,
+     "actual": 102,
+     "child_sum": 102,
+     "children": [
+      {
+       "id": "ming-shu",
+       "label": "淑",
+       "count": 16
+      },
+      {
+       "id": "ming-ru",
+       "label": "儒",
+       "count": 19
+      },
+      {
+       "id": "ming-cao",
+       "label": "曹",
+       "count": 16
+      },
+      {
+       "id": "ming-han",
+       "label": "悍",
+       "count": 22
+      },
+      {
+       "id": "ming-qi",
+       "label": "奇",
+       "count": 20
+      },
+      {
+       "id": "ming-jue",
+       "label": "绝",
+       "count": 9
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "xian",
+     "label": "限",
+     "chip": 144,
+     "actual": 144,
+     "child_sum": 144,
+     "children": [
+      {
+       "id": "xian-mou",
+       "label": "谋",
+       "count": 46
+      },
+      {
+       "id": "xian-sp",
+       "label": "SP",
+       "count": 26
+      },
+      {
+       "id": "xian-jin",
+       "label": "锦",
+       "count": 22
+      },
+      {
+       "id": "xian-xiu",
+       "label": "绣",
+       "count": 23
+      },
+      {
+       "id": "xian-xing",
+       "label": "星",
+       "count": 13
+      },
+      {
+       "id": "xian-le",
+       "label": "乐",
+       "count": 8
+      },
+      {
+       "id": "xian-wei",
+       "label": "威",
+       "count": 6
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jie",
+     "label": "界",
+     "chip": 74,
+     "actual": 74,
+     "child_sum": 74,
+     "children": [
+      {
+       "id": "jie-cheng",
+       "label": "橙",
+       "count": 27
+      },
+      {
+       "id": "jie-zi",
+       "label": "紫",
+       "count": 19
+      },
+      {
+       "id": "jie-lan",
+       "label": "蓝",
+       "count": 12
+      },
+      {
+       "id": "jie-lv",
+       "label": "绿",
+       "count": 8
+      },
+      {
+       "id": "jie-bai",
+       "label": "白",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shen",
+     "label": "神",
+     "chip": 34,
+     "actual": 34,
+     "child_sum": 34,
+     "children": [
+      {
+       "id": "shen-wei",
+       "label": "魏",
+       "count": 9
+      },
+      {
+       "id": "shen-shu",
+       "label": "蜀",
+       "count": 10
+      },
+      {
+       "id": "shen-wu",
+       "label": "吴",
+       "count": 9
+      },
+      {
+       "id": "shen-qun",
+       "label": "群",
+       "count": 6
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "zhuan",
+     "label": "专",
+     "chip": 40,
+     "actual": 40,
+     "child_sum": 40,
+     "children": [
+      {
+       "id": "zhuan-nian",
+       "label": "念",
+       "count": 5
+      },
+      {
+       "id": "zhuan-zhan",
+       "label": "战",
+       "count": 9
+      },
+      {
+       "id": "zhuan-yin",
+       "label": "隐",
+       "count": 3
+      },
+      {
+       "id": "zhuan-te",
+       "label": "特",
+       "count": 2
+      },
+      {
+       "id": "zhuan-miao",
+       "label": "喵",
+       "count": 17
+      },
+      {
+       "id": "zhuan-meng",
+       "label": "盟",
+       "count": 4
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    }
+   ],
+   "issues": []
+  },
+  "sgsol": {
+   "ver": "sgsol",
+   "label": "OL",
+   "index_count": 702,
+   "items": 702,
+   "visible": 702,
+   "jie": 0,
+   "pack_sum": 702,
+   "multi_owned": 0,
+   "packs": [
+    {
+     "id": "std",
+     "label": "标准版",
+     "chip": 27,
+     "actual": 27,
+     "child_sum": 27,
+     "children": [
+      {
+       "id": "std-54",
+       "label": "虎",
+       "count": 4
+      },
+      {
+       "id": "std-55",
+       "label": "主",
+       "count": 4
+      },
+      {
+       "id": "std-56",
+       "label": "骁",
+       "count": 8
+      },
+      {
+       "id": "std-57",
+       "label": "慧",
+       "count": 6
+      },
+      {
+       "id": "std-58",
+       "label": "香",
+       "count": 5
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shenhua",
+     "label": "神话再临",
+     "chip": 64,
+     "actual": 64,
+     "child_sum": 64,
+     "children": [
+      {
+       "id": "shenhua-8",
+       "label": "风",
+       "count": 8
+      },
+      {
+       "id": "shenhua-9",
+       "label": "火",
+       "count": 8
+      },
+      {
+       "id": "shenhua-10",
+       "label": "林",
+       "count": 8
+      },
+      {
+       "id": "shenhua-11",
+       "label": "山",
+       "count": 8
+      },
+      {
+       "id": "shenhua-12",
+       "label": "阴",
+       "count": 8
+      },
+      {
+       "id": "shenhua-13",
+       "label": "雷",
+       "count": 8
+      },
+      {
+       "id": "shenhua-14",
+       "label": "神",
+       "count": 16
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "yj",
+     "label": "一将成名",
+     "chip": 72,
+     "actual": 72,
+     "child_sum": 72,
+     "children": [
+      {
+       "id": "yj-15",
+       "label": "将1",
+       "count": 11
+      },
+      {
+       "id": "yj-16",
+       "label": "将2",
+       "count": 12
+      },
+      {
+       "id": "yj-17",
+       "label": "将3",
+       "count": 11
+      },
+      {
+       "id": "yj-18",
+       "label": "将4",
+       "count": 11
+      },
+      {
+       "id": "yj-19",
+       "label": "将5",
+       "count": 11
+      },
+      {
+       "id": "yj-20",
+       "label": "将6",
+       "count": 8
+      },
+      {
+       "id": "yj-21",
+       "label": "将7",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jie",
+     "label": "界限突破",
+     "chip": 58,
+     "actual": 58,
+     "child_sum": 58,
+     "children": [
+      {
+       "id": "jie-59",
+       "label": "界虎",
+       "count": 4
+      },
+      {
+       "id": "jie-60",
+       "label": "界主",
+       "count": 3
+      },
+      {
+       "id": "jie-61",
+       "label": "界骁",
+       "count": 10
+      },
+      {
+       "id": "jie-62",
+       "label": "界慧",
+       "count": 7
+      },
+      {
+       "id": "jie-63",
+       "label": "界香",
+       "count": 5
+      },
+      {
+       "id": "jie-30",
+       "label": "界风",
+       "count": 6
+      },
+      {
+       "id": "jie-31",
+       "label": "界火",
+       "count": 8
+      },
+      {
+       "id": "jie-32",
+       "label": "界林",
+       "count": 7
+      },
+      {
+       "id": "jie-33",
+       "label": "界山",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jieyj",
+     "label": "界一将",
+     "chip": 32,
+     "actual": 32,
+     "child_sum": 32,
+     "children": [
+      {
+       "id": "jieyj-69",
+       "label": "界将1",
+       "count": 9
+      },
+      {
+       "id": "jieyj-70",
+       "label": "界将2",
+       "count": 10
+      },
+      {
+       "id": "jieyj-71",
+       "label": "界将3",
+       "count": 8
+      },
+      {
+       "id": "jieyj-72",
+       "label": "界将4",
+       "count": 3
+      },
+      {
+       "id": "jieyj-73",
+       "label": "界将5",
+       "count": 1
+      },
+      {
+       "id": "jieyj-74",
+       "label": "界将6",
+       "count": 1
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "wende",
+     "label": "文德武备",
+     "chip": 23,
+     "actual": 23,
+     "child_sum": 23,
+     "children": [
+      {
+       "id": "wende-36",
+       "label": "理",
+       "count": 6
+      },
+      {
+       "id": "wende-37",
+       "label": "备",
+       "count": 6
+      },
+      {
+       "id": "wende-38",
+       "label": "果",
+       "count": 5
+      },
+      {
+       "id": "wende-39",
+       "label": "戒",
+       "count": 4
+      },
+      {
+       "id": "wende-40",
+       "label": "约",
+       "count": 2
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "cuican",
+     "label": "璀璨星河",
+     "chip": 199,
+     "actual": 199,
+     "child_sum": 199,
+     "children": [
+      {
+       "id": "cuican-41",
+       "label": "天极",
+       "count": 26
+      },
+      {
+       "id": "cuican-42",
+       "label": "四弼",
+       "count": 53
+      },
+      {
+       "id": "cuican-43",
+       "label": "天柱",
+       "count": 33
+      },
+      {
+       "id": "cuican-44",
+       "label": "女史",
+       "count": 22
+      },
+      {
+       "id": "cuican-45",
+       "label": "少微",
+       "count": 12
+      },
+      {
+       "id": "cuican-46",
+       "label": "虎贲",
+       "count": 47
+      },
+      {
+       "id": "cuican-47",
+       "label": "列肆",
+       "count": 6
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "mou",
+     "label": "谋",
+     "chip": 28,
+     "actual": 28,
+     "child_sum": 28,
+     "children": [
+      {
+       "id": "mou-64",
+       "label": "谋定",
+       "count": 6
+      },
+      {
+       "id": "mou-65",
+       "label": "武动",
+       "count": 2
+      },
+      {
+       "id": "mou-66",
+       "label": "计出",
+       "count": 3
+      },
+      {
+       "id": "mou-67",
+       "label": "施仁",
+       "count": 2
+      },
+      {
+       "id": "mou-68",
+       "label": "奋勇",
+       "count": 8
+      },
+      {
+       "id": "mou-76",
+       "label": "达权",
+       "count": 4
+      },
+      {
+       "id": "mou-80",
+       "label": "花好",
+       "count": 3
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "mo",
+     "label": "魔",
+     "chip": 6,
+     "actual": 6,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "zu",
+     "label": "门阀士族",
+     "chip": 35,
+     "actual": 35,
+     "child_sum": 35,
+     "children": [
+      {
+       "id": "zu-48",
+       "label": "荀",
+       "count": 8
+      },
+      {
+       "id": "zu-49",
+       "label": "吴",
+       "count": 4
+      },
+      {
+       "id": "zu-50",
+       "label": "韩",
+       "count": 2
+      },
+      {
+       "id": "zu-51",
+       "label": "钟",
+       "count": 4
+      },
+      {
+       "id": "zu-53",
+       "label": "王",
+       "count": 8
+      },
+      {
+       "id": "zu-78",
+       "label": "杨",
+       "count": 4
+      },
+      {
+       "id": "zu-79",
+       "label": "陆",
+       "count": 3
+      },
+      {
+       "id": "zu-82",
+       "label": "陈",
+       "count": 2
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jiangshan",
+     "label": "江山如故",
+     "chip": 5,
+     "actual": 5,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "qifu",
+     "label": "祈福",
+     "chip": 19,
+     "actual": 19,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "xianding",
+     "label": "限定",
+     "chip": 1,
+     "actual": 1,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "sp",
+     "label": "SP",
+     "chip": 23,
+     "actual": 23,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "gz",
+     "label": "国战",
+     "chip": 110,
+     "actual": 110,
+     "child_sum": 110,
+     "children": [
+      {
+       "id": "gz-22",
+       "label": "国战标准",
+       "count": 71
+      },
+      {
+       "id": "gz-26",
+       "label": "阵包",
+       "count": 8
+      },
+      {
+       "id": "gz-27",
+       "label": "势包",
+       "count": 8
+      },
+      {
+       "id": "gz-28",
+       "label": "变包",
+       "count": 8
+      },
+      {
+       "id": "gz-29",
+       "label": "权包",
+       "count": 8
+      },
+      {
+       "id": "gz-89",
+       "label": "他山之石",
+       "count": 7
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    }
+   ],
+   "issues": []
+  },
+  "sgs": {
+   "ver": "sgs",
+   "label": "十周年",
+   "index_count": 670,
+   "items": 729,
+   "visible": 670,
+   "jie": 59,
+   "pack_sum": 670,
+   "multi_owned": 0,
+   "packs": [
+    {
+     "id": "biaozhun",
+     "label": "标准包",
+     "chip": 26,
+     "actual": 26,
+     "child_sum": 26,
+     "children": [
+      {
+       "id": "biaozhun-79",
+       "label": "主",
+       "count": 3
+      },
+      {
+       "id": "biaozhun-78",
+       "label": "虎",
+       "count": 4
+      },
+      {
+       "id": "biaozhun-80",
+       "label": "骁",
+       "count": 7
+      },
+      {
+       "id": "biaozhun-81",
+       "label": "慧",
+       "count": 7
+      },
+      {
+       "id": "biaozhun-82",
+       "label": "香",
+       "count": 5
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shenhuazailin",
+     "label": "神话再临",
+     "chip": 60,
+     "actual": 60,
+     "child_sum": 60,
+     "children": [
+      {
+       "id": "shenhuazailin-14",
+       "label": "风",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-15",
+       "label": "火",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-16",
+       "label": "林",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-17",
+       "label": "山",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-18",
+       "label": "阴",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-19",
+       "label": "雷",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-20",
+       "label": "神",
+       "count": 12
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "yijiangchengming",
+     "label": "一将成名",
+     "chip": 78,
+     "actual": 78,
+     "child_sum": 78,
+     "children": [
+      {
+       "id": "yijiangchengming-21",
+       "label": "一将成名2011",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-22",
+       "label": "一将成名2012",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-23",
+       "label": "一将成名2013",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-24",
+       "label": "一将成名2014",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-25",
+       "label": "一将成名2015",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-71",
+       "label": "一将成名2022",
+       "count": 8
+      },
+      {
+       "id": "yijiangchengming-94",
+       "label": "一将成名2023",
+       "count": 10
+      },
+      {
+       "id": "yijiangchengming-107",
+       "label": "一将成名2025",
+       "count": 5
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "xinghuoliaoyuan",
+     "label": "星火燎原",
+     "chip": 48,
+     "actual": 48,
+     "child_sum": 48,
+     "children": [
+      {
+       "id": "xinghuoliaoyuan-26",
+       "label": "天府",
+       "count": 8
+      },
+      {
+       "id": "xinghuoliaoyuan-27",
+       "label": "天梁",
+       "count": 8
+      },
+      {
+       "id": "xinghuoliaoyuan-28",
+       "label": "天机",
+       "count": 8
+      },
+      {
+       "id": "xinghuoliaoyuan-29",
+       "label": "天同",
+       "count": 8
+      },
+      {
+       "id": "xinghuoliaoyuan-30",
+       "label": "天相",
+       "count": 8
+      },
+      {
+       "id": "xinghuoliaoyuan-31",
+       "label": "七杀",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "xianding",
+     "label": "限定专属",
+     "chip": 35,
+     "actual": 35,
+     "child_sum": 35,
+     "children": [
+      {
+       "id": "xianding-57",
+       "label": "神武",
+       "count": 14
+      },
+      {
+       "id": "xianding-33",
+       "label": "祈福",
+       "count": 7
+      },
+      {
+       "id": "xianding-51",
+       "label": "隐山之玉",
+       "count": 6
+      },
+      {
+       "id": "xianding-72",
+       "label": "高山仰止",
+       "count": 2
+      },
+      {
+       "id": "xianding-76",
+       "label": "武庙",
+       "count": 6
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "huicui",
+     "label": "群英荟萃",
+     "chip": 340,
+     "actual": 340,
+     "child_sum": 340,
+     "children": [
+      {
+       "id": "huicui-41",
+       "label": "黄巾之乱",
+       "count": 4
+      },
+      {
+       "id": "huicui-43",
+       "label": "诸侯伐董",
+       "count": 4
+      },
+      {
+       "id": "huicui-44",
+       "label": "徐州风云",
+       "count": 5
+      },
+      {
+       "id": "huicui-46",
+       "label": "中原狼烟",
+       "count": 4
+      },
+      {
+       "id": "huicui-56",
+       "label": "虓虎悲歌",
+       "count": 4
+      },
+      {
+       "id": "huicui-75",
+       "label": "群雄伺动",
+       "count": 5
+      },
+      {
+       "id": "huicui-34",
+       "label": "文和乱武",
+       "count": 11
+      },
+      {
+       "id": "huicui-35",
+       "label": "逐鹿天下",
+       "count": 4
+      },
+      {
+       "id": "huicui-36",
+       "label": "食禄尽忠",
+       "count": 5
+      },
+      {
+       "id": "huicui-42",
+       "label": "戚宦之争",
+       "count": 7
+      },
+      {
+       "id": "huicui-38",
+       "label": "上兵伐谋",
+       "count": 4
+      },
+      {
+       "id": "huicui-45",
+       "label": "兵临城下",
+       "count": 10
+      },
+      {
+       "id": "huicui-48",
+       "label": "千里单骑",
+       "count": 7
+      },
+      {
+       "id": "huicui-50",
+       "label": "烽火连天",
+       "count": 4
+      },
+      {
+       "id": "huicui-39",
+       "label": "无双上将",
+       "count": 8
+      },
+      {
+       "id": "huicui-40",
+       "label": "才子佳人",
+       "count": 15
+      },
+      {
+       "id": "huicui-47",
+       "label": "芝兰玉树",
+       "count": 13
+      },
+      {
+       "id": "huicui-49",
+       "label": "天下归心",
+       "count": 17
+      },
+      {
+       "id": "huicui-52",
+       "label": "绕庭之鸦",
+       "count": 6
+      },
+      {
+       "id": "huicui-53",
+       "label": "代汉涂高",
+       "count": 8
+      },
+      {
+       "id": "huicui-55",
+       "label": "江湖之远",
+       "count": 7
+      },
+      {
+       "id": "huicui-58",
+       "label": "悬壶济世",
+       "count": 6
+      },
+      {
+       "id": "huicui-59",
+       "label": "纵横捭阖",
+       "count": 8
+      },
+      {
+       "id": "huicui-69",
+       "label": "匡鼎炎汉",
+       "count": 13
+      },
+      {
+       "id": "huicui-70",
+       "label": "太平甲子",
+       "count": 6
+      },
+      {
+       "id": "huicui-73",
+       "label": "异军突起",
+       "count": 7
+      },
+      {
+       "id": "huicui-77",
+       "label": "正音雅乐",
+       "count": 11
+      },
+      {
+       "id": "huicui-60",
+       "label": "百战虎贲",
+       "count": 22
+      },
+      {
+       "id": "huicui-61",
+       "label": "奇人异士",
+       "count": 15
+      },
+      {
+       "id": "huicui-62",
+       "label": "计将安出",
+       "count": 11
+      },
+      {
+       "id": "huicui-64",
+       "label": "豆蔻梢头",
+       "count": 15
+      },
+      {
+       "id": "huicui-65",
+       "label": "皇家贵胄",
+       "count": 23
+      },
+      {
+       "id": "huicui-66",
+       "label": "往者可谏",
+       "count": 5
+      },
+      {
+       "id": "huicui-67",
+       "label": "章台春望",
+       "count": 6
+      },
+      {
+       "id": "huicui-68",
+       "label": "锦瑟良缘",
+       "count": 16
+      },
+      {
+       "id": "huicui-63",
+       "label": "笔舌如椽",
+       "count": 15
+      },
+      {
+       "id": "huicui-74",
+       "label": "钟灵毓秀",
+       "count": 9
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "xinghecuican",
+     "label": "星河璀璨",
+     "chip": 21,
+     "actual": 21,
+     "child_sum": 21,
+     "children": [
+      {
+       "id": "xinghecuican-87",
+       "label": "天枢",
+       "count": 4
+      },
+      {
+       "id": "xinghecuican-88",
+       "label": "天璇",
+       "count": 5
+      },
+      {
+       "id": "xinghecuican-91",
+       "label": "玉衡",
+       "count": 5
+      },
+      {
+       "id": "xinghecuican-92",
+       "label": "开阳",
+       "count": 3
+      },
+      {
+       "id": "xinghecuican-93",
+       "label": "瑶光",
+       "count": 4
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "mouding",
+     "label": "谋",
+     "chip": 47,
+     "actual": 47,
+     "child_sum": 47,
+     "children": [
+      {
+       "id": "mouding-83",
+       "label": "谋定天下",
+       "count": 10
+      },
+      {
+       "id": "mouding-95",
+       "label": "冢虎狼顾",
+       "count": 4
+      },
+      {
+       "id": "mouding-96",
+       "label": "子敬邀刀",
+       "count": 4
+      },
+      {
+       "id": "mouding-97",
+       "label": "毒士鸩计",
+       "count": 4
+      },
+      {
+       "id": "mouding-98",
+       "label": "奇佐论胜",
+       "count": 4
+      },
+      {
+       "id": "mouding-99",
+       "label": "王佐倡义",
+       "count": 4
+      },
+      {
+       "id": "mouding-100",
+       "label": "武侯定南",
+       "count": 2
+      },
+      {
+       "id": "mouding-101",
+       "label": "凤雏溯攻",
+       "count": 4
+      },
+      {
+       "id": "mouding-102",
+       "label": "幼麟绝战",
+       "count": 3
+      },
+      {
+       "id": "mouding-103",
+       "label": "周郎将计",
+       "count": 4
+      },
+      {
+       "id": "mouding-104",
+       "label": "伯言绽火",
+       "count": 4
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "weizhen",
+     "label": "威",
+     "chip": 15,
+     "actual": 15,
+     "child_sum": 15,
+     "children": [
+      {
+       "id": "weizhen-105",
+       "label": "威震天下",
+       "count": 7
+      },
+      {
+       "id": "weizhen-106",
+       "label": "君威盖世",
+       "count": 5
+      },
+      {
+       "id": "weizhen-109",
+       "label": "片羽威凤",
+       "count": 3
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    }
+   ],
+   "issues": []
+  },
+  "msgs": {
+   "ver": "msgs",
+   "label": "手杀",
+   "index_count": 609,
+   "items": 609,
+   "visible": 609,
+   "jie": 0,
+   "pack_sum": 784,
+   "multi_owned": 175,
+   "packs": [
+    {
+     "id": "shenhuazailin",
+     "label": "神话再临",
+     "chip": 75,
+     "actual": 75,
+     "child_sum": 75,
+     "children": [
+      {
+       "id": "shenhuazailin-51",
+       "label": "标",
+       "count": 27
+      },
+      {
+       "id": "shenhuazailin-52",
+       "label": "风",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-53",
+       "label": "火",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-54",
+       "label": "林",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-55",
+       "label": "山",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-56",
+       "label": "阴",
+       "count": 8
+      },
+      {
+       "id": "shenhuazailin-57",
+       "label": "雷",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "bingshipian",
+     "label": "兵势篇",
+     "chip": 30,
+     "actual": 30,
+     "child_sum": 30,
+     "children": [
+      {
+       "id": "bingshipian-152",
+       "label": "奇",
+       "count": 7
+      },
+      {
+       "id": "bingshipian-153",
+       "label": "正",
+       "count": 6
+      },
+      {
+       "id": "bingshipian-154",
+       "label": "势",
+       "count": 11
+      },
+      {
+       "id": "bingshipian-155",
+       "label": "节",
+       "count": 6
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "mougongpian",
+     "label": "谋攻篇",
+     "chip": 54,
+     "actual": 54,
+     "child_sum": 54,
+     "children": [
+      {
+       "id": "mougongpian-141",
+       "label": "知",
+       "count": 12
+      },
+      {
+       "id": "mougongpian-142",
+       "label": "识",
+       "count": 11
+      },
+      {
+       "id": "mougongpian-143",
+       "label": "同",
+       "count": 11
+      },
+      {
+       "id": "mougongpian-144",
+       "label": "虞",
+       "count": 10
+      },
+      {
+       "id": "mougongpian-145",
+       "label": "能",
+       "count": 10
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shijipian",
+     "label": "始计篇",
+     "chip": 40,
+     "actual": 40,
+     "child_sum": 40,
+     "children": [
+      {
+       "id": "shijipian-121",
+       "label": "智",
+       "count": 8
+      },
+      {
+       "id": "shijipian-122",
+       "label": "信",
+       "count": 8
+      },
+      {
+       "id": "shijipian-123",
+       "label": "仁",
+       "count": 8
+      },
+      {
+       "id": "shijipian-124",
+       "label": "勇",
+       "count": 8
+      },
+      {
+       "id": "shijipian-125",
+       "label": "严",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jiexiantupo",
+     "label": "界限突破",
+     "chip": 59,
+     "actual": 59,
+     "child_sum": 59,
+     "children": [
+      {
+       "id": "jiexiantupo-71",
+       "label": "标",
+       "count": 28
+      },
+      {
+       "id": "jiexiantupo-72",
+       "label": "风",
+       "count": 8
+      },
+      {
+       "id": "jiexiantupo-73",
+       "label": "火",
+       "count": 7
+      },
+      {
+       "id": "jiexiantupo-74",
+       "label": "林",
+       "count": 6
+      },
+      {
+       "id": "jiexiantupo-75",
+       "label": "山",
+       "count": 7
+      },
+      {
+       "id": "jiexiantupo-82",
+       "label": "阴",
+       "count": 2
+      },
+      {
+       "id": "jiexiantupo-83",
+       "label": "雷",
+       "count": 1
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "yijiangchengming",
+     "label": "一将成名",
+     "chip": 56,
+     "actual": 56,
+     "child_sum": 56,
+     "children": [
+      {
+       "id": "yijiangchengming-61",
+       "label": "将1",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-62",
+       "label": "将2",
+       "count": 12
+      },
+      {
+       "id": "yijiangchengming-63",
+       "label": "将3",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-64",
+       "label": "将4",
+       "count": 11
+      },
+      {
+       "id": "yijiangchengming-65",
+       "label": "将5",
+       "count": 11
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jieyijiangchengming",
+     "label": "界一将成名",
+     "chip": 41,
+     "actual": 41,
+     "child_sum": 41,
+     "children": [
+      {
+       "id": "jieyijiangchengming-76",
+       "label": "将1",
+       "count": 7
+      },
+      {
+       "id": "jieyijiangchengming-77",
+       "label": "将2",
+       "count": 11
+      },
+      {
+       "id": "jieyijiangchengming-78",
+       "label": "将3",
+       "count": 8
+      },
+      {
+       "id": "jieyijiangchengming-79",
+       "label": "将4",
+       "count": 9
+      },
+      {
+       "id": "jieyijiangchengming-80",
+       "label": "将5",
+       "count": 5
+      },
+      {
+       "id": "jieyijiangchengming-81",
+       "label": "将6",
+       "count": 1
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "luanshiyingjie",
+     "label": "乱世英杰",
+     "chip": 16,
+     "actual": 16,
+     "child_sum": 16,
+     "children": [
+      {
+       "id": "luanshiyingjie-66",
+       "label": "杰6",
+       "count": 8
+      },
+      {
+       "id": "luanshiyingjie-67",
+       "label": "杰7",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "sp",
+     "label": "SP",
+     "chip": 156,
+     "actual": 156,
+     "child_sum": 156,
+     "children": [
+      {
+       "id": "sp-f-wei",
+       "label": "魏",
+       "count": 43
+      },
+      {
+       "id": "sp-f-shu",
+       "label": "蜀",
+       "count": 33
+      },
+      {
+       "id": "sp-f-wu",
+       "label": "吴",
+       "count": 20
+      },
+      {
+       "id": "sp-f-qun",
+       "label": "群",
+       "count": 60
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "longxuexuanhuang",
+     "label": "龙血玄黄",
+     "chip": 9,
+     "actual": 9,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "shenjiang",
+     "label": "神将",
+     "chip": 20,
+     "actual": 20,
+     "child_sum": 0,
+     "children": [],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "gz",
+     "label": "国战",
+     "chip": 113,
+     "actual": 113,
+     "child_sum": 118,
+     "children": [
+      {
+       "id": "gz-f-wei",
+       "label": "魏",
+       "count": 29
+      },
+      {
+       "id": "gz-f-shu",
+       "label": "蜀",
+       "count": 30
+      },
+      {
+       "id": "gz-f-wu",
+       "label": "吴",
+       "count": 29
+      },
+      {
+       "id": "gz-f-qun",
+       "label": "群",
+       "count": 29
+      },
+      {
+       "id": "gz-f-ye",
+       "label": "野",
+       "count": 1
+      }
+     ],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "xiyouzhuanshu",
+     "label": "稀有专属",
+     "chip": 49,
+     "actual": 49,
+     "child_sum": 50,
+     "children": [
+      {
+       "id": "xiyouzhuanshu-91-g1",
+       "label": "袖1",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-91-g2",
+       "label": "袖2",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-91-g3",
+       "label": "袖3",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-91-g4",
+       "label": "袖4",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-91-g5",
+       "label": "袖5",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-91-g6",
+       "label": "袖余",
+       "count": 2
+      },
+      {
+       "id": "xiyouzhuanshu-94-g1",
+       "label": "星1",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-94-g2",
+       "label": "星2",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-94-g3",
+       "label": "星3",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-94-g4",
+       "label": "星余",
+       "count": 2
+      },
+      {
+       "id": "xiyouzhuanshu-96",
+       "label": "千里",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-95",
+       "label": "老友季",
+       "count": 3
+      },
+      {
+       "id": "xiyouzhuanshu-92",
+       "label": "稀有",
+       "count": 16
+      }
+     ],
+     "ok": true,
+     "child_ok": false
+    },
+    {
+     "id": "v1",
+     "label": "1V1",
+     "chip": 66,
+     "actual": 66,
+     "child_sum": 66,
+     "children": [
+      {
+       "id": "v1-f-wei",
+       "label": "魏",
+       "count": 17
+      },
+      {
+       "id": "v1-f-shu",
+       "label": "蜀",
+       "count": 17
+      },
+      {
+       "id": "v1-f-wu",
+       "label": "吴",
+       "count": 15
+      },
+      {
+       "id": "v1-f-qun",
+       "label": "群",
+       "count": 17
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    }
+   ],
+   "issues": []
+  },
+  "wxmini": {
+   "ver": "wxmini",
+   "label": "小程序",
+   "index_count": 353,
+   "items": 353,
+   "visible": 353,
+   "jie": 0,
+   "pack_sum": 353,
+   "multi_owned": 0,
+   "packs": [
+    {
+     "id": "zhi",
+     "label": "志",
+     "chip": 7,
+     "actual": 7,
+     "child_sum": 7,
+     "children": [
+      {
+       "id": "zhi-l8001",
+       "label": "遂志",
+       "count": 3
+      },
+      {
+       "id": "zhi-l8002",
+       "label": "悖志",
+       "count": 2
+      },
+      {
+       "id": "zhi-l8003",
+       "label": "憾志",
+       "count": 2
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "ji",
+     "label": "极",
+     "chip": 39,
+     "actual": 39,
+     "child_sum": 39,
+     "children": [
+      {
+       "id": "ji-l3001",
+       "label": "登峰造极·武包",
+       "count": 12
+      },
+      {
+       "id": "ji-l3002",
+       "label": "登峰造极·智包",
+       "count": 9
+      },
+      {
+       "id": "ji-l3003",
+       "label": "登峰造极·权包",
+       "count": 8
+      },
+      {
+       "id": "ji-l3004",
+       "label": "登峰造极·才包",
+       "count": 10
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "wanxiang",
+     "label": "万象",
+     "chip": 71,
+     "actual": 71,
+     "child_sum": 71,
+     "children": [
+      {
+       "id": "wanxiang-l7001",
+       "label": "万象森罗·乾包",
+       "count": 9
+      },
+      {
+       "id": "wanxiang-l7002",
+       "label": "万象森罗·坤包",
+       "count": 10
+      },
+      {
+       "id": "wanxiang-l7003",
+       "label": "万象森罗·震包",
+       "count": 9
+      },
+      {
+       "id": "wanxiang-l7004",
+       "label": "万象森罗·巽包",
+       "count": 8
+      },
+      {
+       "id": "wanxiang-l7005",
+       "label": "万象森罗·坎包",
+       "count": 9
+      },
+      {
+       "id": "wanxiang-l7006",
+       "label": "万象森罗·离包",
+       "count": 9
+      },
+      {
+       "id": "wanxiang-l7007",
+       "label": "万象森罗·艮包",
+       "count": 9
+      },
+      {
+       "id": "wanxiang-l7008",
+       "label": "万象森罗·兑包",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "jiexian",
+     "label": "界限",
+     "chip": 57,
+     "actual": 57,
+     "child_sum": 57,
+     "children": [
+      {
+       "id": "jiexian-l5001",
+       "label": "界限突破·标准包",
+       "count": 22
+      },
+      {
+       "id": "jiexian-l5002",
+       "label": "界限突破·风包",
+       "count": 3
+      },
+      {
+       "id": "jiexian-l5003",
+       "label": "界限突破·火包",
+       "count": 6
+      },
+      {
+       "id": "jiexian-l5004",
+       "label": "界限突破·林包",
+       "count": 2
+      },
+      {
+       "id": "jiexian-l5005",
+       "label": "界限突破·山包",
+       "count": 5
+      },
+      {
+       "id": "jiexian-l5006",
+       "label": "界限突破·将1",
+       "count": 4
+      },
+      {
+       "id": "jiexian-l5007",
+       "label": "界限突破·将2",
+       "count": 8
+      },
+      {
+       "id": "jiexian-l5008",
+       "label": "界限突破·将3",
+       "count": 4
+      },
+      {
+       "id": "jiexian-l5009",
+       "label": "界限突破·将4",
+       "count": 3
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "xianding",
+     "label": "限定",
+     "chip": 74,
+     "actual": 74,
+     "child_sum": 74,
+     "children": [
+      {
+       "id": "xianding-l6001",
+       "label": "稀有限定·始计篇",
+       "count": 19
+      },
+      {
+       "id": "xianding-l6002",
+       "label": "稀有限定·SP",
+       "count": 12
+      },
+      {
+       "id": "xianding-l6003",
+       "label": "稀有限定·乱世英杰",
+       "count": 9
+      },
+      {
+       "id": "xianding-l6004",
+       "label": "稀有限定·竹林七贤",
+       "count": 6
+      },
+      {
+       "id": "xianding-l6005",
+       "label": "稀有限定·谋攻篇",
+       "count": 26
+      },
+      {
+       "id": "xianding-l6006",
+       "label": "稀有限定·龙血玄黄",
+       "count": 2
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "shenhua",
+     "label": "神话",
+     "chip": 43,
+     "actual": 43,
+     "child_sum": 43,
+     "children": [
+      {
+       "id": "shenhua-l2001",
+       "label": "神话再临·风包",
+       "count": 4
+      },
+      {
+       "id": "shenhua-l2002",
+       "label": "神话再临·火包",
+       "count": 7
+      },
+      {
+       "id": "shenhua-l2003",
+       "label": "神话再临·林包",
+       "count": 4
+      },
+      {
+       "id": "shenhua-l2004",
+       "label": "神话再临·山包",
+       "count": 4
+      },
+      {
+       "id": "shenhua-l2005",
+       "label": "神话再临·阴包",
+       "count": 7
+      },
+      {
+       "id": "shenhua-l2006",
+       "label": "神话再临·雷包",
+       "count": 6
+      },
+      {
+       "id": "shenhua-l2007",
+       "label": "神话再临·神包",
+       "count": 11
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "yijiang",
+     "label": "一将",
+     "chip": 36,
+     "actual": 36,
+     "child_sum": 36,
+     "children": [
+      {
+       "id": "yijiang-l4001",
+       "label": "一将成名·将1",
+       "count": 9
+      },
+      {
+       "id": "yijiang-l4002",
+       "label": "一将成名·将2",
+       "count": 7
+      },
+      {
+       "id": "yijiang-l4003",
+       "label": "一将成名·将3",
+       "count": 6
+      },
+      {
+       "id": "yijiang-l4004",
+       "label": "一将成名·将4",
+       "count": 6
+      },
+      {
+       "id": "yijiang-l4005",
+       "label": "一将成名·将5",
+       "count": 8
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    },
+    {
+     "id": "biaozhun",
+     "label": "标准",
+     "chip": 26,
+     "actual": 26,
+     "child_sum": 26,
+     "children": [
+      {
+       "id": "biaozhun-l1001",
+       "label": "标准包·五虎上将",
+       "count": 5
+      },
+      {
+       "id": "biaozhun-l1002",
+       "label": "标准包·圣明之主",
+       "count": 3
+      },
+      {
+       "id": "biaozhun-l1003",
+       "label": "标准包·强兵猛将",
+       "count": 4
+      },
+      {
+       "id": "biaozhun-l1004",
+       "label": "标准包·谋定四方",
+       "count": 5
+      },
+      {
+       "id": "biaozhun-l1005",
+       "label": "标准包·风华绝代",
+       "count": 5
+      },
+      {
+       "id": "biaozhun-l1006",
+       "label": "标准包·名震一时",
+       "count": 4
+      }
+     ],
+     "ok": true,
+     "child_ok": true
+    }
+   ],
+   "issues": []
+  }
+ },
+ "diffs": {
+  "hlsgs": {
+   "status": "ok",
+   "note": "",
+   "source": "官方 gameconfing1.json",
+   "official_total": 667,
+   "lib_total": 667,
+   "added": [],
+   "gone": []
+  },
+  "sgsol": {
+   "status": "ok",
+   "source": "官方客户端配置 zip（character.json + 系列表）",
+   "official_total": 702,
+   "lib_total": 702,
+   "added": [],
+   "merged": [
+    {
+     "name": "张昭张纮",
+     "gid": 55,
+     "series": "山包",
+     "lib": [
+      "张昭张弘",
+      "界张昭张纮",
+      "国战张昭张纮"
+     ],
+     "diff_name": [
+      "张昭张弘"
+     ]
+    },
+    {
+     "name": "张昭张纮",
+     "gid": 2043,
+     "series": "国战标准",
+     "lib": [
+      "张昭张弘",
+      "界张昭张纮",
+      "国战张昭张纮"
+     ],
+     "diff_name": [
+      "张昭张弘"
+     ]
+    },
+    {
+     "name": "李典",
+     "gid": 2062,
+     "series": "势包",
+     "lib": [
+      "界李典",
+      "国战李典"
+     ],
+     "diff_name": [
+      "界李典",
+      "国战李典"
+     ]
+    }
+   ],
+   "lib_only": [
+    "标袁术",
+    "张昭张弘",
+    "晋司马懿",
+    "晋张春华",
+    "国战曹操",
+    "国战司马懿",
+    "国战夏侯惇",
+    "国战张辽",
+    "国战许褚",
+    "国战郭嘉",
+    "国战甄姬",
+    "国战夏侯渊",
+    "国战张郃",
+    "国战徐晃",
+    "国战曹仁",
+    "国战典韦",
+    "国战荀彧",
+    "国战曹丕",
+    "国战乐进",
+    "国战刘备",
+    "国战关羽",
+    "国战张飞",
+    "国战诸葛亮",
+    "国战赵云",
+    "国战马超",
+    "国战黄月英",
+    "国战黄忠",
+    "国战魏延",
+    "国战庞统",
+    "国战卧龙诸葛亮",
+    "国战刘禅",
+    "国战孟获",
+    "国战祝融",
+    "国战孙权",
+    "国战甘宁",
+    "国战吕蒙",
+    "国战黄盖",
+    "国战周瑜",
+    "国战大乔",
+    "国战陆逊",
+    "国战孙尚香",
+    "国战孙坚",
+    "国战小乔",
+    "国战太史慈",
+    "国战周泰",
+    "国战鲁肃",
+    "国战张昭张纮",
+    "国战丁奉",
+    "国战华佗",
+    "国战吕布",
+    "国战貂蝉",
+    "国战袁绍",
+    "国战颜良文丑",
+    "国战贾诩",
+    "国战庞德",
+    "国战张角",
+    "国战蔡文姬",
+    "国战潘凤",
+    "国战张虎乐綝",
+    "国战夏侯徽",
+    "国战司马师",
+    "国战晋司马懿",
+    "国战司马昭",
+    "国战王元姬",
+    "国战杜预",
+    "国战张春华",
+    "国战羊徽瑜",
+    "国战石苞",
+    "国战司马伷",
+    "国战邓艾",
+    "国战曹洪",
+    "国战姜维",
+    "国战徐盛",
+    "国战何太后",
+    "国战于吉",
+    "国战李典",
+    "国战马岱",
+    "国战孙策",
+    "国战董卓",
+    "国战荀攸",
+    "国战沙摩柯",
+    "国战凌统",
+    "国战马谡",
+    "国战左慈",
+    "国战卞夫人",
+    "国战法正",
+    "国战张绣",
+    "国战陆抗",
+    "国战吴国太",
+    "国战王平",
+    "国战于禁",
+    "国战袁术",
+    "国战王荣",
+    "国战界徐盛",
+    "国战界吕布",
+    "国战界太史慈",
+    "国战马云騄",
+    "国战蒋干",
+    "国战鲁芝"
+   ],
+   "note": "技能完全相同的按「同一武将的不同版本」处理，不重复计入新增；若 merged 里名字对不上（如 纮/弘），可能是库里写错字，值得顺手修。"
+  },
+  "sgs": {
+   "status": "ok",
+   "source": "x.sanguosha.com 官网武将列表",
+   "official_total": 679,
+   "lib_total": 729,
+   "added": []
+  },
+  "msgs": {
+   "status": "ok",
+   "source": "BWIKI 手杀武将分类 + 逐页官方字段（出现模式 / 武将包 / 体力）",
+   "official_total": 768,
+   "lib_total": 609,
+   "added": [
+    {
+     "name": "邴原",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2026年10月~12月排位赛达到大师段位获得"
+    },
+    {
+     "name": "君曹丕",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "君董卓",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "君刘禅",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "君孙策",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    }
+   ],
+   "limited": [
+    {
+     "name": "曹冲博学",
+     "mode": "欢乐",
+     "pack": "限时武将-五三联动",
+     "hp": "3",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年8月26日18点-2026年9月4日16点59分）"
+    },
+    {
+     "name": "赤兔",
+     "mode": "欢乐",
+     "pack": "限时武将-未分组",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年2月16日18点-2026年2月21日16点59分）"
+    },
+    {
+     "name": "的卢",
+     "mode": "排位",
+     "pack": "限时武将-未分组",
+     "hp": "4",
+     "quality": "精品",
+     "how": "排位赛模式限时体验（2026年2月16日18点-2026年2月21日16点59分）"
+    },
+    {
+     "name": "关羽兔",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-那年那兔联动",
+     "hp": "4",
+     "quality": "精品",
+     "how": "【地主】【主公】身份限时体验"
+    },
+    {
+     "name": "集蜜袁术",
+     "mode": "欢乐",
+     "pack": "限时武将-未分组",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年1月23日~2026年1月30日）"
+    },
+    {
+     "name": "劫煞星",
+     "mode": "身份,欢乐",
+     "pack": "武将试炼专属",
+     "hp": "3",
+     "quality": "",
+     "how": "仅出现于{{头像"
+    },
+    {
+     "name": "绝影",
+     "mode": "身份",
+     "pack": "限时武将-未分组",
+     "hp": "4",
+     "quality": "精品",
+     "how": "军争模式/斗地主模式限时体验（2026年2月16日18点-2026年2月21日16点59分）"
+    },
+    {
+     "name": "礼卢毓",
+     "mode": "排位",
+     "pack": "限时武将-君子六艺",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2025年12月5日~2025年12月12日限时体验（仅限排位模式）"
+    },
+    {
+     "name": "刘禅想学",
+     "mode": "欢乐",
+     "pack": "限时武将-五三联动",
+     "hp": "3",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年8月26日18点-2026年9月4日16点59分）"
+    },
+    {
+     "name": "吕蒙好学",
+     "mode": "欢乐",
+     "pack": "限时武将-五三联动",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年8月26日18点-2026年9月4日16点59分）"
+    },
+    {
+     "name": "木牛流马",
+     "mode": "欢乐",
+     "pack": "限时武将-未分组",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年2月7日-2026年2月13日16点59分）"
+    },
+    {
+     "name": "少年张辽",
+     "mode": "身份,欢乐",
+     "pack": "缘包",
+     "hp": "4",
+     "quality": "",
+     "how": "只能通过活动关卡体验"
+    },
+    {
+     "name": "射曹性",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-君子六艺",
+     "hp": "4",
+     "quality": "精品",
+     "how": "2025年12月5日~2025年12月12日限时体验（仅限军争模式）"
+    },
+    {
+     "name": "数刘徽",
+     "mode": "欢乐",
+     "pack": "限时武将-君子六艺",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2025年12月12日~2025年12月19日限时体验（仅限斗地主模式）"
+    },
+    {
+     "name": "书张芝",
+     "mode": "欢乐",
+     "pack": "限时武将-君子六艺",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2025年12月5日~2025年12月12日限时体验（仅限斗地主模式）"
+    },
+    {
+     "name": "天煞星",
+     "mode": "身份,欢乐",
+     "pack": "武将试炼专属",
+     "hp": "3",
+     "quality": "",
+     "how": "仅出现于{{头像"
+    },
+    {
+     "name": "友石韬",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-老友季",
+     "hp": "3",
+     "quality": "精品",
+     "how": "群雄逐鹿比赛斗地主模式限时体验"
+    },
+    {
+     "name": "御曹植",
+     "mode": "身份",
+     "pack": "限时武将-君子六艺",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2025年12月12日~2025年12月19日限时体验（仅限军争模式）"
+    },
+    {
+     "name": "缘陈兰",
+     "mode": "身份,欢乐",
+     "pack": "缘包",
+     "hp": "4",
+     "quality": "",
+     "how": "只能通过活动关卡遇到"
+    },
+    {
+     "name": "缘高顺",
+     "mode": "欢乐",
+     "pack": "限时武将-缘包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年3月6日-2026年3月13日16点59分）"
+    },
+    {
+     "name": "缘关羽",
+     "mode": "身份,欢乐",
+     "pack": "缘包",
+     "hp": "4",
+     "quality": "",
+     "how": "只能通过活动关卡遇到"
+    },
+    {
+     "name": "缘吕布",
+     "mode": "欢乐",
+     "pack": "限时武将-缘包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年3月6日-2026年3月13日16点59分）"
+    },
+    {
+     "name": "缘梅成",
+     "mode": "身份,欢乐",
+     "pack": "缘包",
+     "hp": "4",
+     "quality": "",
+     "how": "只能通过活动关卡遇到"
+    },
+    {
+     "name": "缘孙权",
+     "mode": "欢乐",
+     "pack": "限时武将-缘包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年3月6日-2026年3月13日16点59分）"
+    },
+    {
+     "name": "缘蹋顿",
+     "mode": "身份,欢乐",
+     "pack": "缘包",
+     "hp": "4",
+     "quality": "",
+     "how": "只能通过活动关卡遇到"
+    },
+    {
+     "name": "缘檀石槐",
+     "mode": "欢乐",
+     "pack": "限时武将-缘包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "斗地主模式限时地主身份体验（2026年3月6日-2026年3月13日16点59分）"
+    },
+    {
+     "name": "灾煞星",
+     "mode": "身份,欢乐",
+     "pack": "武将试炼专属",
+     "hp": "3",
+     "quality": "",
+     "how": "仅出现于{{头像"
+    },
+    {
+     "name": "赵云兔",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-那年那兔联动",
+     "hp": "4",
+     "quality": "精品",
+     "how": "【地主】【主公】身份限时体验"
+    },
+    {
+     "name": "诸葛兔",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-那年那兔联动",
+     "hp": "3",
+     "quality": "精品",
+     "how": "【地主】【主公】身份限时体验"
+    }
+   ],
+   "unreleased": [
+    {
+     "name": "鲍三娘（芳许）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "史诗",
+     "how": "废案版本"
+    },
+    {
+     "name": "曹洪（援护）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "",
+     "how": "消耗270将魂合成/招募获得"
+    },
+    {
+     "name": "丁姝",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2026年10月测试服"
+    },
+    {
+     "name": "韩玄",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2026年10月测试服"
+    },
+    {
+     "name": "贾逵（忠佐）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "废案武将，曾经在正式服上线过很长一段时间"
+    },
+    {
+     "name": "疆陆抗",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "疆王濬",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "疆羊祜",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "灵雎（竭雠）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "史诗",
+     "how": "2026年5月咸话精英测试"
+    },
+    {
+     "name": "谋陈泰",
+     "mode": "身份,欢乐",
+     "pack": "谋攻篇-同包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "谋孙权（统业）",
+     "mode": "身份,欢乐",
+     "pack": "谋攻篇-知包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "正式服已上线重制版，此版已报废。"
+    },
+    {
+     "name": "谋张郃（巧变）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "废案武将"
+    },
+    {
+     "name": "起曹操",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "起何进",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "起刘备",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "起刘宏",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "起孙坚",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "3/4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "起王允",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-起包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "戎冯习",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "戎梁习",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "戎凌统",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "戎张南",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "神司马懿（应天）",
+     "mode": "",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "废案武将，曾作为神司马懿重做版的第二套方案。"
+    },
+    {
+     "name": "神太史慈（荡魔）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "废案武将，曾经在正式服上线过一段时间。"
+    },
+    {
+     "name": "势曹爽",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-势包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "势陈矫",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-势包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "2025年11月测试服"
+    },
+    {
+     "name": "势邓艾（峥嵘）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "废案武将，2026年1月13日起此版本势邓艾兵势篇-奇包改为废案武将。"
+    },
+    {
+     "name": "势高翔",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-奇包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "2026年10月测试服"
+    },
+    {
+     "name": "势黄崇",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-势包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "势黄权",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-奇包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "势吕壹",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-势包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "势文丑",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-正包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在技能名爆料"
+    },
+    {
+     "name": "势颜良",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-正包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在技能名爆料"
+    },
+    {
+     "name": "势臧洪",
+     "mode": "身份,欢乐",
+     "pack": "兵势篇-节包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "2026年10月测试服"
+    },
+    {
+     "name": "司马孚（勋德）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "废案武将，曾经在正式服精英测试出现过"
+    },
+    {
+     "name": "孙邵（罪辞）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "废案武将，在测试服反复大改，最后直接推倒重做"
+    },
+    {
+     "name": "王凌（谋立）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "废案武将"
+    },
+    {
+     "name": "夏侯徽",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "仅存在爆料版"
+    },
+    {
+     "name": "夏侯楙",
+     "mode": "身份,欢乐",
+     "pack": "未分组武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "2026年10月测试服"
+    },
+    {
+     "name": "向朗",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "邢道荣",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "4",
+     "quality": "精品",
+     "how": "2025年4月测试服"
+    },
+    {
+     "name": "兴贾南风",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "兴李密",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "兴马隆",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "兴王濬",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "敬请期待"
+    },
+    {
+     "name": "兴文鸯",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "兴诸葛诞",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-江山如故-兴包",
+     "hp": "4",
+     "quality": "史诗",
+     "how": "敬请期待"
+    },
+    {
+     "name": "荀谌（谏战）",
+     "mode": "身份,欢乐",
+     "pack": "废案武将",
+     "hp": "3",
+     "quality": "精品",
+     "how": "废案武将"
+    },
+    {
+     "name": "疑伏寿",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "3/4",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "疑华佗",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "疑蒋干",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "疑刘备",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "疑吕伯奢",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "4",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "疑荀彧",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-蚀心入魔-疑包",
+     "hp": "3",
+     "quality": "精品",
+     "how": "仅存在于爆料版本，暂时不清楚是海外服先上还是手杀先上。"
+    },
+    {
+     "name": "友崔钧",
+     "mode": "身份,欢乐",
+     "pack": "限时武将-老友季",
+     "hp": "3",
+     "quality": "精品",
+     "how": "敬请期待"
+    }
+   ],
+   "mode_only": [
+    {
+     "name": "白无常",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "9",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第三关）（白无常/{{头像"
+    },
+    {
+     "name": "魑",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "5",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第一关）（魑/{{头像"
+    },
+    {
+     "name": "炽羽朱雀",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "地咒巫祭",
+     "mode": "摸金模式",
+     "pack": "摸金模式专属",
+     "hp": "6",
+     "quality": "",
+     "how": "摸金模式专属BOSS"
+    },
+    {
+     "name": "断狱仲达",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "5",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "缚地狴犴",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "3",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "工神月英",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "3",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "寒渊水羌",
+     "mode": "摸金模式",
+     "pack": "摸金模式专属",
+     "hp": "5",
+     "quality": "",
+     "how": "摸金模式专属BOSS"
+    },
+    {
+     "name": "黑无常",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "9",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第三关）（{{头像"
+    },
+    {
+     "name": "胡烈（守卫剑阁2026）（奋进）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡烈（守卫剑阁2026）（锋势）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡烈（守卫剑阁2026）（规诫）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡烈（守卫剑阁2026）（进讨）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡渊（守卫剑阁2026）（奋进）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡渊（守卫剑阁2026）（锋势）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡渊（守卫剑阁2026）（进讨）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "胡渊（守卫剑阁2026）（怒斩）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "机雷白虎",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "佳人子丹",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "5",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "姜维（守卫剑阁2026）（焚魂）",
+     "mode": "守卫剑阁2026",
+     "pack": "守卫剑阁2026（蜀）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "姜维（守卫剑阁2026）（覆策）",
+     "mode": "守卫剑阁2026",
+     "pack": "守卫剑阁2026（蜀）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "姜维（守卫剑阁2026）（烬略）",
+     "mode": "守卫剑阁2026",
+     "pack": "守卫剑阁2026（蜀）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "姜维（守卫剑阁2026）（夙志）",
+     "mode": "守卫剑阁2026",
+     "pack": "守卫剑阁2026（蜀）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "绝尘妙才",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "魉",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "5",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第一关）（{{头像"
+    },
+    {
+     "name": "烈帝玄德",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "裂石睚眦",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "5",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "灵甲玄武",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "5",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "罗刹",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "12",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第三关）（{{头像"
+    },
+    {
+     "name": "马面",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "6",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第二关）（{{头像"
+    },
+    {
+     "name": "魅",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "5",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第一关）（{{头像"
+    },
+    {
+     "name": "牛头",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "7",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第二关）（牛头/{{头像"
+    },
+    {
+     "name": "巧魁儁义",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "青门羌卫",
+     "mode": "摸金模式",
+     "pack": "摸金模式专属",
+     "hp": "5",
+     "quality": "",
+     "how": "摸金模式专属BOSS"
+    },
+    {
+     "name": "食火狻猊",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "3",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "天候孔明",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "吞天螭吻",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "魍",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "5",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第一关）（{{头像"
+    },
+    {
+     "name": "夜叉",
+     "mode": "驱鬼逐邪",
+     "pack": "驱鬼逐邪",
+     "hp": "12",
+     "quality": "",
+     "how": "驱鬼逐邪模式专属（第三关）（{{头像"
+    },
+    {
+     "name": "浴火士元",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（英魂）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "云屏青龙",
+     "mode": "守卫剑阁（已下线）",
+     "pack": "守卫剑阁（器械）",
+     "hp": "4",
+     "quality": "",
+     "how": "守卫剑阁模式专属（已下线）"
+    },
+    {
+     "name": "钟会（守卫剑阁2026）（逆命）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "钟会（守卫剑阁2026）（蚀界）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "钟会（守卫剑阁2026）（胁制）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    },
+    {
+     "name": "钟会（守卫剑阁2026）（仗势）",
+     "mode": "守卫剑阁（2026）",
+     "pack": "守卫剑阁2026（魏）",
+     "hp": "6",
+     "quality": "",
+     "how": "守卫剑阁（2026）专属武将"
+    }
+   ],
+   "junk": [
+    {
+     "name": "毕岚",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "段珪",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "高望",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "郭胜",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "韩悝",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "栗嵩",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "其他角色",
+     "mode": "身份,欢乐",
+     "pack": "无",
+     "hp": "0",
+     "quality": "普通",
+     "how": "不是真的武将，只是一个工具页面"
+    },
+    {
+     "name": "群势力武将",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "蜀势力武将",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "孙璋",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "魏势力武将",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "吴势力武将",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "夏恽",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "眩惑武将",
+     "mode": "国战",
+     "pack": "",
+     "hp": "",
+     "quality": "",
+     "how": ""
+    },
+    {
+     "name": "张让（十常侍）",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    },
+    {
+     "name": "赵忠",
+     "mode": "身份",
+     "pack": "常侍牌",
+     "hp": "",
+     "quality": "",
+     "how": "作为“常侍”牌与{{头像"
+    }
+   ],
+   "note": "⚠ 本库数据来自 BWIKI（玩家整理），不是游戏客户端配置 —— 只能当参考。「确定新增」只算身份/国战且已正式上线的，但补录前请在游戏图鉴里逐位核对；限时、未实装、模式专属已分开列，默认都不该进图鉴。"
+  },
+  "wxmini": {
+   "status": "ok",
+   "source": "本地拆包 game_base_config.json（快照 2026-10-15）",
+   "official_total": 352,
+   "lib_total": 353,
+   "added": [],
+   "gone": [
+    "极马云禄"
+   ],
+   "note": "快照是本地拆包产物；要拿官方最新需重新拆小程序包"
+  }
+ },
+ "recent": {
+  "status": "ok",
+  "app": "3.0.28",
+  "generated": "2026-11-15",
+  "libs": {
+   "hlsgs": {
+    "n": 10,
+    "head": "谋王凌",
+    "date": "2026-11-15"
+   },
+   "sgsol": {
+    "n": 10,
+    "head": "族陈泰",
+    "date": "2026-11-15"
+   },
+   "sgs": {
+    "n": 10,
+    "head": "威曹彰",
+    "date": "2026-11-08"
+   },
+   "msgs": {
+    "n": 10,
+    "head": "界郭皇后",
+    "date": "2026-11-08"
+   },
+   "wxmini": {
+    "n": 10,
+    "head": "极马云禄",
+    "date": "2026-11-08"
+   }
+  }
+ },
+ "lite": {
+  "status": "stale",
+  "diff": [
+   "资源版本：本体 0e9fcf38ff / 子体 7514edcc34（装配时会同步）"
+  ],
+  "libs": [
+   {
+    "lib": "欢乐杀",
+    "app": 667,
+    "lite": 667,
+    "ok": true
+   },
+   {
+    "lib": "OL",
+    "app": 702,
+    "lite": 702,
+    "ok": true
+   },
+   {
+    "lib": "十周年",
+    "app": 670,
+    "lite": 670,
+    "ok": true
+   },
+   {
+    "lib": "手杀",
+    "app": 609,
+    "lite": 609,
+    "ok": true
+   },
+   {
+    "lib": "小程序",
+    "app": 353,
+    "lite": 353,
+    "ok": true
+   }
+  ],
+  "asset_ver": {
+   "app": "0e9fcf38ff",
+   "lite": "7514edcc34"
+  },
+  "index_count": {
+   "app": {
+    "sgsol": 702,
+    "msgs": 609,
+    "sgs": 670,
+    "hlsgs": 667,
+    "gjf": 688,
+    "wxmini": 353,
+    "unreleased": 372
+   },
+   "lite": {
+    "sgsol": 702,
+    "msgs": 609,
+    "sgs": 670,
+    "hlsgs": 667,
+    "gjf": 688,
+    "wxmini": 353
+   }
+  }
+ }
+}

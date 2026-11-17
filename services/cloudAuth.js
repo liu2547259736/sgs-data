@@ -10,10 +10,13 @@
  * 原页面所有读取（我的页、收藏、历史）继续读本机，一行都不用改。
  *
  * 服务器地址解析顺序（改地址不用重新发版）：
- *   1. localStorage['sgs.api.base']   手动覆盖，例如 http://192.168.1.20:8080
- *   2. window.SGS_API_BASE            index.html 里写死，部署时填
+ *   1. localStorage['sgs.api.base']   手动覆盖，可写多个用逗号分隔
+ *   2. window.SGS_API_BASE            index.html / 壳注入，同样支持逗号分隔
  *   3. 同源（仅 http/https 且不是 127.0.0.1/localhost）——后端顺带托管页面时零配置
  *   4. 都没有 → 云端关闭，行为与升级前完全一致
+ *
+ * 多个候选按顺序试，第一个真正应答 /api 的会被记住。这样「家里局域网 IP 变了」
+ * 或「桌面端后端就跑在本机」都不至于让登录直接失败。
  *
  * 接口面（与 LocalAuthService 对齐，调用方不用学新东西）：
  *   available() / base()
@@ -46,29 +49,50 @@
     return trimSlash(s);
   }
 
-  function base() {
-    const manual = normalizeBase(ls(BASE_KEY) || '');
-    if (manual) return manual;
-    const baked = normalizeBase(global.SGS_API_BASE || '');
-    if (baked) return baked;
+  function splitList(raw) {
+    return String(raw == null ? '' : raw)
+      .split(',')
+      .map((s) => normalizeBase(s))
+      .filter(Boolean);
+  }
+
+  /* 候选服务器地址（按顺序尝试，第一个真正应答的会被记住）：
+     1. localStorage['sgs.api.base']  手动覆盖，可写多个用逗号分隔
+     2. window.SGS_API_BASE           页面/壳注入，同样支持逗号分隔
+     3. 同源（仅 http/https 且不是回环）——后端顺带托管页面时零配置 */
+  let chosen = '';
+
+  function bases() {
+    const manual = splitList(ls(BASE_KEY) || '');
+    if (manual.length) return manual;
+    const baked = splitList(global.SGS_API_BASE || '');
+    if (baked.length) return baked;
     try {
       const loc = global.location;
-      if (!loc || !/^https?:$/.test(loc.protocol)) return '';
+      if (!loc || !/^https?:$/.test(loc.protocol)) return [];
       const h = String(loc.hostname || '');
-      // 本机回环上跑的是壳内静态服务（没有 /api），默认不当成后端
-      if (!h || h === '127.0.0.1' || h === 'localhost' || h === '::1' || h === '0.0.0.0') return '';
-      return trimSlash(loc.origin);
+      if (!h || h === '127.0.0.1' || h === 'localhost' || h === '::1' || h === '0.0.0.0') return [];
+      return [trimSlash(loc.origin)];
     } catch (e) {
-      return '';
+      return [];
     }
   }
 
-  function available() { return !!base(); }
+  function base() {
+    const list = bases();
+    if (!list.length) return '';
+    if (chosen && list.indexOf(chosen) >= 0) return chosen;
+    return list[0];
+  }
+
+  function available() { return bases().length > 0; }
   function token() { return ls(TOKEN_KEY) || ''; }
   function setBase(url) {
-    const b = normalizeBase(url);
-    if (b) lsSet(BASE_KEY, b); else lsDel(BASE_KEY);
-    return b;
+    const list = splitList(url);
+    if (list.length) lsSet(BASE_KEY, list.join(','));
+    else lsDel(BASE_KEY);
+    chosen = '';
+    return list.join(',');
   }
 
   function codeOf(status) {
@@ -84,11 +108,9 @@
   }
 
   /* ---------- 请求 ---------- */
-  async function api(path, opts) {
-    opts = opts || {};
-    const root = base();
-    if (!root) return { ok: false, code: 'disabled', error: '未配置账号服务器' };
-
+  /* 单次请求。code === 'retry' 表示「这个地址不像是我们的后端」（连不上 / 返回的不是
+     JSON / 404 页面），调用方应该换下一个候选；其它 code 都是权威答复，直接采信。 */
+  async function request(root, path, opts) {
     let ctl = null;
     let timer = null;
     try {
@@ -112,25 +134,40 @@
         signal: ctl ? ctl.signal : undefined
       });
       let data = null;
-      try { data = await res.json(); } catch (e) { data = null; }
+      try { data = JSON.parse(await res.text()); } catch (e) { data = null; }
+      if (!data || typeof data !== 'object') return { ok: false, code: 'retry' };
       if (!res.ok) {
         return {
           ok: false,
           code: codeOf(res.status),
           status: res.status,
-          error: (data && data.error) || ('服务器返回 ' + res.status)
+          error: data.error || ('服务器返回 ' + res.status)
         };
       }
-      if (!data || data.ok === false) {
-        return { ok: false, code: 'server', error: (data && data.error) || '服务器返回异常' };
+      if (data.ok === false) {
+        return { ok: false, code: 'server', error: data.error || '服务器返回异常' };
       }
       return Object.assign({ ok: true }, data);
     } catch (e) {
-      // 断网 / 超时 / 跨域被拒 —— 统一按「连不上」处理，由调用方降级到本机账号
-      return { ok: false, code: 'offline', error: '连不上账号服务器' };
+      // 断网 / 超时 / 跨域被拒 —— 换下一个候选地址
+      return { ok: false, code: 'retry' };
     } finally {
       if (timer) clearTimeout(timer);
     }
+  }
+
+  async function api(path, opts) {
+    opts = opts || {};
+    const list = bases();
+    if (!list.length) return { ok: false, code: 'disabled', error: '未配置账号服务器' };
+    let last = { ok: false, code: 'offline', error: '连不上账号服务器' };
+    for (let i = 0; i < list.length; i++) {
+      const r = await request(list[i], path, opts);
+      if (r.code === 'retry') continue;
+      chosen = list[i];          // 记住能用的那个，后续请求直接命中
+      return r;
+    }
+    return last;
   }
 
   /* ---------- 本机镜像 ---------- */

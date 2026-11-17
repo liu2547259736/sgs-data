@@ -1501,6 +1501,13 @@
     const CA = window.CloudAuth;
     if (CA && CA.available()) {
       const r = await CA.login(account, pwd);
+      if (r.code === 'offline') {
+        // 连不上服务器：退回本机镜像。本机没登录过这个号就明说是离线，
+        // 不能说「没有这个账号」—— 那会让用户以为账号丢了。
+        const lr = S.login(account, pwd);
+        if (lr.ok) return lr;
+        return { ok: false, error: '连不上账号服务器（离线模式）：这台设备还没登录过该账号' };
+      }
       if (r.ok || r.code !== 'notfound') return r;
       // 云端说没这个号：可能是升级前在本机注册的，本地校验通过就把它认领到云端
       const lr = S.login(account, pwd);
@@ -1519,6 +1526,9 @@
     if (CA && CA.available()) {
       const cr = await CA.register(username, pwd, nick);
       if (cr.ok || cr.code !== 'offline') return cr;
+      const lr = S.register(username, pwd, nick);
+      if (lr.ok) lr.localOnly = true;   // 断网时只建了本机账号，提示里要说清
+      return lr;
     }
     return S.register(username, pwd, nick);
   }
@@ -4280,7 +4290,7 @@
       if (!lr.ok) { show('注册成功，但自动登入失败：' + lr.error); return; }
       closeLogin();
       await UserStore.loginWith(lr.session);
-      toast(`注册成功，已自动登入 · 「${r.user.nickname}」`);
+      toast(`注册成功，已自动登入 · 「${r.user.nickname}」${r.localOnly ? '（离线注册，仅本机）' : ''}`);
     } catch (e) {
       show('注册失败：' + ((e && e.message) || '未知错误'));
     } finally {

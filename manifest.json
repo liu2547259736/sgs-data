@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "version": "2026.11.17-2",
-  "updated_at": "2026-11-17T10:56:29+08:00",
+  "version": "2026.11.17-3",
+  "updated_at": "2026-11-17T11:25:17+08:00",
   "counts": {
     "heroes": 3748,
     "skins": 15636,
     "images": 8200,
-    "shell": 8962,
-    "files": 9322
+    "shell": 8963,
+    "files": 9323
   },
   "files": [
     {
       "path": "app.js",
-      "sha256": "2a3897ecfd9487704f10f1d51235ff6ab9c42685ce89b2e98942eb67ffbb8134",
-      "bytes": 324388
+      "sha256": "8441de9181402df58acff2e7a99df99639be353dd4aa4d16f38792fe8ef18e94",
+      "bytes": 325030
     },
     {
       "path": "apple-touch-icon.png",
@@ -1464,6 +1464,11 @@
       "path": "data/gjf/pack_icons.json",
       "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
       "bytes": 2
+    },
+    {
+      "path": "data/hero_audit.json",
+      "sha256": "84129caafa64822bf29baacdb1f137d08ffc7c63d3a16d0aef2a3446f06ede12",
+      "bytes": 76828
     },
     {
       "path": "data/history/books/houhanshu.json",
@@ -46447,7 +46452,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "c0b2009df6cac6f6f19dfab034a47ccdd2b3ff44e3a4046bb8353f62bd020455",
+      "sha256": "3ed879861538d39a58d7f9af9f1dea0d69bdf2cabd9cddb9e57993ffbdffdea3",
       "bytes": 59853
     },
     {
@@ -46537,8 +46542,8 @@
     },
     {
       "path": "services/cloudAuth.js",
-      "sha256": "d9aa2e47b503e7aab2d2c0f2287b92c07aadb24d82be4b677d78351d97ccdd93",
-      "bytes": 9414
+      "sha256": "366086dede34262aa2b0aebeab22762cd6c59dc5b359b8f61ed8e86a4b091ef9",
+      "bytes": 10904
     },
     {
       "path": "services/localAuth.js",
