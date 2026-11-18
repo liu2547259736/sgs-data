@@ -856,7 +856,18 @@ html[data-theme="ink"] .k-passive{color:#a6adb8}
 .olv-g{margin:12px 0 7px;font:500 12.5px/1 var(--kai);color:var(--ink2);letter-spacing:1px;display:flex;align-items:center;gap:8px}
 .olv-g::after{content:'';flex:1;height:1px;background:var(--line)}
 .sect .olv-g:first-child{margin-top:2px}
-.prose{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13px;line-height:1.85;color:var(--ink2)}
+/* 台词区折叠（移动版）：默认收起，点标题行展开。箭头沿用 .faq 的 ▾ 规范 */
+.sect-fold>h3{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.sect-fold>h3>small{white-space:nowrap;flex-shrink:0}
+/* 箭头用 CSS 三角画，不依赖字体字形（▾ 在楷体/部分安卓字体下会缺字变成一条横线） */
+.sect-fold>h3::after{content:'';width:0;height:0;margin-left:auto;margin-right:2px;
+  border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--ink3);
+  transition:transform .18s ease;flex-shrink:0}
+.sect-fold.on>h3::after{transform:rotate(180deg)}
+.sect-fold>.fold-b{display:none}
+.sect-fold.on>.fold-b{display:block;animation:foldIn .18s ease}
+@keyframes foldIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.prose{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13px;line-height:1.85;color:var(--ink2);white-space:pre-line}
 /* 武将攻略：官方评分 / 星级 / 技能 FAQ 折叠 */
 .gd-rate{display:flex;align-items:center;gap:12px;margin:0 0 9px}
 .gd-score{font:500 24px/1 var(--serif);color:var(--zhu);font-variant-numeric:tabular-nums;letter-spacing:.5px}
@@ -1323,7 +1334,12 @@ body[data-auth="guest"] .pinfo b:hover{border-bottom-color:var(--line2)}
    ============================================================ */
 /* —— 虚拟列表容器：卡片改绝对定位，总高由 JS 撑起 —— */
 .grid{position:relative;display:block}
-.vcard{position:absolute;top:0;left:0;will-change:transform;contain:layout style}
+/* ★ 2026-11-19：这里原来带 will-change:transform，但虚拟卡片是用 left/top 绝对定位的，
+   根本没有 transform 可优化 —— 它的实际效果只是把每一张卡都提成独立的合成层。
+   iOS Safari 对合成层的纹理内存极敏感，几十张卡同时提层 + 立绘解码，超过上限后
+   整层会被丢弃重绘，表现就是滚动时立绘一块块变白、屏幕闪。
+   去掉 will-change，右下的移动改用 left/top；contain 保留（隔离布局/样式，仍然划算）。 */
+.vcard{position:absolute;top:0;left:0;contain:layout style}
 /* —— 水墨骨架屏 + 图片渐现 ——
    骨架挂在 .pimg（立绘区）而不是 .ph：卡面现在是「势力条 + 立绘」两栏，
    挂在 .ph 上会把呼吸光扫到势力条上。 */
@@ -1336,6 +1352,9 @@ body[data-auth="guest"] .pinfo b:hover{border-bottom-color:var(--line2)}
   transition:opacity .3s ease
 }
 @keyframes inkbreath{0%,100%{background-position:0 0,120% 0;opacity:.75}50%{background-position:0 0,-60% 0;opacity:1}}
+/* 滚动中暂停骨架呼吸动画（2026-11-19）：一屏十几张未加载的卡各跑一个无限动画，
+   iOS 上会持续抢合成/绘制预算，滚动时更容易掉帧闪屏。手指放开 180ms 后自动恢复。 */
+body.is-scrolling .card .pimg::after{animation-play-state:paused}
 .card.imgld .pimg::after{opacity:0;animation:none}
 .card img{opacity:0;transition:opacity .3s ease}
 .card.imgld img{opacity:1}

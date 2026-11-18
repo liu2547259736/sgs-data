@@ -41,6 +41,17 @@
   /* 「最新更新」数据：v2/gen_recent.py 从 changelog.json 的「新增武将」记录生成，
      只含最近 10 位（跨版本）的卡片字段。缺文件时整条筛选行自动隐藏，不影响其它功能。 */
   const RECENT_URL = vq(DATA_DIR + 'recent.json');
+
+  /* 官方拆包数据偶尔夹带富文本（国际服 FitRole 的 <font color=#ff782e>…</font>、
+     技能描述里的 <a target_type=…>）。图鉴这些小字统一是素色，直接塞进 innerHTML 会
+     整行串色；「幻曹植」那三位源数据还漏了 `<`，写成 `…农民/font>`，页面上真的印出「/font>」。
+     数据侧已由 tools/fix_gjf_fields.py 清过一遍，这里再兜一层：去标签 → 补转义，纯文本输出。 */
+  const plain = (s) => String(s == null ? '' : s)
+    .replace(/<\/?[a-zA-Z][^>]*>/g, '')
+    .replace(/\/font>/gi, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+    .trim();
   const dataUrl = (version) => vq(`${DATA_DIR}${version}/characters.json`);
   const IMG_V = { hlsgs: '7', sgs: '3', gjf: '1', sgsol: '2', msgs: '2', wxmini: '1', fks: '1' };
   // msgs 1 / wxmini 1：2026-10-15 图片瘦身，sk/il/av 由 jpg/png 统一转 webp（msgs 皮肤、
@@ -127,6 +138,10 @@
      数据独立成篇、不并入任何正式版，也刻意不进跨版本搜索索引（搜索四版时不搜它）。 */
   const VN = { sgsol: 'OL', msgs: '移动版', sgs: '十周年', hlsgs: '欢乐杀', gjf: '国际服', wxmini: '小程序', fks: '新月集', unreleased: '未实装' };
   const UNRELEASED_ID = 'unreleased';
+  /* 有 olv（按皮肤分组的台词）且台词量大到需要默认折叠的服务器。
+     其他服台词少，保持平铺。新增服务器时改这一处即可。
+     2026-11-19：小程序补齐台词（352/353 位、876 组 4251 句）后一并纳入折叠。 */
+  const OLV_FOLD_VERS = ['msgs', 'sgsol', 'sgs', 'hlsgs', 'gjf', 'wxmini'];
 
   /* ============ 状态 ============ */
   let INDEX = [];
@@ -247,7 +262,8 @@
   }
 
   /* ============ 虚拟列表状态（vgrid：仅视口内卡片挂 DOM，up/003 一.1） ============ */
-  const VG = { gap: 11, cols: 3, colW: 0, rowH: 0, pt: 0, pb: 0, items: [], raf: 0, lastKey: '' };
+  const VG = { gap: 11, cols: 3, colW: 0, rowH: 0, pt: 0, pb: 0, items: [], raf: 0, lastKey: '',
+    nodes: null, itemsRef: null, ldT: 0 };   // nodes: 复用中的卡片 DOM；ldT: 兜底显影定时器
   let PYINI = new Map();  // id → 首字母（大写）
   let AZ = [];            // 数据中出现的首字母（有序）
   let HAS_ORD = false;    // 数据是否带游戏内序号 ord（带 = 按游戏顺序排 + 右侧条走分组跳转）
@@ -953,7 +969,11 @@
     if (src && !g.img && netWeak()) src = recAv(g, ver);
     if (!src) return phHeroHTML(g);
     // onload 渐现（up/003 一.2）：加载完成给所在卡片加 imgld，骨架让位、图片 300ms 淡入
-    return `<img loading="lazy" src="${src}" alt="${g.n}"
+    /* ★ 不再给卡片立绘加 loading="lazy"（2026-11-19 · iOS 修复）：
+       虚拟列表本身只挂视口 ±1 行的卡片，等于已经懒加载过了；再叠一层浏览器原生 lazy，
+       iOS Safari 上会出现「元素已进视口但 complete 仍是 false」的窗口期 —— 图片被
+       opacity:0 按着，用户看到的就是一片空立绘。这里改成即时请求，配合下面的 imgld 判定。 */
+    return `<img src="${src}" alt="${g.n}"
              onload="if(this.closest('.card'))this.closest('.card').classList.add('imgld')"
              onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph-empty',textContent:'${(g.n || '?').slice(0, 1)}'}))">`;
   }
@@ -1083,39 +1103,108 @@
     VG.rowH = VG.colW * 1.32 + 2 + VG.gap;  // 立绘比例 1:1.32 + 上下边框 + 行距
     return true;
   }
+  /* 卡片的复用键：跨版本搜索时同名不同版各是一张卡，所以 id 之外还要带版本 */
+  const vgKey = (g) => cardVer(g) + '|' + g.id;
+  /* ★ 增量挂载（2026-11-19 · iOS 滚动立绘空白 / 闪屏修复）
+     老实现每次跨行就 el.innerHTML = 全部卡片，等于把视口里那几十张卡连同 <img> 全部销毁重造。
+     桌面浏览器有内存缓存兜着看不出来；iOS Safari 上代价是：
+       ① 新 <img> 要重新解码，快速滑动时上一帧还没解码完就被下一帧换掉 → 立绘一帧一帧地空；
+       ② 每张新卡都回到「未加载」态（骨架 + inkbreath 呼吸光同时跑几十个动画）→ 整屏闪；
+       ③ 重建瞬间所有卡片从 0 高度重新布局 → 视觉上抖一下。
+     现在按 vgKey 做差集：滚出范围的 remove，滚进来的 new，留下的只改 left/top（位置没变就一个字节都不碰），
+     图片元素全程复用 → 不再重新解码、骨架不再重播。 */
   function vgLayout() {
     const el = $('grid');
     const items = VG.items;
-    if (!items.length) { el.innerHTML = ''; el.style.height = ''; VG.lastKey = ''; return; }
+    if (!items.length) { el.innerHTML = ''; el.style.height = ''; VG.lastKey = ''; VG.nodes = null; VG.itemsRef = null; return; }
     if (!vgMeasure()) return;
+    // 数据换过一批（切版本 / 搜索 / 筛选）：旧节点全部作废，按新列表重建
+    if (VG.itemsRef !== items) { VG.itemsRef = items; VG.nodes = null; }
     const rows = Math.ceil(items.length / VG.cols);
     el.style.height = (VG.pt + rows * VG.rowH - VG.gap + VG.pb) + 'px';
     const rect = el.getBoundingClientRect();
     const vh = window.innerHeight || document.documentElement.clientHeight;
     const viewTop = Math.max(0, -rect.top);
     const viewBottom = Math.min(rect.height, vh - rect.top);
-    let r0 = Math.max(0, Math.floor((viewTop - VG.pt) / VG.rowH) - 1);
-    let r1 = Math.min(rows - 1, Math.ceil((viewBottom - VG.pt) / VG.rowH) + 1);
+    // 视口上下各多挂 2 行（原 1 行）：立绘单张 150~400ms，只挂 ±1 行时，卡片「刚进视口
+    // 才开始请求」，快速滑动就是一屏骨架闪过去。±2 行让下一屏的图提前在后台加载完，
+    // 滑到时已经是 imgld 状态。代价是同时挂载多 6~12 张卡，仍远低于整库。
+    let r0 = Math.max(0, Math.floor((viewTop - VG.pt) / VG.rowH) - 2);
+    let r1 = Math.min(rows - 1, Math.ceil((viewBottom - VG.pt) / VG.rowH) + 2);
     const key = r0 + ':' + r1 + ':' + items.length + ':' + VG.cols;
     if (key === VG.lastKey) return;
     VG.lastKey = key;
-    const frag = [];
+    if (!VG.nodes) { el.innerHTML = ''; VG.nodes = new Map(); }
+    const want = [];
+    const keep = new Set();
     for (let r = r0; r <= r1; r++) {
       for (let c = 0; c < VG.cols; c++) {
         const i = r * VG.cols + c;
         if (i >= items.length) break;
         const g = items[i];
-        const x = (c * (VG.colW + VG.gap)).toFixed(1);
-        const y = (VG.pt + r * VG.rowH).toFixed(1);
-        frag.push(`<article class="card vcard" data-id="${g.id}" data-v="${cardVer(g)}" style="left:${x}px;top:${y}px;width:${VG.colW.toFixed(1)}px">${cardInner(g)}</article>`);
+        const k = vgKey(g);
+        keep.add(k);
+        want.push({ k, g, x: (c * (VG.colW + VG.gap)).toFixed(1), y: (VG.pt + r * VG.rowH).toFixed(1) });
       }
     }
-    el.innerHTML = frag.join('');
+    for (const [k, node] of VG.nodes) {
+      if (!keep.has(k)) { node.remove(); VG.nodes.delete(k); }
+    }
+    const frag = document.createDocumentFragment();
+    for (const w of want) {
+      let node = VG.nodes.get(w.k);
+      if (!node) {
+        node = document.createElement('article');
+        node.className = 'card vcard';
+        node.dataset.id = w.g.id;
+        node.dataset.v = cardVer(w.g);
+        node.style.width = VG.colW.toFixed(1) + 'px';
+        node.innerHTML = cardInner(w.g);
+        VG.nodes.set(w.k, node);
+      }
+      if (node._x !== w.x) { node.style.left = w.x + 'px'; node._x = w.x; }
+      if (node._y !== w.y) { node.style.top = w.y + 'px'; node._y = w.y; }
+      frag.appendChild(node);
+    }
+    el.appendChild(frag);
     for (const im of el.querySelectorAll('img')) {  // 缓存命中直接显影，避免闪骨架
       if (im.complete && im.naturalWidth) { const c = im.closest('.card'); if (c) c.classList.add('imgld'); }
     }
+    /* 兜底显影：iOS 上偶发 onload 不回调（图已从缓存解出、但事件早于监听），
+       卡片就永远停在 opacity:0 的「空立绘」状态。这里隔一帧+300ms 各补扫一次，
+       只查还没 imgld 的卡片，开销可忽略；图真到了就立刻显形。 */
+    clearTimeout(VG.ldT);
+    VG.ldT = setTimeout(() => {
+      for (const im of el.querySelectorAll('.card:not(.imgld) img')) {
+        if (im.complete && im.naturalWidth) im.closest('.card').classList.add('imgld');
+      }
+    }, 300);
+    // 往下 3 行预取立绘（见 prefetchArt）：不挂 DOM，只把图塞进浏览器缓存
+    for (let r = r1 + 1; r <= Math.min(rows - 1, r1 + 3); r++) {
+      for (let c = 0; c < VG.cols; c++) {
+        const i = r * VG.cols + c;
+        if (i >= items.length) break;
+        prefetchArt(items[i]);
+      }
+    }
   }
   function vgSchedule() { if (!VG.raf) VG.raf = requestAnimationFrame(() => { VG.raf = 0; vgLayout(); updatePyHighlight(); }); }
+  /* 立绘预取：把「视口下方还没挂载的那几行」的图先拉进内存缓存。
+     增量复用解决的是「已加载的卡不再重建」，但快速滑动时新行的图仍要现拉（线上 150~400ms），
+     这段时间就是骨架块。提前 3 行预取，滑到时就命中缓存、几乎瞬时显示。
+     去重集合封顶 600 条（滚动很久也不会无限涨），满了整体清空重来。 */
+  const PREFETCHED = new Set();
+  function prefetchArt(g) {
+    if (!g || g.ni) return;
+    const ver = itemVer(g);
+    const src = imgV(g.img || rawAsset(ver, 'il', g.id), ver);
+    if (!src || PREFETCHED.has(src)) return;
+    if (PREFETCHED.size > 600) PREFETCHED.clear();
+    PREFETCHED.add(src);
+    const im = new Image();
+    im.decoding = 'async';
+    im.src = src;
+  }
   function render() {
     const q = state.q.trim();
     const searching = !!q;
@@ -2006,14 +2095,14 @@
     }
 
     /* OL 版武将特点并入下方「武将攻略」区块，顶部不再重复一行小字 */
-    if (g.ft && dv !== 'sgsol') h += `<div class="note">武将特点：${g.ft}</div>`;
+    if (g.ft && dv !== 'sgsol') h += `<div class="note">武将特点：${plain(g.ft)}</div>`;
     /* 移动版 / 国际服 / 小程序（官方拆包数据）：关键牌 + 适配身份/胜率。
        ★ 小程序 wr 是自带 % 的复合串（"5人场 38% ｜ 主公 1% ｜ 农民 39%"），
          且没有 fit 字段 —— 不套「适配身份：—」的壳，直接出「官方胜率」；尾 % 只给纯数字的 msgs/gjf 加。 */
-    if ((dv === 'msgs' || dv === 'gjf') && g.kc) h += `<div class="note">关键牌：${g.kc}</div>`;
+    if ((dv === 'msgs' || dv === 'gjf') && g.kc) h += `<div class="note">关键牌：${plain(g.kc)}</div>`;
     if ((dv === 'msgs' || dv === 'gjf' || dv === 'wxmini') && (g.fit || g.wr)) {
       if (dv === 'wxmini' && !g.fit) h += `<div class="note">官方胜率：${g.wr}</div>`;
-      else h += `<div class="note">适配身份：${g.fit || '—'}${g.wr ? `　官方胜率：${g.wr}%` : ''}</div>`;
+      else h += `<div class="note">适配身份：${plain(g.fit) || '—'}${g.wr ? `　官方胜率：${g.wr}%` : ''}</div>`;
     }
     /* 国际服：官方「打法思路」（CharacterData.SpellUsage） */
     if (dv === 'gjf' && g.su) {
@@ -2071,40 +2160,36 @@
       h += '</div>';
     }
 
-    /* 台词播放按钮开关（按运行环境自动判定，勿写死）——
-       ✔ 本地开发包（电脑 localhost / 局域网 IP / file://）：语音资源就在
-         images/{sgsol|msgs}/voice/ 下（889M），显示 ▶ 可播；
-       ✘ 纯本地 App（App 内 WebView，域名 appassets.androidplatform.net）：
-         为控体积未打包语音（voice 目录已移出），不显示 ▶；
-       ✘ 线上站（*.workbuddy.host / *.workbuddy.cn）：语音未随站发布，不显示 ▶。
-       将来要把语音打进 App：把 voice 目录加回装配清单，并删掉下面的
-       appassets 判定即可。 */
-    const _vh = location.hostname;
-    const VOICE_ENABLED = location.protocol === 'file:'
-      || /^(localhost|127\.0\.0\.1|\[::1\]|::1)$/i.test(_vh)
-      || /^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.)/.test(_vh);
+    /* 台词区的语音播放已于 2026-11-18 关闭（皮肤语音各服覆盖不全，缺的皮肤没按钮更乱）。
+       语音资源仍在本地：images/{sgsol|msgs}/voice/ 下（889M，未打进 App / 线上站）。
+       将来要恢复播放：把下面 olv 分支重新接上 data-voices 按钮，并按运行环境判定
+       （本地 localhost / 局域网 IP / file:// 才播；App 内 WebView 与线上站不播）。 */
     const qk = Object.keys(g.q || {});
-    const olv = ((dv === 'sgsol' || dv === 'msgs') && (g.olv || []).length) ? g.olv : null;
+    const olv = (OLV_FOLD_VERS.indexOf(dv) >= 0 && (g.olv || []).length) ? g.olv : null;
     if (olv) {
-      /* OL/移动版 官方台词+语音：按皮肤语音组分组，▶ 播该技能全部语音
-         （sgsol → images/sgsol/voice/*.ogg；msgs → images/msgs/voice/*.mp3） */
-      const VBASE = dv === 'sgsol' ? 'images/sgsol/voice/' : 'images/msgs/voice/';
-      const VEXT = dv === 'sgsol' ? '.ogg' : '.mp3';
-      h += `<div class="sect"><h3>武将台词</h3>` + olv.map((grp) => {
+      /* OL/移动版 官方台词：按「经典形象 + 各皮肤」分组，条目标题是技能名/阵亡/胜利。
+         2026-11-18 起台词区不再提供 ▶ 播放（皮肤语音在各服覆盖不全，缺的皮肤没按钮反而更乱），
+         au 数据仍留在库里以备将来恢复。 */
+      const olvBody = olv.map((grp) => {
         const body = (grp.items || []).map((it) => {
-          const urls = (it.au || []).filter(Boolean).map((u) => VBASE + u + VEXT);
-          const btn = (VOICE_ENABLED && urls.length) ? `<button class="vbtn" data-voices="${urls.join('|')}" aria-label="播放${it.k}语音">▶</button>` : '';
-          return `<div class="quote"><div class="qn">${it.k}${btn}</div><div class="qt">` +
+          return `<div class="quote"><div class="qn">${it.k}</div><div class="qt">` +
             (it.lines || []).map((l) => `「${l}」`).join('') + '</div></div>';
         }).join('');
         return `<div class="olv-g">${grp.grp}</div>` + body;
-      }).join('') + '</div>';
+      }).join('');
+      /* 台词量大（移动版平均 4.7 组 / 17 条，OL 3.2 组 / 18 条，十周年 4.9 组 / 24 条，
+         欢乐杀 1.4 组 / 7.6 条，多的 60+ 条），会把生平和皮肤挤到很下面，
+         所以默认折叠，点标题展开。凡是带 olv 的服务器都折叠。 */
+      {
+        const nLine = olv.reduce((s, gr) => s + (gr.items || []).reduce((t, it) => t + (it.lines || []).length, 0), 0);
+        h += `<div class="sect sect-fold"><h3>武将台词<small>共 ${olv.length} 组 · ${nLine} 条</small></h3>` +
+          `<div class="fold-b">` + olvBody + '</div></div>';
+      }
     } else if (qk.length) {
-      /* 台词来源（g.qs）不在页面平铺（硬规则）：统一归入免责声明弹窗 */
+      /* 台词来源（g.qs）不在页面平铺（硬规则）：统一归入免责声明弹窗。
+         同上，2026-11-18 起不再出 ▶。 */
       h += `<div class="sect"><h3>武将台词</h3>` + qk.map((k) => {
-        const vs = ((g.vo && g.vo[k]) || []).filter((u) => /^https?:/i.test(u));
-        const btn = (VOICE_ENABLED && vs.length) ? `<button class="vbtn" data-voices="${vs.join('|')}" aria-label="播放${k}语音">▶</button>` : '';
-        return `<div class="quote"><div class="qn">${k}${btn}</div><div class="qt">` +
+        return `<div class="quote"><div class="qn">${k}</div><div class="qt">` +
           g.q[k].split('/').filter(Boolean).map((l) => `「${l}」`).join('') + '</div></div>';
       }).join('') + '</div>';
     } else {
@@ -2118,7 +2203,28 @@
         g.gw.map((l) => `「${l}」`).join('') + '</div></div></div>';
     }
 
-    if (g.bio) h += `<div class="sect"><h3>武将生平</h3><div class="prose">${g.bio}</div></div>`;
+    /* 移动版：官方「武将典故」——游戏内「简介」页原文（tools/fetch_msgs_dg.py
+       抓 sgs 官网 hero-detail 的 hero-intro，已与游戏截图逐字核对）。
+       它与「武将生平」常同源，重合时只出典故，不重复铺两段。 */
+    const _flatTxt = (s) => (s || '').replace(/\[[^\]]*\]/g, '')
+      .replace(/[\s\u3000，。；：、！？,.!?:;"'“”‘’（）()《》〈〉·—…]/g, '');
+    const _sameTxt = (a, b) => {
+      const A = _flatTxt(a), B = _flatTxt(b);
+      if (!A || !B) return false;
+      if (A === B) return true;
+      const n = Math.min(A.length, B.length);
+      let i = 0;
+      while (i < n && A[i] === B[i]) i += 1;
+      return i >= Math.min(24, n * 0.6);
+    };
+    const dgTxt = (dv === 'msgs' && g.dg) ? g.dg : '';
+    if (dgTxt) h += `<div class="sect"><h3>武将典故</h3><div class="prose">${dgTxt}</div></div>`;
+    /* 生平只在「比典故明显更长」时补一段：同源重复或更短的一句话简介就不铺了 */
+    if (g.bio && (!dgTxt
+      ? true
+      : (!_sameTxt(dgTxt, g.bio) && _flatTxt(g.bio).length >= _flatTxt(dgTxt).length * 1.1))) {
+      h += `<div class="sect"><h3>武将生平</h3><div class="prose">${g.bio}</div></div>`;
+    }
 
     /* OL/移动版/国际服 皮肤带官方名称 + 画师（skn 与 sk 一一对应，索引不破坏大图查看器）
        国际服的皮肤来自拆包 skin.lua（chrList 展开：一张皮肤挂在它的所有武将版本上），
@@ -4009,9 +4115,15 @@
   // 全局滚动：虚拟列表布局 + htop 沉浸式折叠（up/003 三.1）
   // 锚点累计判定 + 折叠冷却期：移动端 Chrome 滚动锚定会产生 ±30px 以上的抖动，
   // 单帧方向判定会反复横跳；折叠建立后 600ms 内忽略反向信号，真反向累计 -40px 才还原
-  let foldAnchor = 0, foldedAt = 0;
+  let foldAnchor = 0, foldedAt = 0, scrollIdleT = 0;
   window.addEventListener('scroll', () => {
     vgSchedule();
+    /* 滚动期间给 body 打 is-scrolling：骨架呼吸动画暂停（见 style.css）。
+       手指停下 180ms 后自动摘掉，静止时动画照常，不影响观感。 */
+    const b = document.body;
+    if (!b.classList.contains('is-scrolling')) b.classList.add('is-scrolling');
+    clearTimeout(scrollIdleT);
+    scrollIdleT = setTimeout(() => b.classList.remove('is-scrolling'), 180);
     const sy = window.scrollY;
     if (document.body.dataset.tab === 'heroes') {
       const htop = document.querySelector('.htop');
@@ -4160,6 +4272,9 @@
       }
       return;
     }
+    /* 台词区折叠（移动版默认折叠）：点标题行切换 */
+    const fh = e.target.closest('.sect-fold>h3');
+    if (fh) { fh.parentElement.classList.toggle('on'); tapFeel(6); return; }
     const b = e.target.closest('.vbtn');
     if (!b) return;
     if (audio && playingBtn === b) {

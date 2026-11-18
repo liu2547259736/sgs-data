@@ -1,19 +1,514 @@
 {
   "schema": 1,
-  "version": "2026.11.18",
-  "updated_at": "2026-11-18T03:02:34+08:00",
+  "version": "2026.11.19",
+  "updated_at": "2026-11-19T01:12:04+08:00",
   "counts": {
     "heroes": 3748,
     "skins": 15636,
     "images": 15246,
-    "shell": 16011,
-    "files": 16371
+    "shell": 16111,
+    "files": 16471
   },
   "files": [
     {
+      "path": "_probe_live_lite.js",
+      "sha256": "a0d682f3e7380370a2ae638ce3e3258e16c8d6f5b89477ceda2374e03dc6234a",
+      "bytes": 3584
+    },
+    {
+      "path": "_probe_live_lite2.js",
+      "sha256": "6f914971735fc49faed39233603284f481ea45d0cdc25520460b19a35b947e4e",
+      "bytes": 2121
+    },
+    {
+      "path": "_probe_scroll.js",
+      "sha256": "24e6962e2b282a15b710b6a117db12405e81a088bf2e6fa77367eabf44f82afd",
+      "bytes": 3688
+    },
+    {
+      "path": "_probe_scroll2.js",
+      "sha256": "2534da480ac1e1c85af6ff8b42884f6cf1f8da2723853260766f64b470a0a4e1",
+      "bytes": 3545
+    },
+    {
+      "path": "_reports/bug_gjf_mouzhugeliang.png",
+      "sha256": "4ab931c573f2179f41555be9b3117b9a062dc10cad166fd4955516068075f90f",
+      "bytes": 148393
+    },
+    {
+      "path": "_reports/dg_jieguohuanghou_final.png",
+      "sha256": "bb0e0aeae2bf093bca1c06e6cbb8b2b776d7887ccc47ec3d74743f9ef47a5753",
+      "bytes": 418526
+    },
+    {
+      "path": "_reports/dg_shixiaoqiao.png",
+      "sha256": "f187f0f940ffdfe4ea9062cf2af0575c3924ae8aa04ef754bd904f0d39a3a618",
+      "bytes": 417616
+    },
+    {
+      "path": "_reports/dg_sunquan.png",
+      "sha256": "86ddda7ce69ead50f20d8af7d051507ac47f3b23fb9dd917cac26c689bf1039c",
+      "bytes": 372967
+    },
+    {
+      "path": "_reports/dg_zhangbu.png",
+      "sha256": "2e0438b0b2bf4d23d2b5bb07328301b1af643812e1b597cacb4b4e063e1f1a0b",
+      "bytes": 400403
+    },
+    {
+      "path": "_reports/dg_zhouyu.png",
+      "sha256": "ad287051b8dfe7c88e8bdeee21d4cbe772a9d86c36cb591028a5cd2212252655",
+      "bytes": 403523
+    },
+    {
+      "path": "_reports/fix_gjf_huancaozhi.png",
+      "sha256": "dcee65fe66506f04d50f1b8e7bdf917f23c026a995dfce98ae848d4fca051a7e",
+      "bytes": 154325
+    },
+    {
+      "path": "_reports/fix_gjf_liubei.png",
+      "sha256": "62b21c0221466c374803fbdeb122d3a9b455d5bdd6b84ce6139125c6bc9d6f0c",
+      "bytes": 141337
+    },
+    {
+      "path": "_reports/fix_gjf_mouzhugeliang.png",
+      "sha256": "4ed4cc5c587b93ea37f9c3ce24b36f857478da559efd663273945d70763ab8fc",
+      "bytes": 147734
+    },
+    {
+      "path": "_reports/fix_unreleased_manlvmeng.png",
+      "sha256": "3777cb22a20c155c5b83a2111ca293dc02735c563723f8a5635e7fe1c515b68d",
+      "bytes": 151030
+    },
+    {
+      "path": "_reports/fold_gjf_关羽_closed.png",
+      "sha256": "a98ad13b510fb8aa8146817ea52fb1175a3baa8dc60d32b6cc7a02c03a94f194",
+      "bytes": 196586
+    },
+    {
+      "path": "_reports/fold_gjf_关羽_open.png",
+      "sha256": "6633b70cbf46f0cda9432533e17e1246147f42f9734fb2b85f2bca3e3ac271a1",
+      "bytes": 124110
+    },
+    {
+      "path": "_reports/fold_gjf_关羽_open2.png",
+      "sha256": "e5b4c61397b32f9bcdb6fe17a8e5fa25ba7c37f019a4d3255778c7ca9c39c9e2",
+      "bytes": 86825
+    },
+    {
+      "path": "_reports/fold_gjf_刘备_closed.png",
+      "sha256": "62b21c0221466c374803fbdeb122d3a9b455d5bdd6b84ce6139125c6bc9d6f0c",
+      "bytes": 141337
+    },
+    {
+      "path": "_reports/fold_gjf_刘备_open.png",
+      "sha256": "4d437779348049e43934559f08dcaa801f9b4b5a443cd02014aff821df8c0981",
+      "bytes": 140242
+    },
+    {
+      "path": "_reports/fold_gjf_刘备_open2.png",
+      "sha256": "e97a3a46fd7211561696d334f66022aec09093c1fe404a47c1354ff86cde0c85",
+      "bytes": 87613
+    },
+    {
+      "path": "_reports/fold_gjf_孙坚_closed.png",
+      "sha256": "0d365b696af406b8c0ab2b5dd4ddb9613fb736e6c4b1b9d8f4c4c59732479095",
+      "bytes": 149454
+    },
+    {
+      "path": "_reports/fold_gjf_孙坚_open.png",
+      "sha256": "e6cfce1a56e1764d44cb8388468e1126fbf62686bdec4826200f9aaba293b003",
+      "bytes": 144989
+    },
+    {
+      "path": "_reports/fold_gjf_孙坚_open2.png",
+      "sha256": "bd2504dea20f8f40b09277366be89aa9c96a3ff943d01516f9467871e1eb49eb",
+      "bytes": 81511
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹丕_closed.png",
+      "sha256": "72739aa14e8ce196da959ee055f4b959fadeb0ed68f1fe6e7e940ba1f9d9198e",
+      "bytes": 145393
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹丕_open.png",
+      "sha256": "a1e494d70c8d95cd2e096984ad9ca3e9efe25b370a9bf6e553b60f9072f7130f",
+      "bytes": 127162
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹丕_open2.png",
+      "sha256": "037f2513015d984ce76891010362fe479107259712f3a92dbacb6c99126fa837",
+      "bytes": 105580
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹冲_closed.png",
+      "sha256": "06eced8cb952a5e24eeaaf5c3a13087405339488ba4ddebc333a8301e0af1447",
+      "bytes": 148792
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹冲_open.png",
+      "sha256": "1c10dedf824a1ee24a497ebf08bdc169f6dbb478cba4014d594f146ed7e80a73",
+      "bytes": 144140
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹冲_open2.png",
+      "sha256": "36cd3bf612c441f611f8247a4655d243d828fc1f87c3bf1661646f4eae09d3b3",
+      "bytes": 109448
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹植_closed.png",
+      "sha256": "dcee65fe66506f04d50f1b8e7bdf917f23c026a995dfce98ae848d4fca051a7e",
+      "bytes": 154325
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹植_open.png",
+      "sha256": "66ea6d75828fd56321f0893f0be2381b05bf78868bec8ec8bb889d9fd44ade8e",
+      "bytes": 154243
+    },
+    {
+      "path": "_reports/fold_gjf_幻曹植_open2.png",
+      "sha256": "9dd31e68ece2159c9d17cc127637678a38830ea547594e17a9e70fe5b77cbfc0",
+      "bytes": 122705
+    },
+    {
+      "path": "_reports/fold_gjf_谋诸葛亮_closed.png",
+      "sha256": "4ed4cc5c587b93ea37f9c3ce24b36f857478da559efd663273945d70763ab8fc",
+      "bytes": 147734
+    },
+    {
+      "path": "_reports/fold_gjf_谋诸葛亮_open.png",
+      "sha256": "b16bf62dfcd95b6881f9eec6f460dc8b2cb2199d5e9e2e815de105b4ac8efe60",
+      "bytes": 147859
+    },
+    {
+      "path": "_reports/fold_gjf_谋诸葛亮_open2.png",
+      "sha256": "082eaa0026515f76a329266646a8403d5815445e9fa65368b30b0e84abcf71e1",
+      "bytes": 97232
+    },
+    {
+      "path": "_reports/fold_hlsgs_孙策_closed.png",
+      "sha256": "92b095915b050211778b8e559f8b60c0966c252a4a2fcdc9aaeec70de5e0a10c",
+      "bytes": 129863
+    },
+    {
+      "path": "_reports/fold_hlsgs_孙策_open.png",
+      "sha256": "b37ef0ed94ae9dfe6d2e46d1967a562cb6b1a2df9e06b83023d5fa6d05eaf31a",
+      "bytes": 103776
+    },
+    {
+      "path": "_reports/fold_hlsgs_孙策_open2.png",
+      "sha256": "927fa114200c0cf3c793855b3389caa311a132be32cd009336b4193dc8773207",
+      "bytes": 100157
+    },
+    {
+      "path": "_reports/fold_hlsgs_念孙权_closed.png",
+      "sha256": "20bc6f316150cd379526344bc0a770ca7f003ee79c1f0d05bcb02d2412b865cb",
+      "bytes": 152888
+    },
+    {
+      "path": "_reports/fold_hlsgs_念孙权_open.png",
+      "sha256": "bf13580906dea7f657e6e889f052bba42798e03fa1b226c83257b0a7bde49ba5",
+      "bytes": 113321
+    },
+    {
+      "path": "_reports/fold_hlsgs_念孙权_open2.png",
+      "sha256": "845f9c33a2f6ff1d18757c321da183f726e5c9ba698e234ff2d5249003e24a14",
+      "bytes": 95302
+    },
+    {
+      "path": "_reports/fold_jieguanyu_bio.png",
+      "sha256": "8e1bc980ac2ff3f8ceb10beaccc1c58830c48b68cd02c365eff0cc678c7a771d",
+      "bytes": 287341
+    },
+    {
+      "path": "_reports/fold_jieguanyu_closed.png",
+      "sha256": "ec3b5ad3f5502f5493fa078cd4bca4523d87f304761d053479db2dcdae0bb866",
+      "bytes": 280888
+    },
+    {
+      "path": "_reports/fold_jieguanyu_open.png",
+      "sha256": "3b0e487337eb1058033effdf001b9d3ea5b61de8523ca2f2db21e25d01556dc1",
+      "bytes": 285458
+    },
+    {
+      "path": "_reports/fold_msgs_关羽_closed.png",
+      "sha256": "bc937bb793a87c31f2f5630b87a0d136f045c8916e5ee042a46e1b2e058c1813",
+      "bytes": 145344
+    },
+    {
+      "path": "_reports/fold_msgs_关羽_open.png",
+      "sha256": "73e7df0b3aa76a25ee8938e88f7c948940a5d34ac13cb58c81d0366bbc0a6a63",
+      "bytes": 124032
+    },
+    {
+      "path": "_reports/fold_msgs_关羽_open2.png",
+      "sha256": "a86c4b031767a3f858421a2b204ba0eaed6e44ea67333c8c5fbf04d2002e77ba",
+      "bytes": 80583
+    },
+    {
+      "path": "_reports/fold_msgs_界关羽_closed.png",
+      "sha256": "1a57e9ab7f3818c93625f9ab9435743c4863e518ae2e6fb1a38c2ab09070e320",
+      "bytes": 141942
+    },
+    {
+      "path": "_reports/fold_msgs_界关羽_open.png",
+      "sha256": "653f3eccf8d01460909b7fddcc8a84de2d54b5f4792f92974d681e72f77973df",
+      "bytes": 140631
+    },
+    {
+      "path": "_reports/fold_msgs_界关羽_open2.png",
+      "sha256": "70100cb7026be4cf33c036e87d22889fffaf362648d4e503f55678c0d8f1056f",
+      "bytes": 83479
+    },
+    {
+      "path": "_reports/fold_msgs_界徐盛_closed.png",
+      "sha256": "fa7a9ce75463b09e02e9eba8ba97592b6164df627ae4b51591fd4499d052d0d4",
+      "bytes": 172385
+    },
+    {
+      "path": "_reports/fold_msgs_界徐盛_open.png",
+      "sha256": "32b018ca1fb585be62553863f8b5ad24b784fa03cbd5f994cb8f7407d2628bd7",
+      "bytes": 143760
+    },
+    {
+      "path": "_reports/fold_msgs_界徐盛_open2.png",
+      "sha256": "beabea78e617c595e8bf666c24cf38c833cc420ce13fc880f69257ede77580d7",
+      "bytes": 90582
+    },
+    {
+      "path": "_reports/fold_sgs_界诸葛亮_closed.png",
+      "sha256": "bb383b17a1d97a530d60b48183d73ae2d9334029946b0c4304a4611dd0d94bc9",
+      "bytes": 149965
+    },
+    {
+      "path": "_reports/fold_sgs_界诸葛亮_open.png",
+      "sha256": "eaef99f7879cd5e9bac37d5443bc9d4a88b13161a8e6c9057d8153f02f5f6bf1",
+      "bytes": 130572
+    },
+    {
+      "path": "_reports/fold_sgs_界诸葛亮_open2.png",
+      "sha256": "816f6d7fc039c17c151a865457832ac00ab4a88341bca405608065d650398c93",
+      "bytes": 83881
+    },
+    {
+      "path": "_reports/fold_sgsol_关羽_closed.png",
+      "sha256": "204db706cba8cc5d596edc1dcf119fa59c68c4da337d3af62090bc4269407963",
+      "bytes": 124731
+    },
+    {
+      "path": "_reports/fold_sgsol_关羽_open.png",
+      "sha256": "1160ec6cbff4397871188493744a00551f5ffcc16aa692f74eae5cb01e475425",
+      "bytes": 120815
+    },
+    {
+      "path": "_reports/fold_sgsol_关羽_open2.png",
+      "sha256": "22b74f11b0de83d00e5c56e13d9b40031a048866833a9dad683813dc9617d689",
+      "bytes": 86954
+    },
+    {
+      "path": "_reports/fold_unreleased_慢吕蒙_closed.png",
+      "sha256": "3777cb22a20c155c5b83a2111ca293dc02735c563723f8a5635e7fe1c515b68d",
+      "bytes": 151030
+    },
+    {
+      "path": "_reports/fold_wxmini_刘备_closed.png",
+      "sha256": "7d067f76a315636c54f01df3fe1e60cb398c7290267613e7481764a8f9357c7f",
+      "bytes": 240173
+    },
+    {
+      "path": "_reports/fold_wxmini_刘备_open.png",
+      "sha256": "23b37a0555a50dd39cded8eff45bee846f0be50c2417f2dfa1031406563fc10a",
+      "bytes": 119485
+    },
+    {
+      "path": "_reports/fold_wxmini_刘备_open2.png",
+      "sha256": "ff83c737fe63fb1bcd0a7e520453a799aaa920db7704c4b8e80d32e73f83ef76",
+      "bytes": 85355
+    },
+    {
+      "path": "_reports/fold_wxmini_志孙权_closed.png",
+      "sha256": "a58133ab0a0fcda14354cdcd0490a418209a49d93eebcec6bc69f06522562198",
+      "bytes": 164043
+    },
+    {
+      "path": "_reports/fold_wxmini_志孙权_open.png",
+      "sha256": "04f86d37e70623e0836d5e920c7d1910947bf9571bceab1eccdd2b47610e2520",
+      "bytes": 120259
+    },
+    {
+      "path": "_reports/fold_wxmini_志孙权_open2.png",
+      "sha256": "d4448c53f4c5e88982a45c345b7e8ea36c044ad582d6a4bfe5d01cead3d72971",
+      "bytes": 202309
+    },
+    {
+      "path": "_reports/fold_wxmini_极吕布_closed.png",
+      "sha256": "318d1bba5797129b159065ec6f2385117c1adb724330975cb011ac1d715ba746",
+      "bytes": 156596
+    },
+    {
+      "path": "_reports/fold_wxmini_极吕布_open.png",
+      "sha256": "f3aea14c3f520c4a7b93411f63542ff60f76d97d42d1ee865bd8a9575d76e92a",
+      "bytes": 132061
+    },
+    {
+      "path": "_reports/fold_wxmini_极吕布_open2.png",
+      "sha256": "b95190a914f316cd75dfc02f9e078a7cab50f5b1e0c6c460268ae5ef1e8686b2",
+      "bytes": 209471
+    },
+    {
+      "path": "_reports/fold_wxmini_极马云禄_closed.png",
+      "sha256": "c83dcaa6588d1f72295cd64571f713baf58aefec38c897770c87258ca8dcf271",
+      "bytes": 144293
+    },
+    {
+      "path": "_reports/fold_yanpu_bio.png",
+      "sha256": "c6ab8b776d2b0d3f819f7703386f9d64eedc65ebcaff20c411ea8d8378fdc9d9",
+      "bytes": 285697
+    },
+    {
+      "path": "_reports/fold_yanpu_closed.png",
+      "sha256": "1caf800958cf4ab0455c53ab5cc0e31a207312bc20d7875cf6841f7c2d18d837",
+      "bytes": 286023
+    },
+    {
+      "path": "_reports/fold_yanpu_open.png",
+      "sha256": "b51b97855b105beb9def8ed0e14425f0e49684d05671a412c71d10d3e316ea21",
+      "bytes": 291516
+    },
+    {
+      "path": "_reports/ios_detail_guan.png",
+      "sha256": "204db706cba8cc5d596edc1dcf119fa59c68c4da337d3af62090bc4269407963",
+      "bytes": 124731
+    },
+    {
+      "path": "_reports/ios_scroll_msgs.png",
+      "sha256": "a6f2d7497e30e4cdb92fd42fe6b105db4454514745eeb4f985d0a23cdbef9c37",
+      "bytes": 539764
+    },
+    {
+      "path": "_reports/lines_huangzhong.png",
+      "sha256": "b4892e9e38d5330d560a861a8965862ce8f07e3e974e31d9fd57340301090021",
+      "bytes": 178414
+    },
+    {
+      "path": "_reports/lines_jieguanyu.png",
+      "sha256": "27479110ab4e77d7dc4dc7cd319acebd5284751d6398628eb924624f917f2ce5",
+      "bytes": 148664
+    },
+    {
+      "path": "_reports/lite_scroll.png",
+      "sha256": "e92d3bdcc4bcee058e44544e0679beae0be32426b36772b06c11fe70f0987218",
+      "bytes": 537134
+    },
+    {
+      "path": "_reports/lite_update_modal.png",
+      "sha256": "068e5f7a095d9769db4b0c499a94747840bad407a4830aa0a9ed2fa2282dbb0b",
+      "bytes": 180232
+    },
+    {
+      "path": "_reports/live_lite_detail.png",
+      "sha256": "136813440300bfec0e9f502a121e3253ca73fd66ba8604bd5afe736ea6b76469",
+      "bytes": 552734
+    },
+    {
+      "path": "_reports/live_lite_grid.png",
+      "sha256": "2382a2f856c99a7fb8735c7b5abee74c6a04542038a460f8e6890d17cc66941e",
+      "bytes": 2329979
+    },
+    {
+      "path": "_reports/msgs_fold_界关羽_closed.png",
+      "sha256": "1a57e9ab7f3818c93625f9ab9435743c4863e518ae2e6fb1a38c2ab09070e320",
+      "bytes": 141942
+    },
+    {
+      "path": "_reports/msgs_fold_界关羽_open.png",
+      "sha256": "653f3eccf8d01460909b7fddcc8a84de2d54b5f4792f92974d681e72f77973df",
+      "bytes": 140631
+    },
+    {
+      "path": "_reports/msgs_fold_界关羽_open2.png",
+      "sha256": "70100cb7026be4cf33c036e87d22889fffaf362648d4e503f55678c0d8f1056f",
+      "bytes": 83479
+    },
+    {
+      "path": "_reports/ol_fold_关羽_closed.png",
+      "sha256": "204db706cba8cc5d596edc1dcf119fa59c68c4da337d3af62090bc4269407963",
+      "bytes": 124731
+    },
+    {
+      "path": "_reports/ol_fold_关羽_open.png",
+      "sha256": "1160ec6cbff4397871188493744a00551f5ffcc16aa692f74eae5cb01e475425",
+      "bytes": 120815
+    },
+    {
+      "path": "_reports/ol_fold_关羽_open2.png",
+      "sha256": "22b74f11b0de83d00e5c56e13d9b40031a048866833a9dad683813dc9617d689",
+      "bytes": 86954
+    },
+    {
+      "path": "_reports/ol_fold_曹操_closed.png",
+      "sha256": "fe74bab24a4a02866a82b8cf85d5386429856574cd90be9655c87fd1b04e999f",
+      "bytes": 129700
+    },
+    {
+      "path": "_reports/ol_fold_曹操_open.png",
+      "sha256": "b242276137e085f0c2b572301fe2ec4a692f66ea9038d55b2a62334f25fff800",
+      "bytes": 131149
+    },
+    {
+      "path": "_reports/ol_fold_曹操_open2.png",
+      "sha256": "2e6cc3fa9cfa826377350b9eda1b0a1e25dd8022455141a28d9764aa47561b13",
+      "bytes": 79820
+    },
+    {
+      "path": "_reports/prose_gjf_孙资刘放.png",
+      "sha256": "a2fdfaf017977b5a1699d5d25bc3eea1238ecbfd82236f7335539b781cfca052",
+      "bytes": 139773
+    },
+    {
+      "path": "_reports/sgs_fold_刘备_closed.png",
+      "sha256": "448232b1d5076cd14615ef77419c22f4065b8c5fb067e136d735e419444d5784",
+      "bytes": 141952
+    },
+    {
+      "path": "_reports/sgs_fold_刘备_open.png",
+      "sha256": "7fd8861dac5a700680d97a8f2ef22ce4410c17f4dc90dad92a9a51a14f8ba125",
+      "bytes": 142167
+    },
+    {
+      "path": "_reports/sgs_fold_刘备_open2.png",
+      "sha256": "58ddaae85451be51f2a31b6818dbc57ec087baf337bb8a7d3c225a33e2aceaee",
+      "bytes": 85527
+    },
+    {
+      "path": "_reports/sgs_fold_界诸葛亮_closed.png",
+      "sha256": "bb383b17a1d97a530d60b48183d73ae2d9334029946b0c4304a4611dd0d94bc9",
+      "bytes": 149965
+    },
+    {
+      "path": "_reports/sgs_fold_界诸葛亮_open.png",
+      "sha256": "eaef99f7879cd5e9bac37d5443bc9d4a88b13161a8e6c9057d8153f02f5f6bf1",
+      "bytes": 130572
+    },
+    {
+      "path": "_reports/sgs_fold_界诸葛亮_open2.png",
+      "sha256": "816f6d7fc039c17c151a865457832ac00ab4a88341bca405608065d650398c93",
+      "bytes": 83881
+    },
+    {
+      "path": "_reports/sgs_full_刘桢.png",
+      "sha256": "fb2b1730386ddf3eedadefc60a8d06b6d7a83bbd8bad18b8f3692547973391af",
+      "bytes": 134354
+    },
+    {
+      "path": "_reports/sgs_full_界刘备.png",
+      "sha256": "a7c04e049a2a4e2767a13bc9d66ae1d793b4ed48843c901e33d36f08eeafe966",
+      "bytes": 145836
+    },
+    {
       "path": "app.js",
-      "sha256": "623c131e623dcb3ebbc9147869b6a5c571cc52b893bb035c786f00c59851f825",
-      "bytes": 327232
+      "sha256": "1eb7fb0cb862be1c0e0e6ba9b012868310dbb5310ba7aee6695eb1b7bddb686d",
+      "bytes": 334295
     },
     {
       "path": "apple-touch-icon.png",
@@ -1447,8 +1942,8 @@
     },
     {
       "path": "data/changelog.json",
-      "sha256": "97b83af8cd0f345be4d5bd1122187c3a26a320ff43ea5010aea1d5e3e2dbc296",
-      "bytes": 27023
+      "sha256": "05bab6749fe41084eacee3fa18073c3b1c3e8102c712213bdb1b61bf6a6fded7",
+      "bytes": 39769
     },
     {
       "path": "data/fks/_seen.json",
@@ -1467,8 +1962,8 @@
     },
     {
       "path": "data/gjf/characters.json",
-      "sha256": "455e726b910bcc630a7ed84c41030fcb76f9cb8842009712da908c51db27be7f",
-      "bytes": 1307790
+      "sha256": "19faea0897628f4d0e45aec4a39dff4a350da60d208dc65fa289b849d0e8bccd",
+      "bytes": 2272489
     },
     {
       "path": "data/gjf/pack_icons.json",
@@ -3087,8 +3582,8 @@
     },
     {
       "path": "data/hlsgs/characters.json",
-      "sha256": "ccb98611524ca768c107909439aac73b94eff22401d4997099fb950b7fc1f817",
-      "bytes": 1690668
+      "sha256": "964280da9835f8f96fce445e36c259ac60b40a9523424f8cce51b3040834deb0",
+      "bytes": 2084026
     },
     {
       "path": "data/hlsgs/pack_icons.json",
@@ -3107,8 +3602,8 @@
     },
     {
       "path": "data/msgs/characters.json",
-      "sha256": "ff19d7b6f76fb98d29678d83af6074917b3ba64ca8af725ddc4c3725cfe3e6de",
-      "bytes": 2884099
+      "sha256": "11dd843b73f0dcc5025acd94d5b06596a9949c729a622725c91d82690d6a98bd",
+      "bytes": 3293374
     },
     {
       "path": "data/msgs/pack_icons.json",
@@ -3411,9 +3906,14 @@
       "bytes": 26278
     },
     {
+      "path": "data/ol_news/covers/20261116_3151_5809.webp",
+      "sha256": "9ddc43c2cff5f86a152f67b5a3c63c36e62cce2f915c5e0b3f0e4aa26273755c",
+      "bytes": 14854
+    },
+    {
       "path": "data/ol_news/news.json",
-      "sha256": "f49a043d023c76e4b1479fef311179773d54ee224c46e0f1024716f5f26870ae",
-      "bytes": 1052108
+      "sha256": "a9ad686a954e0ad2d5e98b7a76c8cbdaa201ad20ef01985758e18ad8c6efea9d",
+      "bytes": 1058580
     },
     {
       "path": "data/recent.json",
@@ -3432,8 +3932,8 @@
     },
     {
       "path": "data/sgs/characters.json",
-      "sha256": "779ee7759f2c9f8b36075c08811feeb319bccf43105488e3377ed142e2be127b",
-      "bytes": 2010710
+      "sha256": "613654d9ec5000ea8454e5cdbdbf4e34705f29462f69332417495e9dd6ec1c00",
+      "bytes": 3584767
     },
     {
       "path": "data/sgs/female_skins.json",
@@ -3452,8 +3952,8 @@
     },
     {
       "path": "data/sgsol/characters.json",
-      "sha256": "d5fc7b9cd38a1395bfc814da79d0786ac53cf776e25e92261aad37d9bb5a03a8",
-      "bytes": 3054580
+      "sha256": "e9b98a721719305b2ecd87b94ba44e99137367cea2bfb464796823d0147db30b",
+      "bytes": 2999427
     },
     {
       "path": "data/sgsol/pack_icons.json",
@@ -3467,8 +3967,8 @@
     },
     {
       "path": "data/wxmini/characters.json",
-      "sha256": "63a144cee15cfac3d0994dad23db2f65a8bab7195033b159fd3c920d0e96e5e6",
-      "bytes": 1017772
+      "sha256": "e6dc398692c0d77dfc60e1d2aaf9d39c9edfe3adb2e9c708abb98c62cd955ed3",
+      "bytes": 1026665
     },
     {
       "path": "data/wxmini/pack_icons.json",
@@ -3722,7 +4222,7 @@
     },
     {
       "path": "data/x10_news/news.json",
-      "sha256": "f52fdc8e18f77bac80f7e0d8dfaeb51d2c3506c6e873c7f0b20fb1a277e5d954",
+      "sha256": "ca1ba35e2b20eab7220ed55149f7da1fa825933fe3fbc79690fb6accf97f3c3e",
       "bytes": 1021014
     },
     {
@@ -3772,23 +4272,23 @@
     },
     {
       "path": "heroes/gjf-001.json",
-      "sha256": "7374669a93b2eee39216249eefeedbd99eb9be17e131e11c1ecd7fb4156be21e",
-      "bytes": 943849
+      "sha256": "13f4fdad37677f059a83d52c90fcec7893dd90b15f81e1e9deb61ef3b147cdfb",
+      "bytes": 1667960
     },
     {
       "path": "heroes/gjf-002.json",
-      "sha256": "e414f513b6a4716da3dfac1c0985bc756e76da82d5056b3a74e1ffc37a37917f",
-      "bytes": 359467
+      "sha256": "a4fed34ad9839a79450f730bd119d0a38b02b0205adad65722520f1cffc9e448",
+      "bytes": 600055
     },
     {
       "path": "heroes/hlsgs-001.json",
-      "sha256": "6b57336c3c0001c0793cf2cfc903bc7e999ce1a269c6acb11ab53faf85fb4944",
-      "bytes": 1199140
+      "sha256": "acd45b55485c74407276b50ba9f6b53b4d2a01272d1344b9c2794e79ad2b2911",
+      "bytes": 1469706
     },
     {
       "path": "heroes/hlsgs-002.json",
-      "sha256": "d9244ebee629344eec6085ceb53e32ff4dfa11c2f77c219d8004cc5d4764f977",
-      "bytes": 488583
+      "sha256": "849635479531d4bfe4c9bcfcc5ad7a5cb8edd9f78dbd943244ebc8c5baadc62e",
+      "bytes": 611375
     },
     {
       "path": "heroes/index.json",
@@ -3797,38 +4297,38 @@
     },
     {
       "path": "heroes/msgs-001.json",
-      "sha256": "065f95e43e73791d3c1e15fee3ca9623f2939b20a78f79dd2db76d0d17cd7c50",
-      "bytes": 2444925
+      "sha256": "a17d0ad55780fd4fd2c4f2984e058fd04d16d23b8ede0904d617f81b2a1e4f67",
+      "bytes": 2812527
     },
     {
       "path": "heroes/msgs-002.json",
-      "sha256": "08bb5eed004ec0e6b4080c631aff6889bc49c4e2b2c1e7873bfd0ed221e916a1",
-      "bytes": 434898
+      "sha256": "8ff56cd92cfb17472ec955e511f6d109a7d5bd05788ea490185cfe5bdb825462",
+      "bytes": 476571
     },
     {
       "path": "heroes/sgs-001.json",
-      "sha256": "80699beccaaa6ecff66fab73209a1280ec3fe1bca7255b343e75a6b7cf1d1b39",
-      "bytes": 1435570
+      "sha256": "1c7d430f8b1a23b3a69d8bccd581c647efb85f940a44b77e13fb0cc9caa110e0",
+      "bytes": 2655013
     },
     {
       "path": "heroes/sgs-002.json",
-      "sha256": "b0e842081c7ffff284588b7011781f2f79ecb80760e7bb24a7a31fbd64a2d1b9",
-      "bytes": 569873
+      "sha256": "903445d04d51a78103077c64be3e57e86685577c5259ffb6dad090a2933a28a9",
+      "bytes": 924487
     },
     {
       "path": "heroes/sgsol-001.json",
-      "sha256": "78b7f5223e9760139a32c137964238478a4750d8be2324be14ee5119bedc3edc",
-      "bytes": 2352996
+      "sha256": "81cf13e763d2fb21c367540afd51263f61b4696d3eec309d5564e4ab4ffb750c",
+      "bytes": 2261969
     },
     {
       "path": "heroes/sgsol-002.json",
-      "sha256": "65bd493137420221d2ab445962f66eacf0c1928b22b6df1e8637a9d5e19d6157",
-      "bytes": 697848
+      "sha256": "45bee5851897eaf5ea4643d2b41dcf29ed752de79e3dcba2a6bfd5a536b48a50",
+      "bytes": 733722
     },
     {
       "path": "heroes/wxmini-001.json",
-      "sha256": "d57656c9a6cbd5945e8d4263577c78687d80b68243b7b6727de3e9a44f909236",
-      "bytes": 749198
+      "sha256": "c9922be67b644e57b98a547a7d676aa6e9846a5ef5367c56bf18bbda72920c61",
+      "bytes": 1023019
     },
     {
       "path": "history.css",
@@ -81692,7 +82192,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "a603387511d3785b2ca24b7b67906575bbb7291919ea8774df868599dc65141e",
+      "sha256": "4da025dfcac225460697f53391fff9ab826b4f3ef8f87e087d83c341df189895",
       "bytes": 62215
     },
     {
@@ -81702,8 +82202,8 @@
     },
     {
       "path": "meta/changelog.json",
-      "sha256": "97b83af8cd0f345be4d5bd1122187c3a26a320ff43ea5010aea1d5e3e2dbc296",
-      "bytes": 27023
+      "sha256": "05bab6749fe41084eacee3fa18073c3b1c3e8102c712213bdb1b61bf6a6fded7",
+      "bytes": 39769
     },
     {
       "path": "meta/gameplayRules.json",
@@ -81847,8 +82347,8 @@
     },
     {
       "path": "style.css",
-      "sha256": "597667d3fcfd5f2f30af3e861a2a5e93783c3259c9dc7652d7a18f48ecbf003f",
-      "bytes": 137678
+      "sha256": "25221c13f2ebf7967b59ab296ee4a12943db7deb23598349337f536195d34f8a",
+      "bytes": 139359
     },
     {
       "path": "types/cards.ts",
