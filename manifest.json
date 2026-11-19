@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "version": "2026.11.19",
-  "updated_at": "2026-11-19T01:12:04+08:00",
+  "version": "2026.11.19-2",
+  "updated_at": "2026-11-19T12:21:32+08:00",
   "counts": {
     "heroes": 3748,
     "skins": 15636,
@@ -507,8 +507,8 @@
     },
     {
       "path": "app.js",
-      "sha256": "1eb7fb0cb862be1c0e0e6ba9b012868310dbb5310ba7aee6695eb1b7bddb686d",
-      "bytes": 334295
+      "sha256": "9c4f6b2f393a1d6faca314494eaa236db91f296ad7b101d24f2c090379415697",
+      "bytes": 335151
     },
     {
       "path": "apple-touch-icon.png",
@@ -1942,8 +1942,8 @@
     },
     {
       "path": "data/changelog.json",
-      "sha256": "05bab6749fe41084eacee3fa18073c3b1c3e8102c712213bdb1b61bf6a6fded7",
-      "bytes": 39769
+      "sha256": "318b8ee15720bcfc6962bbc7d7e182dd1d8a137045094bd31774bfa0399dc00f",
+      "bytes": 41524
     },
     {
       "path": "data/fks/_seen.json",
@@ -82192,7 +82192,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "4da025dfcac225460697f53391fff9ab826b4f3ef8f87e087d83c341df189895",
+      "sha256": "78798678b14c7f468b98e6537919e1ad4efad619f9c4892ca1429e506ecaa4a0",
       "bytes": 62215
     },
     {
@@ -82202,8 +82202,8 @@
     },
     {
       "path": "meta/changelog.json",
-      "sha256": "05bab6749fe41084eacee3fa18073c3b1c3e8102c712213bdb1b61bf6a6fded7",
-      "bytes": 39769
+      "sha256": "318b8ee15720bcfc6962bbc7d7e182dd1d8a137045094bd31774bfa0399dc00f",
+      "bytes": 41524
     },
     {
       "path": "meta/gameplayRules.json",

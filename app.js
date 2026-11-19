@@ -138,6 +138,13 @@
      数据独立成篇、不并入任何正式版，也刻意不进跨版本搜索索引（搜索四版时不搜它）。 */
   const VN = { sgsol: 'OL', msgs: '移动版', sgs: '十周年', hlsgs: '欢乐杀', gjf: '国际服', wxmini: '小程序', fks: '新月集', unreleased: '未实装' };
   const UNRELEASED_ID = 'unreleased';
+  /* 「未实装」入口从版本条上隐藏（2026-11-19 用户要求：它出现在里面，需要隐藏掉）。
+     只藏入口，不删数据 —— data/index.json 里的 unreleased 那一份照旧存在、
+     科普页的版本对照也照旧引用它，改这一个开关就能恢复显示。 */
+  const HIDE_UNRELEASED = true;
+  /* 某版本能否作为「当前浏览的库」被选中：存在 + 没被隐藏。 */
+  const canPickVer = (id) => INDEX.some((v) => v.id === id) &&
+    (!HIDE_UNRELEASED || id !== UNRELEASED_ID);
   /* 有 olv（按皮肤分组的台词）且台词量大到需要默认折叠的服务器。
      其他服台词少，保持平铺。新增服务器时改这一处即可。
      2026-11-19：小程序补齐台词（352/353 位、876 组 4251 句）后一并纳入折叠。 */
@@ -548,8 +555,9 @@
       ? `<button class="vtab vtab-all${state.scope === 'all' ? ' active' : ''}" role="tab"
            aria-selected="${state.scope === 'all'}" data-v=""><b>全部</b></button>`
       : '';
-    /* 搜索态不列「未实装」：它不在跨版本搜索索引里，列出来点了只会是空结果 */
-    $('vtabs').innerHTML = allChip + INDEX.filter((v) => !searching || v.id !== UNRELEASED_ID).map((v) => {
+    /* 「未实装」不出现在版本条上（HIDE_UNRELEASED，见 UNRELEASED_ID 旁注释）；
+       搜索态本来也不列它 —— 它不在跨版本搜索索引里，点了只会是空结果。 */
+    $('vtabs').innerHTML = allChip + INDEX.filter((v) => canPickVer(v.id)).map((v) => {
       const act = searching ? state.scope === v.id : v.id === V.id;
       return `<button class="vtab${act ? ' active' : ''}" role="tab"
          aria-selected="${act}" data-v="${v.id}">
@@ -565,7 +573,7 @@
   }
 
   async function switchVersion(id) {
-    if (!INDEX.some((v) => v.id === id)) id = INDEX.length ? INDEX[0].id : DEFAULT_VERSION;
+    if (!canPickVer(id)) id = (INDEX.find((v) => canPickVer(v.id)) || {}).id || DEFAULT_VERSION;
     setStatus(`正在载入「${(INDEX.find((v) => v.id === id) || {}).label || id}」…`);
     try {
       const data = await fetchJSON(dataUrl(id));
@@ -5861,7 +5869,9 @@
     }
     renderTabs();
     const saved = safeGet(VERSION_KEY);
-    const target = INDEX.some((v) => v.id === saved) ? saved : DEFAULT_VERSION;
+    /* 上次停在「未实装」时不能原样恢复 —— 那个入口已经隐藏，
+       恢复进去会变成「有内容、但版本条上没有一格高亮」的隐形状态。 */
+    const target = canPickVer(saved) ? saved : (canPickVer(DEFAULT_VERSION) ? DEFAULT_VERSION : (INDEX[0] || {}).id);
     try {
       await switchVersion(target);
       splashProgress(85);                            // 桩点：版本数据就绪
